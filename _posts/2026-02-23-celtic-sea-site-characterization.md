@@ -1,66 +1,99 @@
 ---
 layout: post
-title: Celtic Sea Site Characterization
-image: "/posts/coffee_python.jpg"
-tags: [Python, Coffee]
+title: Lease Area Site Characterization - Celtic Sea
+image: "img/posts/celtic_sea_map.jpg"
+tags: [Offshore Wind, Site Characterization, GEBCO, EMODnet, Python]
 ---
 
-# My first project
-## is all about
-### how much
-#### I LOVE
-##### Python & Coffee!
+# Celtic Sea Floating Offshore Wind – Site Characterization
+
+This project presents a structured site characterization workflow for a floating offshore wind lease area in the **Celtic Sea**. The objective is to define the lease boundary, extract bathymetric data, and integrate regional soil information to support early-stage engineering assessments for anchors, moorings, and infrastructure layout.
 
 ---
 
-Firstly, I love Python so much, here is some code!
+## 1. Lease Area Definition
 
-```
-my_love_for_python = 0
-my_python_knowledge = 0
+The lease area contour is defined using geospatial boundary coordinates and converted into a computational polygon for spatial analysis. The workflow includes:
 
-for day in lifetime:
-    my_love_for_python += 1
-    my_python_knowledge += 1
-```
+- Importing geographic coordinates (WGS84)
+- Converting to projected metric coordinates
+- Generating a closed lease polygon
+- Visual validation of boundary consistency
 
-Just so you really see how much I love Python, here is some code BUT with some colours for keywords & functionality!
+This contour forms the spatial reference for all subsequent bathymetric and geotechnical data extraction.
+
+---
+
+## 2. Bathymetry – GEBCO Integration
+
+Bathymetric data is sourced from **GEBCO (General Bathymetric Chart of the Oceans)**.
+
+Processing steps:
+
+- Load GEBCO raster dataset
+- Subset data within lease polygon
+- Convert depth reference to project datum
+- Generate depth contours and gradient maps
+- Compute statistics (min, max, mean depth)
+
+Outputs:
+
+- Lease-area bathymetry map
+- Depth distribution histogram
+- Slope estimation for mooring footprint assessment
+
+Bathymetry directly informs:
+
+- Anchor feasibility
+- Mooring line length estimation
+- Installation logistics
+- Cable routing constraints
+
+---
+
+## 3. Soil Properties – EMODnet Integration
+
+Seabed geotechnical characterization is derived from **EMODnet Geology & Seabed Habitat datasets**.
+
+Processing steps:
+
+- Import sediment classification layers
+- Intersect with lease boundary
+- Extract dominant soil types
+- Map spatial variability
+
+Where available, the following parameters are interpreted:
+
+- Sediment type (sand, clay, mixed sediments)
+- Relative density (for sands)
+- Undrained shear strength proxies (for clays)
+- Rock presence indicators
+
+This data supports early-stage screening for:
+
+- Suction anchor feasibility
+- Driven or drilled pile suitability
+- Drag-embedment anchor potential
+
+---
+
+## 4. Integrated Spatial Framework (Python Workflow)
+
+All datasets are processed using Python-based geospatial tools:
 
 ```python
-my_love_for_python = 0
-my_python_knowledge = 0
+import xarray as xr
+import geopandas as gpd
+import numpy as np
 
-for day in lifetime:
-    my_love_for_python += 1
-    my_python_knowledge += 1  
-```
+# Load lease polygon
+lease = gpd.read_file("lease_area.geojson")
 
-Here is an **unordered list** showing some things I love about Python
+# Load GEBCO bathymetry
+gebco = xr.open_dataset("gebco_subset.nc")
 
-* For my work
-    * Data Analysis
-    * Data Visualisation
-    * Machine Learning
-* For fun
-    * Deep Learning
-    * Computer Vision
-    * Projects about coffee
-
-Here is an _ordered list_ showing some things I love about coffee
-
-1. The smell
-    1. Especially in the morning, but also at all times of the day!
-2. The taste
-3. The fact I can run the 100m in approx. 9 seconds after having 4 cups in quick succession
-
-I love Python & Coffee so much, here is that picture from the top of my project AGAIN, but this time, in the BODY of my project!
-
-![alt text](/img/posts/coffee_python.jpg "Coffee & Python - I love them!")
-
-The above image is just linked to the actual file in my Github, but I could also link to images online, using the URL!
-
-A line break, like this one below - helps me make sense of what I'm reading, especially when I've had so much coffee that my vision goes a little blurry
-
----
-
-I could also add things to my project like links, tables, quotes, and HTML blocks - but I'm starting to get a cracking headache.  Must be coffee time.
+# Spatial masking example
+bathymetry_subset = gebco.where(
+    (gebco.lon >= lease.bounds.minx) &
+    (gebco.lon <= lease.bounds.maxx)
+)
