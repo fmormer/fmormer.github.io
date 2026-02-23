@@ -15,7 +15,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 #-------------------------------
 # About Section
-subtitle: Data Science <span style="color:#f58506"> Portfolio </span>
+subtitle: Offshore Wind <span style="color:#0057FF"> Portfolio </span>
 location: "El Puerto de Santa Maria, Cadiz. Spain"
 resume_url: /docs/C V_F e l i p e  J.  M o r e n o_F e b  2 0 2 6.pdf
 avatar_image: /img/morie_analytics_logo.jpg
@@ -51,6 +51,7 @@ defaults:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
 
 
 
