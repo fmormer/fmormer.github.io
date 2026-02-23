@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Coffee & Python
+title: Celtic Sea Site Characterization
 image: "/posts/coffee_python.jpg"
 tags: [Python, Coffee]
 ---
