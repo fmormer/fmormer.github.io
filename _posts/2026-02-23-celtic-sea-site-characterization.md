@@ -78,7 +78,7 @@ Bathymetry directly informs:
 
 Seabed classification is derived from **EMODnet Geology & Seabed Habitat datasets**.
 
-![Celtic Sea Seabed Classification](/img/posts/2dfarm_soil_2.png)
+<img src="/img/posts/2dfarm_soil_2.png" alt="Celtic Sea Seabed Classification" width="500">
 *Figure 2 – EMODnet sediment classification intersected with lease polygon.*
 
 Spatial sediment variability informs anchor concept selection and early-stage geotechnical feasibility screening.
