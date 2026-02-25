@@ -48,6 +48,7 @@ Bathymetric data is sourced from the **GEBCO 2025 global elevation grid** (15 ar
 
 image: "/posts/2dfarm_bathy_2.png"
 
+![Celtic Sea Bathymetry]("/img/posts/2dfarm_bathy_lease_2.png")
 *Figure 1 – Masked GEBCO 2025 bathymetry within lease boundary.*
 
 Depth variations across the lease area directly influence mooring system configuration, anchor embedment requirements, and installation vessel selection.
@@ -79,8 +80,7 @@ Bathymetry directly informs:
 
 Seabed classification is derived from **EMODnet Geology & Seabed Habitat datasets**.
 
-![Celtic Sea Seabed Classification](/posts/2dfarm_soil_2.png)
-
+![Celtic Sea Seabed Classification](/img/posts/2dfarm_soil_2.png)
 *Figure 2 – EMODnet sediment classification intersected with lease polygon.*
 
 Spatial sediment variability informs anchor concept selection and early-stage geotechnical feasibility screening.
