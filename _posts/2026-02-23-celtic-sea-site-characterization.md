@@ -46,7 +46,7 @@ The lease polygon forms the spatial mask for all subsequent bathymetric and seab
 
 Bathymetric data is sourced from the **GEBCO 2025 global elevation grid** (15 arc-second resolution).
 
-![Celtic Sea Bathymetry](/posts/2dfarm_bathy_lease_2.png)
+![Celtic Sea Bathymetry]({{ "/posts/2dfarm_bathy_lease_2.png" | relative_url }})
 
 *Figure 1 – Masked GEBCO 2025 bathymetry within lease boundary.*
 
