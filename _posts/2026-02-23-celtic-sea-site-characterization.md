@@ -38,6 +38,11 @@ Processing steps:
 - Generate closed lease polygon
 - Validate spatial consistency
 
+<div align="center">
+  <img src="/img/posts/celtic_sea_lease_areas.png" alt="Celtic Sea Lease Areas" width="500">
+</div>
+*Figure 1 – Masked GEBCO 2025 bathymetry within lease boundary.*
+
 The lease polygon forms the spatial mask for all subsequent bathymetric and seabed extraction.
 
 ---
@@ -49,7 +54,7 @@ Bathymetric data is sourced from the **GEBCO 2025 global elevation grid** (15 ar
 <div align="center">
   <img src="/img/posts/2dfarm_bathy_2.png" alt="Celtic Sea Bathymetry" width="500">
 </div>
-*Figure 1 – Masked GEBCO 2025 bathymetry within lease boundary.*
+*Figure 2 – Masked GEBCO 2025 bathymetry within lease boundary.*
 
 Depth variations across the lease area directly influence mooring system configuration, anchor embedment requirements, and installation vessel selection.
 
@@ -83,7 +88,7 @@ Seabed classification is derived from **EMODnet Geology & Seabed Habitat dataset
 <div align="center">
   <img src="/img/posts/2dfarm_soil_2.png" alt="Celtic Sea Seabed Classification" width="500">
 </div>
-*Figure 2 – EMODnet sediment classification intersected with lease polygon.*
+*Figure 3 – EMODnet sediment classification intersected with lease polygon.*
 
 Spatial sediment variability informs anchor concept selection and early-stage geotechnical feasibility screening.
 
