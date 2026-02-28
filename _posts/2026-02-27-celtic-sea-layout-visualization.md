@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hex-Based Floater Layout Optimization – Celtic Sea
-image: "/img/posts/hexgrid_overlay.png"
+image: "/posts/hexgrid_overlay.png"
 tags: [Offshore Wind, Layout Optimization, Hex Grid, Topology, Python]
 ---
 
@@ -83,7 +83,7 @@ Bathymetry directly influences mooring footprint, anchor feasibility, and instal
 Depth is incorporated as a filtering constraint and contextual visualization layer.
 
 <div align="center">
-  <img src="/img/posts/2dfarm_bathy_1.png" alt="Bathymetry Overlay" width="500">
+  <img src="/img/posts/2dfarm_bathy_2.png" alt="Bathymetry Overlay" width="500">
 </div>
 *Figure 3 – GEBCO bathymetry intersected with lease polygon.*
 
@@ -96,7 +96,7 @@ Depth thresholds remove infeasible lattice nodes prior to optimization.
 Sediment classification informs anchor concept feasibility screening.
 
 <div align="center">
-  <img src="/img/posts/2dfarm_soil_1.png" alt="Soil Classification Overlay" width="500">
+  <img src="/img/posts/2dfarm_soil_2.png" alt="Soil Classification Overlay" width="500">
 </div>
 *Figure 4 – Soil type distribution within lease boundary.*
 
