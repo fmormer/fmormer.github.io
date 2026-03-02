@@ -1,8 +1,5 @@
 # Morie Analytics  
-## Integrated Mooring System & Subsea Infrastructure Intelligence  
-### For Floating Offshore Wind and Marine Energy Converters
-
----
+### Integrated Mooring Systems & Subsea Infrastructure Intelligence for Floating Offshore Wind and Marine Energy Converters
 
 ## Enabling Scalable Floating Renewable Energy
 
@@ -26,7 +23,7 @@ Morie Analytics provides an integrated, data-driven framework to optimize the en
 Current engineering workflows remain fragmented:
 
 - Hydrodynamic simulations are separated from geotechnical capacity evaluation  
-- Mooring lines, anchors, and dynamic cables are optimized independently  
+- Mooring lines, anchors and dynamic cables are optimized independently  
 - Extreme, cyclic, and fatigue limit states are treated in isolation  
 - Soil variability is not fully integrated into system-level optimization  
 - Installation methodology is disconnected from early design decisions  
@@ -56,9 +53,9 @@ Morie Analytics delivers an integrated design and optimization framework coverin
 - Suitability screening for floating technologies  
 
 ### 2. Integrated Mooring System Optimization
-- Coupled mooring line and anchor performance assessment  
-- Extreme, cyclic and fatigue capacity evaluation  
-- Comparative assessment across mooring configurations  
+- Coupled mooring line and anchor performance assessment 
+- Comparative assessment across mooring layout configurations 
+- Anchor capacity soil-structure evaluation and structural design  
 - Depth- and load-informed layout optimization  
 
 ### 3. Subsea Cable Analytics
@@ -79,7 +76,7 @@ Morie Analytics delivers an integrated design and optimization framework coverin
 - Portfolio-scale sensitivity analysis  
 - Reduced iteration cycles during Pre-FEED and FEED  
 
-Our tools are built in object-oriented Python and designed to integrate with industry-standard simulation environments and NRL/NREL research-backed methodologies.
+Our tools are built in object-oriented Python and designed to integrate with industry-standard simulation environments. They are trusted NREL research-backed methodologies.
 
 ---
 
@@ -111,7 +108,7 @@ We transform the mooring and subsea infrastructure system from a constraint-driv
 
 ---
 
-## Why Morie Analytics
+## Why Morie Analytics?
 
 Morie Analytics bridges:
 
@@ -119,7 +116,9 @@ Morie Analytics bridges:
 - Mooring and floating system mechanics  
 - Subsea cable considerations  
 - Installation strategy  
-- Advanced optimization and machine learning  
+- Advanced optimization and machine learning
+
+Our core skilss include:
 
 - 12+ years of offshore renewable energy experience  
 - Background spanning commercial projects and national laboratory research  
@@ -127,8 +126,7 @@ Morie Analytics bridges:
 - Independent, developer-focused analytics approach  
 - Designed specifically for floating renewable energy systems  
 
-We are not a single-discipline consultant.  
-We are an integrated subsea systems analytics partner.
+We are not a single-discipline consultant. We are an integrated moorings and subsea systems analytics partner. We adapt to your specific needs by listening and analyzing each scenario.
 
 ---
 
@@ -136,10 +134,10 @@ We are an integrated subsea systems analytics partner.
 
 Floating offshore wind and marine energy deployment are accelerating globally:
 
-- Multi-GW floating targets in the United Kingdom  
+- Multi-GW floating targets in the North Sea  
 - Strategic floating lease areas in Southern Europe  
-- Deepwater expansion across the Atlantic and Pacific  
-- Growing interest in wave and tidal technologies  
+- Deepwater expansion across the other areas of the Atlantic and Pacific  
+- Growing interest in marine energy convertors technologies using wave and tidal resources  
 
 Mooring systems and subsea infrastructure represent a significant portion of floating project CAPEX and technical risk.
 
