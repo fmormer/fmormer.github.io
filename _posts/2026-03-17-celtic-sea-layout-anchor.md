@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Shared Anchor Load Resolution & Capacity Verification – Celtic Sea
-image: "/img/posts/shared_anchor_planview.png"
+image: "/posts/shared_anchor.png"
 tags: [Offshore Wind, Anchors, Suction Piles, Shared Anchors, Geotechnical Engineering, Python]
 ---
 
