@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Shared Anchor Load Resolution & Capacity Verification – Celtic Sea
-image: "/posts/suction_plot.png"
+image: "/posts/morie_anchor/suction_plot.png"
 tags: [Offshore Wind, Anchors, Suction Piles, Shared Anchors, Geotechnical Engineering, Python]
 ---
 
@@ -33,7 +33,7 @@ This workflow converts mooring simulation outputs into **engineering-ready ancho
 Mooring loads are obtained from RAFT simulations and reconstructed into time series.
 
 <div align="center">
-  <img src="/img/posts/mooring_loads.png" width="700">
+  <img src="/img/posts/morie_anchor/mooring_loads.png" width="700">
 </div>
 *Figure 1 – Synthetic tension time series with design peak definition.*
 
@@ -57,7 +57,7 @@ Instead:
 - Extract **simultaneous loads in all other lines**
 
 <div align="center">
-  <img src="/img/posts/concomitant_loads.png" width="700">
+  <img src="/img/posts/morie_anchor/concomitant_loads.png" width="700">
 </div>
 *Figure 2 – Concomitant load extraction at the governing event.*
 
@@ -90,7 +90,7 @@ This step connects **mooring mechanics to geotechnical loading**.
 Each mooring line contributes a directional load.
 
 <div align="center">
-  <img src="/img/posts/shared_anchor_planview2.png" width="500">
+  <img src="/img/posts/morie_anchor/shared_anchor_planview2.png" width="500">
 </div>
 *Figure 3 – Plan view of shared anchor with multi-line load vectors.*
 
@@ -147,7 +147,7 @@ T_total = Σ |T_i|
 The anchor does not operate in isolation.
 
 <div align="center">
-  <img src="/img/posts/shared_anchor.png" width="600">
+  <img src="/img/posts/morie_anchor/shared_anchor.png" width="600">
 </div>
 *Figure 4 – Farm-scale mooring system with shared-anchor topology.*
 
@@ -193,7 +193,7 @@ Derived from:
 The interaction between horizontal and vertical loads is evaluated.
 
 <div align="center">
-  <img src="/img/posts/capacity_envelope.png" width="600">
+  <img src="/img/posts/morie_anchor/capacity_envelope.png" width="600">
 </div>
 *Figure 5 – VH capacity envelope with applied load.*
 
@@ -209,7 +209,7 @@ The applied load must lie within the envelope:
 Torsion introduces additional demand.
 
 <div align="center">
-  <img src="/img/posts/capacity_ellipsoid.png" width="600">
+  <img src="/img/posts/morie_anchor/capacity_ellipsoid.png" width="600">
 </div>
 *Figure 6 – VH–M interaction envelope.*
 

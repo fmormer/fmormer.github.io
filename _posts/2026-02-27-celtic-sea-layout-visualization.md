@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hex-Based Floater Layout Optimization – Celtic Sea
-image: "/posts/hexgrid_overlay.png"
+image: "/posts/morie_visualization/hexgrid_overlay.png"
 tags: [Offshore Wind, Layout Optimization, Hex Grid, Topology, Python]
 ---
 
@@ -41,7 +41,7 @@ Processing steps:
 - Enforce depth constraints
 
 <div align="center">
-  <img src="/img/posts/suitability_overlay.png" alt="Lease Suitability Filtering" width="500">
+  <img src="/img/posts/morie_visualization/suitability_overlay.png" alt="Lease Suitability Filtering" width="500">
 </div>
 *Figure 1 – Lease boundary with soil suitability masking.*
 
@@ -68,7 +68,7 @@ Spacing consistency ensures:
 - Scalable cluster evaluation  
 
 <div align="center">
-  <img src="/img/posts/hexgrid_overlay.png" alt="Hex Grid Overlay" width="500">
+  <img src="/img/posts/morie_visualization/hexgrid_overlay.png" alt="Hex Grid Overlay" width="500">
 </div>
 *Figure 2 – Buffered lease region populated with hexagonal lattice.*
 
@@ -83,7 +83,7 @@ Bathymetry directly influences mooring footprint, anchor feasibility, and instal
 Depth is incorporated as a filtering constraint and contextual visualization layer.
 
 <div align="center">
-  <img src="/img/posts/2dfarm_bathy_2.png" alt="Bathymetry Overlay" width="500">
+  <img src="/img/posts/morie_visualization/2dfarm_bathy_2.png" alt="Bathymetry Overlay" width="500">
 </div>
 *Figure 3 – GEBCO bathymetry intersected with lease polygon.*
 
