@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Mooring System Generation & Load Analysis – Celtic Sea
-image: "/posts/shared_anchor_planview.png"
+image: "/posts/morie_mooring/shared_anchor_planview.png"
 tags: [Offshore Wind, Mooring Systems, RAFT, MoorPy, Shared Anchors, Python]
 ---
 
