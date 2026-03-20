@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Lease Area Site Characterization - Celtic Sea
-image: "/posts/celtic_sea_map.jpg"
+image: "/posts/morie_site/celtic_sea_map.jpg"
 tags: [Offshore Wind, Site Characterization, GEBCO, EMODnet, Python]
 ---
 
@@ -39,7 +39,7 @@ Processing steps:
 - Validate spatial consistency
 
 <div align="center">
-  <img src="/img/posts/celtic_sea_lease_areas.png" alt="Celtic Sea Lease Areas" width="500">
+  <img src="/img/posts/morie_site/celtic_sea_lease_areas.png" alt="Celtic Sea Lease Areas" width="500">
 </div>
 *Figure 1 – Masked GEBCO 2025 bathymetry within lease boundary.*
 
@@ -52,7 +52,7 @@ The lease polygon forms the spatial mask for all subsequent bathymetric and seab
 Bathymetric data is sourced from the **GEBCO 2025 global elevation grid** (15 arc-second resolution).
 
 <div align="center">
-  <img src="/img/posts/2dfarm_bathy_2.png" alt="Celtic Sea Bathymetry" width="500">
+  <img src="/img/posts/morie_site/2dfarm_bathy_2.png" alt="Celtic Sea Bathymetry" width="500">
 </div>
 *Figure 2 – Masked GEBCO 2025 bathymetry within lease boundary.*
 
@@ -86,7 +86,7 @@ Bathymetry directly informs:
 Seabed classification is derived from **EMODnet Geology & Seabed Habitat datasets**.
 
 <div align="center">
-  <img src="/img/posts/2dfarm_soil_2.png" alt="Celtic Sea Seabed Classification" width="500">
+  <img src="/img/posts/morie_site/2dfarm_soil_2.png" alt="Celtic Sea Seabed Classification" width="500">
 </div>
 *Figure 3 – EMODnet sediment classification intersected with lease polygon.*
 
