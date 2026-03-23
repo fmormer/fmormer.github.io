@@ -207,11 +207,12 @@ Three governing mechanisms:
 3. Plug + external resistance  
 
 ```
-V_max = min(V1, V2, V3)
+V_max = max or min(V1, V2, V3)
 ```
+The selection of the load depends on the nature of the impulse. For explosive loads maximum should be selected for sustained loads minimum.
 
 <div align="center">
-  <img src="/img/posts/morie_anchor/anchor_failure_modes.png" width="700">
+  <img src="/img/posts/morie_anchor/anchor_failure_modes.png" width="800">
 </div>
 *Figure 8 – Suction pile vertical failure mechanisms.*
 
@@ -234,7 +235,7 @@ Derived from:
 <div align="center">
   <img src="/img/posts/morie_anchor/capacity_ellipsoid.png" width="600">
 </div>
-*Figure 10 – VHM interaction surface.*
+*Figure 9 – VHM interaction surface.*
 
 This enables:
 
@@ -249,7 +250,7 @@ This enables:
 <div align="center">
   <img src="/img/posts/morie_anchor/capacity_envelope.png" width="600">
 </div>
-*Figure 9 – VH capacity envelope.*
+*Figure 10 – VH capacity envelope.*
 
 The applied load must lie within the envelope:
 
