@@ -130,7 +130,12 @@ Outputs per line:
 
 - Horizontal load at padeye (**Ha**)  
 - Vertical load at padeye (**Va**)  
-- Load inclination angle  
+- Load inclination angle 
+
+<div align="center">
+  <img src="/img/posts/morie_anchor/load_transfer.png" width="700">
+</div>
+*Figure 6 – Inverse catenary load transfer from mudline to padeye.* 
 
 This step connects **mooring loads to anchor loading conditions**.
 
@@ -209,10 +214,10 @@ Three governing mechanisms:
 ```
 V_max = max or min(V1, V2, V3)
 ```
-The selection of the load depends on the nature of the impulse. For explosive loads maximum should be selected for sustained loads minimum.
+The selection of the load depends on the nature of the impulse. For explosive loads maximum should be selected and for sustained loads minimum.
 
 <div align="center">
-  <img src="/img/posts/morie_anchor/anchor_failure_modes.png" width="800">
+  <img src="/img/posts/morie_anchor/anchor_failure_modes.png" width="600">
 </div>
 *Figure 8 – Suction pile vertical failure mechanisms.*
 
