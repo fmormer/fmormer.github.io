@@ -9,9 +9,11 @@ tags: [Offshore Wind, Anchors, Suction Piles, Shared Anchors, Geotechnical Engin
 
 This project extends the mooring system workflow by introducing a structured methodology to transform **dynamic mooring loads into anchor design loads** and verify **suction pile capacity under combined loading**.
 
-Using reconstructed time series from RAFT simulations, embedded chain mechanics, and layered soil models, a modular Python pipeline is developed to bridge **hydrodynamics, mooring mechanics, and geotechnical design**.
+Using reconstructed time series from RAFT simulations, embedded chain mechanics, and layered soil models, a modular Python workflow is developed to bridge **hydrodynamics, mooring mechanics, and geotechnical design**.
 
-The objective is to formalize anchor design into a reproducible computational workflow that captures **realistic multi-line loading conditions** in floating offshore wind farms.
+This case study directly follows the mooring workflow, using **padeye-level loads (Ha, Va, θ)** as inputs for anchor design.
+
+The objective is to formalize anchor design into a reproducible computational pipeline that captures **realistic multi-line loading conditions** in floating offshore wind farms.
 
 ---
 
@@ -22,148 +24,179 @@ The objective is to formalize anchor design into a reproducible computational wo
 - **Concomitant multi-line loading**
 - **Torsional load assessment**
 - **Layered-soil suction pile capacity**
-- Full **VH–M interaction verification**
+- Full **VHM interaction verification**
 
-This workflow converts mooring simulation outputs into **engineering-ready anchor design loads**.
+The workflow transforms mooring simulation outputs into **engineering-ready anchor demand and capacity verification**.
 
 ---
 
-## 1. From Mooring Dynamics to Anchor Loads
+## 1. Anchor System Definition & Topology
 
-Mooring loads are obtained from RAFT simulations and reconstructed into time series.
+Shared anchor systems are generated from floater layouts using deterministic geometric rules that define both **line connectivity and load transfer paths** across the farm.
+
+Each anchor may be connected to one or multiple mooring lines depending on layout geometry.
 
 <div align="center">
-  <img src="/img/posts/morie_anchor/mooring_loads.png" width="700">
+  <img src="/img/posts/morie_anchor/2dfarm_shared.png" width="500">
 </div>
-*Figure 1 – Synthetic tension time series with design peak definition.*
+*Figure 1 – Plan view of floating wind farm showing shared-anchor configurations.*
 
-The design load is defined as:
+---
+
+### Detection & Merging
+
+Shared anchors are identified through spatial analysis of anchor coordinates:
+
+- Detect coincident or near-coincident anchor locations  
+- Merge anchors into unified nodes  
+- Reassign all connected mooring lines to the merged anchor  
+- Preserve full connectivity between floaters and anchors  
+
+<div align="center">
+  <img src="/img/posts/morie_anchor/shared_anchor_planview.png" width="500">
+</div>
+*Figure 2 – Shared-anchor topology showing multiple mooring lines connected to a single anchor.*
+
+---
+
+### Engineering Significance
+
+The resulting system forms a **coupled load network**, where:
+
+- Multiple floaters contribute to a single anchor  
+- Load directions differ across lines  
+- Resultant loads must be evaluated as vector combinations  
+
+---
+
+## 2. Anchor Demand from Mooring System
+
+Anchor loads originate from the mooring system workflow.
+
+For each mooring line, the following quantities are obtained at the padeye:
+
+- Horizontal load (**Ha**)  
+- Vertical load (**Va**)  
+- Load direction (**θ**)  
+
+These loads represent the **interface between mooring mechanics and anchor design**.
+
+---
+
+## 3. Critical Event & Concomitant Loads
+
+The governing anchor load case is derived from time-domain reconstruction of mooring tensions.
+
+The design tension is defined as:
 
 ```
 T_design = T_mean + 3.8σ
 ```
 
-This provides a realistic representation of extreme loading while preserving spectral characteristics.
+<div align="center">
+  <img src="/img/posts/morie_anchor/mooring_loads.png" width="700">
+</div>
+*Figure 3 – Synthetic tension time series with design peak.*
 
----
+At the time of peak tension in the dominant line:
 
-## 2. Critical Event & Concomitant Loads
-
-The governing load case is not defined by independent maxima.
-
-Instead:
-
-- Identify **peak tension in the dominant line**
-- Extract **simultaneous loads in all other lines**
+- Loads in all other lines are extracted simultaneously  
 
 <div align="center">
   <img src="/img/posts/morie_anchor/concomitant_loads.png" width="700">
 </div>
-*Figure 2 – Concomitant load extraction at the governing event.*
+*Figure 4 – Concomitant loads at the governing event.*
 
-This produces the **true load state** acting on the shared anchor.
+This defines the **true multi-line load state acting on the anchor**.
 
 ---
 
-## 3. Load Transfer Through Embedded Chain
+## 4. Load Transfer Through Embedded Chain
 
-Loads at the mudline are transferred to the anchor padeye through the embedded chain.
+Loads at the mudline are transferred to the anchor padeye through the embedded chain segment.
 
-Key effects:
+This process accounts for:
 
-- Soil resistance  
 - Inverse catenary geometry  
-- Chain weight  
+- Soil resistance (tangential and normal)  
+- Chain self-weight  
+
+<div align="center">
+  <img src="/img/posts/morie_anchor/anchor_inverse_catenary.png" width="700">
+</div>
+*Figure 5 – Inverse catenary load transfer from mudline to padeye.*
 
 Outputs per line:
 
-- Horizontal load (Ha)  
-- Vertical load (Va)  
-- Padeye angle  
+- Horizontal load at padeye (**Ha**)  
+- Vertical load at padeye (**Va**)  
+- Load inclination angle  
 
-This step connects **mooring mechanics to geotechnical loading**.
+This step connects **mooring loads to anchor loading conditions**.
 
 ---
 
-## 4. Shared Anchor Load Resolution
+## 5. Anchor Load Resolution (H, V, T)
 
-Each mooring line contributes a directional load.
+Each mooring line contributes a directional load at the anchor.
 
 <div align="center">
-  <img src="/img/posts/morie_anchor/shared_anchor_planview2.png" width="500">
+  <img src="/img/posts/morie_anchor/shared_anchor_planview.png" width="500">
 </div>
-*Figure 3 – Plan view of shared anchor with multi-line load vectors.*
+*Figure 6 – Load vectors acting on a shared anchor.*
 
-Resolution:
+### Horizontal Resolution
 
 ```
 Hx = Ha cos(ψ)
 Hy = Ha sin(ψ)
 ```
 
-Total loads:
+### Total Loads
 
 ```
 H_total = √(Hx² + Hy²)
 V_total = Σ Va
 ```
 
-Resultant:
+### Resultant Load
 
 ```
 R = √(H_total² + V_total²)
 ```
 
-This defines the **true 3D load state at the anchor**.
-
 ---
 
-## 5. Torsional Load from Lug Misalignment
+### Torsional Load
 
-Shared anchors experience torsion due to misalignment between:
+Torsion arises from misalignment between:
 
 - Mooring line direction  
 - Padeye orientation  
 
-Torque per line:
-
 ```
 T_i = H_a,i × r_lug × sin(ψ_lug)
-```
-
-Total torsion:
-
-```
 T_total = Σ |T_i|
 ```
-
-✔️ Absolute summation prevents unrealistic cancellation  
-✔️ Critical for suction pile performance  
-
----
-
-## 6. Farm-Scale Context
-
-The anchor does not operate in isolation.
 
 <div align="center">
   <img src="/img/posts/morie_anchor/shared_anchor.png" width="600">
 </div>
-*Figure 4 – Farm-scale mooring system with shared-anchor topology.*
+*Figure 7 – Farm-scale context showing shared-anchor load interaction.*
 
-Shared anchors:
-
-- Couple multiple floaters  
-- Amplify load interaction  
-- Reduce infrastructure count  
-
-But require **accurate multi-line load modeling**.
+This produces a complete **3D load state (H, V, T)**.
 
 ---
 
-## 7. Suction Pile Capacity Model
+## 6. Suction Pile Capacity Model
 
-Capacity is evaluated using a layered-soil model.
+Anchor capacity is evaluated using a layered-soil suction pile model accounting for:
+
+- Multiple soil types (clay, sand)  
+- Depth-dependent properties  
+- Padeye position relative to pile  
+
+---
 
 ### Vertical Capacity
 
@@ -177,41 +210,31 @@ Three governing mechanisms:
 V_max = min(V1, V2, V3)
 ```
 
+<div align="center">
+  <img src="/img/posts/morie_anchor/anchor_failure_modes.png" width="700">
+</div>
+*Figure 8 – Suction pile vertical failure mechanisms.*
+
 ---
 
 ### Horizontal Capacity
 
 Derived from:
 
-- Distributed side resistance  
+- Distributed lateral resistance  
 - Integration along pile length  
+- Load application depth  
 
 ---
 
-## 8. VH Capacity Envelope
+## 7. Load–Capacity Interaction (VHM & VH)
 
-The interaction between horizontal and vertical loads is evaluated.
-
-<div align="center">
-  <img src="/img/posts/morie_anchor/capacity_envelope.png" width="600">
-</div>
-*Figure 5 – VH capacity envelope with applied load.*
-
-The applied load must lie within the envelope:
-
-- Inside → safe  
-- Outside → failure  
-
----
-
-## 9. Combined Loading with Moment (VH–M)
-
-Torsion introduces additional demand.
+### VHM Interaction
 
 <div align="center">
   <img src="/img/posts/morie_anchor/capacity_ellipsoid.png" width="600">
 </div>
-*Figure 6 – VH–M interaction envelope.*
+*Figure 10 – VHM interaction surface.*
 
 This enables:
 
@@ -221,7 +244,21 @@ This enables:
 
 ---
 
-## 10. Integrated Python Workflow
+### VH Envelope
+
+<div align="center">
+  <img src="/img/posts/morie_anchor/capacity_envelope.png" width="600">
+</div>
+*Figure 9 – VH capacity envelope.*
+
+The applied load must lie within the envelope:
+
+- Inside → safe  
+- Outside → failure  
+
+---
+
+## 8. Integrated Python Workflow
 
 All steps are implemented in a modular pipeline:
 
@@ -235,10 +272,10 @@ event = find_peak_event(loads)
 # Extract concomitant loads
 concomitant = extract_concomitant(loads, event)
 
-# Transfer to padeye
+# Transfer loads to padeye
 padeye_loads = transfer_to_padeye(concomitant)
 
-# Resolve shared anchor loads
+# Resolve anchor loads
 anchor_load = resolve_anchor_load(padeye_loads)
 
 # Compute torsion
@@ -252,11 +289,11 @@ capacity = getCapacitySuction(anchor_load, soil_profile)
 
 ## Engineering Applications
 
-- Shared-anchor design for floating wind  
-- Multi-line load resolution  
+- Shared-anchor design for floating wind farms  
+- Multi-line load aggregation  
 - Anchor sizing under combined loading  
 - Torsional load assessment  
-- Layout optimization support  
+- Layout optimization  
 
 ---
 
@@ -282,7 +319,7 @@ It enables:
 
 ## Next Steps
 
-- Multi-case probabilistic envelopes  
+- Multi-case probabilistic load envelopes  
 - Automated anchor sizing (D, L optimization)  
 - Integration with installation models  
 - ML-based surrogate models  
