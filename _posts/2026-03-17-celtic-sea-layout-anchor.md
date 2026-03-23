@@ -53,9 +53,9 @@ Shared anchors are identified through spatial analysis of anchor coordinates:
 - Preserve full connectivity between floaters and anchors  
 
 <div align="center">
-  <img src="/img/posts/morie_anchor/shared_anchor_planview.png" width="500">
+  <img src="/img/posts/morie_anchor/shared_anchor_floaters.png" width="500">
 </div>
-*Figure 2 – Shared-anchor topology showing multiple mooring lines connected to a single anchor.*
+*Figure 2 – Shared-anchor topology showing multiple mooring lines connected to anchors.*
 
 ---
 
