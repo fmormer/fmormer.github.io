@@ -1,170 +1,386 @@
 ---
 layout: post
-title: Hex-Based Floater Layout Optimization – Celtic Sea
-image: "/posts/morie_visualization/hexgrid_overlay.png"
-tags: [Offshore Wind, Layout Optimization, Hex Grid, Topology, Python]
+title: Layout Generation & Topology Optimization – Celtic Sea
+image: "/posts/morie_layout/2dfarm_layout.png"
+tags: [Offshore Wind, Layout Optimization, Hex Grid, Floating Wind, GIS, Python]
 ---
 
-# Celtic Sea Floating Offshore Wind – Hexagonal Lattice Layout Optimization
+# Celtic Sea Floating Offshore Wind – Layout Generation & Topology Optimization
 
-This project extends the structured site-characterization workflow by introducing a deterministic floater placement methodology based on hexagonal lattice theory.
+This project establishes the first step of the Morie Analytics workflow by introducing a structured methodology for generating **floating wind farm layouts from site data**.
 
-Using processed lease geometry, bathymetry, and seabed suitability layers, a constrained hexagonal grid is generated within the lease area. A fixed 8-node cluster is then evaluated using topology-driven connectivity metrics to identify compact, engineering-consistent floater arrangements.
+Using bathymetry and soil datasets, a modular Python pipeline is developed to transform **public marine data into engineering-ready floater configurations**, based on deterministic spatial logic and topology-driven optimization.
 
-The objective is to formalize early-stage layout screening into a reproducible computational framework that replaces ad-hoc spatial placement with deterministic, constraint-aware logic.
+The workflow bridges the gap between **site characterization and engineering design**, enabling consistent generation of layout candidates that can be directly propagated into **mooring and anchor systems**.
+
+The objective is to replace ad-hoc placement strategies with a **reproducible, data-driven layout generation framework**.
 
 ---
 
 ## Project Scope
 
-- Structured hexagonal lattice generation inside buffered lease area  
-- Depth and soil suitability filtering  
-- Axial coordinate indexing  
-- Sliding fixed 8-node cluster optimization  
-- Connectivity-based scoring  
-- Visualization of layout feasibility and topology  
+- **Site-driven layout generation**
+- **Bathymetry and soil-constrained feasibility filtering**
+- **Hexagonal lattice-based floater placement**
+- **Topology-driven cluster optimization**
+- **YAML-based model generation for downstream workflows**
+- Integration with:
+  - Mooring system generation  
+  - Shared-anchor detection  
+  - Anchor design workflows  
 
-The workflow transforms processed site data into engineering-ready layout candidates suitable for early-stage floating wind feasibility studies.
+The workflow transforms raw spatial data into **engineering-ready layout configurations**, ensuring full traceability from:
+
+```text
+Site Data → Feasible Region → Layout → Mooring → Anchors
+```
 
 ---
 
-## 1. Lease & Suitability Filtering
+## 1. Site Data Processing & Spatial Framework
 
-The lease boundary defines the spatial domain for candidate floater placement.
+The workflow begins by transforming raw marine datasets into a consistent engineering framework.
 
-Processing steps:
+### Data Sources
 
-- Import projected lease polygon
-- Apply setback buffer
-- Mask non-developable areas
-- Intersect soil suitability layers
-- Enforce depth constraints
+- **Bathymetry**: GEBCO grid (ASCII format)  
+- **Soil Classification**: EMODnet seabed substrate (Folk-7 system)  
+- **Soil Profiles**: Layered YAML profiles mapped to grid labels  
+
+### Processing Steps
+
+- Load bathymetry and soil grids  
+- Validate grid alignment (same coordinates and resolution)  
+- Map soil labels to engineering soil properties  
+- Generate 2D visualizations:
+  - Bathymetry contours  
+  - Soil classification maps  
 
 <div align="center">
-  <img src="/img/posts/morie_visualization/suitability_overlay.png" alt="Lease Suitability Filtering" width="500">
+  <img src="/img/posts/morie_layout/2dfarm_bathy_2.png" width="500">
 </div>
-*Figure 1 – Lease boundary with soil suitability masking.*
-
-Suitability filtering ensures that lattice generation occurs only within technically viable regions.
-
----
-
-## 2. Hexagonal Lattice Generation
-
-A regular hexagonal lattice is generated inside the filtered lease region.
-
-Key geometric definitions:
-
-| Parameter | Definition |
-|------------|------------|
-| `SPACING` | Center → vertex distance |
-| Orientation | 30° |
-| Coordinate System | Axial indexing |
-
-Spacing consistency ensures:
-
-- Repeatable geometric definition  
-- Uniform mooring spacing assumptions  
-- Scalable cluster evaluation  
+*Figure 1 – Bathymetry contour map of the Celtic Sea lease area, showing depth variation across the site.*
 
 <div align="center">
-  <img src="/img/posts/morie_visualization/hexgrid_overlay.png" alt="Hex Grid Overlay" width="500">
+  <img src="/img/posts/morie_layout/2dfarm_soil_2_folk7_EMOD.png" width="500">
 </div>
-*Figure 2 – Buffered lease region populated with hexagonal lattice.*
-
-The lattice forms the discrete spatial candidate set for cluster evaluation.
+*Figure 2 – Seabed soil classification using the EMODnet Folk-7 system, mapped across the lease area.*
 
 ---
 
-## 3. Bathymetric Context Integration
+### Engineering Significance
 
-Bathymetry directly influences mooring footprint, anchor feasibility, and installation complexity.
+This step establishes:
 
-Depth is incorporated as a filtering constraint and contextual visualization layer.
+- A **common spatial reference system**  
+- Consistent mapping between bathymetry and soil  
+- A foundation for engineering filtering and layout generation  
+
+---
+
+## 2. Suitability Region Detection
+
+Feasible regions are identified using combined engineering constraints.
+
+### Criteria
+
+- **Depth range**: 85–95 m  
+- **Soil types**: Engineering-suitable sediments (Folk groups 1xx–2xx)  
+
+### Method
+
+- Apply bathymetry mask  
+- Apply soil classification mask  
+- Combine into a single feasibility map  
+
+```python
+combined_mask = depth_mask & soil_mask
+```
 
 <div align="center">
-  <img src="/img/posts/morie_visualization/2dfarm_bathy_2.png" alt="Bathymetry Overlay" width="500">
+  <img src="/img/posts/morie_layout/2dfarm_overlay.png" width="500">
 </div>
-*Figure 3 – GEBCO bathymetry intersected with lease polygon.*
-
-Depth thresholds remove infeasible lattice nodes prior to optimization.
+*Figure 3 – Suitability region derived from combined bathymetry and soil constraints, defining feasible areas for floater placement.*
 
 ---
 
-## 4. Soil Classification Integration
+### Physical Interpretation
 
-Sediment classification informs anchor concept feasibility screening.
+The suitability region represents:
+
+- Areas where installation is feasible  
+- Soil conditions compatible with anchor systems  
+- Depth ranges suitable for floating wind deployment  
+
+---
+
+### Engineering Significance
+
+This step defines the **engineering domain** for layout generation and ensures that all candidate floater locations:
+
+- Are physically feasible  
+- Respect seabed constraints  
+- Align with downstream design requirements  
+
+---
+
+## 3. Hexagonal Lattice Generation
+
+A structured hexagonal grid is generated within the feasible region.
+
+### Parameters
+
+- **SPACING** = 800 m  
+- **BUFFER** = 400 m (lease setback)  
+- Orientation = 30°  
+
+### Process
+
+- Apply buffer to lease boundary  
+- Generate full hex lattice  
+- Filter hex centers using suitability mask  
 
 <div align="center">
-  <img src="/img/posts/2dfarm_soil_2.png" alt="Soil Classification Overlay" width="500">
+  <img src="/img/posts/morie_layout/2dfarm_hexoverlay.png" width="500">
 </div>
-*Figure 4 – Soil type distribution within lease boundary.*
-
-Soil filtering supports early evaluation of:
-
-- Suction anchor feasibility  
-- Driven pile potential  
-- Shared-anchor suitability  
-
-Only lattice nodes satisfying soil constraints are retained.
+*Figure 4 – Hexagonal lattice generated within the buffered lease area, with valid floater positions filtered by suitability criteria.*
 
 ---
 
-## 5. Fixed 8-Node Cluster Optimization
+### Physical Interpretation
 
-A fixed 8-node axial cluster is defined and slid across all valid lattice seeds.
+The hexagonal grid provides:
 
-Algorithmic steps:
-
-1. Convert valid hex centers to axial indices.
-2. Translate fixed cluster template.
-3. Verify full cluster validity.
-4. Compute adjacency counts.
-5. Score connectivity.
-
-### Scoring Philosophy
-
-- Interior nodes increase score.
-- Peripheral nodes reduce score.
-- Pure topology evaluation (no anchor geometry modeling).
-
-<div align="center">
-  <img src="/img/posts/slide_overlay.png" alt="Selected Cluster" width="500">
-</div>
-*Figure 5 – Optimal 8-node cluster placement after connectivity scoring.*
-
-Connectivity serves as a proxy for anchor-sharing potential and layout compactness.
+- Uniform spacing between floaters  
+- Maximum packing efficiency  
+- Consistent neighbor relationships  
 
 ---
 
-## 6. Quantitative Metrics
+### Engineering Significance
 
-Cluster evaluation metrics include:
+This approach ensures:
+
+- Deterministic floater placement  
+- Reproducibility across scenarios  
+- Compatibility with shared-anchor configurations  
+
+---
+
+## 4. Cluster Optimization (Topology-Based)
+
+A fixed **8-node cluster template** is used to identify optimal floater configurations.
+
+### Algorithm
+
+- Slide cluster across all valid hex centers  
+- Verify full cluster feasibility  
+- Compute connectivity metrics  
+- Select cluster maximizing internal adjacency  
+
+### Neighbor Detection
+
+- Distance matrix between centers  
+- Minimum spacing defines adjacency  
+- Neighbor count per node  
+
+---
+
+### Metrics
 
 | Metric | Description |
 |--------|------------|
-| `n_floaters` | Total cluster nodes (8) |
-| `avg_neighbors` | Mean internal connectivity |
-| `min_neighbors` | Weakest-connected node |
-| `n_deg0` | Isolated nodes |
-| `n_deg1` | Single-neighbor nodes |
-| `score` | Connectivity-weighted metric |
+| `n_floaters` | 8 |
+| `avg_neighbors` | Mean connectivity |
+| `min_neighbors` | Weakest node |
+| `score` | Connectivity metric |
 
-This provides a deterministic basis for layout comparison.
+---
+
+### Visualization
+
+<div align="center">
+  <img src="/img/posts/morie_layout/2dfarm_layout.png" width="500">
+</div>
+*Figure 5 – Optimal 8-node floater cluster selected using topology-based connectivity optimization.*
+
+---
+
+### Physical Interpretation
+
+Connectivity reflects:
+
+- Potential for shared anchors  
+- Structural compactness of layout  
+- Interaction between floaters  
+
+---
+
+### Engineering Significance
+
+This step replaces:
+
+> heuristic layout selection  
+
+with:
+
+> **topology-driven optimization**
+
+providing a proxy for anchor-sharing efficiency before detailed modeling.
+
+---
+
+## 5. Layout Integration into Engineering Model
+
+The selected cluster is injected into a project YAML file.
+
+### Process
+
+- Replace floater coordinates  
+- Maintain project structure  
+- Generate new layout configuration  
+
+### Output
+
+- `modified_celticsea.yaml`
+
+---
+
+### Engineering Significance
+
+This step bridges:
+
+```text
+Layout Optimization → Mooring System Modeling
+```
+
+ensuring seamless integration with downstream workflows.
+
+---
+
+## 6. Mooring & Anchor Topology Generation
+
+Following layout generation:
+
+- Mooring systems are instantiated  
+- Anchor locations are generated  
+- Coincident anchors are merged  
+- Attachment counts are computed  
+
+<div align="center">
+  <img src="/img/posts/morie_layout/2dfarm_layout_anchor.png" width="500">
+</div>
+*Figure 6 – Resulting anchor topology after mooring system generation and shared-anchor merging, showing connectivity across the layout.*
+
+---
+
+### Anchor Classification
+
+| Attachments | Meaning |
+|-------------|--------|
+| 1 | Single-line anchor |
+| 2 | Shared anchor |
+| 3 | Fully shared anchor |
+
+---
+
+### Engineering Significance
+
+This step defines:
+
+- Load transfer topology  
+- Anchor-sharing configurations  
+- Inputs for anchor design workflows  
 
 ---
 
 ## 7. Integrated Python Workflow
 
-All processing is implemented in Python using structured modular scripts:
+All steps are implemented in a modular pipeline:
 
 ```python
-# Example lattice generation
-valid_hex = generate_hex_turbine_array(
-    lease_polygon,
-    spacing=SPACING,
-    soil_mask=soil_filter,
-    depth_mask=depth_filter
-)
+# Load project and site data
+project = Project('original_celticsea.yaml')
+project.loadSoil(...)
 
-best_cluster = optimize_hex_cluster(valid_hex)
+# Build suitability mask
+combined_mask = depth_mask & soil_mask
+
+# Generate hex grid
+all_hex, valid_hex = generate_hex_turbine_array(...)
+
+# Optimize layout
+best_centers = slide_fixed8_best(valid_hex)
+
+# Inject into YAML
+inject_selected_cluster_into_yaml(...)
+
+# Generate moorings and anchors
+project.getMoorPyArray()
+merge_shared_anchors(project)
+```
+
+---
+
+## Engineering Applications
+
+- Layout feasibility screening  
+- Shared-anchor layout optimization  
+- Mooring system initialization  
+- Anchor demand preparation  
+- Farm-scale spatial planning  
+
+---
+
+## Engineering Value
+
+This workflow demonstrates how to:
+
+> Convert **site data into engineering-ready floating wind layouts**
+
+Bridging:
+
+- Geospatial data  
+- Layout generation  
+- Mooring systems  
+- Anchor topology  
+
+It enables:
+
+- Deterministic design workflows  
+- Reduced uncertainty in early-stage design  
+- Direct integration across disciplines  
+
+---
+
+## Next Steps
+
+- Multi-cluster optimization  
+- Integration with mooring load analysis (RAFT)  
+- Anchor capacity verification  
+- Cable routing constraints  
+- Surrogate-based layout optimization  
+
+---
+
+## Morie Analytics Vision
+
+At Morie Analytics, the goal is to build:
+
+> **Integrated Offshore Layout Intelligence for Floating Wind**
+
+This layout workflow forms the foundation for:
+
+- Mooring system analysis  
+- Anchor design optimization  
+- Full farm-level engineering integration  
+
+---
+
+## Related Work
+
+- Mooring System Generation & Load Analysis  
+- Shared Anchor Load Resolution & Capacity Verification  
+- Dynamic Cable Design & Optimization  
+
+---
