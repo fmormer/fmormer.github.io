@@ -1,71 +1,70 @@
-html {
-  background: #ffffff !important;
-}
+/* =========================================
+   Morie Analytics - Light Theme
+   Safer version: color overrides only
+   ========================================= */
 
+/* Page background */
+html,
 body {
-  background: #ffffff !important;
-  color: #111827 !important;
+  background-color: #ffffff !important;
+  color: #0f172a !important;
 }
 
+/* Main site areas */
+body,
 .header,
 .footer,
-.container,
-.row,
-.col,
 .post,
 .post-content,
-.post-body,
-.post-head,
-.post-image-box,
-.post-image,
-.article,
 .article-box,
-.article-content,
-.article-head,
-.article-info,
 .pagination,
-.pagination-list,
-.header-box,
-.footer-top,
-.footer-bottom,
-.menu-links,
-.list-reset {
-  background: #ffffff !important;
-  color: #111827 !important;
+.pagination-list {
+  background-color: #ffffff !important;
 }
 
-.header-title,
-.header-subtitle,
-.post-title,
-.article-title,
-.article-title a,
-.logo-title,
-.logo-text,
+/* Header and footer lines */
+.header {
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+.footer {
+  border-top: 1px solid #e2e8f0 !important;
+}
+
+/* Headings */
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.header-title,
+.header-subtitle,
+.post-title,
+.article-title,
+.article-title a,
+.logo-text {
   color: #0a1f44 !important;
 }
 
+/* Body text */
 p,
 li,
-span,
-small,
-.item-link,
-.header-tagline,
+.post-body,
 .article-excerpt,
-.article-date,
-.post-time,
+.header-tagline,
+.item-link,
 .page__meta,
+.post-time,
+.article-date,
 .footer,
-.copyright,
-.footer-social {
+.footer p,
+.footer li,
+.footer a {
   color: #475569 !important;
 }
 
+/* Links */
 a {
   color: #0057ff !important;
 }
@@ -75,58 +74,73 @@ a:focus {
   color: #003ec4 !important;
 }
 
+/* Cards */
 .article-box,
 .post-content {
-  background: #ffffff !important;
+  background-color: #ffffff !important;
   border: 1px solid #e2e8f0 !important;
-  border-radius: 16px !important;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06) !important;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06) !important;
 }
 
+/* Tags */
 .tag,
 .post-tag a,
 .article-tag a {
-  display: inline-block !important;
-  background: #eff6ff !important;
+  background-color: #eff6ff !important;
   color: #0057ff !important;
   border: 1px solid #bfdbfe !important;
-  border-radius: 999px !important;
-  padding: 0.3rem 0.7rem !important;
-  text-decoration: none !important;
 }
 
 .tag:hover,
 .post-tag a:hover,
 .article-tag a:hover {
-  background: #dbeafe !important;
+  background-color: #dbeafe !important;
   color: #003ec4 !important;
 }
 
+/* Horizontal rules */
 hr {
   border: none !important;
   border-top: 1px solid #e2e8f0 !important;
 }
 
+/* Code blocks */
 pre,
 code,
-.highlight,
-table,
-th,
-td,
-blockquote {
-  background: #f8fafc !important;
-  color: #111827 !important;
+.highlight {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
   border-color: #e2e8f0 !important;
 }
 
+/* Tables */
+table,
+th,
+td {
+  border-color: #e2e8f0 !important;
+}
+
+th {
+  background-color: #f8fafc !important;
+  color: #0a1f44 !important;
+}
+
+td {
+  background-color: #ffffff !important;
+  color: #475569 !important;
+}
+
+/* Form elements */
 input,
 textarea,
 select {
-  background: #ffffff !important;
-  color: #111827 !important;
+  background-color: #ffffff !important;
+  color: #0f172a !important;
   border: 1px solid #cbd5e1 !important;
 }
 
-img {
-  border-radius: 12px !important;
+/* Selection */
+::selection {
+  background: #bfdbfe;
+  color: #0a1f44;
 }
