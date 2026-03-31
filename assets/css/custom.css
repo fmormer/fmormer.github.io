@@ -166,18 +166,19 @@ select {
 
 /* =========================================
    Restore homepage case study grid
-   3 columns desktop / 2 tablet / 1 mobile
+   2 columns desktop = 3 rows x 2 columns
    ========================================= */
 
-/* Project cards on homepage */
+/* Homepage article cards */
 .article.col.col-12.col-t-6 {
-  width: 33.333% !important;
-  max-width: 33.333% !important;
+  flex: 0 0 50% !important;
+  width: 50% !important;
+  max-width: 50% !important;
   padding: 12px !important;
   box-sizing: border-box !important;
 }
 
-/* Keep cards consistent */
+/* Keep card heights tidy */
 .article-box {
   height: 100% !important;
   display: flex !important;
@@ -188,17 +189,10 @@ select {
   flex: 1 1 auto !important;
 }
 
-/* Tablet */
-@media (max-width: 1024px) {
-  .article.col.col-12.col-t-6 {
-    width: 50% !important;
-    max-width: 50% !important;
-  }
-}
-
 /* Mobile */
 @media (max-width: 768px) {
   .article.col.col-12.col-t-6 {
+    flex: 0 0 100% !important;
     width: 100% !important;
     max-width: 100% !important;
   }
