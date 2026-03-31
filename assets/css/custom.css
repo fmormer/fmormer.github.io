@@ -253,3 +253,83 @@ select {
     min-height: 200px !important;
   }
 }
+
+/* =========================================
+   Homepage case-study card sizing
+   2 columns with controlled width
+   ========================================= */
+
+.container > .row > .col.col-12.col-t-12 > .row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  margin-left: -12px !important;
+  margin-right: -12px !important;
+}
+
+.article.col.col-12.col-t-6 {
+  flex: 0 0 calc(50% - 24px) !important;
+  max-width: calc(50% - 24px) !important;
+  width: calc(50% - 24px) !important;
+  margin: 12px !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.article-box {
+  width: 100% !important;
+  max-width: 560px !important;
+  margin: 0 auto !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.article-image {
+  display: block !important;
+  width: 100% !important;
+  height: 240px !important;
+  min-height: 240px !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+.article-content {
+  flex: 1 1 auto !important;
+  padding: 20px !important;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .article.col.col-12.col-t-6 {
+    flex: 0 0 calc(50% - 20px) !important;
+    max-width: calc(50% - 20px) !important;
+    width: calc(50% - 20px) !important;
+    margin: 10px !important;
+  }
+
+  .article-image {
+    height: 220px !important;
+    min-height: 220px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .article.col.col-12.col-t-6 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 10px 0 !important;
+  }
+
+  .article-box {
+    max-width: 100% !important;
+  }
+
+  .article-image {
+    height: 200px !important;
+    min-height: 200px !important;
+  }
+}
