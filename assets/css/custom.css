@@ -1,16 +1,21 @@
 /* =========================================
    Morie Analytics - Light Theme
-   Safer version: color overrides only
+   Clean version with:
+   - light colors
+   - controlled logo size
+   - homepage grid restored
+   - homepage card images restored
    ========================================= */
 
-/* Page background */
+/* -----------------------------------------
+   Base colors
+   ----------------------------------------- */
 html,
 body {
   background-color: #ffffff !important;
   color: #0f172a !important;
 }
 
-/* Main site areas */
 body,
 .header,
 .footer,
@@ -22,7 +27,9 @@ body,
   background-color: #ffffff !important;
 }
 
-/* Header and footer lines */
+/* -----------------------------------------
+   Header and footer
+   ----------------------------------------- */
 .header {
   border-bottom: 1px solid #e2e8f0 !important;
 }
@@ -31,7 +38,9 @@ body,
   border-top: 1px solid #e2e8f0 !important;
 }
 
-/* Headings */
+/* -----------------------------------------
+   Typography
+   ----------------------------------------- */
 h1,
 h2,
 h3,
@@ -47,7 +56,6 @@ h6,
   color: #0a1f44 !important;
 }
 
-/* Body text */
 p,
 li,
 .post-body,
@@ -64,7 +72,9 @@ li,
   color: #475569 !important;
 }
 
-/* Links */
+/* -----------------------------------------
+   Links
+   ----------------------------------------- */
 a {
   color: #0057ff !important;
 }
@@ -74,7 +84,9 @@ a:focus {
   color: #003ec4 !important;
 }
 
-/* Cards */
+/* -----------------------------------------
+   Cards
+   ----------------------------------------- */
 .article-box,
 .post-content {
   background-color: #ffffff !important;
@@ -82,7 +94,9 @@ a:focus {
   box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06) !important;
 }
 
-/* Tags */
+/* -----------------------------------------
+   Tags
+   ----------------------------------------- */
 .tag,
 .post-tag a,
 .article-tag a {
@@ -98,13 +112,17 @@ a:focus {
   color: #003ec4 !important;
 }
 
-/* Horizontal rules */
+/* -----------------------------------------
+   Horizontal rules
+   ----------------------------------------- */
 hr {
   border: none !important;
   border-top: 1px solid #e2e8f0 !important;
 }
 
-/* Code blocks */
+/* -----------------------------------------
+   Code blocks
+   ----------------------------------------- */
 pre,
 code,
 .highlight {
@@ -113,7 +131,9 @@ code,
   border-color: #e2e8f0 !important;
 }
 
-/* Tables */
+/* -----------------------------------------
+   Tables
+   ----------------------------------------- */
 table,
 th,
 td {
@@ -130,7 +150,9 @@ td {
   color: #475569 !important;
 }
 
-/* Form elements */
+/* -----------------------------------------
+   Form elements
+   ----------------------------------------- */
 input,
 textarea,
 select {
@@ -139,12 +161,17 @@ select {
   border: 1px solid #cbd5e1 !important;
 }
 
-/* Selection */
+/* -----------------------------------------
+   Selection
+   ----------------------------------------- */
 ::selection {
   background: #bfdbfe;
   color: #0a1f44;
 }
 
+/* -----------------------------------------
+   Logo size control
+   ----------------------------------------- */
 .header-box .col-3.wd-mob {
   flex: 0 0 120px !important;
   max-width: 120px !important;
@@ -169,7 +196,13 @@ select {
    2 columns desktop = 3 rows x 2 columns
    ========================================= */
 
-/* Homepage article cards */
+/* Parent row that contains homepage cards */
+.container > .row > .col.col-12.col-t-12 > .row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+/* Homepage article cards only */
 .article.col.col-12.col-t-6 {
   flex: 0 0 50% !important;
   width: 50% !important;
@@ -189,11 +222,34 @@ select {
   flex: 1 1 auto !important;
 }
 
-/* Mobile */
+/* =========================================
+   Restore homepage card images
+   ========================================= */
+
+.article-head {
+  display: block !important;
+}
+
+.article-image {
+  display: block !important;
+  width: 100% !important;
+  min-height: 220px !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* -----------------------------------------
+   Mobile adjustments
+   ----------------------------------------- */
 @media (max-width: 768px) {
   .article.col.col-12.col-t-6 {
     flex: 0 0 100% !important;
     width: 100% !important;
     max-width: 100% !important;
+  }
+
+  .article-image {
+    min-height: 200px !important;
   }
 }
