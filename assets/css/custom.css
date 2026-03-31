@@ -1,10 +1,10 @@
 /* =========================================
    Morie Analytics - Light Theme
-   Clean version with:
+   Stable version
    - light colors
    - controlled logo size
-   - homepage grid restored
-   - homepage card images restored
+   - homepage images restored
+   - homepage grid: 2 columns / 3 rows
    ========================================= */
 
 /* -----------------------------------------
@@ -192,73 +192,11 @@ select {
 }
 
 /* =========================================
-   Restore homepage case study grid
+   Homepage case study grid
    2 columns desktop = 3 rows x 2 columns
    ========================================= */
 
 /* Parent row that contains homepage cards */
-.container > .row > .col.col-12.col-t-12 > .row {
-  display: flex !important;
-  flex-wrap: wrap !important;
-}
-
-/* Homepage article cards only */
-.article.col.col-12.col-t-6 {
-  flex: 0 0 50% !important;
-  width: 50% !important;
-  max-width: 50% !important;
-  padding: 12px !important;
-  box-sizing: border-box !important;
-}
-
-/* Keep card heights tidy */
-.article-box {
-  height: 100% !important;
-  display: flex !important;
-  flex-direction: column !important;
-}
-
-.article-content {
-  flex: 1 1 auto !important;
-}
-
-/* =========================================
-   Restore homepage card images
-   ========================================= */
-
-.article-head {
-  display: block !important;
-}
-
-.article-image {
-  display: block !important;
-  width: 100% !important;
-  min-height: 220px !important;
-  background-size: cover !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-}
-
-/* -----------------------------------------
-   Mobile adjustments
-   ----------------------------------------- */
-@media (max-width: 768px) {
-  .article.col.col-12.col-t-6 {
-    flex: 0 0 100% !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  .article-image {
-    min-height: 200px !important;
-  }
-}
-
-/* =========================================
-   Homepage case-study card sizing
-   2 columns with tighter spacing
-   ========================================= */
-
 .container > .row > .col.col-12.col-t-12 > .row {
   display: flex !important;
   flex-wrap: wrap !important;
@@ -267,32 +205,24 @@ select {
   margin-right: -4px !important;
 }
 
+/* Homepage article cards */
 .article.col.col-12.col-t-6 {
   flex: 0 0 calc(50% - 8px) !important;
-  max-width: calc(50% - 8px) !important;
   width: calc(50% - 8px) !important;
+  max-width: calc(50% - 8px) !important;
   margin: 4px !important;
   padding: 0 !important;
   box-sizing: border-box !important;
 }
 
+/* Card structure */
 .article-box {
   width: 100% !important;
-  max-width: 560px !important;
+  max-width: 540px !important;
   margin: 0 auto !important;
   height: 100% !important;
   display: flex !important;
   flex-direction: column !important;
-}
-
-.article-image {
-  display: block !important;
-  width: 100% !important;
-  height: 240px !important;
-  min-height: 240px !important;
-  background-size: cover !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
 }
 
 .article-content {
@@ -300,27 +230,48 @@ select {
   padding: 20px !important;
 }
 
-/* Tablet */
+/* -----------------------------------------
+   Restore homepage card images
+   ----------------------------------------- */
+.article-head {
+  display: block !important;
+}
+
+.article-image {
+  display: block !important;
+  width: 100% !important;
+  height: 220px !important;
+  min-height: 220px !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* -----------------------------------------
+   Tablet
+   ----------------------------------------- */
 @media (max-width: 1024px) {
   .article.col.col-12.col-t-6 {
-    flex: 0 0 calc(50% - 10px) !important;
-    max-width: calc(50% - 10px) !important;
-    width: calc(50% - 10px) !important;
-    margin: 5px !important;
+    flex: 0 0 calc(50% - 8px) !important;
+    width: calc(50% - 8px) !important;
+    max-width: calc(50% - 8px) !important;
+    margin: 4px !important;
   }
 
   .article-image {
-    height: 220px !important;
-    min-height: 220px !important;
+    height: 210px !important;
+    min-height: 210px !important;
   }
 }
 
-/* Mobile */
+/* -----------------------------------------
+   Mobile
+   ----------------------------------------- */
 @media (max-width: 768px) {
   .article.col.col-12.col-t-6 {
     flex: 0 0 100% !important;
-    max-width: 100% !important;
     width: 100% !important;
+    max-width: 100% !important;
     margin: 8px 0 !important;
   }
 
