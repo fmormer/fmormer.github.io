@@ -163,3 +163,43 @@ select {
   display: block !important;
   object-fit: contain !important;
 }
+
+/* =========================================
+   Restore homepage case study grid
+   3 columns desktop / 2 tablet / 1 mobile
+   ========================================= */
+
+/* Project cards on homepage */
+.article.col.col-12.col-t-6 {
+  width: 33.333% !important;
+  max-width: 33.333% !important;
+  padding: 12px !important;
+  box-sizing: border-box !important;
+}
+
+/* Keep cards consistent */
+.article-box {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.article-content {
+  flex: 1 1 auto !important;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .article.col.col-12.col-t-6 {
+    width: 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .article.col.col-12.col-t-6 {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
