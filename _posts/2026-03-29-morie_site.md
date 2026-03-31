@@ -217,3 +217,4 @@ soil_gdf = gpd.read_file('emodnet_folk7.shp')
 
 lease_proj = lease_gdf.to_crs(target_crs)
 soil_proj = soil_gdf.to_crs(target_crs)
+```
