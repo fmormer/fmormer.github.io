@@ -1,0 +1,184 @@
+---
+---
+
+/* Morie Analytics light theme override */
+
+html,
+body {
+  background: #ffffff !important;
+  color: #0f172a !important;
+}
+
+body,
+.header,
+.footer,
+.container,
+.row,
+.article,
+.article-box,
+.article-content,
+.article-info,
+.pagination,
+.pagination-list,
+.header-box,
+.footer-top,
+.footer-bottom {
+  background: #ffffff !important;
+  color: #0f172a !important;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.65;
+}
+
+/* Header */
+.header {
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+.header-title,
+.header-subtitle,
+.logo-title,
+.logo-text {
+  color: #0a1f44 !important;
+}
+
+.header-tagline,
+.item-link,
+.footer,
+.footer-bottom,
+.copyright p {
+  color: #475569 !important;
+}
+
+/* Links */
+a {
+  color: #0057ff !important;
+}
+
+a:hover,
+a:focus {
+  color: #003ec4 !important;
+}
+
+/* Cards */
+.article-box {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+}
+
+.article-title a,
+.article-title {
+  color: #0a1f44 !important;
+}
+
+.article-excerpt,
+.article-date,
+.page__meta {
+  color: #64748b !important;
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  background: #eff6ff !important;
+  color: #0057ff !important;
+  border: 1px solid #bfdbfe !important;
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  text-decoration: none !important;
+}
+
+.tag:hover {
+  background: #dbeafe !important;
+  color: #003ec4 !important;
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid #e2e8f0 !important;
+}
+
+.footer a,
+.footer-social a {
+  color: #0a1f44 !important;
+}
+
+.footer a:hover,
+.footer-social a:hover {
+  color: #0057ff !important;
+}
+
+/* Pagination */
+.pagination a,
+.older-link,
+.newer-link {
+  color: #0a1f44 !important;
+}
+
+.pagination a:hover,
+.older-link:hover,
+.newer-link:hover {
+  color: #0057ff !important;
+}
+
+/* Generic text */
+p,
+li,
+span,
+small,
+div {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #0a1f44 !important;
+}
+
+/* Images */
+img,
+.article-image {
+  border-radius: 12px;
+}
+
+/* Horizontal rule */
+hr {
+  border: none;
+  border-top: 1px solid #e2e8f0 !important;
+}
+
+/* Code and tables */
+pre,
+code,
+.highlight,
+table,
+th,
+td {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Inputs */
+input,
+textarea,
+select {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+/* Selection */
+::selection {
+  background: #bfdbfe;
+  color: #0a1f44;
+}
