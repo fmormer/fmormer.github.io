@@ -1,0 +1,24 @@
+body {
+  background: #ffffff !important;
+  color: #0f172a !important;
+}
+
+.header,
+.footer,
+.container,
+.article,
+.article-box {
+  background: #ffffff !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #0a1f44 !important;
+}
+
+a {
+  color: #0057ff !important;
+}
+
+.article-box {
+  border: 1px solid #e2e8f0 !important;
+}
