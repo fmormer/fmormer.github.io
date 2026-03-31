@@ -144,3 +144,17 @@ select {
   background: #bfdbfe;
   color: #0a1f44;
 }
+
+/* Logo size fix */
+.header-avatar {
+  display: inline-block !important;
+  max-width: 180px !important;
+}
+
+.header-avatar-img {
+  width: 100% !important;
+  max-width: 180px !important;
+  height: auto !important;
+  display: block !important;
+  border-radius: 12px !important;
+}
