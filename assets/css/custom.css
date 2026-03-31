@@ -256,22 +256,22 @@ select {
 
 /* =========================================
    Homepage case-study card sizing
-   2 columns with controlled width
+   2 columns with tighter spacing
    ========================================= */
 
 .container > .row > .col.col-12.col-t-12 > .row {
   display: flex !important;
   flex-wrap: wrap !important;
   justify-content: center !important;
-  margin-left: -12px !important;
-  margin-right: -12px !important;
+  margin-left: -6px !important;
+  margin-right: -6px !important;
 }
 
 .article.col.col-12.col-t-6 {
-  flex: 0 0 calc(50% - 24px) !important;
-  max-width: calc(50% - 24px) !important;
-  width: calc(50% - 24px) !important;
-  margin: 12px !important;
+  flex: 0 0 calc(50% - 12px) !important;
+  max-width: calc(50% - 12px) !important;
+  width: calc(50% - 12px) !important;
+  margin: 6px !important;
   padding: 0 !important;
   box-sizing: border-box !important;
 }
@@ -303,10 +303,10 @@ select {
 /* Tablet */
 @media (max-width: 1024px) {
   .article.col.col-12.col-t-6 {
-    flex: 0 0 calc(50% - 20px) !important;
-    max-width: calc(50% - 20px) !important;
-    width: calc(50% - 20px) !important;
-    margin: 10px !important;
+    flex: 0 0 calc(50% - 10px) !important;
+    max-width: calc(50% - 10px) !important;
+    width: calc(50% - 10px) !important;
+    margin: 5px !important;
   }
 
   .article-image {
@@ -321,7 +321,7 @@ select {
     flex: 0 0 100% !important;
     max-width: 100% !important;
     width: 100% !important;
-    margin: 10px 0 !important;
+    margin: 8px 0 !important;
   }
 
   .article-box {
