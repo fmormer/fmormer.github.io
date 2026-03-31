@@ -1,24 +1,132 @@
+html {
+  background: #ffffff !important;
+}
+
 body {
   background: #ffffff !important;
-  color: #0f172a !important;
+  color: #111827 !important;
 }
 
 .header,
 .footer,
 .container,
+.row,
+.col,
+.post,
+.post-content,
+.post-body,
+.post-head,
+.post-image-box,
+.post-image,
 .article,
-.article-box {
+.article-box,
+.article-content,
+.article-head,
+.article-info,
+.pagination,
+.pagination-list,
+.header-box,
+.footer-top,
+.footer-bottom,
+.menu-links,
+.list-reset {
   background: #ffffff !important;
+  color: #111827 !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
+.header-title,
+.header-subtitle,
+.post-title,
+.article-title,
+.article-title a,
+.logo-title,
+.logo-text,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #0a1f44 !important;
+}
+
+p,
+li,
+span,
+small,
+.item-link,
+.header-tagline,
+.article-excerpt,
+.article-date,
+.post-time,
+.page__meta,
+.footer,
+.copyright,
+.footer-social {
+  color: #475569 !important;
 }
 
 a {
   color: #0057ff !important;
 }
 
-.article-box {
+a:hover,
+a:focus {
+  color: #003ec4 !important;
+}
+
+.article-box,
+.post-content {
+  background: #ffffff !important;
   border: 1px solid #e2e8f0 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06) !important;
+}
+
+.tag,
+.post-tag a,
+.article-tag a {
+  display: inline-block !important;
+  background: #eff6ff !important;
+  color: #0057ff !important;
+  border: 1px solid #bfdbfe !important;
+  border-radius: 999px !important;
+  padding: 0.3rem 0.7rem !important;
+  text-decoration: none !important;
+}
+
+.tag:hover,
+.post-tag a:hover,
+.article-tag a:hover {
+  background: #dbeafe !important;
+  color: #003ec4 !important;
+}
+
+hr {
+  border: none !important;
+  border-top: 1px solid #e2e8f0 !important;
+}
+
+pre,
+code,
+.highlight,
+table,
+th,
+td,
+blockquote {
+  background: #f8fafc !important;
+  color: #111827 !important;
+  border-color: #e2e8f0 !important;
+}
+
+input,
+textarea,
+select {
+  background: #ffffff !important;
+  color: #111827 !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+img {
+  border-radius: 12px !important;
 }
