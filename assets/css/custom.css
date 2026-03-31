@@ -328,8 +328,8 @@ select {
 
 .header-box {
   display: grid !important;
-  grid-template-columns: 78px minmax(0, 700px) !important;
-  column-gap: 14px !important;
+  grid-template-columns: 90px minmax(0, 760px) !important;
+  column-gap: 18px !important;
   align-items: center !important;
   justify-content: center !important;
   max-width: 920px !important;
