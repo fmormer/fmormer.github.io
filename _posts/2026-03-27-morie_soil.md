@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Local Soil Reconstruction for Floating Offshore Wind – Celtic Sea
-image: "/posts/morie_soil/tomographic_layout.png"
+image: "/posts/morie_soil/04_tomographic_layout.png"
 tags: [Offshore Wind, Geotechnical Engineering, Soil Modeling, Tomography, Floating Wind, Anchors, Python]
 ---
 
@@ -43,12 +43,12 @@ The workflow begins by extracting a **localized engineering domain** from the se
 - Crop bathymetry and soil grids  
 
 <div align="center">
-  <img src="/img/posts/morie_soil/plot_bathy.png" width="500">
+  <img src="/img/posts/morie_soil/2dfarm_plot_bathy_2.png" width="500">
 </div>
 *Figure 1 – Cropped bathymetry grid representing the local depth variation within the selected floating wind cluster.*
 
 <div align="center">
-  <img src="/img/posts/morie_soil/plot_soil.png" width="500">
+  <img src="/img/posts/morie_soil/2dfarm_soil_2_folk7_EMOD.png" width="500">
 </div>
 *Figure 2 – Cropped soil classification map showing dominant seabed material within the local domain.*
 
@@ -77,7 +77,7 @@ A synthetic layered soil model is constructed to represent the **ground truth su
   - Unit weight (γ)  
 
 <div align="center">
-  <img src="/img/posts/morie_soil/truth_surfaces.png" width="700">
+  <img src="/img/posts/morie_soil/03_truth_surfaces.png" width="700">
 </div>
 *Figure 3 – Synthetic soil layer interfaces (Z1 and Z2) defining the ground truth stratigraphy.*
 
@@ -102,7 +102,7 @@ To emulate realistic geotechnical data availability, a **tomographic acquisition
 - Planes intersect key layout regions  
 
 <div align="center">
-  <img src="/img/posts/morie_soil/tomographic_layout.png" width="500">
+  <img src="/img/posts/morie_soil/04_tomographic_layout.png" width="500">
 </div>
 *Figure 4 – Tomographic sampling layout showing FOWTs, anchors, and sectional planes used for soil reconstruction.*
 
@@ -127,12 +127,12 @@ The synthetic soil model is sampled along each tomographic plane.
 - Continuous property fields  
 
 <div align="center">
-  <img src="/img/posts/morie_soil/xz01_phi.png" width="500">
+  <img src="/img/posts/morie_soil/05_xz01_phi.png" width="500">
 </div>
 *Figure 5 – XZ sectional view showing variation of friction angle (φ) with depth.*
 
 <div align="center">
-  <img src="/img/posts/morie_soil/yz01_phi.png" width="500">
+  <img src="/img/posts/morie_soil/06_yz01_phi.png" width="500">
 </div>
 *Figure 6 – YZ sectional view showing reconstructed soil structure along orthogonal direction.*
 
@@ -157,7 +157,7 @@ Vertical soil profiles are reconstructed at anchor locations using **inverse-dis
 - Generate continuous depth profiles  
 
 <div align="center">
-  <img src="/img/posts/morie_soil/profile_comparison_phi.png" width="500">
+  <img src="/img/posts/morie_soil/07_profile_comparison_phi.png" width="500">
 </div>
 *Figure 7 – Comparison between reconstructed and ground truth soil profiles at a representative anchor location.*
 
@@ -182,7 +182,7 @@ Layer boundaries are identified from reconstructed profiles.
 - Comparison with ground truth  
 
 <div align="center">
-  <img src="/img/posts/morie_soil/boundary_comparison.png" width="500">
+  <img src="/img/posts/morie_soil/08_boundary_comparison.png" width="500">
 </div>
 *Figure 8 – Comparison between detected and true layer boundaries (Z1 and Z2).*
 
