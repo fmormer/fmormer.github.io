@@ -145,16 +145,21 @@ select {
   color: #0a1f44;
 }
 
-/* Logo size fix */
+.header-box .col-3.wd-mob {
+  flex: 0 0 120px !important;
+  max-width: 120px !important;
+}
+
 .header-avatar {
-  display: inline-block !important;
+  display: block !important;
+  width: 120px !important;
   max-width: 120px !important;
 }
 
 .header-avatar-img {
-  width: 100% !important;
+  width: 120px !important;
   max-width: 120px !important;
   height: auto !important;
   display: block !important;
-  border-radius: 12px !important;
+  object-fit: contain !important;
 }
