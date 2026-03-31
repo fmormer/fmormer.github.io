@@ -464,13 +464,13 @@ select {
 
 /* logo */
 .header-avatar {
-  width: 140px !important;
-  max-width: 140px !important;
+  width: 180px !important;
+  max-width: 180px !important;
 }
 
 .header-avatar-img {
-  width: 140px !important;
-  max-width: 140px !important;
+  width: 180px !important;
+  max-width: 180px !important;
 }
 
 /* right block alignment */
