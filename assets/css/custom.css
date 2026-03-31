@@ -192,34 +192,33 @@ select {
 }
 
 /* =========================================
-   Homepage case study grid
+   Homepage grid
+   Exact structure from homepage source
    2 columns desktop = 3 rows x 2 columns
    ========================================= */
 
-/* Parent row that contains homepage cards */
 .container > .row > .col.col-12.col-t-12 > .row {
   display: flex !important;
   flex-wrap: wrap !important;
+  gap: 12px !important;
   justify-content: center !important;
-  margin-left: -4px !important;
-  margin-right: -4px !important;
 }
 
-/* Homepage article cards */
-.article.col.col-12.col-t-6 {
-  flex: 0 0 calc(50% - 8px) !important;
-  width: calc(50% - 8px) !important;
-  max-width: calc(50% - 8px) !important;
-  margin: 4px !important;
+/* neutralize theme column spacing on homepage cards */
+.container > .row > .col.col-12.col-t-12 > .row > .article.col.col-12.col-t-6 {
+  flex: 0 0 calc(50% - 6px) !important;
+  max-width: calc(50% - 6px) !important;
+  width: calc(50% - 6px) !important;
+  margin: 0 !important;
   padding: 0 !important;
   box-sizing: border-box !important;
 }
 
-/* Card structure */
+/* card structure */
 .article-box {
   width: 100% !important;
-  max-width: 540px !important;
-  margin: 0 auto !important;
+  max-width: none !important;
+  margin: 0 !important;
   height: 100% !important;
   display: flex !important;
   flex-direction: column !important;
@@ -231,7 +230,7 @@ select {
 }
 
 /* -----------------------------------------
-   Restore homepage card images
+   Homepage card images
    ----------------------------------------- */
 .article-head {
   display: block !important;
@@ -251,11 +250,10 @@ select {
    Tablet
    ----------------------------------------- */
 @media (max-width: 1024px) {
-  .article.col.col-12.col-t-6 {
-    flex: 0 0 calc(50% - 8px) !important;
-    width: calc(50% - 8px) !important;
-    max-width: calc(50% - 8px) !important;
-    margin: 4px !important;
+  .container > .row > .col.col-12.col-t-12 > .row > .article.col.col-12.col-t-6 {
+    flex: 0 0 calc(50% - 6px) !important;
+    max-width: calc(50% - 6px) !important;
+    width: calc(50% - 6px) !important;
   }
 
   .article-image {
@@ -268,15 +266,14 @@ select {
    Mobile
    ----------------------------------------- */
 @media (max-width: 768px) {
-  .article.col.col-12.col-t-6 {
-    flex: 0 0 100% !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 8px 0 !important;
+  .container > .row > .col.col-12.col-t-12 > .row {
+    gap: 10px !important;
   }
 
-  .article-box {
+  .container > .row > .col.col-12.col-t-12 > .row > .article.col.col-12.col-t-6 {
+    flex: 0 0 100% !important;
     max-width: 100% !important;
+    width: 100% !important;
   }
 
   .article-image {
