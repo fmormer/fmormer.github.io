@@ -316,3 +316,85 @@ select {
     max-width: 100% !important;
   }
 }
+
+/* =========================================
+   Header layout refinement
+   ========================================= */
+
+/* Main header container */
+.header-box {
+  display: flex !important;
+  align-items: center !important;
+  gap: 20px !important;
+  padding: 10px 0 !important;
+}
+
+/* Remove the big divider line */
+.header-box hr {
+  display: none !important;
+}
+
+/* Left column (logo) */
+.header-box .col-3.wd-mob {
+  flex: 0 0 auto !important;
+  max-width: none !important;
+}
+
+/* Right column (text block) */
+.header-box .col-9.wd-mob {
+  flex: 1 !important;
+  max-width: none !important;
+}
+
+/* Logo */
+.header-avatar {
+  width: 90px !important;
+  max-width: 90px !important;
+}
+
+.header-avatar-img {
+  width: 90px !important;
+  max-width: 90px !important;
+}
+
+/* Title */
+.header-title {
+  font-size: 26px !important;
+  margin: 0 !important;
+  line-height: 1.2 !important;
+}
+
+/* Subtitle */
+.header-subtitle {
+  font-size: 18px !important;
+  margin: 4px 0 10px 0 !important;
+  line-height: 1.2 !important;
+}
+
+/* Tagline (centered + narrower) */
+.header-tagline {
+  max-width: 700px !important;
+  margin: 0 auto 10px auto !important;
+  text-align: center !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+/* Menu links */
+.menu-links {
+  margin-top: 6px !important;
+}
+
+.menu-links ul {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  justify-content: center !important;
+  padding: 0 !important;
+}
+
+/* Reduce header height */
+.header {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
