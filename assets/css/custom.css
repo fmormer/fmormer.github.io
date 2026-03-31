@@ -581,3 +581,47 @@ select {
   padding-left: 20px !important;
   padding-right: 20px !important;
 }
+
+/* =========================================
+   Header links refinement (final polish)
+   ========================================= */
+
+/* Remove bullet separators */
+.menu-links ul {
+  list-style: none !important;
+}
+
+/* Remove any default separators (like •) */
+.menu-links .item::before {
+  content: none !important;
+}
+
+/* Layout of links */
+.menu-links ul {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  gap: 22px !important; /* spacing between items */
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Each item */
+.menu-links .item {
+  margin: 0 !important;
+}
+
+/* Link text size (bigger) */
+.item-link {
+  font-size: 18px !important;
+  line-height: 1.3 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important; /* space between icon and text */
+}
+
+/* Optional: slightly reduce opacity for location (secondary info) */
+.menu-links .item:first-child .item-link {
+  opacity: 0.85;
+}
