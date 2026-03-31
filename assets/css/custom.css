@@ -198,20 +198,21 @@ select {
    ========================================= */
 
 .container > .row > .col.col-12.col-t-12 > .row {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 12px !important;
-  justify-content: center !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  column-gap: 12px !important;
+  row-gap: 12px !important;
+  align-items: stretch !important;
 }
 
-/* neutralize theme column spacing on homepage cards */
+/* neutralize theme column system on homepage cards */
 .container > .row > .col.col-12.col-t-12 > .row > .article.col.col-12.col-t-6 {
-  flex: 0 0 calc(50% - 6px) !important;
-  max-width: calc(50% - 6px) !important;
-  width: calc(50% - 6px) !important;
+  width: auto !important;
+  max-width: none !important;
+  min-width: 0 !important;
   margin: 0 !important;
   padding: 0 !important;
-  box-sizing: border-box !important;
+  float: none !important;
 }
 
 /* card structure */
@@ -229,9 +230,7 @@ select {
   padding: 20px !important;
 }
 
-/* -----------------------------------------
-   Homepage card images
-   ----------------------------------------- */
+/* homepage card images */
 .article-head {
   display: block !important;
 }
@@ -246,14 +245,12 @@ select {
   background-repeat: no-repeat !important;
 }
 
-/* -----------------------------------------
-   Tablet
-   ----------------------------------------- */
+/* tablet */
 @media (max-width: 1024px) {
-  .container > .row > .col.col-12.col-t-12 > .row > .article.col.col-12.col-t-6 {
-    flex: 0 0 calc(50% - 6px) !important;
-    max-width: calc(50% - 6px) !important;
-    width: calc(50% - 6px) !important;
+  .container > .row > .col.col-12.col-t-12 > .row {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    column-gap: 10px !important;
+    row-gap: 10px !important;
   }
 
   .article-image {
@@ -262,18 +259,12 @@ select {
   }
 }
 
-/* -----------------------------------------
-   Mobile
-   ----------------------------------------- */
+/* mobile */
 @media (max-width: 768px) {
   .container > .row > .col.col-12.col-t-12 > .row {
-    gap: 10px !important;
-  }
-
-  .container > .row > .col.col-12.col-t-12 > .row > .article.col.col-12.col-t-6 {
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-    width: 100% !important;
+    grid-template-columns: 1fr !important;
+    column-gap: 0 !important;
+    row-gap: 10px !important;
   }
 
   .article-image {
