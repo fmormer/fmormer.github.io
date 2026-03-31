@@ -452,76 +452,88 @@ select {
 }
 
 /* =========================================
-   Header refinement - larger scale
+   Header refinement - +25% scale (final)
    ========================================= */
 
+/* overall header container */
 .header-box {
-  grid-template-columns: 112px minmax(0, 820px) !important;
-  column-gap: 22px !important;
-  max-width: 980px !important;
+  grid-template-columns: 140px minmax(0, 1000px) !important;
+  column-gap: 26px !important;
+  max-width: 1150px !important;
 }
 
-/* logo ~25% larger */
+/* logo */
 .header-avatar {
-  width: 112px !important;
-  max-width: 112px !important;
+  width: 140px !important;
+  max-width: 140px !important;
 }
 
 .header-avatar-img {
-  width: 112px !important;
-  max-width: 112px !important;
+  width: 140px !important;
+  max-width: 140px !important;
 }
 
-/* right block */
+/* right block alignment */
 .header-box .col-9.wd-mob {
   text-align: right !important;
 }
 
-/* title + subtitle aligned right and larger */
+/* title */
 .header-title {
-  font-size: 25px !important;
+  font-size: 32px !important;
   line-height: 1.15 !important;
-  margin: 0 0 3px 0 !important;
+  margin: 0 0 4px 0 !important;
   text-align: right !important;
 }
 
+/* subtitle */
 .header-subtitle {
-  font-size: 17px !important;
+  font-size: 21px !important;
   line-height: 1.2 !important;
-  margin: 0 0 12px 0 !important;
+  margin: 0 0 14px 0 !important;
   text-align: right !important;
 }
 
-/* tagline slightly larger */
+/* tagline */
 .header-tagline {
-  max-width: 760px !important;
-  margin: 0 0 12px auto !important;
+  max-width: 860px !important;
+  margin: 0 0 14px auto !important;
   text-align: right !important;
-  font-size: 16px !important;
-  line-height: 1.45 !important;
+  font-size: 18px !important;
+  line-height: 1.5 !important;
 }
 
-/* links row aligned right */
+/* links */
 .menu-links ul {
   justify-content: flex-end !important;
-  gap: 12px !important;
+  gap: 14px !important;
 }
 
-/* increase gap after location item */
+/* spacing between location and links */
 .menu-links .item:first-child {
-  margin-right: 18px !important;
+  margin-right: 26px !important;
 }
 
+/* link text */
 .item-link {
-  font-size: 15px !important;
-  line-height: 1.25 !important;
+  font-size: 17px !important;
+  line-height: 1.3 !important;
 }
 
-/* mobile keep centered */
+/* -----------------------------------------
+   Mobile (keep readable, not oversized)
+   ----------------------------------------- */
 @media (max-width: 768px) {
   .header-box {
     grid-template-columns: 1fr !important;
     max-width: 100% !important;
+  }
+
+  .header-avatar,
+  .header-avatar-img {
+    width: 110px !important;
+    max-width: 110px !important;
+    margin: 0 auto !important;
   }
 
   .header-box .col-9.wd-mob,
@@ -531,7 +543,16 @@ select {
     text-align: center !important;
   }
 
+  .header-title {
+    font-size: 26px !important;
+  }
+
+  .header-subtitle {
+    font-size: 18px !important;
+  }
+
   .header-tagline {
+    font-size: 16px !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
@@ -542,5 +563,9 @@ select {
 
   .menu-links .item:first-child {
     margin-right: 0 !important;
+  }
+
+  .item-link {
+    font-size: 15px !important;
   }
 }
