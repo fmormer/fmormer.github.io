@@ -657,16 +657,20 @@ The workflow demonstrates how mooring system modeling can be transformed into a 
 
 ## How to Run
 
+1. Place datasets in `celtic_sea_share/`  
+2. Install dependencies:
+
+	- `numpy`
+	- `matplotlib`
+	- `scipy`
+	- `pyyaml`
+	- `FAModel`
+	- `MoorPy`
+	- `RAFT` (optional for dynamic extension)
+
+3. Execute:
+
 ```bash
 python morie_mooring.py
 ```
 
-Requirements typically include:
-
-- `numpy`
-- `matplotlib`
-- `scipy`
-- `pyyaml`
-- `famodel`
-- `MoorPy`
-- `RAFT` (optional for dynamic extension)

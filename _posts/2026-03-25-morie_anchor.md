@@ -317,9 +317,9 @@ This is where:
 
 2. Install dependencies:
 
-   - numpy  
-   - scipy  
-   - matplotlib  
+   - `numpy` 
+   - `matplotlib`    
+   - `scipy`  
 
 3. Execute:
 

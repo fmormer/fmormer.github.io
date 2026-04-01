@@ -303,5 +303,16 @@ This study reflects Morie Analytics principles:
 
 ## How to Run
 
+1. Place datasets in `celtic_sea_share/`  
+2. Install dependencies:
+
+   - `numpy`  
+   - `matplotlib` 
+   - `geopandas`  
+   - `xarray`   
+
+3. Execute:
+
 ```bash
 python morie_soil.py
+```
