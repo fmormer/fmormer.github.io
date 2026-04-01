@@ -9,13 +9,13 @@ tags: [Offshore Floating Wind, Dynamic Cables, Floating Wind, Cable Optimization
 
 ## Executive Summary
 
-This study establishes the **dynamic cable engineering layer** of Morie Analytics by transforming **floater motion and site geometry into optimized cable configurations**.
+This study establishes the **cable optimization layer** of Morie Analytics by transforming **floater motion and site geometry into optimized cable configurations**.
 
 Building on outputs from **morie_layout**, **morie_mooring**, and **morie_anchor**, the workflow integrates bathymetry, mooring-derived offsets, and hydrodynamic response (RAFT) to design **constraint-compliant dynamic power cables**.
 
-A representative floating wind turbine (FOWT) is selected, and a standalone cable system is optimized under realistic motion conditions, ensuring consistency across:
+A representative floating wind turbine (FOWT) is selected, and a standalone cable system is optimized under realistic motion conditions, positioning this module within the full system workflow:
 
-> **Site → Layout → Mooring → Anchor → Cable**
+> Site intelligence → Layout generation → Soil reconstruction → Mooring physics → Anchor verification → **Cable optimization**
 
 This module closes the system loop by connecting **structural response to electrical infrastructure design**.
 

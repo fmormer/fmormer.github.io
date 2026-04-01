@@ -9,12 +9,13 @@ tags: [Offshore Floating Wind, Geotechnical Engineering, Soil Modeling, Tomograp
 
 ## Executive Summary
 
-This study establishes the **subsurface intelligence layer** of Morie Analytics by transforming sparse geotechnical information into **engineering-ready soil profiles at anchor locations**.
+This study establishes the **soil reconstruction layer** of Morie Analytics by transforming sparse geotechnical information into **engineering-ready soil profiles at anchor locations**.
 
 Starting from a layout generated in **morie_layout**, the workflow constructs a localized soil domain, generates a synthetic ground truth model, emulates **tomographic sampling**, and reconstructs vertical soil profiles using interpolation techniques.
 
 The result is a **reproducible framework for anchor-level soil characterization**, bridging the gap between spatial layout design and geotechnical engineering inputs.
 
+> Site intelligence → Layout generation → **Soil reconstruction** → Mooring physics → Anchor verification → Cable optimization
 ---
 
 ## Project Scope

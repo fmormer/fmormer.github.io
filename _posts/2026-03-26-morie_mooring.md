@@ -7,14 +7,17 @@ tags: [Offshore Floating Wind, Mooring Systems, RAFT, MoorPy, Shared Anchors, Py
 
 # Celtic Sea Floating Offshore Wind – Mooring System Generation & Load Analysis
 
-This project extends the site characterization and layout optimization workflow by introducing a structured methodology for generating, simulating, and analyzing floating offshore wind mooring systems.
+## Executive Summary
 
-Using YAML-based farm definitions, bathymetry and soil datasets, and integrated simulation tools (primarily MoorPy, with optional RAFT coupling), a modular Python workflow is developed to transform floater layouts into physically consistent mooring systems and extract **padeye-level loads (horizontal, vertical, and directional)** for engineering assessment.
+This study establishes the **mooring physics layer** of Morie Analytics by transforming floating wind layouts into **physically consistent mooring systems and design-ready load outputs**.
+
+Using YAML-based farm definitions, bathymetry and soil datasets, and integrated simulation tools (primarily MoorPy, with optional RAFT coupling), a modular Python workflow is developed to generate mooring configurations and extract **padeye-level loads (horizontal, vertical, and directional)** for engineering assessment.
 
 A key objective of the workflow is to explicitly bridge **mooring system behavior and anchor demand**, enabling consistent transformation of line-level forces into **design-ready anchor loads (H, V, θ)**.
 
-The objective is to formalize mooring system modeling into a reproducible computational pipeline that connects geometry, equilibrium physics, and load transfer mechanisms into downstream anchor design inputs.
+The result is a **reproducible computational pipeline** that connects geometry, equilibrium physics, and load transfer mechanisms into downstream anchor design inputs.
 
+> Site intelligence → Layout generation → Soil reconstruction → **Mooring physics** → Anchor verification → Cable optimization
 ---
 
 ## Project Scope

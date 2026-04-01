@@ -9,12 +9,13 @@ tags: [Offshore Floating Wind, Layout Optimization, Hex Grid, Floating Wind, GIS
 
 ## Executive Summary
 
-This study establishes the **layout intelligence layer** of Morie Analytics by transforming site-level geospatial data into **engineering-ready floating wind farm configurations**.
+This study establishes the **layout generation layer** of Morie Analytics by transforming site-level geospatial data into **engineering-ready floating wind farm configurations**.
 
 Using bathymetry and seabed classification from **morie_site**, the workflow identifies feasible regions, generates a constrained hexagonal lattice, and selects optimal floater clusters using **topology-driven optimization**.
 
 The result is a **deterministic and reproducible layout generation framework** that directly integrates with mooring and anchor models, replacing heuristic placement strategies with structured engineering logic.
 
+> Site intelligence → **Layout generation** → Soil reconstruction → Mooring physics → Anchor verification → Cable optimization
 ---
 
 ## Project Scope
