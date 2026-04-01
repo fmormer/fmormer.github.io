@@ -2,32 +2,38 @@
 layout: default
 ---
 
-{% if page.tags.size >= 1 %}
-  <div class='post-tags'>
-    {% for tag in page.tags %}
-      <a href='/tags#{{ tag | slugify }}' class='tag'>{{ tag }}</a>
-    {% endfor %}
+<div class="post-content">
+
+  {% if page.tags.size >= 1 %}
+    <div class='post-tags'>
+      {% for tag in page.tags %}
+        <a href='/tags#{{ tag | slugify }}' class='tag'>{{ tag }}</a>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <h1>{{ page.title | escape }}</h1>
+
+  {% include read-time.html %}
+
+  <div class="post-body">
+    {{ content }}
   </div>
-{% endif %}
 
-<h1>{{ page.title | escape }}</h1>
+  {% if page.share %}
+    {% include social-share.html %}
+  {% endif %}
 
-{% include read-time.html %}
+  {% if page.previous.url or page.next.url %}
+    <div class='post-nav'>
+      {% if page.next.url %}
+        <a class='post-nav-btn' href='{{ page.next.url | relative_url }}'>← Previous</a>
+      {% endif %}
 
-{{ content }}
+      {% if page.previous.url %}
+        <a class='post-nav-btn' href='{{ page.previous.url | relative_url }}'>Next →</a>
+      {% endif %}
+    </div>
+  {% endif %}
 
-{% if page.share %}
-  {% include social-share.html %}
-{% endif %}
-
-{% if page.previous.url or page.next.url %}
-  <div class='post-nav'>
-	{% if page.next.url %}
-	  <a class='post-nav-btn' href='{{ page.next.url | relative_url }}'>← Previous</a>
-	{% endif %}
-
-	{% if page.previous.url %}
-	  <a class='post-nav-btn' href='{{ page.previous.url | relative_url }}'>Next →</a>
-	{% endif %}
-  </div>
-{% endif %}
+</div>
