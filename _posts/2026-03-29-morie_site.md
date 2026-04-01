@@ -100,7 +100,9 @@ The workflow is fully automated and repeatable across multiple lease areas.
 ## Regional Lease Context
 
 <div align="center">
-  <img src="/img/posts/morie_site/celtic_sea_lease_areas.png" alt="Shared Anchor Plan View" width="500">
+  <img src="/img/posts/morie_site/celtic_sea_lease_areas.png" 
+       alt="Map of Celtic Sea lease areas showing spatial distribution of candidate zones for floating offshore wind development" 
+       width="500">
 </div>
 *Figure 1 – Regional lease areas used as the screening context for floating offshore wind development.*
 
@@ -117,9 +119,11 @@ Offshore design begins at regional scale, where:
 ## Bathymetry Characterization
 
 <div align="center">
-  <img src="/img/posts/morie_site/2farm_bathy_2_folk7.png" alt="Shared Anchor Plan View" width="500">
+  <img src="/img/posts/morie_site/2farm_bathy_2_folk7.png" 
+       alt="Lease-scale bathymetry map showing water depth variations across Celtic Sea offshore wind lease areas" 
+       width="500">
 </div>
-*Figure 2 – Regional lease areas used as the screening context for floating offshore wind development.*
+*Figure 2 – Lease-scale bathymetry used to constrain feasible layout regions.*
 
 ### Engineering Significance
 
@@ -135,7 +139,9 @@ Bathymetry directly informs:
 ## Seabed Characterization (Initial Mapping)
 
 <div align="center">
-  <img src="/img/posts/morie_site/2dfarm_soil_2_folk7.png" alt="Shared Anchor Plan View" width="500">
+  <img src="/img/posts/morie_site/2dfarm_soil_2_folk7.png" 
+       alt="Initial seabed classification map showing raw sediment distribution prior to EMODnet alignment for offshore wind site analysis" 
+       width="500">
 </div>
 *Figure 3 – Initial soil classification used for validation of processing steps.*
 
@@ -144,7 +150,9 @@ Bathymetry directly informs:
 ## EMODnet Classification Alignment
 
 <div align="center">
-  <img src="/img/posts/morie_site/seabed_legend.PNG" alt="Shared Anchor Plan View" width="500">
+  <img src="/img/posts/morie_site/seabed_legend.PNG" 
+       alt="EMODnet Folk-7 classification legend showing sediment categories used for seabed mapping in offshore wind studies" 
+       width="500">
 </div>
 *Figure 4 – EMODnet Folk 7 classification legend.*
 
@@ -153,7 +161,9 @@ Bathymetry directly informs:
 ## Seabed Characterization (Engineering Mapping)
 
 <div align="center">
-  <img src="/img/posts/morie_site/2dfarm_soil_2_folk7_EMOD.png" alt="Shared Anchor Plan View" width="500">
+  <img src="/img/posts/morie_site/2dfarm_soil_2_folk7_EMOD.png" 
+       alt="Seabed classification map aligned with EMODnet Folk-7 system showing sediment distribution for anchor and cable design assessment" 
+       width="500">
 </div>
 *Figure 5 – Soil classification aligned with EMODnet standards.*
 
@@ -170,7 +180,9 @@ Seabed classification supports:
 ## Regional Context Verification
 
 <div align="center">
-  <img src="/img/posts/morie_site/celtic_sea_map_EMOD.jpg" alt="Shared Anchor Plan View" width="500">
+  <img src="/img/posts/morie_site/celtic_sea_map_EMOD.jpg" 
+       alt="Regional seabed map of the Celtic Sea showing large-scale sediment distribution across offshore wind development areas" 
+       width="500">
 </div>
 *Figure 6 – Regional seabed conditions across the Celtic Sea.*
 
@@ -179,7 +191,9 @@ Seabed classification supports:
 ## Local-to-Regional Validation
 
 <div align="center">
-  <img src="/img/posts/morie_site/celtic_sea_map_EMODnet.png" alt="Shared Anchor Plan View" width="500">
+  <img src="/img/posts/morie_site/celtic_sea_map_EMODnet.png" 
+       alt="Comparison of lease-scale seabed classification against regional EMODnet dataset to validate spatial consistency" 
+       width="500">
 </div>
 *Figure 7 – Verification of lease-scale results within regional context.*
 

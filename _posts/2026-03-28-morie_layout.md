@@ -111,13 +111,19 @@ The architecture ensures **direct continuity with downstream physics-based model
 
 ## Bathymetry & Soil Context
 
-![Bathymetry Map](/img/posts/morie_layout/2dfarm_bathy_2.png)
+<div align="center">
+  <img src="/img/posts/morie_layout/2dfarm_bathy_2.png" 
+       alt="2D bathymetry map of the Celtic Sea showing water depth variations across the lease area used for floating wind layout constraints" 
+       width="500">
+</div>
+*Figure 1 – Lease-scale bathymetry used to constrain feasible layout regions.*
 
-*Lease-scale bathymetry used to constrain feasible layout regions.*
-
-![Soil Map](/img/posts/morie_layout/2dfarm_soil_2_folk7_EMOD.png)
-
-*Seabed classification based on EMODnet Folk-7 system.*
+<div align="center">
+  <img src="/img/posts/morie_layout/2dfarm_soil_2_folk7_EMOD.png" 
+       alt="Seabed classification map using EMODnet Folk-7 system showing spatial distribution of sediment types for offshore wind foundation and anchor design" 
+       width="500">
+</div>
+*Figure 2 – Seabed classification based on EMODnet Folk-7 system.*
 
 ### Engineering Significance
 
@@ -131,9 +137,12 @@ These datasets define:
 
 ## Suitability Region Detection
 
-![Suitability Overlay](/img/posts/morie_layout/2dfarm_overlay.png)
-
-*Feasible region derived from combined bathymetry and soil constraints.*
+<div align="center">
+  <img src="/img/posts/morie_layout/2dfarm_overlay.png" 
+       alt="Suitability map showing feasible floating wind farm regions derived from combined bathymetry depth limits and seabed soil constraints" 
+       width="500">
+</div>
+*Figure 3 – Feasible region derived from combined bathymetry and soil constraints.*
 
 ### Criteria
 
@@ -152,9 +161,12 @@ Defines the **valid design domain** where:
 
 ## Hexagonal Lattice Generation
 
-![Hex Grid](/img/posts/morie_layout/2dfarm_hexoverlay.png)
-
-*Hexagonal lattice filtered by feasibility constraints.*
+<div align="center">
+  <img src="/img/posts/morie_layout/2dfarm_hexoverlay.png" 
+       alt="Hexagonal grid layout overlaid on feasible offshore wind area showing filtered turbine positions based on bathymetry and soil constraints" 
+       width="500">
+</div>
+*Figure 4 – Hexagonal lattice filtered by feasibility constraints.*
 
 ### Parameters
 
@@ -174,9 +186,12 @@ The hex grid ensures:
 
 ## Cluster Optimization (Topology-Driven)
 
-![Selected Cluster](/img/posts/morie_layout/2dfarm_layout.png)
-
-*Optimal 8-node cluster selected based on connectivity metrics.*
+<div align="center">
+  <img src="/img/posts/morie_layout/2dfarm_layout.png" 
+       alt="Selected 8-turbine cluster within hexagonal grid showing optimized floating wind layout based on connectivity and feasibility metrics" 
+       width="500">
+</div>
+*Figure 5 – Optimal 8-node cluster selected based on connectivity metrics.*
 
 ### Methodology
 
@@ -198,9 +213,12 @@ Connectivity acts as a **proxy for shared-anchor efficiency**, enabling layout o
 
 ## Mooring & Anchor Topology Generation
 
-![Anchor Topology](/img/posts/morie_layout/2dfarm_layout_anchor.png)
-
-*Anchor-sharing topology derived from mooring system generation.*
+<div align="center">
+  <img src="/img/posts/morie_layout/2dfarm_layout_anchor.png" 
+       alt="Anchor-sharing topology map showing mooring line connections and shared anchor nodes across the floating wind farm layout" 
+       width="500">
+</div>
+*Figure 6 – Anchor-sharing topology derived from mooring system generation.*
 
 ### Outputs
 
