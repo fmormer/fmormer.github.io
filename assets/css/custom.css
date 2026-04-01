@@ -126,6 +126,12 @@ h3 {
   line-height: 1.25;
 }
 
+.post-title {
+  font-size: clamp(2.1rem, 3vw, 2.6rem);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
 p,
 li,
 .post-body,
@@ -212,15 +218,71 @@ select:focus {
   object-fit: contain !important;
 }
 
+/* Header width + structure */
+.header-box {
+  max-width: var(--morie-width-wide);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.header-title {
+  margin-bottom: 8px !important;
+}
+
+.header-subtitle {
+  margin-bottom: 12px !important;
+  color: var(--morie-text-muted) !important;
+  font-weight: 500;
+}
+
+.header-tagline {
+  margin-bottom: 18px !important;
+  max-width: 720px;
+}
+
+/* Keep current theme markup, but restyle the list like inline utility links */
+.header-box ul {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.header-box ul li {
+  margin: 0;
+  padding: 0;
+}
+
+.header-box ul li a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none !important;
+}
+
+.header-box ul li a:hover {
+  text-decoration: underline !important;
+}
+
 /* =========================================
    6. Card system
    ========================================= */
-.article-box,
-.post-content {
+.article-box {
   background-color: var(--morie-bg) !important;
   border: 1px solid var(--morie-border) !important;
   border-radius: var(--morie-radius-2) !important;
   box-shadow: var(--morie-shadow-1) !important;
+}
+
+.post-content {
+  background-color: var(--morie-bg) !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
 .article-box {
@@ -311,8 +373,8 @@ select:focus {
   margin-right: auto !important;
   padding-left: 24px !important;
   padding-right: 24px !important;
-  padding-top: 28px !important;
-  padding-bottom: 32px !important;
+  padding-top: 36px !important;
+  padding-bottom: 40px !important;
   box-sizing: border-box !important;
 }
 
@@ -431,5 +493,14 @@ select {
   .post-body li {
     font-size: 1rem;
     line-height: 1.75;
+  }
+
+  .header-box {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .header-box ul {
+    gap: 12px;
   }
 }
