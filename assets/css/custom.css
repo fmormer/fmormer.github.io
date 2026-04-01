@@ -416,8 +416,8 @@ select:focus {
 .article-image {
   display: block !important;
   width: 100% !important;
-  height: 154px !important;
-  min-height: 154px !important;
+  aspect-ratio: 16 / 10;
+  height: auto !important;
   background-size: cover !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
@@ -508,8 +508,9 @@ select {
   }
 
   .article-image {
-    height: 145px !important;
-    min-height: 145px !important;
+    aspect-ratio: 16 / 10;
+    height: auto !important;
+    min-height: 0 !important;
   }
 
   .post-content {
@@ -531,8 +532,9 @@ select {
   }
 
   .article-image {
-    height: 170px !important;
-    min-height: 170px !important;
+    aspect-ratio: 16 / 10;
+    height: auto !important;
+    min-height: 0 !important;
   }
 
   .header-box {
