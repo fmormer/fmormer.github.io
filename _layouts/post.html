@@ -22,12 +22,12 @@ layout: default
 
 {% if page.previous.url or page.next.url %}
   <div class='post-nav'>
-    {% if page.previous.url %}
-      <a class='post-nav-btn' href='{{ page.previous.url | relative_url }}'>← Previous</a>
-    {% endif %}
+	{% if page.next.url %}
+	  <a class='post-nav-btn' href='{{ page.next.url | relative_url }}'>← Previous</a>
+	{% endif %}
 
-    {% if page.next.url %}
-      <a class='post-nav-btn' href='{{ page.next.url | relative_url }}'>Next →</a>
-    {% endif %}
+	{% if page.previous.url %}
+	  <a class='post-nav-btn' href='{{ page.previous.url | relative_url }}'>Next →</a>
+	{% endif %}
   </div>
 {% endif %}
