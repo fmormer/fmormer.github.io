@@ -35,11 +35,11 @@ This study focuses on **regional-to-lease scale characterization**, forming the 
 
 Early-stage floating offshore wind design requires rapid and consistent evaluation of:
 
-- water depth distribution  
-- seabed conditions  
-- anchor feasibility constraints  
-- mooring footprint implications  
-- installation constraints  
+- Water depth distribution  
+- Seabed conditions  
+- Anchor feasibility constraints  
+- Mooring footprint implications  
+- Installation constraints  
 
 These assessments are often performed manually in GIS environments, leading to inconsistencies across projects.
 
@@ -57,9 +57,9 @@ The workflow integrates:
 
 All datasets are:
 
-- harmonized into a projected coordinate system  
-- spatially aligned  
-- processed into engineering-ready formats  
+- Harmonized into a projected coordinate system  
+- Spatially aligned  
+- Processed into engineering-ready formats  
 
 ---
 
@@ -74,10 +74,10 @@ The workflow is implemented in Python using:
 
 Core modules:
 
-- lease boundary extraction  
+- Lease boundary extraction  
 - CRS transformation  
-- bathymetry masking  
-- seabed intersection  
+- Bathymetry masking  
+- Seabed intersection  
 
 This modular structure ensures **reproducibility, clarity, and scalability**.
 
@@ -112,9 +112,9 @@ The workflow is fully automated and repeatable across multiple lease areas.
 
 Offshore design begins at regional scale, where:
 
-- lease areas compete for feasible conditions  
-- bathymetry and soils vary spatially  
-- design assumptions must remain consistent  
+- Lease areas compete for feasible conditions  
+- Bathymetry and soils vary spatially  
+- Design assumptions must remain consistent  
 
 ---
 
@@ -129,11 +129,8 @@ Offshore design begins at regional scale, where:
 
 The bathymetric dataset reveals water depths across the selected Celtic Sea lease areas typically ranging between:
 
-- **~80 m to 120 m** in shallower zones  
-- **~120 m to 200 m** across the dominant domain  
-- locally exceeding **200 m** in deeper pockets  
-
-The seabed exhibits relatively **gentle slopes**, with gradual depth transitions across most of the site and limited occurrence of steep gradients or abrupt bathymetric features.
+- **~80 m to 95 m** approx.  
+- Gentle slopes with gradual depth transitions  
 
 This results in a **bathymetrically smooth environment**, well-suited for floating offshore wind deployment.
 
@@ -141,28 +138,28 @@ This results in a **bathymetrically smooth environment**, well-suited for floati
 
 Bathymetry directly informs:
 
-- mooring line geometry  
-- anchor radius and footprint  
-- floater feasibility  
-- cable routing constraints  
+- Floater type feasibility
+- Mooring line configurations and geometry  
+- Anchor radius and footprint  
+- Cable routing constraints  
 
 From an engineering perspective, the observed depth range implies:
 
-- **floating wind is required** (fixed-bottom solutions are not viable at this depth scale)  
-- mooring systems will operate in a **deep-water regime**, where line length and compliance dominate behavior  
-- anchor locations must be designed considering **large horizontal offsets and footprint expansion**  
+- **Floating wind is prefered** (fixed-bottom solutions are not economically viable at this depth scale)  
+- Mooring systems will operate in a **deep-water regime** (even if its in the shallowest range), where line length and compliance dominate behavior  
+- Anchor locations must be designed considering **relevant horizontal offsets and footprint expansion**  
 
 The relatively mild seabed slopes enable:
 
-- stable and predictable mooring layouts  
-- reduced risk of localized load amplification due to terrain effects  
-- simplified cable routing with fewer constraints related to steep gradients  
+- Stable and predictable mooring layouts  
+- Reduced risk of localized load amplification due to terrain effects  
+- Simplified cable routing with fewer constraints related to steep gradients  
 
 However, depth variability across the site still requires:
 
-- consistent normalization of mooring configurations (addressed in **morie_mooring**)  
-- alignment of anchor design with local water depth conditions  
-- consideration of cable touchdown zones under varying depth profiles  
+- Consistent normalization of mooring configurations (addressed in **morie_mooring**)  
+- Alignment of anchor design with local water depth conditions (addressed in **morie_anchor**) 
+- Consideration of cable touchdown zones under varying depth profiles (addessed in **morie_cable**)  
 
 This bathymetric characterization defines the **geometric boundary conditions** for all downstream engineering modules.
 
@@ -178,8 +175,6 @@ This bathymetric characterization defines the **geometric boundary conditions** 
        width="500">
 </div>
 *Figure 3 – Initial soil classification used for validation of processing steps.*
-
----
 
 ### EMODnet Classification Alignment
 
@@ -198,13 +193,11 @@ The EMODnet seabed dataset provides sediment classification at multiple levels o
 
 In this workflow, the **Folk-7 classification** is selected as a balance between:
 
-- spatial resolution  
-- engineering interpretability  
-- compatibility with anchor and cable design models  
+- Spatial resolution (soil horizontal variability)
+- Engineering interpretability  
+- Compatibility with anchor and cable design models  
 
 This level preserves key distinctions (e.g., sand vs mud vs coarse material) while avoiding excessive fragmentation of sediment classes.
-
----
 
 ### Engineering Mapping
 
@@ -217,27 +210,27 @@ This level preserves key distinctions (e.g., sand vs mud vs coarse material) whi
 
 The processed map shows a **predominance of sandy sediments** across the selected Celtic Sea region, with localized variations including:
 
-- finer materials (mud-dominated zones)  
-- coarser sediments and transitional layers  
+- Finer materials (mud-dominated zones)  
+- Coarser sediments and transitional layers  
 
 ### Engineering Significance
 
 Seabed classification supports:
 
-- anchor concept screening (e.g., suction piles vs driven solutions)  
-- soil-structure interaction assumptions (strength, stiffness, friction)  
-- cable burial feasibility and protection requirements  
+- Anchor concept screening (e.g., suction piles vs driven solutions)  
+- Soil-structure interaction assumptions (strength, stiffness, friction)  
+- Cable burial feasibility and protection requirements  
 
 From an engineering perspective, the dominance of sand suggests:
 
-- favorable conditions for **predictable installation behavior**  
-- strong dependence on **relative density and friction angle**  
-- suitability for **drag-embedded or driven anchor concepts**, depending on depth and variability  
+- Favorable conditions for **predictable installation behavior**  
+- Strong dependence on **relative density and friction angle**  
+- Suitability for **drag-embedded or driven anchor concepts**, depending on depth and variability  
 
 At the same time, localized heterogeneity highlights the need for:
 
-- site-specific soil reconstruction (addressed in **morie_soil**)  
-- robust design envelopes for mixed conditions    
+- Site-specific soil reconstruction (addressed in **morie_soil**)  
+- Robust design envelopes for mixed conditions    
 
 ---
 
@@ -265,9 +258,9 @@ At the same time, localized heterogeneity highlights the need for:
 
 Ensures:
 
-- spatial accuracy  
-- classification consistency  
-- traceability to source datasets  
+- Spatial accuracy  
+- Classification consistency  
+- Traceability to source datasets  
 
 ---
 
@@ -288,12 +281,12 @@ These outputs are directly usable in downstream engineering workflows.
 
 The outputs support:
 
-- anchor concept screening  
-- mooring system feasibility  
-- cable routing strategy  
-- installation planning  
-- lease-to-lease comparison  
-
+- Lease-to-lease comparison 
+- Anchor concept screening  
+- Mooring system feasibility  
+- Cable routing strategy  
+- Installation planning  
+ 
 This transforms raw geospatial data into **engineering decision inputs**.
 
 ---
@@ -341,11 +334,11 @@ These extensions would move the workflow closer to **FEED-level site characteriz
 
 This study reflects the Morie Analytics approach:
 
-- modular  
-- reproducible  
-- data-driven  
-- engineering-focused  
-- scalable to full wind farm design  
+- Modular  
+- Reproducible  
+- Data-driven  
+- Rngineering-focused  
+- Scalable to full wind farm design  
 
 ---
 
