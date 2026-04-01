@@ -15,7 +15,7 @@ Using Celtic Sea lease areas, **GEBCO 2025 bathymetry**, and **EMODnet seabed cl
 
 The result is a **reproducible Python-based pipeline** that replaces fragmented GIS workflows with a scalable and transparent offshore data-processing framework.
 
-**Site intelligence** → Layout generation → Soil reconstruction → Mooring physics → Anchor verification → Cable optimization
+> **Site intelligence** → Layout generation → Soil reconstruction → Mooring physics → Anchor verification → Cable optimization
 
 ---
 
