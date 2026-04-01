@@ -140,9 +140,10 @@ Where:
 ### Initial Configuration
 
 <div align="center">
-  <img src="/img/posts/morie_cable/cable_initial_config.png" width="500">
+  <img src="/img/posts/morie_cable/cable_initial_config.png" 
+       alt="Initial dynamic cable configuration showing seabed touchdown, suspended spans, and connection to floating wind turbine fairlead before optimization" 
+       width="500">
 </div>
-
 *Figure 1 – Initial cable configuration prior to optimization.*
 
 ---
@@ -221,9 +222,10 @@ The cable configuration accounts for:
 ## Optimization Convergence
 
 <div align="center">
-  <img src="/img/posts/morie_cable/cable_board.png" width="650">
+  <img src="/img/posts/morie_cable/cable_board.png" 
+       alt="Optimization convergence plot showing cost reduction and constraint satisfaction during dynamic cable configuration optimization process" 
+       width="650">
 </div>
-
 *Figure 2 – Optimization convergence showing cost evolution and constraint satisfaction.*
 
 ---
@@ -231,9 +233,10 @@ The cable configuration accounts for:
 ## Optimized Configuration
 
 <div align="center">
-  <img src="/img/posts/morie_cable/cable_opt_config.png" width="500">
+  <img src="/img/posts/morie_cable/cable_opt_config.png" 
+       alt="Optimized dynamic cable configuration satisfying sag, curvature, tension, and seabed interaction constraints under realistic floater motion" 
+       width="500">
 </div>
-
 *Figure 3 – Optimized cable configuration satisfying all constraints.*
 
 ---

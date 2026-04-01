@@ -143,7 +143,9 @@ Each floater is connected to the seabed through a set of mooring lines defined b
 - Consistent **heading conventions in global coordinates**
 
 <div align="center">
-  <img src="/img/posts/morie_mooring/2dfarm_layout.png" alt="Shared Anchor Plan View" width="500">
+  <img src="/img/posts/morie_mooring/2dfarm_layout.png" 
+       alt="Plan view of floating wind farm mooring layout showing floater positions, mooring line headings, and anchor locations" 
+       width="500">
 </div>
 *Figure 1 – Plan view of mooring system geometry showing floater positions, line headings and anchor locations.*
 
@@ -171,7 +173,9 @@ When this occurs:
 - Load contributions from multiple floaters are transferred to a common point
 
 <div align="center">
-  <img src="/img/posts/morie_mooring/2dfarm_shared.png" alt="Shared Anchor Plan View" width="500">
+  <img src="/img/posts/morie_mooring/2dfarm_shared.png" 
+       alt="Plan view of floating wind farm showing shared-anchor configurations with anchors connected to one, two, or three mooring lines" 
+       width="500">
 </div>
 *Figure 2 – Plan view of mooring system geometry showing floater positions, line headings and anchor counts (1, 2 or 3 shared anchors).*
 
@@ -203,7 +207,9 @@ Shared anchors are identified through spatial analysis of anchor coordinates:
 This ensures a consistent representation of the physical system, where each anchor node may receive loads from multiple lines.
 
 <div align="center">
-  <img src="/img/posts/morie_mooring/shared_anchor_planview.png" alt="Shared Anchor Plan View" width="500">
+  <img src="/img/posts/morie_mooring/shared_anchor_planview.png" 
+       alt="Shared-anchor topology map showing floater positions, mooring line headings, and merged anchor nodes across the farm" 
+       width="500">
 </div>
 *Figure 3 – Plan view of mooring system geometry showing floater positions, line headings and anchor labels.*
 
@@ -271,7 +277,9 @@ At equilibrium:
 - Watch circle behavior and restoring response
 
 <div align="center">
-  <img src="/img/posts/morie_mooring/mooring_profile.png" alt="Mooring Line Profile" width="500">
+  <img src="/img/posts/morie_mooring/mooring_profile.png" 
+       alt="Mooring line profile showing catenary geometry between fairlead and anchor with seabed interaction and load transfer path" 
+       width="500">
 </div>
 *Figure 4 – Mooring line profile showing catenary geometry between fairlead and anchor.*
 
@@ -327,7 +335,9 @@ To capture system response under wave excitation, frequency-domain simulations a
 - Line tension spectra are extracted for comparison across headings
 
 <div align="center">
-  <img src="/img/posts/morie_mooring/raft_heading_cases.png" alt="Wave Heading Cases" width="500">
+  <img src="/img/posts/morie_mooring/raft_heading_cases.png" 
+       alt="Environmental load cases and frequency-domain mooring response across multiple wave headings for floating offshore wind system" 
+       width="500">
 </div>
 *Figure 5 – Environmental load cases and corresponding frequency-domain response.*
 
@@ -427,7 +437,9 @@ The reconstructed time series represents:
 - Occurrence of peak loads within a realistic time window
 
 <div align="center">
-  <img src="/img/posts/morie_mooring/mooring_loads.png" width="500">
+  <img src="/img/posts/morie_mooring/mooring_loads.png" 
+       alt="Reconstructed mooring line tension time series showing dynamic load variation and peak response under selected environmental case" 
+       width="500">
 </div>
 *Figure 6 – Time-domain reconstruction of mooring line tension.*
 
