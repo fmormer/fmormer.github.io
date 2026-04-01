@@ -16,6 +16,7 @@ Starting from a layout generated in **morie_layout**, the workflow constructs a 
 The result is a **reproducible framework for anchor-level soil characterization**, bridging the gap between spatial layout design and geotechnical engineering inputs.
 
 > Site intelligence → Layout generation → **Soil reconstruction** → Mooring physics → Anchor verification → Cable optimization
+
 ---
 
 ## Project Scope

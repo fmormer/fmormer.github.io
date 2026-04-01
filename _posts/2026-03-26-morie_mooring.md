@@ -18,6 +18,7 @@ A key objective of the workflow is to explicitly bridge **mooring system behavio
 The result is a **reproducible computational pipeline** that connects geometry, equilibrium physics, and load transfer mechanisms into downstream anchor design inputs.
 
 > Site intelligence → Layout generation → Soil reconstruction → **Mooring physics** → Anchor verification → Cable optimization
+
 ---
 
 ## Project Scope
