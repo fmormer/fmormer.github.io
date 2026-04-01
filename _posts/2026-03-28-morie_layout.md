@@ -149,7 +149,7 @@ These datasets define:
 ### Criteria
 
 - Depth: **from 88 m to 94 m**  
-- Soil: Engineering-suitable sediments (Folk groups 1xx–2xx)  
+- Soil: Engineering-suitable sediments - 2.0. Sand (Multiscale - folk 7)   
 
 ### Engineering Significance
 
