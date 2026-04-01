@@ -393,6 +393,9 @@ select:focus {
   column-gap: 16px !important;
   row-gap: 16px !important;
   align-items: stretch !important;
+  max-width: var(--morie-width-wide) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .container > .row > .col.col-12.col-t-12 > .row > .article.col.col-12.col-t-6 {
@@ -411,9 +414,8 @@ select:focus {
 .article-image {
   display: block !important;
   width: 100% !important;
-  aspect-ratio: 16 / 9;
-  height: auto !important;
-  min-height: 0 !important;
+  height: 154px !important;
+  min-height: 154px !important;
   background-size: cover !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
@@ -504,10 +506,10 @@ select {
   }
 
   .article-image {
-    aspect-ratio: 16 / 9;
-    height: auto !important;
-    min-height: 0 !important;
+    height: 145px !important;
+    min-height: 145px !important;
   }
+
   .post-content {
     max-width: 880px !important;
     padding-left: 24px !important;
@@ -527,9 +529,8 @@ select {
   }
 
   .article-image {
-    aspect-ratio: 16 / 9;
-    height: auto !important;
-    min-height: 0 !important;
+    height: 170px !important;
+    min-height: 170px !important;
   }
 
   .header-box {
