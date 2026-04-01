@@ -1,19 +1,23 @@
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1, viewport-fit=cover'>
-    <title>{{ site.title }}</title>
-    <meta name='description' content='{{ site.description }}' />
-    <link rel='canonical' href='{{ page.url | replace:"index.html","" | absolute_url }}'>
-    <link rel='alternate' type='application/rss+xml' title='{{ site.title }}' href='{{ "/feed.xml" | relative_url }}'>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1, viewport-fit=cover'>
+  <title>{{ site.title }}</title>
+  <meta name='description' content='{{ site.description }}'>
+  <link rel='canonical' href='{{ page.url | replace:"index.html","" | absolute_url }}'>
+  <link rel='alternate' type='application/rss+xml' title='{{ site.title }}' href='{{ "/feed.xml" | relative_url }}'>
 
-    <!-- Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Nunito:400,700' rel='stylesheet'>
-    <link href='https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css' rel='stylesheet'>
+  <!-- Morie typography -->
+  <link rel='preconnect' href='https://fonts.googleapis.com'>
+  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+  <link href='https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Merriweather:wght@700&display=swap' rel='stylesheet'>
 
-    <!-- THEME CSS (keep this) -->
-    <link rel='stylesheet' href='{{ "/assets/css/main.css" | relative_url }}'>
+  <!-- Icons -->
+  <link href='https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css' rel='stylesheet'>
 
-    <!-- 👇 YOUR CSS (this is the key) -->
-    <link rel='stylesheet' href='{{ "/assets/css/custom.css" | relative_url }}'>
+  <!-- Theme CSS -->
+  <link rel='stylesheet' href='{{ "/assets/css/main.css" | relative_url }}'>
+
+  <!-- Morie overrides -->
+  <link rel='stylesheet' href='{{ "/assets/css/custom.css" | relative_url }}'>
 </head>
