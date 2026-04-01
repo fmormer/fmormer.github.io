@@ -269,12 +269,13 @@ This study reflects the Morie Analytics approach:
 1. Place datasets in `celtic_sea_share/`  
 2. Install dependencies:
 
-   - geopandas  
-   - xarray  
-   - numpy  
-   - matplotlib  
+   - `numpy`  
+   - `matplotlib` 
+   - `geopandas`  
+   - `xarray`  
 
 3. Execute:
 
 ```bash
-python lease_area_definition.py
+python morie_site.py
+```

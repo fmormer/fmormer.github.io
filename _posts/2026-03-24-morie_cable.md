@@ -321,12 +321,12 @@ This is where:
 
 2. Install dependencies:
 
-   - numpy  
-   - matplotlib  
-   - scipy  
-   - FAModel  
-   - MoorPy  
-   - RAFT  
+   - `numpy`  
+   - `matplotlib`  
+   - `scipy`  
+   - `FAModel`  
+   - `MoorPy`  
+   - `RAFT`  
 
 3. Execute:
 
