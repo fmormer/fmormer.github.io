@@ -1,267 +1,335 @@
 ---
 layout: post
-title: Dynamic Cable Design & Optimization – Celtic Sea
+title: Dynamic Cable Design & Configuration Optimization – Celtic Sea
 image: "/posts/morie_cable/cable_opt_config.png"
-tags: [Offshore Wind, Dynamic Cables, Floating Wind, Cable Optimization, RAFT, MoorPy, Python]
+tags: [Offshore Floating Wind, Dynamic Cables, Floating Wind, Cable Optimization, RAFT, MoorPy, Python]
 ---
 
-# Celtic Sea Floating Offshore Wind – Dynamic Cable Design & Optimization
+# Celtic Sea Floating Offshore Wind – Dynamic Cable Design & Configuration Optimization
 
-This project extends the Morie Analytics workflow by introducing a structured methodology for designing and optimizing dynamic power cables in floating offshore wind systems.
+## Executive Summary
 
-Building upon site characterization, layout generation, mooring system analysis, and anchor load resolution, this workflow integrates bathymetry, floater motion, and hydrodynamic response into a unified cable design framework.
+This study establishes the **dynamic cable engineering layer** of Morie Analytics by transforming **floater motion and site geometry into optimized cable configurations**.
 
-A representative floating wind turbine (FOWT) is selected, and a standalone dynamic cable connecting the seabed to the floater is optimized under realistic motion conditions derived from MoorPy and RAFT.
+Building on outputs from **morie_layout**, **morie_mooring**, and **morie_anchor**, the workflow integrates bathymetry, mooring-derived offsets, and hydrodynamic response (RAFT) to design **constraint-compliant dynamic power cables**.
 
-The objective is to formalize dynamic cable design into a reproducible computational pipeline that captures geometry, physics, and constraint-driven optimization, ensuring consistency across:
+A representative floating wind turbine (FOWT) is selected, and a standalone cable system is optimized under realistic motion conditions, ensuring consistency across:
 
-Site → Layout → Mooring → Anchor → Cable
+> **Site → Layout → Mooring → Anchor → Cable**
+
+This module closes the system loop by connecting **structural response to electrical infrastructure design**.
 
 ---
 
 ## Project Scope
 
-- Dynamic cable configuration design (seabed to floater)
-- Integration of bathymetry and platform geometry
-- Mooring-derived mean offset (watch circle)
-- Hydrodynamic motion from RAFT (surge & sway)
-- Constraint-based cable optimization
-- Evaluation of curvature, sag, tension, and touchdown
-- Modular Python implementation for reproducible workflows  
+- Dynamic cable configuration (seabed to floater)  
+- Integration of bathymetry and platform geometry  
+- Mooring-derived mean offset (watch circle)  
+- Hydrodynamic motion from RAFT (surge & sway)  
+- Constraint-based cable optimization  
+- Evaluation of sag, curvature, tension, and touchdown  
+- Modular Python workflow for reproducibility  
 
-The workflow transforms motion-driven inputs into engineering-ready cable configurations, ensuring full traceability from:
+This workflow transforms:
 
-Mooring Response → Hydrodynamic Motion → Cable Geometry → Constraint Verification
+> **Floater Motion → Cable Geometry → Constraint Verification → Optimized Design**
 
 ---
 
-## 1. Cable System Definition & Geometry
+## Engineering Context
 
-The dynamic cable is defined as a multi-segment system connecting:
+Dynamic power cables are critical components in floating offshore wind systems, enabling energy transfer between floating turbines and subsea infrastructure.
 
-- seabed touchdown point
-- suspended cable sections with distributed buoyancy
-- floater fairlead connection
+Unlike static cables, dynamic cables must accommodate:
 
-The geometry is derived from platform data:
+- large floater excursions  
+- cyclic hydrodynamic motion  
+- seabed interaction  
+- geometric constraints  
 
-- Water depth from bathymetry grid
-- Fairlead position from platform definition
+Traditional approaches rely on assumed motions. This workflow instead uses:
 
+- **MoorPy → mean offset (watch circle)**  
+- **RAFT → dynamic response (surge/sway)**  
+
+This ensures that cable design reflects **real system physics**.
+
+---
+
+## Inputs and Dependencies
+
+### From previous Morie modules
+
+- **morie_layout** → floater position and geometry  
+- **morie_site** → bathymetry grid  
+- **morie_mooring** → platform offset (watch circle)  
+- **morie_anchor** → system constraints context  
+
+### Additional inputs
+
+- YAML farm configuration  
+- Platform fairlead definition  
+- Hydrodynamic simulation outputs (RAFT)  
+
+---
+
+## Technical Architecture
+
+The workflow combines geometry, physics, and optimization:
+
+- Bathymetry extraction  
+- Mooring equilibrium analysis  
+- Hydrodynamic response evaluation  
+- Cable configuration solver  
+- Constraint-based optimization  
+
+### Architectural Flow
+
+```text
+Bathymetry + Platform Geometry
+              ↓
+MoorPy (Offset / Watch Circle)
+              ↓
+RAFT (Dynamic Motion)
+              ↓
+Cable Geometry Definition
+              ↓
+Constraint-Based Optimization
+              ↓
+Optimized Cable Configuration
+```
+
+---
+
+## Processing Workflow
+
+1. Load farm configuration (YAML)  
+2. Extract bathymetry at selected floater  
+3. Define fairlead geometry  
+4. Compute mooring-derived offset  
+5. Extract RAFT dynamic motion  
+6. Define cable model and variables  
+7. Apply constraints  
+8. Run optimization  
+9. Evaluate final configuration  
+
+---
+
+## Cable System Definition
+
+The cable is modeled as a multi-segment system connecting:
+
+- seabed touchdown point  
+- suspended spans with buoyancy  
+- floater fairlead  
+
+Fairlead position:
+
+```
 rBFair = [rFair, 0, zFair]
+```
 
 Where:
 
-- rFair → radial distance from platform center
-- zFair → vertical position of fairlead
+- rFair → radial distance  
+- zFair → vertical position  
 
 ---
 
-### Physical Interpretation
-
-The cable must accommodate:
-
-- vertical span (water depth)
-- horizontal excursion (floater motion)
-- geometric constraints (curvature, sag, touchdown location)
-
----
-
-### Engineering Significance
-
-This defines the baseline geometric problem linking seabed conditions, floater configuration, and cable routing.
-
----
+### Initial Configuration
 
 <div align="center">
   <img src="/img/posts/morie_cable/cable_initial_config.png" width="500">
 </div>
-*Figure 1 – Initial dynamic cable configuration prior to optimization, showing baseline geometry under combined offset and dynamic motion conditions.*
+
+*Figure 1 – Initial cable configuration prior to optimization.*
 
 ---
 
-## 2. Mooring-Derived Floater Offset
+## Mooring-Derived Offset
 
-Floater offset is computed using MoorPy watch circle analysis.
+Floater offset is obtained using MoorPy watch circle analysis:
 
-### Methodology
-
-- Solve mooring system equilibrium
-- Evaluate platform excursion across headings
-- Compute radial displacement
-
+```
 offset = max( √(dx² + dy²) )
+```
+
+### Engineering Meaning
+
+- Defines quasi-static excursion  
+- Sets horizontal boundary condition for cable  
 
 ---
 
-### Physical Interpretation
+## Hydrodynamic Motion (RAFT)
 
-This represents the mean excursion envelope of the floater due to mooring restoring forces and environmental loading.
+Dynamic motion is derived from RAFT:
 
----
-
-### Engineering Significance
-
-Defines the maximum horizontal displacement of the fairlead and the quasi-static boundary condition for cable design.
-
----
-
-## 3. Hydrodynamic Motion (RAFT)
-
-Dynamic motion is obtained from RAFT simulations.
-
-### Methodology
-
-- Frequency-domain analysis
-- Extraction of surge and sway response
-
+```
 x_ampl = √(surge_max² + sway_max²)
+```
+
+### Engineering Meaning
+
+- Captures wave-induced motion  
+- Defines oscillatory cable loading  
 
 ---
 
-### Physical Interpretation
+## Cable Design Model
 
-Represents oscillatory motion due to waves and dynamic amplification of floater displacement.
+The cable configuration accounts for:
 
----
-
-### Engineering Significance
-
-Combines with offset to define:
-
-Total motion envelope = mean offset + dynamic amplitude
-
-This is critical for curvature evaluation, fatigue considerations, and extreme load cases.
-
----
-
-## 4. Cable Design Model
-
-The cable is modeled using a multi-segment configuration with:
-
-- seabed contact region
-- suspended spans
-- buoyancy-controlled sections
+- self-weight  
+- buoyancy modules  
+- seabed interaction  
+- dynamic boundary conditions  
 
 ### Key Inputs
 
-- water depth
-- fairlead position
-- mooring-derived offset
-- RAFT-derived dynamic amplitude
+- water depth  
+- fairlead position  
+- offset  
+- dynamic amplitude  
 
 ---
 
-### Physical Interpretation
-
-The cable adopts a catenary-like shape influenced by self-weight, buoyancy modules, and boundary motion.
-
----
-
-### Engineering Significance
-
-Defines how loads are transferred to the floater, how curvature develops along the cable, and how seabed interaction occurs.
-
----
-
-## 5. Optimization Problem
-
-The cable configuration is optimized using a constraint-based formulation.
+## Optimization Problem
 
 ### Design Variables
 
-- segment lengths
-- buoyancy distribution
-- lay lengths
-
----
+- segment lengths  
+- buoyancy distribution  
+- lay lengths  
 
 ### Constraints
 
-- Minimum lay length
-- Maximum sag
-- Curvature limits
-- Tension safety factors
-- Touchdown range
-
----
+- minimum lay length  
+- maximum sag  
+- curvature limits  
+- tension safety factors  
+- touchdown range  
 
 ### Objective
 
-Minimize cost while satisfying all constraints.
+- minimize cost  
+- ensure full constraint compliance  
 
 ---
+
+## Optimization Convergence
 
 <div align="center">
-  <img src="/img/posts/morie_cable/cable_board.png" width="600">
+  <img src="/img/posts/morie_cable/cable_board.png" width="650">
 </div>
-*Figure 2 – Optimization convergence showing cost evolution and constraint satisfaction across function evaluations.*
+
+*Figure 2 – Optimization convergence showing cost evolution and constraint satisfaction.*
 
 ---
 
-### Physical Interpretation
-
-The optimization process explores feasible cable shapes, trade-offs between curvature and tension, and the influence of buoyancy distribution.
-
----
-
-### Engineering Significance
-
-Ensures constraint-compliant design, efficient material usage, and physically realistic cable behavior.
-
----
-
-## 6. Optimization Results
-
-The optimized cable configuration satisfies all imposed constraints while maintaining a physically consistent geometry under combined motion conditions.
-
----
+## Optimized Configuration
 
 <div align="center">
   <img src="/img/posts/morie_cable/cable_opt_config.png" width="500">
 </div>
-*Figure 3 – Optimized dynamic cable configuration satisfying all geometric, curvature, and tension constraints under realistic floater motion conditions.*
+
+*Figure 3 – Optimized cable configuration satisfying all constraints.*
 
 ---
 
-### Physical Interpretation
+## Outputs Generated
 
-The optimized configuration demonstrates controlled curvature distribution, stable touchdown behavior, and balanced tension along the cable.
-
----
-
-### Engineering Significance
-
-The final design ensures structural integrity, compliance with installation constraints, and robustness under operational conditions.
+- optimized cable geometry  
+- constraint verification results  
+- cost evolution  
+- curvature and sag profiles  
+- tension safety checks  
 
 ---
 
-## 7. Integrated Python Workflow
+## Engineering Applications
 
-All steps are implemented in a modular pipeline:
+- dynamic cable concept design  
+- constraint-driven optimization  
+- coupling between mooring and cable systems  
+- early-stage engineering assessment  
 
-```python
-# Load project
-project = Project('floating_farm.yaml')
+This module enables:
 
-# Extract bathymetry and platform geometry
-depth = get_depth(project, fowt_id)
-rBFair = get_fairlead_position(project)
+> **Physics-based cable design integrated with full system behavior**
 
-# Compute mooring offset
-offset = compute_watch_circle(project)
+---
 
-# Run RAFT simulations
-raft_results = run_raft(project)
+## Relationship to Other Morie Study Cases
 
-# Extract dynamic amplitude
-x_ampl = extract_motion_amplitude(raft_results)
+### Receives from
 
-# Define cable design
-cable = CableDesign(depth, rBFair, offset, x_ampl)
+- **morie_site** → bathymetry  
+- **morie_layout** → geometry  
+- **morie_mooring** → offsets  
+- **morie_anchor** → system constraints  
 
-# Run optimization
-cable.optimize()
+### Completes
 
-# Plot results
-cable.plot()
+- Full offshore wind system workflow  
+
+> **Site → Layout → Mooring → Anchor → Cable**
+
+---
+
+## Why It Matters Commercially
+
+- reduces overdesign of cables  
+- improves installation feasibility  
+- ensures constraint-compliant configurations  
+- integrates structural and electrical design  
+
+This is where:
+
+> **motion-driven engineering meets power transmission design**
+
+---
+
+## Aspects to Improve
+
+- fatigue and time-domain analysis  
+- probabilistic motion envelopes  
+- multi-cable system interactions  
+- electrical performance coupling  
+- full farm-level cable routing  
+
+---
+
+## Design Philosophy
+
+- physics-based modeling  
+- modular architecture  
+- reproducibility  
+- engineering usability  
+- scalability to farm-level design  
+
+---
+
+## How to Run
+
+1. Place required inputs:
+
+   - YAML farm file  
+   - bathymetry grid  
+   - RAFT results  
+
+2. Install dependencies:
+
+   - numpy  
+   - matplotlib  
+   - scipy  
+   - FAModel  
+   - MoorPy  
+   - RAFT  
+
+3. Execute:
+
+```bash
+python morie_cable.py
+```
