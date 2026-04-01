@@ -253,17 +253,17 @@ select {
 
 .post-content {
   width: 100% !important;
-  max-width: 1100px !important;   /* wider overall container */
+  max-width: 1200px !important;   /* near full layout width */
   margin-left: auto !important;
   margin-right: auto !important;
-  padding-left: 24px !important;
-  padding-right: 24px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
   box-sizing: border-box !important;
 }
 
 .post-body {
   width: 100% !important;
-  max-width: 960px !important;   /* wider text column */
+  max-width: 1020px !important;   /* wider text */
   margin-left: auto !important;
   margin-right: auto !important;
 }
