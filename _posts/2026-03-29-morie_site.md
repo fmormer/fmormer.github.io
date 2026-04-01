@@ -127,6 +127,16 @@ Offshore design begins at regional scale, where:
 </div>
 *Figure 2 – Lease-scale bathymetry used to constrain feasible layout regions.*
 
+The bathymetric dataset reveals water depths across the selected Celtic Sea lease areas typically ranging between:
+
+- **~80 m to 120 m** in shallower zones  
+- **~120 m to 200 m** across the dominant domain  
+- locally exceeding **200 m** in deeper pockets  
+
+The seabed exhibits relatively **gentle slopes**, with gradual depth transitions across most of the site and limited occurrence of steep gradients or abrupt bathymetric features.
+
+This results in a **bathymetrically smooth environment**, well-suited for floating offshore wind deployment.
+
 ### Engineering Significance
 
 Bathymetry directly informs:
@@ -135,6 +145,26 @@ Bathymetry directly informs:
 - anchor radius and footprint  
 - floater feasibility  
 - cable routing constraints  
+
+From an engineering perspective, the observed depth range implies:
+
+- **floating wind is required** (fixed-bottom solutions are not viable at this depth scale)  
+- mooring systems will operate in a **deep-water regime**, where line length and compliance dominate behavior  
+- anchor locations must be designed considering **large horizontal offsets and footprint expansion**  
+
+The relatively mild seabed slopes enable:
+
+- stable and predictable mooring layouts  
+- reduced risk of localized load amplification due to terrain effects  
+- simplified cable routing with fewer constraints related to steep gradients  
+
+However, depth variability across the site still requires:
+
+- consistent normalization of mooring configurations (addressed in **morie_mooring**)  
+- alignment of anchor design with local water depth conditions  
+- consideration of cable touchdown zones under varying depth profiles  
+
+This bathymetric characterization defines the **geometric boundary conditions** for all downstream engineering modules.
 
 ---
 
