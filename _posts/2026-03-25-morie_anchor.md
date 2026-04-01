@@ -9,11 +9,13 @@ tags: [Offshore Floating Wind, Anchors, Suction Piles, Shared Anchors, Geotechni
 
 ## Executive Summary
 
-This study establishes the **anchor engineering layer** of Morie Analytics by transforming **mooring-derived loads into capacity-verified anchor designs**.
+This study establishes the **anchor verification layer** of Morie Analytics by transforming **mooring-derived loads into capacity-verified anchor designs**.
 
 Starting from the mooring response generated in **morie_mooring**, the workflow extracts concomitant loads, transfers them through embedded chain mechanics, resolves shared-anchor load states, and verifies suction pile capacity under combined loading.
 
 The result is a **reproducible anchor design framework**, bridging the gap between system-level mooring physics and geotechnical engineering verification.
+
+> Site intelligence → Layout generation → Soil reconstruction → Mooring physics → **Anchor verification** → Cable optimization
 
 ---
 
