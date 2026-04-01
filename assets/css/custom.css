@@ -200,28 +200,28 @@ select:focus {
 }
 
 /* Logo sizing */
-.header-box {
+..header-box {
   max-width: var(--morie-width-wide);
   margin-left: auto;
   margin-right: auto;
   padding-left: 24px;
   padding-right: 24px;
-  padding-top: 28px;
-  padding-bottom: 24px;
+  padding-top: 22px;
+  padding-bottom: 18px;
 }
 
 .header-title {
-  margin-bottom: 8px !important;
+  margin-bottom: 6px !important;
 }
 
 .header-subtitle {
-  margin-bottom: 12px !important;
+  margin-bottom: 10px !important;
   color: var(--morie-text-muted) !important;
   font-weight: 500;
 }
 
 .header-tagline {
-  margin-bottom: 18px !important;
+  margin-bottom: 14px !important;
   max-width: 640px;
 }
 
@@ -231,7 +231,7 @@ select:focus {
   flex-wrap: wrap;
   list-style: none;
   padding: 0;
-  margin-top: 14px;
+  margin-top: 10px;
   margin-bottom: 0;
 }
 
@@ -348,11 +348,12 @@ select:focus {
 
 .article-content {
   flex: 1 1 auto !important;
-  padding: 22px 22px 24px !important;
+  padding: 22px 22px 26px !important;
 }
 
 .article-title {
-  margin-top: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .article-title a,
@@ -396,6 +397,7 @@ select:focus {
   max-width: var(--morie-width-wide) !important;
   margin-left: auto !important;
   margin-right: auto !important;
+  margin-top: 12px !important;
 }
 
 .container > .row > .col.col-12.col-t-12 > .row > .article.col.col-12.col-t-6 {
