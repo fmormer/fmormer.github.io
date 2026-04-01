@@ -126,12 +126,16 @@ Suction Pile Capacity Evaluation
 ## Anchor System Topology
 
 <div align="center">
-  <img src="/img/posts/morie_anchor/2dfarm_shared.png" width="500">
+  <img src="/img/posts/morie_anchor/2dfarm_shared.png" 
+       alt="Floating wind farm layout showing shared-anchor configurations with multiple mooring lines connected to common anchor points" 
+       width="500">
 </div>
 *Figure 1 – Shared-anchor configurations across the floating wind farm.*
 
 <div align="center">
-  <img src="/img/posts/morie_anchor/shared_anchor_floaters.png" width="500">
+  <img src="/img/posts/morie_anchor/shared_anchor_floaters.png" 
+       alt="Mooring connectivity diagram showing multiple floating turbines linked to shared anchors through mooring lines" 
+       width="500">
 </div>
 *Figure 2 – Multiple mooring lines connected to shared anchors.*
 
@@ -140,7 +144,9 @@ Suction Pile Capacity Evaluation
 ## Critical Event & Concomitant Loads
 
 <div align="center">
-  <img src="/img/posts/morie_anchor/mooring_loads.png" width="700">
+  <img src="/img/posts/morie_anchor/mooring_loads.png" 
+       alt="Mooring line tension time series showing dynamic load variation and peak response used to define governing load case" 
+       width="700">
 </div>
 *Figure 3 – Mooring tension time series.*
 
@@ -151,7 +157,9 @@ T_design = T_mean + 3.8σ
 ```
 
 <div align="center">
-  <img src="/img/posts/morie_anchor/concomitant_loads.png" width="700">
+  <img src="/img/posts/morie_anchor/concomitant_loads.png" 
+       alt="Concomitant mooring loads extracted at peak event showing simultaneous loading conditions across multiple lines" 
+       width="700">
 </div>
 *Figure 4 – Concomitant loads at peak event.*
 
@@ -160,12 +168,16 @@ T_design = T_mean + 3.8σ
 ## Load Transfer to Padeye
 
 <div align="center">
-  <img src="/img/posts/morie_anchor/anchor_inverse_catenary.png" width="700">
+  <img src="/img/posts/morie_anchor/anchor_inverse_catenary.png" 
+       alt="Inverse catenary representation of embedded mooring chain showing load transfer from mudline to padeye within seabed" 
+       width="700">
 </div>
 *Figure 5 – Inverse catenary load transfer.*
 
 <div align="center">
-  <img src="/img/posts/morie_anchor/load_transfer.png" width="700">
+  <img src="/img/posts/morie_anchor/load_transfer.png" 
+       alt="Transformation of mooring loads from mudline to padeye including horizontal and vertical load components" 
+       width="700">
 </div>
 *Figure 6 – Load transformation from mudline to padeye.*
 
@@ -174,7 +186,9 @@ T_design = T_mean + 3.8σ
 ## Anchor Load Resolution
 
 <div align="center">
-  <img src="/img/posts/morie_anchor/shared_anchor_planview.png" width="500">
+  <img src="/img/posts/morie_anchor/shared_anchor_planview.png" 
+       alt="Plan view of shared anchor showing resolved horizontal load vectors from multiple mooring lines" 
+       width="500">
 </div>
 *Figure 7 – Load vectors acting on a shared anchor.*
 
@@ -198,7 +212,9 @@ T_total = Σ |T_i|
 ```
 
 <div align="center">
-  <img src="/img/posts/morie_anchor/shared_anchor.png" width="600">
+  <img src="/img/posts/morie_anchor/shared_anchor.png" 
+       alt="System-level view of shared anchor interaction showing multiple line load contributions and resulting load state" 
+       width="600">
 </div>
 *Figure 8 – Shared-anchor interaction at farm scale.*
 
@@ -207,7 +223,9 @@ T_total = Σ |T_i|
 ## Suction Pile Capacity Model
 
 <div align="center">
-  <img src="/img/posts/morie_anchor/suction_plot.png" width="600">
+  <img src="/img/posts/morie_anchor/suction_plot.png" 
+       alt="Suction pile geometry showing diameter, embedded length, and padeye position used for anchor capacity evaluation" 
+       width="600">
 </div>
 *Figure 9 – Suction pile geometry.*
 
@@ -218,7 +236,9 @@ V_max = min(V1, V2, V3)
 ```
 
 <div align="center">
-  <img src="/img/posts/morie_anchor/anchor_failure_modes.png" width="600">
+  <img src="/img/posts/morie_anchor/anchor_failure_modes.png" 
+       alt="Suction pile failure mechanisms including uplift, sliding, and rotational modes under combined loading" 
+       width="600">
 </div>
 *Figure 10 – Vertical failure mechanisms.*
 
@@ -227,15 +247,18 @@ V_max = min(V1, V2, V3)
 ## Load–Capacity Interaction
 
 <div align="center">
-  <img src="/img/posts/morie_anchor/capacity_ellipsoid.png" width="600">
+  <img src="/img/posts/morie_anchor/capacity_ellipsoid.png" 
+       alt="VHM interaction surface representing combined vertical, horizontal, and moment capacity of suction pile anchor" 
+       width="600">
 </div>
 *Figure 11 – VHM interaction surface.*
 
 <div align="center">
-  <img src="/img/posts/morie_anchor/capacity_envelope.png" width="600">
+  <img src="/img/posts/morie_anchor/capacity_envelope.png" 
+       alt="VH capacity envelope showing allowable combinations of vertical and horizontal loads for suction pile design" 
+       width="600">
 </div>
 *Figure 12 – VH capacity envelope.*
-
 ---
 
 ## Outputs Generated

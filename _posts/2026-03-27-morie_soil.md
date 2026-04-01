@@ -112,9 +112,19 @@ The structure ensures **full traceability from data to engineering output**.
 
 ## Local Domain Definition
 
-![Cropped Bathymetry](/img/posts/morie_soil/01_cropped_bathy.png)
+<div align="center">
+  <img src="/img/posts/morie_soil/01_cropped_bathy.png" 
+       alt="Cropped bathymetry map of the local domain showing water depth distribution around selected floating wind turbine cluster" 
+       width="500">
+</div>
+*Figure 1 – Cropped bathymetry defining the local engineering domain.*
 
-![Cropped Soil](/img/posts/morie_soil/02_cropped_soil.png)
+<div align="center">
+  <img src="/img/posts/morie_soil/02_cropped_soil.png" 
+       alt="Cropped seabed classification map showing local sediment distribution within selected floating wind farm domain" 
+       width="500">
+</div>
+*Figure 2 – Cropped soil classification aligned with the local layout domain.*
 
 ### Engineering Significance
 
@@ -128,7 +138,12 @@ Defines:
 
 ## Synthetic Soil Model (Ground Truth)
 
-![Truth Surfaces](/img/posts/morie_soil/03_truth_surfaces.png)
+<div align="center">
+  <img src="/img/posts/morie_soil/03_truth_surfaces.png" 
+       alt="Synthetic layered soil model showing spatial variation of layer boundaries Z1 and Z2 across the local domain" 
+       width="500">
+</div>
+*Figure 3 – Synthetic ground truth soil model with spatially varying layer interfaces.*
 
 ### Model Characteristics
 
@@ -149,7 +164,12 @@ Provides:
 
 ## Tomographic Sampling Framework
 
-![Tomographic Layout](/img/posts/morie_soil/04_tomographic_layout.png)
+<div align="center">
+  <img src="/img/posts/morie_soil/04_tomographic_layout.png" 
+       alt="Tomographic sampling layout showing XZ and YZ sectional planes used to emulate geotechnical investigation coverage" 
+       width="500">
+</div>
+*Figure 4 – Tomographic acquisition grid representing sparse geotechnical sampling.*
 
 ### Configuration
 
@@ -168,9 +188,19 @@ Represents:
 
 ## Soil Section Sampling
 
-![XZ Section](/img/posts/morie_soil/05_xz01_phi.png)
+<div align="center">
+  <img src="/img/posts/morie_soil/05_xz01_phi.png" 
+       alt="Vertical XZ soil section showing variation of friction angle phi across depth and horizontal distance in sampled plane" 
+       width="500">
+</div>
+*Figure 5 – XZ section illustrating vertical soil layering and lateral variability.*
 
-![YZ Section](/img/posts/morie_soil/06_yz01_phi.png)
+<div align="center">
+  <img src="/img/posts/morie_soil/06_yz01_phi.png" 
+       alt="Vertical YZ soil section showing variation of friction angle phi across depth and horizontal distance in sampled plane" 
+       width="500">
+</div>
+*Figure 6 – YZ section illustrating vertical soil layering and lateral variability.*
 
 ### Engineering Significance
 
@@ -184,7 +214,12 @@ These sections represent the **available dataset**, capturing:
 
 ## Profile Reconstruction
 
-![Profile Comparison](/img/posts/morie_soil/07_profile_comparison_phi.png)
+<div align="center">
+  <img src="/img/posts/morie_soil/07_profile_comparison_phi.png" 
+       alt="Comparison of reconstructed and ground truth soil profiles showing accuracy of interpolation-based soil property estimation" 
+       width="500">
+</div>
+*Figure 7 – Reconstructed vs ground truth soil profiles at anchor location.*
 
 ### Method
 
@@ -200,7 +235,12 @@ These sections represent the **available dataset**, capturing:
 
 ## Boundary Detection & Validation
 
-![Boundary Comparison](/img/posts/morie_soil/08_boundary_comparison.png)
+<div align="center">
+  <img src="/img/posts/morie_soil/08_boundary_comparison.png" 
+       alt="Comparison of detected and true soil layer boundaries demonstrating accuracy of boundary identification algorithm" 
+       width="500">
+</div>
+*Figure 8 – Boundary detection accuracy for reconstructed soil layers.*
 
 ### Results
 
