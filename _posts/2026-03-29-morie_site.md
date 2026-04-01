@@ -138,7 +138,9 @@ Bathymetry directly informs:
 
 ---
 
-## Seabed Characterization (Initial Mapping)
+## Seabed Characterization 
+
+### Initial Mapping
 
 <div align="center">
   <img src="/img/posts/morie_site/2dfarm_soil_2_folk7.png" 
@@ -149,7 +151,7 @@ Bathymetry directly informs:
 
 ---
 
-## EMODnet Classification Alignment
+### EMODnet Classification Alignment
 
 <div align="center">
   <img src="/img/posts/morie_site/seabed_legend.PNG" 
@@ -158,9 +160,23 @@ Bathymetry directly informs:
 </div>
 *Figure 4 – EMODnet Folk 7 classification legend.*
 
+The EMODnet seabed dataset provides sediment classification at multiple levels of resolution:
+
+- **Folk-16** → highly detailed classification including mixed sediment types  
+- **Folk-7** → intermediate engineering-relevant grouping  
+- **Folk-5** → simplified classification for large-scale screening  
+
+In this workflow, the **Folk-7 classification** is selected as a balance between:
+
+- spatial resolution  
+- engineering interpretability  
+- compatibility with anchor and cable design models  
+
+This level preserves key distinctions (e.g., sand vs mud vs coarse material) while avoiding excessive fragmentation of sediment classes.
+
 ---
 
-## Seabed Characterization (Engineering Mapping)
+### Engineering Mapping
 
 <div align="center">
   <img src="/img/posts/morie_site/2dfarm_soil_2_folk7_EMOD.png" 
@@ -169,13 +185,29 @@ Bathymetry directly informs:
 </div>
 *Figure 5 – Soil classification aligned with EMODnet standards.*
 
+The processed map shows a **predominance of sandy sediments** across the selected Celtic Sea region, with localized variations including:
+
+- finer materials (mud-dominated zones)  
+- coarser sediments and transitional layers  
+
 ### Engineering Significance
 
 Seabed classification supports:
 
-- anchor concept screening  
-- soil-structure interaction assumptions  
-- cable burial feasibility  
+- anchor concept screening (e.g., suction piles vs driven solutions)  
+- soil-structure interaction assumptions (strength, stiffness, friction)  
+- cable burial feasibility and protection requirements  
+
+From an engineering perspective, the dominance of sand suggests:
+
+- favorable conditions for **predictable installation behavior**  
+- strong dependence on **relative density and friction angle**  
+- suitability for **drag-embedded or driven anchor concepts**, depending on depth and variability  
+
+At the same time, localized heterogeneity highlights the need for:
+
+- site-specific soil reconstruction (addressed in **morie_soil**)  
+- robust design envelopes for mixed conditions    
 
 ---
 
