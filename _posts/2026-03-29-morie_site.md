@@ -99,9 +99,10 @@ The workflow is fully automated and repeatable across multiple lease areas.
 
 ## Regional Lease Context
 
-![Celtic Sea Lease Areas](/img/posts/morie_site/celtic_sea_lease_areas.png)
-
-*Regional lease areas used as the screening context for floating offshore wind development.*
+<div align="center">
+  <img src="/img/posts/morie_site/celtic_sea_lease_areas.png" alt="Shared Anchor Plan View" width="500">
+</div>
+*Figure 1 – Regional lease areas used as the screening context for floating offshore wind development.*
 
 ### Engineering Significance
 
@@ -115,9 +116,10 @@ Offshore design begins at regional scale, where:
 
 ## Bathymetry Characterization
 
-![Bathymetry Map](/img/posts/morie_site/2farm_bathy_2_folk7.png)
-
-*Lease-scale bathymetry showing water depth distribution.*
+<div align="center">
+  <img src="/img/posts/morie_site/2farm_bathy_2_folk7.png" alt="Shared Anchor Plan View" width="500">
+</div>
+*Figure 2 – Regional lease areas used as the screening context for floating offshore wind development.*
 
 ### Engineering Significance
 
@@ -132,25 +134,28 @@ Bathymetry directly informs:
 
 ## Seabed Characterization (Initial Mapping)
 
-![Soil Map Generic](/img/posts/morie_site/2dfarm_soil_2_folk7.png)
-
-*Initial soil classification used for validation of processing steps.*
+<div align="center">
+  <img src="/img/posts/morie_site/2dfarm_soil_2_folk7.png" alt="Shared Anchor Plan View" width="500">
+</div>
+*Figure 3 – Initial soil classification used for validation of processing steps.*
 
 ---
 
 ## EMODnet Classification Alignment
 
-![Seabed Legend](/img/posts/morie_site/seabed_legend.PNG)
-
-*EMODnet Folk 7 classification legend.*
+<div align="center">
+  <img src="/img/posts/morie_site/seabed_legend.PNG" alt="Shared Anchor Plan View" width="500">
+</div>
+*Figure 4 – EMODnet Folk 7 classification legend.*
 
 ---
 
 ## Seabed Characterization (Engineering Mapping)
 
-![Soil Map EMOD](/img/posts/morie_site/2dfarm_soil_2_folk7_EMOD.png)
-
-*Soil classification aligned with EMODnet standards.*
+<div align="center">
+  <img src="/img/posts/morie_site/2dfarm_soil_2_folk7_EMOD.png" alt="Shared Anchor Plan View" width="500">
+</div>
+*Figure 5 – Soil classification aligned with EMODnet standards.*
 
 ### Engineering Significance
 
@@ -164,17 +169,19 @@ Seabed classification supports:
 
 ## Regional Context Verification
 
-![Regional Soil Map](/img/posts/morie_site/celtic_sea_map_EMOD.jpg)
-
-*Regional seabed conditions across the Celtic Sea.*
+<div align="center">
+  <img src="/img/posts/morie_site/celtic_sea_map_EMOD.jpg" alt="Shared Anchor Plan View" width="500">
+</div>
+*Figure 6 – Regional seabed conditions across the Celtic Sea.*
 
 ---
 
 ## Local-to-Regional Validation
 
-![Embedded Verification](/img/posts/morie_site/celtic_sea_map_EMODnet.jpg.png)
-
-*Verification of lease-scale results within regional context.*
+<div align="center">
+  <img src="/img/posts/morie_site/celtic_sea_map_EMODnet.jpg" alt="Shared Anchor Plan View" width="500">
+</div>
+*Figure 7 – Verification of lease-scale results within regional context.*
 
 ### Engineering Significance
 
