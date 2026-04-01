@@ -43,25 +43,25 @@ Following site characterization, the next critical step in offshore wind design 
 
 At this stage, engineers must balance:
 
-- lease boundaries and setback buffers  
-- water depth constraints  
-- seabed conditions  
-- mooring footprint interactions  
-- anchor-sharing potential  
+- Lease boundaries and setback buffers  
+- Water depth constraints  
+- Seabed conditions  
+- Mooring footprint interactions  
+- Anchor-sharing potential  
 
 Traditional approaches rely on manual placement or coarse grids.
 
 This workflow introduces a **lattice-first methodology**, where layout is derived from:
 
-- physical feasibility  
-- spatial structure  
-- connectivity metrics  
+- Physical feasibility  
+- Spatial structure  
+- Connectivity metrics  
 
 ---
 
 ## Inputs and Data Sources
 
-This study builds directly on **morie_site outputs**:
+This study builds directly on **morie_site outputs** for each lease area:
 
 - Bathymetry grids (`bathy_*.txt`)  
 - Soil classification grids (`soil_*.txt`)  
@@ -131,9 +131,9 @@ The architecture ensures **direct continuity with downstream physics-based model
 
 These datasets define:
 
-- feasible depth ranges  
-- soil conditions compatible with anchor systems  
-- spatial constraints for layout generation  
+- Feasible depth ranges  
+- Soil conditions compatible with anchor systems  
+- Spatial constraints for layout generation  
 
 ---
 
@@ -148,16 +148,16 @@ These datasets define:
 
 ### Criteria
 
-- Depth: **85–95 m**  
+- Depth: **from 88 m to 94 m**  
 - Soil: Engineering-suitable sediments (Folk groups 1xx–2xx)  
 
 ### Engineering Significance
 
 Defines the **valid design domain** where:
 
-- installation is feasible  
-- anchor systems are viable  
-- mooring configurations are realistic  
+- Installation is feasible  
+- Anchor systems are viable  
+- Mooring configurations are realistic  
 
 ---
 
@@ -180,9 +180,9 @@ Defines the **valid design domain** where:
 
 The hex grid ensures:
 
-- uniform spacing  
-- deterministic placement  
-- compatibility with shared-anchor layouts  
+- Uniform spacing  
+- Deterministic placement  
+- Compatibility with shared-anchor layouts  
 
 ---
 
@@ -232,9 +232,9 @@ Connectivity acts as a **proxy for shared-anchor efficiency**, enabling layout o
 
 This step defines:
 
-- load aggregation structure  
-- anchor-sharing potential  
-- inputs for anchor sizing  
+- Load aggregation structure  
+- Anchor-sharing potential  
+- Inputs for anchor sizing  
 
 ---
 
@@ -248,9 +248,9 @@ This step defines:
 
 These outputs are directly usable in:
 
-- mooring analysis  
-- anchor design  
-- cable routing  
+- Mooring analysis  
+- Anchor design  
+- Cable routing  
 
 ---
 
@@ -309,11 +309,11 @@ This is where **layout becomes a strategic design variable**, not just a geometr
 
 This study reflects Morie Analytics principles:
 
-- deterministic design logic  
-- topology-driven optimization  
-- modular workflows  
-- integration with physics-based models  
-- scalability to farm-level design  
+- Deterministic design logic  
+- Topology-driven optimization  
+- Modular workflows  
+- Integration with physics-based models  
+- Scalability to farm-level design  
 
 ---
 

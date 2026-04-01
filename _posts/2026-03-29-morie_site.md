@@ -129,7 +129,7 @@ Offshore design begins at regional scale, where:
 
 The bathymetric dataset reveals water depths across the selected Celtic Sea lease areas typically ranging between:
 
-- **~80 m to 95 m** approx.  
+- **~85 m to 100 m** approx.  
 - Gentle slopes with gradual depth transitions  
 
 This results in a **bathymetrically smooth environment**, well-suited for floating offshore wind deployment.
