@@ -15,7 +15,7 @@ Using bathymetry and seabed classification from **morie_site**, the workflow ide
 
 The result is a **deterministic and reproducible layout generation framework** that directly integrates with mooring and anchor models, replacing heuristic placement strategies with structured engineering logic.
 
-<span> Site intelligence → **Layout generation** → Soil reconstruction → Mooring physics → Anchor verification → Cable optimization
+Site intelligence → **Layout generation** → Soil reconstruction → Mooring physics → Anchor verification → Cable optimization
 ---
 
 ## Project Scope
