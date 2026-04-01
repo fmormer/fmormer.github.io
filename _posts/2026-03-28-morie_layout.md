@@ -155,9 +155,10 @@ These datasets define:
 
 Defines the **valid design domain** where:
 
-- Installation is feasible  
+- Standardization of the assets
+- Mooring configurations are coherent across the site 
 - Anchor systems are viable  
-- Mooring configurations are realistic  
+- Installation equipment and techniques are feasible  
 
 ---
 

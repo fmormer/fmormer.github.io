@@ -625,3 +625,46 @@ select {
 .menu-links .item:first-child .item-link {
   opacity: 0.85;
 }
+
+/* =========================================
+   Post Navigation (Previous / Next)
+   Morie-style buttons (centered + tag-like)
+   ========================================= */
+
+.pagination {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 18px !important;
+  margin: 50px auto 30px auto !important;
+  text-align: center !important;
+}
+
+/* target the actual links */
+.pagination a {
+  display: inline-block !important;
+  padding: 12px 26px !important;
+  border-radius: 999px !important;
+  font-size: 17px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+
+  /* SAME STYLE AS TAGS */
+  background-color: #eff6ff !important;
+  color: #0057ff !important;
+  border: 1px solid #bfdbfe !important;
+
+  transition: all 0.2s ease !important;
+}
+
+/* hover */
+.pagination a:hover {
+  background-color: #dbeafe !important;
+  color: #003ec4 !important;
+  transform: translateY(-1px) !important;
+}
+
+/* spacing between prev / next */
+.pagination a + a {
+  margin-left: 10px !important;
+}
