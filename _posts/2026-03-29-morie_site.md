@@ -179,7 +179,7 @@ Seabed classification supports:
 ## Local-to-Regional Validation
 
 <div align="center">
-  <img src="/img/posts/morie_site/celtic_sea_map_EMODnet.jpg" alt="Shared Anchor Plan View" width="500">
+  <img src="/img/posts/morie_site/celtic_sea_map_EMODnet.png" alt="Shared Anchor Plan View" width="500">
 </div>
 *Figure 7 – Verification of lease-scale results within regional context.*
 
