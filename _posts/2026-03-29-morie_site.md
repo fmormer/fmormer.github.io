@@ -1,197 +1,180 @@
 ---
 layout: post
-title: Lease Area Site Characterization - Celtic Sea
+title: Lease Area Site Characterization – Celtic Sea
 image: "/posts/morie_site/celtic_sea_lease_areas.png"
-tags: [Offshore Wind, Site Characterization, GEBCO, EMODnet, GIS, Python]
+tags: [Offshore Floating Wind, Site Characterization, GEBCO, EMODnet, GIS, Python]
 ---
 
-# Celtic Sea Floating Offshore Wind – Site Characterization & Spatial Intelligence
+# Celtic Sea Floating Offshore Wind – Site Intelligence & Spatial Characterization
 
-This project develops a structured Python workflow to transform publicly available marine geospatial datasets into **engineering-ready inputs** for floating offshore wind development in the Celtic Sea.
+## Executive Summary
 
-Using lease boundary data, **GEBCO 2025 bathymetry**, and **EMODnet seabed classification**, the workflow converts raw regional datasets into standardized spatial products suitable for:
+This study establishes the **site intelligence layer** of Morie Analytics by transforming publicly available marine geospatial datasets into **engineering-ready inputs** for floating offshore wind development.
 
-- lease-scale screening  
-- floater layout definition  
-- mooring system planning  
-- anchor concept selection  
-- cable routing strategy  
-- early geotechnical interpretation  
+Using Celtic Sea lease areas, **GEBCO 2025 bathymetry**, and **EMODnet seabed classification**, the workflow converts raw regional data into structured spatial products that support early-stage engineering decisions.
 
-The objective is to formalize public marine data ingestion into a reproducible computational pipeline that connects **regional site intelligence** with downstream offshore engineering workflows.
+The result is a **reproducible Python-based pipeline** that replaces fragmented GIS workflows with a scalable and transparent offshore data-processing framework.
 
 ---
 
 ## Project Scope
 
-- **5 Celtic Sea lease areas** screened at regional level  
-- Public bathymetry processed from **GEBCO 2025**  
-- Public seabed classification processed from **EMODnet Folk 7**  
-- Lease-scale bathymetry and soil maps generated in projected coordinates  
-- Validation of local lease plots against regional seabed mapping  
+- Screening of **5 Celtic Sea lease areas**  
+- Processing of **GEBCO 2025 bathymetry**  
+- Integration of **EMODnet Folk 7 seabed classification**  
+- Generation of lease-scale bathymetry and soil maps  
+- Validation of local results against regional datasets  
 
-This workflow transforms raw public datasets into **decision-ready offshore site intelligence**.
-
-<pre>
-Public Marine Data → Spatial Processing → Site Constraints → Engineering Inputs
-                                      ↓
-               Layout → Mooring → Anchor → Cable → Installation
-</pre>
+This study focuses on **regional-to-lease scale characterization**, forming the foundation for downstream engineering modules.
 
 ---
 
-## 1. Regional Lease Context
+## Engineering Context
 
-The first step is to position the project within the broader Celtic Sea development area.
+Early-stage floating offshore wind design requires rapid and consistent evaluation of:
 
-At regional scale, multiple lease areas are identified and screened as candidate zones for floating offshore wind deployment.
-
-<div align="center">
-  <img src="/img/posts/morie_site/celtic_sea_lease_areas.png" width="700">
-</div>
-*Figure 1 – Celtic Sea lease areas of interest used as the regional screening context for the workflow.*
-
-### Engineering Significance
-
-Regional framing is important because offshore design does not start from a single polygon in isolation. It starts from a broader marine system where:
-
-- lease areas compete for feasible seabed conditions  
-- bathymetry varies across the region  
-- sediment environments shift spatially  
-- design assumptions must remain consistent from regional screening to local engineering  
-
----
-
-## 2. Lease Area Definition
-
-Following regional screening, the selected lease area is converted into a computational polygon for local analysis.
-
-### Methodology
-
-- import boundary coordinates  
-- transform from geographic to projected metric coordinates  
-- generate a closed lease polygon  
-- validate spatial consistency  
-
-### Outputs
-
-- projected lease boundary  
-- analysis-ready coordinate system  
-- masking domain  
-
-### Engineering Significance
-
-Defines the **valid engineering domain** for:
-
-- floater placement  
-- mooring footprint  
-- anchor positioning  
-- cable routing  
-
----
-
-## 3. Bathymetry Integration – GEBCO 2025
-
-<div align="center">
-  <img src="/img/posts/morie_site/2farm_bathy_2_folk7.png" width="500">
-</div>
-*Figure 2 – Lease-scale bathymetry map.*
-
-### Processing Steps
-
-- load GEBCO data  
-- clip to lease  
-- interpolate grid  
-- generate contours  
-
-### Outputs
-
-- depth map  
-- contour lines  
-- depth statistics  
-
-### Engineering Significance
-
-Bathymetry informs:
-
-- mooring geometry  
-- anchor radius  
-- floater feasibility  
-- cable routing  
+- water depth distribution  
+- seabed conditions  
+- anchor feasibility constraints  
+- mooring footprint implications  
 - installation constraints  
 
----
+These assessments are often performed manually in GIS environments, leading to inconsistencies across projects.
 
-## 4. Seabed Characterization – Initial Soil Mapping
-
-<div align="center">
-  <img src="/img/posts/morie_site/2dfarm_soil_2_folk7.png" width="500">
-</div>
-*Figure 3 – Initial soil map (generic colors).*
-
-### Purpose
-
-Verification of:
-
-- clipping  
-- alignment  
-- classification mapping  
+This workflow introduces a **structured computational alternative**, where public datasets are transformed into standardized engineering inputs.
 
 ---
 
-## 5. EMODnet Folk 7 Legend Alignment
+## Inputs and Data Sources
 
-<div align="center">
-  <img src="/img/posts/morie_site/seabed_legend.PNG" width="380">
-</div>
-*Figure 4 – EMODnet Folk 7 legend.*
+The workflow integrates:
+
+- Celtic Sea lease area boundaries  
+- **GEBCO 2025** global bathymetry grid  
+- **EMODnet Folk 7** seabed classification  
+
+All datasets are:
+
+- harmonized into a projected coordinate system  
+- spatially aligned  
+- processed into engineering-ready formats  
+
+---
+
+## Technical Architecture
+
+The workflow is implemented in Python using:
+
+- `geopandas` → spatial data processing  
+- `xarray` → bathymetry handling  
+- `numpy` → numerical operations  
+- `matplotlib` → visualization  
+
+Core modules:
+
+- lease boundary extraction  
+- CRS transformation  
+- bathymetry masking  
+- seabed intersection  
+
+This modular structure ensures **reproducibility, clarity, and scalability**.
+
+---
+
+## Processing Workflow
+
+For each lease area:
+
+1. Import lease boundary  
+2. Transform coordinates to projected system  
+3. Load GEBCO bathymetry  
+4. Mask bathymetry within lease polygon  
+5. Load EMODnet seabed data  
+6. Intersect seabed classification with lease  
+7. Generate plots and structured outputs  
+
+The workflow is fully automated and repeatable across multiple lease areas.
+
+---
+
+## Regional Lease Context
+
+![Celtic Sea Lease Areas](/img/posts/morie_site/celtic_sea_lease_areas.png)
+
+*Regional lease areas used as the screening context for floating offshore wind development.*
 
 ### Engineering Significance
 
-Ensures:
+Offshore design begins at regional scale, where:
 
-- consistency with source datasets  
-- correct interpretation  
-- cross-project comparability  
+- lease areas compete for feasible conditions  
+- bathymetry and soils vary spatially  
+- design assumptions must remain consistent  
 
 ---
 
-## 6. Seabed Characterization – EMODnet Color Mapping
+## Bathymetry Characterization
 
-<div align="center">
-  <img src="/img/posts/morie_site/2dfarm_soil_2_folk7_EMOD.png" width="500">
-</div>
-*Figure 5 – Soil map using EMODnet colors.*
+![Bathymetry Map](/img/posts/morie_site/2farm_bathy_2_folk7.png)
+
+*Lease-scale bathymetry showing water depth distribution.*
 
 ### Engineering Significance
 
-Supports:
+Bathymetry directly informs:
 
-- anchor screening  
-- seabed interaction understanding  
+- mooring line geometry  
+- anchor radius and footprint  
+- floater feasibility  
+- cable routing constraints  
+
+---
+
+## Seabed Characterization (Initial Mapping)
+
+![Soil Map Generic](/img/posts/morie_site/2dfarm_soil_2_folk7.png)
+
+*Initial soil classification used for validation of processing steps.*
+
+---
+
+## EMODnet Classification Alignment
+
+![Seabed Legend](/img/posts/morie_site/seabed_legend.PNG)
+
+*EMODnet Folk 7 classification legend.*
+
+---
+
+## Seabed Characterization (Engineering Mapping)
+
+![Soil Map EMOD](/img/posts/morie_site/2dfarm_soil_2_folk7_EMOD.png)
+
+*Soil classification aligned with EMODnet standards.*
+
+### Engineering Significance
+
+Seabed classification supports:
+
+- anchor concept screening  
+- soil-structure interaction assumptions  
 - cable burial feasibility  
 
 ---
 
-## 7. Regional Soil Context
+## Regional Context Verification
 
-<div align="center">
-  <img src="/img/posts/morie_site/celtic_sea_map_EMOD.jpg" width="700">
-</div>
-*Figure 6 – Regional seabed map.*
+![Regional Soil Map](/img/posts/morie_site/celtic_sea_map_EMOD.jpg)
 
-### Engineering Significance
-
-Provides large-scale sediment context.
+*Regional seabed conditions across the Celtic Sea.*
 
 ---
 
-## 8. Embedded Verification
+## Local-to-Regional Validation
 
-<div align="center">
-  <img src="/img/posts/morie_site/celtic_sea_map_EMODnet.jpg.png" width="700">
-</div>
-*Figure 7 – Local vs regional verification.*
+![Embedded Verification](/img/posts/morie_site/celtic_sea_map_EMODnet.jpg.png)
+
+*Verification of lease-scale results within regional context.*
 
 ### Engineering Significance
 
@@ -199,22 +182,99 @@ Ensures:
 
 - spatial accuracy  
 - classification consistency  
-- dataset traceability  
+- traceability to source datasets  
 
 ---
 
-## 9. Integrated Python Workflow
+## Outputs Generated
 
-```python
-import xarray as xr
-import geopandas as gpd
-import numpy as np
-import matplotlib.pyplot as plt
+For each lease area:
 
-lease_gdf = gpd.read_file('lease_area.geojson')
-gebco = xr.open_dataset('gebco_2025.nc')
-soil_gdf = gpd.read_file('emodnet_folk7.shp')
+- bathymetry grids (`.txt`)  
+- soil classification grids (`.txt`)  
+- spatial plots (`.png`)  
+- structured CSV summaries  
 
-lease_proj = lease_gdf.to_crs(target_crs)
-soil_proj = soil_gdf.to_crs(target_crs)
-```
+These outputs are directly usable in downstream engineering workflows.
+
+---
+
+## Engineering Applications
+
+The outputs support:
+
+- anchor concept screening  
+- mooring system feasibility  
+- cable routing strategy  
+- installation planning  
+- lease-to-lease comparison  
+
+This transforms raw geospatial data into **engineering decision inputs**.
+
+---
+
+## Relationship to Other Morie Study Cases
+
+This study is the **entry point of the Morie Analytics workflow**.
+
+### Feeds into:
+
+- **morie_layout** → spatial layout optimization  
+- **morie_soil** → localized soil modeling  
+- **morie_mooring** → depth-informed system geometry  
+- **morie_anchor** → preliminary anchor feasibility  
+- **morie_cable** → seabed-aware routing constraints  
+
+It provides the **baseline environmental context** for all downstream modules.
+
+---
+
+## Why It Matters Commercially
+
+- Reduces reliance on manual GIS workflows  
+- Enables rapid multi-site screening  
+- Improves consistency across projects  
+- Accelerates early-stage decision making  
+- Provides scalable data infrastructure for developers  
+
+This is where **data becomes engineering leverage**.
+
+---
+
+## Aspects to Improve
+
+- Incorporation of higher-resolution bathymetry datasets  
+- Integration of geotechnical CPT data  
+- Inclusion of metocean conditions  
+- Automated constraint mapping (exclusion zones, cables, shipping)  
+
+These extensions would move the workflow closer to **FEED-level site characterization**.
+
+---
+
+## Design Philosophy
+
+This study reflects the Morie Analytics approach:
+
+- modular  
+- reproducible  
+- data-driven  
+- engineering-focused  
+- scalable to full wind farm design  
+
+---
+
+## How to Run
+
+1. Place datasets in `celtic_sea_share/`  
+2. Install dependencies:
+
+   - geopandas  
+   - xarray  
+   - numpy  
+   - matplotlib  
+
+3. Execute:
+
+```bash
+python lease_area_definition.py
