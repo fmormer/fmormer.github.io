@@ -247,7 +247,7 @@ select:focus {
 }
 
 .header-box ul li a {
-  font-size: 0.95rem;
+  font-size: 1.35rem;
   font-weight: 500;
   color: var(--morie-accent) !important;
   text-decoration: none !important;
@@ -275,11 +275,17 @@ select:focus {
   max-width: none !important;
 }
 
+.header-title {
+  margin: 0 !important;
+  display: flex;
+  align-items: center;
+}
+
 .header-avatar {
   display: block !important;
-  width: 52px !important;
-  max-width: 52px !important;
-  flex: 0 0 52px !important;
+  width: 58px !important;
+  max-width: 58px !important;
+  flex: 0 0 58px !important;
 }
 
 .header-avatar-img {
