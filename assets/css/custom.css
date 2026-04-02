@@ -40,7 +40,7 @@
 
   --morie-width-reading: 820px;
   --morie-width-content: 1100px;
-  --morie-width-wide: 1240px;
+  --morie-width-wide: 1440px;
 }
 
 /* =========================================
@@ -537,7 +537,7 @@ select:focus {
   column-gap: 20px !important;
   row-gap: 20px !important;
 
-  max-width: 1680px !important;   /* 👈 wider */
+  max-width: var(--morie-width-wide);
   margin-left: auto !important;
   margin-right: auto !important;
 
