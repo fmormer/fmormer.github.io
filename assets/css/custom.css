@@ -704,3 +704,12 @@ select {
     gap: 12px;
   }
 }
+
+/* =========================================
+   Grid width refinement
+   ========================================= */
+
+.container > .row > .col.col-12.col-t-12 {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
