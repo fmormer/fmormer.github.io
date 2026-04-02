@@ -199,7 +199,7 @@ select:focus {
   border-top: 1px solid var(--morie-border) !important;
 }
 
-/* Logo sizing */
+/* Header shell */
 .header-box {
   max-width: var(--morie-width-wide);
   margin-left: auto;
@@ -210,8 +210,26 @@ select:focus {
   padding-bottom: 18px;
 }
 
+/* Brand row helpers from current theme */
+.header-box .col-3.wd-mob {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px;
+  flex: 0 0 auto !important;
+  max-width: none !important;
+}
+
+.header-box .col-9 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Brand title */
 .header-title {
-  margin-bottom: 6px !important;
+  margin: 0 0 6px 0 !important;
+  display: flex;
+  align-items: center;
   font-family: 'Montserrat', var(--morie-font-sans) !important;
   font-weight: 800;
   font-size: 1.35rem;
@@ -219,6 +237,7 @@ select:focus {
   color: var(--morie-heading) !important;
 }
 
+/* Context text */
 .header-subtitle {
   margin-bottom: 10px !important;
   color: var(--morie-text-muted) !important;
@@ -230,102 +249,7 @@ select:focus {
   max-width: 640px;
 }
 
-.header-box ul {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0;
-  margin-top: 10px;
-  margin-bottom: 0;
-  justify-content: flex-end;
-}
-
-.header-box ul li {
-  margin: 0;
-  padding: 0;
-}
-
-.header-box ul li a {
-  font-size: 1.35rem;
-  font-weight: 500;
-  color: var(--morie-accent) !important;
-  text-decoration: none !important;
-}
-
-.header-box ul li a:hover {
-  text-decoration: underline !important;
-}
-
-.header-box .col-9 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.header-box .col-9 ul {
-  align-self: flex-end;
-}
-
-.header-box .col-3.wd-mob {
-  display: flex !important;
-  align-items: center !important;
-  gap: 12px;
-  flex: 0 0 auto !important;
-  max-width: none !important;
-}
-
-.header-title {
-  margin: 0 !important;
-  display: flex;
-  align-items: center;
-}
-
-.header-avatar {
-  display: block !important;
-  width: 58px !important;
-  max-width: 58px !important;
-  flex: 0 0 58px !important;
-}
-
-.header-avatar-img {
-  width: 52px !important;
-  max-width: 52px !important;
-  height: auto !important;
-  display: block !important;
-  object-fit: contain !important;
-}
-
-/* Header width + structure */
-.header-box {
-  max-width: var(--morie-width-wide);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
-.header-title {
-  margin-bottom: 6px !important;
-  font-family: 'Montserrat', var(--morie-font-sans) !important;
-  font-weight: 700;
-  font-size: 1.35rem;
-  letter-spacing: -0.02em;
-  color: var(--morie-heading) !important;
-}
-
-.header-subtitle {
-  margin-bottom: 12px !important;
-  color: var(--morie-text-muted) !important;
-  font-weight: 500;
-}
-
-.header-tagline {
-  margin-bottom: 18px !important;
-  max-width: 720px;
-}
-
-/* Keep current theme markup, but restyle the list like inline utility links */
+/* Utility links */
 .header-box ul {
   display: flex;
   gap: 18px;
@@ -342,13 +266,35 @@ select:focus {
 }
 
 .header-box ul li a {
-  font-size: 0.95rem;
+  font-size: 1.25rem;
   font-weight: 500;
+  color: var(--morie-accent) !important;
   text-decoration: none !important;
 }
 
 .header-box ul li a:hover {
   text-decoration: underline !important;
+}
+
+/* Keep links where they are for now */
+.header-box .col-9 ul {
+  align-self: flex-start;
+}
+
+/* Logo sizing */
+.header-avatar {
+  display: block !important;
+  width: 58px !important;
+  max-width: 58px !important;
+  flex: 0 0 58px !important;
+}
+
+.header-avatar-img {
+  width: 52px !important;
+  max-width: 52px !important;
+  height: auto !important;
+  display: block !important;
+  object-fit: contain !important;
 }
 
 /* =========================================
