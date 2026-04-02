@@ -533,13 +533,20 @@ select:focus {
 .container > .row > .col.col-12.col-t-12 > .row {
   display: grid !important;
   grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  column-gap: 16px !important;
-  row-gap: 16px !important;
-  align-items: stretch !important;
-  max-width: var(--morie-width-wide) !important;
+
+  column-gap: 20px !important;
+  row-gap: 20px !important;
+
+  max-width: 1680px !important;   /* 👈 wider */
   margin-left: auto !important;
   margin-right: auto !important;
+
   margin-top: 12px !important;
+}
+
+.container > .row > .col.col-12.col-t-12 {
+  padding-left: 16px !important;
+  padding-right: 16px !important;
 }
 
 .container > .row > .col.col-12.col-t-12 > .row > .article.col.col-12.col-t-6 {
