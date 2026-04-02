@@ -200,7 +200,7 @@ select:focus {
 }
 
 /* Logo sizing */
-..header-box {
+.header-box {
   max-width: var(--morie-width-wide);
   margin-left: auto;
   margin-right: auto;
@@ -212,6 +212,11 @@ select:focus {
 
 .header-title {
   margin-bottom: 6px !important;
+  font-family: 'Montserrat', var(--morie-font-sans) !important;
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  color: var(--morie-heading) !important;
 }
 
 .header-subtitle {
@@ -227,12 +232,13 @@ select:focus {
 
 .header-box ul {
   display: flex;
-  gap: 18px;
+  gap: 20px;
   flex-wrap: wrap;
   list-style: none;
   padding: 0;
   margin-top: 10px;
   margin-bottom: 0;
+  justify-content: flex-end;
 }
 
 .header-box ul li {
@@ -243,6 +249,7 @@ select:focus {
 .header-box ul li a {
   font-size: 0.95rem;
   font-weight: 500;
+  color: var(--morie-accent) !important;
   text-decoration: none !important;
 }
 
@@ -250,20 +257,34 @@ select:focus {
   text-decoration: underline !important;
 }
 
+.header-box .col-9 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header-box .col-9 ul {
+  align-self: flex-end;
+}
+
 .header-box .col-3.wd-mob {
-  flex: 0 0 120px !important;
-  max-width: 120px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px;
+  flex: 0 0 auto !important;
+  max-width: none !important;
 }
 
 .header-avatar {
   display: block !important;
-  width: 120px !important;
-  max-width: 120px !important;
+  width: 52px !important;
+  max-width: 52px !important;
+  flex: 0 0 52px !important;
 }
 
 .header-avatar-img {
-  width: 120px !important;
-  max-width: 120px !important;
+  width: 52px !important;
+  max-width: 52px !important;
   height: auto !important;
   display: block !important;
   object-fit: contain !important;
@@ -279,7 +300,12 @@ select:focus {
 }
 
 .header-title {
-  margin-bottom: 8px !important;
+  margin-bottom: 6px !important;
+  font-family: 'Montserrat', var(--morie-font-sans) !important;
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  color: var(--morie-heading) !important;
 }
 
 .header-subtitle {
@@ -573,5 +599,9 @@ select {
 
   .header-box ul {
     gap: 12px;
+  }
+  
+  .header-box .col-9 ul {
+    align-self: flex-start;
   }
 }
