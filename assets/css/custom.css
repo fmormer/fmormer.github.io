@@ -375,25 +375,41 @@ select:focus {
 .section-ribbon-nav ul {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 28px;
   flex-wrap: wrap;
   list-style: none;
   margin: 0;
-  padding: 12px 0;
+  padding: 14px 0;
 }
 
 .section-ribbon-nav a {
   display: inline-block;
-  font-size: 0.96rem;
-  font-weight: 600;
+  font-size: 1.15rem;
+  font-weight: 700;
   color: var(--morie-heading) !important;
   text-decoration: none !important;
+  letter-spacing: -0.01em;
 }
 
 .section-ribbon-nav a:hover,
 .section-ribbon-nav a:focus {
   color: var(--morie-accent) !important;
   text-decoration: underline !important;
+}
+
+.section-ribbon-nav a.active {
+  color: var(--morie-accent) !important;
+  position: relative;
+}
+
+.section-ribbon-nav a.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--morie-accent);
 }
 
 /* =========================================
