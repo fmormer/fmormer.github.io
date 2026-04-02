@@ -286,12 +286,6 @@ select:focus {
   background-color: #0a1f44;
   padding-top: 10px;
   padding-bottom: 10px;
-}
-
-.hero {
-  background-color: #0a1f44;
-  padding-top: 10px;
-  padding-bottom: 10px;
   position: relative;
 }
 
