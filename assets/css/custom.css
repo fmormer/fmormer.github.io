@@ -279,7 +279,85 @@ select:focus {
 }
 
 /* =========================================
-   6. Card system
+   6. Hero
+   ========================================= */
+.hero-box {
+  max-width: var(--morie-width-wide);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 28px;
+  padding-bottom: 20px;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  gap: 32px;
+  align-items: center;
+}
+
+.hero-text {
+  min-width: 0;
+}
+
+.hero-title {
+  margin: 0 0 12px 0;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  line-height: 1.1;
+  color: var(--morie-heading) !important;
+  font-family: var(--morie-font-sans);
+  letter-spacing: -0.02em;
+}
+
+.hero-tagline {
+  max-width: 640px;
+  margin-bottom: 18px !important;
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.hero-links ul {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-links ul li {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.hero-links ul li a {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--morie-accent) !important;
+  text-decoration: none !important;
+}
+
+.hero-links ul li a:hover {
+  text-decoration: underline !important;
+}
+
+.hero-media {
+  min-width: 0;
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--morie-radius-2);
+  box-shadow: var(--morie-shadow-1);
+}
+
+/* =========================================
+   7. Card system
    ========================================= */
 .article-box {
   background-color: var(--morie-bg) !important;
@@ -321,7 +399,7 @@ select:focus {
 }
 
 /* =========================================
-   7. Tags
+   8. Tags
    ========================================= */
 .tag,
 .post-tag a,
@@ -345,7 +423,7 @@ select:focus {
 }
 
 /* =========================================
-   8. Homepage grid
+   9. Homepage grid
    ========================================= */
 .container > .row > .col.col-12.col-t-12 > .row {
   display: grid !important;
@@ -383,7 +461,7 @@ select:focus {
 }
 
 /* =========================================
-   9. Post page readability
+   10. Post page readability
    ========================================= */
 .post-content {
   width: 100% !important;
@@ -417,7 +495,7 @@ select:focus {
 }
 
 /* =========================================
-   10. Tables, code, forms
+   11. Tables, code, forms
    ========================================= */
 hr {
   border: none !important;
@@ -457,7 +535,7 @@ select {
 }
 
 /* =========================================
-   11. Responsive
+   12. Responsive
    ========================================= */
 @media (max-width: 1024px) {
   .container > .row > .col.col-12.col-t-12 > .row {
@@ -480,6 +558,11 @@ select {
 
   .post-body {
     max-width: 720px !important;
+  }
+  
+  .hero-content {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
+    gap: 24px;
   }
 }
 
