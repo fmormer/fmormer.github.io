@@ -357,6 +357,46 @@ select:focus {
 }
 
 /* =========================================
+   6b. Section ribbon
+   ========================================= */
+.section-ribbon {
+  background-color: var(--morie-surface);
+  border-bottom: 1px solid var(--morie-border);
+}
+
+.section-ribbon-box {
+  max-width: var(--morie-width-wide);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.section-ribbon-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 12px 0;
+}
+
+.section-ribbon-nav a {
+  display: inline-block;
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: var(--morie-heading) !important;
+  text-decoration: none !important;
+}
+
+.section-ribbon-nav a:hover,
+.section-ribbon-nav a:focus {
+  color: var(--morie-accent) !important;
+  text-decoration: underline !important;
+}
+
+/* =========================================
    7. Card system
    ========================================= */
 .article-box {

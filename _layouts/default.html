@@ -4,6 +4,31 @@
   <body>
 
     {% include site-header.html %}
+	
+	<body>
+
+	{% include site-header.html %}
+
+	<section class="section-ribbon" aria-label="Primary site sections">
+	 <div class="container">
+	   <div class="row">
+		 <div class="col col-12">
+		   <div class="section-ribbon-box">
+			 <nav class="section-ribbon-nav">
+			   <ul class="list-reset">
+				 <li><a href="{{ '/' | relative_url }}">Home</a></li>
+				 <li><a href="{{ '/portfolio/' | relative_url }}">Portfolio</a></li>
+				 <li><a href="{{ '/capabilities/' | relative_url }}">Capabilities</a></li>
+				 <li><a href="{{ '/methods/' | relative_url }}">Methods</a></li>
+				 <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+				 <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+			   </ul>
+			 </nav>
+		   </div>
+		 </div>
+	   </div>
+	 </div>
+	</section>
 
     <section class="hero">
       <div class="container">
