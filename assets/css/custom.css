@@ -288,6 +288,28 @@ select:focus {
   padding-bottom: 10px;
 }
 
+.hero {
+  background-color: #0a1f44;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(147, 197, 253, 0.45),
+    rgba(255, 255, 255, 0)
+  );
+}
+
 .hero-box {
   max-width: var(--morie-width-wide);
   margin-left: auto;
