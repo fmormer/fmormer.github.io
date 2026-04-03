@@ -2,7 +2,7 @@ backend:
   name: github
   repo: fmormer/fmormer.github.io
   branch: master
-  auth_type: implicit
+  auth_type: pkce
   app_id: Ov23li3eTgDNTeiWzaMF
   use_graphql: true
   squash_merges: true
