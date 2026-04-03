@@ -3,7 +3,7 @@ backend:
   repo: fmormer/fmormer.github.io
   branch: master
   auth_type: implicit
-  app_id: TODO_GITHUB_OAUTH_APP_CLIENT_ID
+  app_id: Ov23li3eTgDNTeiWzaMF
   use_graphql: true
   squash_merges: true
 
