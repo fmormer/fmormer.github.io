@@ -5,18 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex" />
   <title>Content Manager</title>
-  <script>window.CMS_MANUAL_INIT = true;</script>
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-  <script>
-    var isLocal = ['localhost', '127.0.0.1'].includes(window.location.hostname);
-    CMS.init({
-      config: {
-        load_config_file: true,
-        local_backend: isLocal
-      }
-    });
-  </script>
 </body>
 </html>
