@@ -1,0 +1,10 @@
+{
+  "name": "morie-analytics",
+  "private": true,
+  "scripts": {
+    "cms": "decap-server"
+  },
+  "devDependencies": {
+    "decap-server": "^3.0.0"
+  }
+}

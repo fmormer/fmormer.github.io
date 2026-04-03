@@ -8,14 +8,14 @@
               <a href="{{ '/' | relative_url }}" class="header-avatar">
                 <img src="{{ '/img/morie_analytics_logo.png' | relative_url }}" class="header-avatar-img" alt="Morie Analytics">
               </a>
-              <div class="header-title">MORIE ANALYTICS</div>
+              <a href="{{ '/' | relative_url }}" class="header-title">MORIE ANALYTICS</a>
             </div>
 
             <div class="header-utility-links">
               <ul class="list-reset">
-                <li class="item"><a href="YOUR_GITHUB_URL">Github</a></li>
-                <li class="item"><a href="YOUR_LINKEDIN_URL">LinkedIn</a></li>
-                <li class="item"><a href="YOUR_RESUME_URL">Resume</a></li>
+                <li class="item"><a href="{{ site.github }}">Github</a></li>
+                <li class="item"><a href="{{ site.linkedln }}">LinkedIn</a></li>
+                <li class="item"><a href="{{ site.resume_url | relative_url }}">Resume</a></li>
               </ul>
             </div>
           </div>
