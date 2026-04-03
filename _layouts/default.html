@@ -4,67 +4,98 @@
   <body>
 
     {% include site-header.html %}
-	
-	<section class="section-ribbon" aria-label="Primary site sections">
-	 <div class="container">
-	   <div class="row">
-		 <div class="col col-12">
-		   <div class="section-ribbon-box">
-			 <nav class="section-ribbon-nav">
-			   <ul class="list-reset">
-				 <li><a href="{{ '/' | relative_url }}" class="active">Home</a></li>
-				 <li><a href="{{ '/portfolio/' | relative_url }}">Portfolio</a></li>
-				 <li><a href="{{ '/capabilities/' | relative_url }}">Capabilities</a></li>
-				 <li><a href="{{ '/methods/' | relative_url }}">Methods</a></li>
-				 <li><a href="{{ '/about/' | relative_url }}">About</a></li>
-				 <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
-			   </ul>
-			 </nav>
-		   </div>
-		 </div>
-	   </div>
-	 </div>
-	</section>
 
-	<section class="hero">
-	  <div class="hero-background">
-		<img src="{{ '/img/hero_img.png' | relative_url }}" alt="Floating offshore wind turbines">
-	  </div>
+    <section class="section-ribbon" aria-label="Primary site sections">
+      <div class="container">
+        <div class="row">
+          <div class="col col-12">
+            <div class="section-ribbon-box">
+              <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="ion ion-md-menu"></i>
+              </button>
+              <nav class="section-ribbon-nav" id="main-nav">
+                <ul class="list-reset">
+                  <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active"{% endif %}>Home</a></li>
+                  <li><a href="{{ '/portfolio/' | relative_url }}"{% if page.url contains 'portfolio' %} class="active"{% endif %}>Portfolio</a></li>
+                  <li><a href="{{ '/capabilities/' | relative_url }}"{% if page.url contains 'capabilities' %} class="active"{% endif %}>Capabilities</a></li>
+                  <li><a href="{{ '/methods/' | relative_url }}"{% if page.url contains 'methods' %} class="active"{% endif %}>Methods</a></li>
+                  <li><a href="{{ '/about/' | relative_url }}"{% if page.url contains 'about' %} class="active"{% endif %}>About</a></li>
+                  <li><a href="{{ '/contact/' | relative_url }}"{% if page.url contains 'contact' %} class="active"{% endif %}>Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-	  <div class="hero-overlay"></div>
+    <section class="hero">
+      <div class="hero-background">
+        <img src="{{ '/img/hero_img.png' | relative_url }}" alt="Floating offshore wind turbines">
+      </div>
 
-	  <div class="hero-inner">
-		<div class="hero-callout">
+      <div class="hero-overlay"></div>
 
-		  <h1 class="hero-title">
-			Offshore Wind <span>Portfolio</span>
-		  </h1>
+      <div class="hero-inner">
+        <div class="hero-callout">
 
-		  <p class="hero-subtitle">
-			Engineering intelligence for floating offshore wind systems
-		  </p>
+          <h1 class="hero-title">
+            Offshore Wind <span>Portfolio</span>
+          </h1>
 
-		  <p class="hero-tagline">
-			Integrated workflows combining physics-based engineering, data science, and system-level design to solve real-world offshore wind challenges.
-		  </p>
+          <p class="hero-subtitle">
+            Engineering intelligence for floating offshore wind systems
+          </p>
 
-		  <a href="{{ '/portfolio/' | relative_url }}" class="hero-button">
-			Explore Portfolio
-		  </a>
+          <p class="hero-tagline">
+            Integrated workflows combining physics-based engineering, data science, and system-level design to solve real-world offshore wind challenges.
+          </p>
 
-		</div>
-	  </div>
-	</section>
+          <a href="{{ '/portfolio/' | relative_url }}" class="hero-button">
+            Explore Portfolio
+          </a>
+
+        </div>
+      </div>
+    </section>
 
     <main>
       {{ content }}
     </main>
 
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">{{ site.title }}</div>
+          <p class="footer-tagline">{{ site.location }}</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="{{ site.github }}">GitHub</a></li>
+          <li><a href="{{ site.linkedln }}">LinkedIn</a></li>
+          <li><a href="{{ site.resume_url | relative_url }}">Resume</a></li>
+          <li><a href="/admin/">CMS</a></li>
+        </ul>
+      </div>
+      <div class="footer-copy">
+        &copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.
+      </div>
+    </footer>
 
     <script src="{{ '/assets/js/jquery-3.3.1.min.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/jquery.waitforimages.min.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/jquery.fitvids.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/common.js' | relative_url }}"></script>
+    <script>
+      $(function () {
+        var $toggle = $('.nav-toggle');
+        var $nav = $('#main-nav');
+        $toggle.on('click', function () {
+          var open = $nav.hasClass('is-open');
+          $nav.toggleClass('is-open', !open);
+          $toggle.attr('aria-expanded', !open);
+          $toggle.find('i').toggleClass('ion-md-menu', open).toggleClass('ion-md-close', !open);
+        });
+      });
+    </script>
   </body>
 </html>

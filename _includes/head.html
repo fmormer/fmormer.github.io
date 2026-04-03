@@ -2,10 +2,13 @@
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta name='viewport' content='width=device-width, initial-scale=1, viewport-fit=cover'>
-  <title>{{ site.title }}</title>
-  <meta name='description' content='{{ site.description }}'>
+  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name='description' content='{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}'>
   <link rel='canonical' href='{{ page.url | replace:"index.html","" | absolute_url }}'>
   <link rel='alternate' type='application/rss+xml' title='{{ site.title }}' href='{{ "/feed.xml" | relative_url }}'>
+
+  <!-- Favicon -->
+  <link rel='icon' type='image/x-icon' href='{{ "/favicon.ico" | relative_url }}'>
 
   <!-- Morie typography -->
   <link rel='preconnect' href='https://fonts.googleapis.com'>
@@ -15,9 +18,9 @@
   <!-- Icons -->
   <link href='https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css' rel='stylesheet'>
 
-  <!-- Theme CSS -->
-  <link rel='stylesheet' href='{{ "/assets/css/main.css" | relative_url }}'>
+  <!-- USWDS design tokens (CDN) -->
+  <link rel='stylesheet' href='https://unpkg.com/@uswds/uswds@3.9.0/dist/css/uswds-global.min.css'>
 
-  <!-- Morie overrides -->
-  <link rel='stylesheet' href='{{ "/assets/css/custom.css" | relative_url }}'>
+  <!-- Morie styles -->
+  <link rel='stylesheet' href='{{ "/assets/css/main.css" | relative_url }}'>
 </head>
