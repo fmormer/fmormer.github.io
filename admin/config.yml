@@ -2,8 +2,6 @@ backend:
   name: github
   repo: fmormer/fmormer.github.io
   branch: master
-  auth_type: pkce
-  app_id: Ov23li3eTgDNTeiWzaMF
 
 site_url: https://fmormer.github.io
 show_preview_links: true
