@@ -7,6 +7,8 @@ backend:
   use_graphql: true
   squash_merges: true
 
+local_backend: true
+
 site_url: https://fmormer.github.io
 show_preview_links: true
 
