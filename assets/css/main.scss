@@ -909,3 +909,101 @@ code.language-plaintext {
   .footer-links { gap: 10px; }
   .footer-brand { font-size: 0.9rem; }
 }
+
+.home-intro {
+  padding: 4rem 0 3rem;
+  background: #ffffff;
+}
+
+.home-intro__inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.home-intro__title {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  line-height: 1.2;
+  color: #0b1f44;
+}
+
+.home-intro__lead {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #23395d;
+  margin-bottom: 1.25rem;
+}
+
+.home-intro__workflow {
+  margin: 1.5rem 0;
+  font-size: 1.05rem;
+  color: #0b1f44;
+}
+
+.home-intro p {
+  color: #4a5874;
+  line-height: 1.8;
+}
+
+.portfolio-page {
+  padding: 4rem 0 2rem;
+  background: #ffffff;
+}
+
+.portfolio-page__intro {
+  max-width: 900px;
+  margin: 0 auto 2.5rem;
+}
+
+.portfolio-page__intro h1 {
+  margin-bottom: 1rem;
+  color: #0b1f44;
+}
+
+.portfolio-page__lead {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #23395d;
+  margin-bottom: 1.25rem;
+}
+
+.portfolio-page__workflow {
+  margin-top: 1.5rem;
+  color: #0b1f44;
+}
+
+.portfolio-page .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.portfolio-page .col {
+  float: none;
+  width: calc(33.333% - 1rem);
+  margin: 0;
+}
+
+@media only screen and (max-width: 1024px) {
+  .portfolio-page .col {
+    width: calc(50% - 0.75rem);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .home-intro {
+    padding: 3rem 0 2.5rem;
+  }
+
+  .home-intro__title {
+    font-size: 1.7rem;
+  }
+
+  .portfolio-page {
+    padding: 3rem 0 2rem;
+  }
+
+  .portfolio-page .col {
+    width: 100%;
+  }
+}

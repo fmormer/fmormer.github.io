@@ -1,15 +1,34 @@
 ---
 layout: default
+title: Home
 ---
-<div class="container">
-    <div class="row">
-        <div class="col col-12 col-t-12">
-            <div class="row">
-                {% for post in paginator.posts %}
-                    {% include post-card.html %}
-                {% endfor %}
-            </div>
-            {% include pagination.html %}
-        </div>
+
+<section class="home-intro">
+  <div class="container">
+    <div class="home-intro__inner">
+      <h2 class="home-intro__title">System-Level Offshore Wind Engineering</h2>
+
+      <p class="home-intro__lead">
+        Morie Analytics develops integrated engineering workflows for floating offshore wind,
+        combining physics-based modeling, geotechnical intelligence, data-driven methods,
+        and system-level design.
+      </p>
+
+      <p>
+        The portfolio brings together interconnected study cases that reflect how real offshore
+        projects are evaluated across the full design chain, from early site screening to
+        subsystem verification and optimization.
+      </p>
+
+      <p class="home-intro__workflow">
+        <strong>Site → Layout → Soil → Mooring → Anchor → Cable</strong>
+      </p>
+
+      <p>
+        This structure is intended to support developers, consultancies, technology providers,
+        and research collaborators looking for rigorous, scalable, and engineering-ready
+        workflows for offshore wind systems.
+      </p>
     </div>
-</div>
+  </div>
+</section>
