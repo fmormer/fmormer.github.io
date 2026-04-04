@@ -950,9 +950,18 @@ code.language-plaintext {
   background: #ffffff;
 }
 
+.portfolio-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  box-sizing: border-box;
+}
+
 .portfolio-page__intro {
-  max-width: 900px;
-  margin: 0 auto 2.5rem;
+  width: 100%;
+  max-width: none;
+  margin: 0 0 2.5rem;
 }
 
 .portfolio-page__intro h1 {
@@ -976,17 +985,26 @@ code.language-plaintext {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .portfolio-page .col {
   float: none;
   width: calc(33.333% - 1rem);
   margin: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 @media only screen and (max-width: 1024px) {
   .portfolio-page .col {
     width: calc(50% - 0.75rem);
+  }
+
+  .portfolio-container {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
@@ -1005,5 +1023,10 @@ code.language-plaintext {
 
   .portfolio-page .col {
     width: 100%;
+  }
+
+  .portfolio-container {
+    padding-left: 14px;
+    padding-right: 14px;
   }
 }
