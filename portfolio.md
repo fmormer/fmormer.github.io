@@ -26,15 +26,15 @@ permalink: /portfolio/
     </div>
 
     <div class="row">
-      {% assign desired_order = 'Lease Area Site Characterization – Celtic Sea|Layout Generation & Topology Optimization – Celtic Sea|Local Soil Reconstruction & Subsurface Intelligence – Celtic Sea|Mooring System Generation & Load Analysis – Celtic Sea|Shared Anchor Load Resolution & Capacity Verification – Celtic Sea|Dynamic Cable Design & Optimization – Celtic Sea' | split: '|' %}
+	 {% assign desired_order = 'morie_site|morie_layout|morie_soil|morie_mooring|morie_anchor|morie_cable' | split: '|' %}
 
-      {% for target_title in desired_order %}
-        {% for post in site.posts %}
-          {% if post.title == target_title %}
-            {% include post-card.html %}
-          {% endif %}
-        {% endfor %}
-      {% endfor %}
+	 {% for target_slug in desired_order %}
+	   {% for post in site.posts %}
+		 {% if post.slug == target_slug %}
+		   {% include post-card.html %}
+		 {% endif %}
+	   {% endfor %}
+	 {% endfor %}
     </div>
 
   </div>
