@@ -456,10 +456,11 @@ a:hover, a:focus { color: var(--morie-accent-hover) !important; }
   display: block !important;
   width: 100% !important;
   aspect-ratio: 16 / 11;
-  height: auto !important;
-  background-size: cover !important;
+  background-size: contain !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
+  background-color: #f4f6f9;
+  border-radius: 6px;
 }
 
 // --- Post page ---
