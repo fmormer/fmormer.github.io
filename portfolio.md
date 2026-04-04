@@ -5,19 +5,19 @@ permalink: /portfolio/
 ---
 
 <section class="portfolio-page">
-  <div class="container">
+  <div class="container portfolio-container">
+
     <div class="portfolio-page__intro">
       <h1>Offshore Wind Engineering Portfolio</h1>
 
       <p class="portfolio-page__lead">
-        Morie Analytics delivers a structured, system-level workflow for floating offshore wind engineering,
-        integrating site intelligence, layout generation, soil reconstruction, mooring physics,
-        anchor verification, and cable optimization.
+        A collection of interconnected study cases covering the full engineering workflow
+        for floating offshore wind systems.
       </p>
 
       <p>
-        The study cases below are presented as interconnected engineering layers rather than isolated analyses,
-        reflecting the way real offshore projects evolve from spatial screening to subsystem design.
+        Each case represents a key layer in the design chain, from site characterization
+        to subsystem optimization.
       </p>
 
       <p class="portfolio-page__workflow">
@@ -36,5 +36,6 @@ permalink: /portfolio/
         {% endfor %}
       {% endfor %}
     </div>
+
   </div>
 </section>
