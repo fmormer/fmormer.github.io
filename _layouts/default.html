@@ -29,35 +29,37 @@
       </div>
     </section>
 
-    <section class="hero">
-      <div class="hero-background">
-        <img src="{{ '/img/hero_img.png' | relative_url }}" alt="Floating offshore wind turbines">
-      </div>
+	{% if page.url == '/' %}
+	<section class="hero">
+	  <div class="hero-background">
+		<img src="{{ '/img/hero_img.png' | relative_url }}" alt="Floating offshore wind turbines">
+	  </div>
 
-      <div class="hero-overlay"></div>
+	  <div class="hero-overlay"></div>
 
-      <div class="hero-inner">
-        <div class="hero-callout">
+	  <div class="hero-inner">
+		<div class="hero-callout">
 
-          <h1 class="hero-title">
-            Offshore Wind <span>Portfolio</span>
-          </h1>
+		  <h1 class="hero-title">
+			Offshore Wind <span>Portfolio</span>
+		  </h1>
 
-          <p class="hero-subtitle">
-            Engineering intelligence for floating offshore wind systems
-          </p>
+		  <p class="hero-subtitle">
+			Engineering intelligence for floating offshore wind systems
+		  </p>
 
-          <p class="hero-tagline">
-            Integrated workflows combining physics-based engineering, data science, and system-level design to solve real-world offshore wind challenges.
-          </p>
+		  <p class="hero-tagline">
+			Integrated workflows combining physics-based engineering, data science, and system-level design to solve real-world offshore wind challenges.
+		  </p>
 
-          <a href="{{ '/portfolio/' | relative_url }}" class="hero-button">
-            Explore Portfolio
-          </a>
+		  <a href="{{ '/portfolio/' | relative_url }}" class="hero-button">
+			Explore Portfolio
+		  </a>
 
-        </div>
-      </div>
-    </section>
+		</div>
+	  </div>
+	</section>
+	{% endif %}
 
     <main>
       {{ content }}
