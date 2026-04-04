@@ -951,10 +951,11 @@ code.language-plaintext {
 }
 
 .portfolio-container {
-  max-width: 1180px;
+  width: 100%;
+  max-width: var(--container-width, 1400px);
   margin: 0 auto;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 32px;
+  padding-right: 32px;
   box-sizing: border-box;
 }
 
@@ -1003,20 +1004,12 @@ code.language-plaintext {
   }
 
   .portfolio-container {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .home-intro {
-    padding: 3rem 0 2.5rem;
-  }
-
-  .home-intro__title {
-    font-size: 1.7rem;
-  }
-
   .portfolio-page {
     padding: 3rem 0 2rem;
   }
@@ -1026,7 +1019,7 @@ code.language-plaintext {
   }
 
   .portfolio-container {
-    padding-left: 14px;
-    padding-right: 14px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
