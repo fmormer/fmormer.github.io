@@ -17,367 +17,410 @@ The result is a **reproducible framework for anchor-level soil characterization*
 
 > Site intelligence → Layout generation → **Soil reconstruction** → Mooring physics → Anchor verification → Cable optimization
 
----
+***
 
 ## Project Scope
 
-- Local domain extraction from selected floater cluster  
-- Cropping of bathymetry and soil datasets  
-- Synthetic layered soil model generation (truth)  
-- Tomographic sampling using sectional planes  
-- Soil profile reconstruction via interpolation  
-- Boundary detection and validation  
-- Multi-anchor soil characterization  
+- Local domain extraction from selected floater cluster
+- Cropping of bathymetry and soil datasets
+- Synthetic layered soil model generation
+- Tomographic sampling using sectional planes
+- Soil profile reconstruction via interpolation
+- Boundary detection and validation
+- Multi-anchor soil characterization
 
-This study transforms:
+This study converts **layout intelligence into anchor-ready subsurface inputs**.
 
-> **Layout → Local Soil Model → Anchor Design Inputs**
-
----
+***
 
 ## Engineering Context
 
+Following layout definition, the next geotechnical question is:
+
+> **What soil profile is acting at each anchor location?**
+
 Anchor and mooring design depend critically on:
 
-- soil stratigraphy  
-- layer boundaries  
-- spatial variability  
+- Soil stratigraphy
+- Layer boundaries
+- Spatial variability
+- Localized geotechnical interpretation
 
 However, early-stage offshore projects typically rely on:
 
-- sparse CPT data  
-- limited geotechnical sections  
-- incomplete subsurface coverage  
+- Sparse CPT data
+- Limited geotechnical sections
+- Incomplete subsurface coverage
 
-This workflow emulates that reality and provides a structured way to:
+This workflow introduces a **localized reconstruction methodology**, where sparse sectional information is converted into soil profiles suitable for downstream engineering analysis.
 
-- reconstruct soil profiles from limited data  
-- quantify uncertainty  
-- generate inputs suitable for engineering design  
-
----
+***
 
 ## Inputs and Data Sources
 
-This study builds directly on:
+This study builds directly on upstream Morie Analytics outputs:
 
 ### From `morie_layout`:
-- Selected floater cluster  
-- Anchor coordinates  
-- Local spatial domain  
+- Selected floater cluster
+- FOWT coordinates
+- Anchor coordinates
+- Local layout footprint
 
 ### From `morie_site`:
-- Bathymetry grids  
-- Soil classification grids  
+- Bathymetry grid
+- Soil classification grid
+- Lease boundary context
 
 Additional inputs:
 
-- Layered soil profile definitions (YAML)  
+- Layered soil profile definitions (YAML)
+- Cropped local-domain outputs
+- Synthetic soil-model parameters
 
----
+All inputs are aligned in a **common projected coordinate system**.
+
+***
 
 ## Technical Architecture
 
 The workflow is implemented in Python using:
 
-- `numpy` → numerical operations  
-- `matplotlib` → visualization  
-- custom modular utilities for each step  
+- `numpy` → numerical operations
+- `matplotlib` → visualization
+- `yaml` → configuration handling
+- `pickle` → intermediate storage
+- `famodel` → layout and anchor extraction
 
 Core modules:
 
-- domain extraction  
-- synthetic soil generation  
-- tomographic grid definition  
-- soil sampling  
-- profile reconstruction  
-- boundary detection  
+- `step01_layout_domain.py` → crop local bathymetry and soil fields
+- `step02_truth_soil_model.py` → generate synthetic truth soil model
+- `step03_tomographic_grid.py` → define XZ / YZ tomographic planes
+- `step04_soil_planes.py` → sample truth model along planes
+- `step05_query_soil_profiles.py` → reconstruct soil profiles
+- `step06_boundary_detection.py` → detect and compare layer boundaries
+- `step07_plot_soil.py` → plotting and visualization
 
-The structure ensures **full traceability from data to engineering output**.
+The structure ensures **full traceability from spatial inputs to anchor-level soil outputs**.
 
----
+***
 
 ## Processing Workflow
 
-1. Load layout and extract anchor positions  
-2. Define local domain around cluster  
-3. Crop bathymetry and soil grids  
-4. Generate synthetic soil model (truth)  
-5. Define tomographic acquisition grid  
-6. Sample soil properties along planes  
-7. Reconstruct profiles at anchor locations  
-8. Detect layer boundaries  
-9. Compare against truth  
-10. Evaluate reconstruction across all anchors  
+1. Load selected layout and soil model
+2. Extract FOWT and anchor coordinates
+3. Define cropped local domain around layout
+4. Generate lease-scale crop context
+5. Create synthetic ground truth soil model
+6. Build tomographic acquisition grid
+7. Sample soil properties along XZ and YZ planes
+8. Reconstruct profiles at validation and anchor locations
+9. Detect layer boundaries and compare against truth
+10. Evaluate all anchors and select downstream case-study location
 
----
+The workflow is fully modular and repeatable.
+
+***
 
 ## Local Domain Definition
 
-## Local Domain Definition
-
-The workflow begins by extracting a **localized engineering domain** from the selected floating wind layout.
-
-The cropped domain is defined relative to the full lease area, ensuring that all subsequent soil modeling is performed within a **focused and relevant region around the floater cluster**.
+The workflow begins by defining a **localized engineering domain** around the selected floater cluster.
 
 <div align="center">
-  <img src="/img/posts/morie_soil/00_lease_crop_context.png" 
-       alt="Lease boundary and cropped local domain showing selected floating wind cluster and anchor positions within the Celtic Sea lease area" 
+  <img src="/img/posts/morie_soil/00_lease_crop_context.png"
+       alt="Lease boundary and cropped local domain showing selected floating wind cluster and anchor positions within the Celtic Sea lease area"
        width="500">
 </div>
-*Figure 1 – Lease boundary and cropped local domain highlighting the selected floater cluster and associated anchor positions.*
+_Figure 1 – Lease boundary and cropped local soil domain highlighting the selected floater cluster and associated anchor positions._
 
 ### Engineering Significance
 
-This step establishes:
+This figure establishes:
 
-- the relationship between **regional lease scale and local engineering domain**  
-- a **focused computational region** around the layout  
-- spatial traceability from site-level screening to detailed soil modeling  
-
----
+- The relationship between **lease-scale site context** and **local soil study area**
+- The cropped analysis window used for detailed subsurface reconstruction
+- Spatial continuity from `morie_site` and `morie_layout` into geotechnical analysis
 
 <div align="center">
-  <img src="/img/posts/morie_soil/01_cropped_bathy.png" 
-       alt="Cropped bathymetry map of the local domain showing water depth distribution around selected floating wind turbine cluster" 
+  <img src="/img/posts/morie_soil/01_cropped_bathy.png"
+       alt="Cropped bathymetry map of the local domain showing water depth distribution around selected floating wind turbine cluster"
        width="500">
 </div>
-*Figure 2 – Cropped bathymetry defining the local engineering domain.*
+_Figure 2 – Cropped bathymetry defining the local engineering domain._
 
 <div align="center">
-  <img src="/img/posts/morie_soil/02_cropped_soil.png" 
-       alt="Cropped seabed classification map showing local sediment distribution within selected floating wind farm domain" 
+  <img src="/img/posts/morie_soil/02_cropped_soil.png"
+       alt="Cropped seabed classification map showing local sediment distribution within selected floating wind farm domain"
        width="500">
 </div>
-*Figure 3 – Cropped soil classification aligned with the local layout domain.*
+_Figure 3 – Cropped soil classification aligned with the local layout domain._
 
 ### Engineering Significance
 
-Defines:
+These local-domain products define:
 
-- a **localized engineering domain**  
-- alignment between layout and subsurface data  
-- reduced computational complexity  
+- A focused computational region around the layout
+- Alignment between geometry and subsurface inputs
+- The starting point for localized truth-model generation
 
----
+***
 
 ## Synthetic Soil Model (Ground Truth)
 
+A synthetic truth model is generated over the cropped local domain to provide a controlled subsurface reference.
+
 <div align="center">
-  <img src="/img/posts/morie_soil/03_truth_surfaces.png" 
-       alt="Synthetic layered soil model showing spatial variation of layer boundaries Z1 and Z2 across the local domain" 
+  <img src="/img/posts/morie_soil/03_truth_surfaces.png"
+       alt="Synthetic layered soil model showing spatial variation of layer boundaries Z1 and Z2 across the local domain"
        width="500">
 </div>
-*Figure 4 – Synthetic ground truth soil model with spatially varying layer interfaces.*
+_Figure 4 – Synthetic ground truth soil model with spatially varying layer interfaces._
 
 ### Model Characteristics
 
-- Three-layer sand system  
-- Interfaces: **Z1 and Z2**  
-- Spatial variation using smooth functions  
-- Continuous variation of φ, Dr, γ  
+- Three-layer sand system
+- Interfaces: **Z1** and **Z2**
+- Spatially varying layer boundaries
+- Continuous variation of:
+  - Friction angle, φ
+  - Relative density, Dr
+  - Unit weight, γ
 
 ### Engineering Significance
 
-Provides:
+The truth model provides:
 
-- a controlled reference model  
-- known layer boundaries  
-- benchmark for reconstruction accuracy  
+- A controlled reference model
+- Known boundaries for validation
+- A benchmark to quantify reconstruction performance
 
----
+***
 
 ## Tomographic Sampling Framework
 
+To emulate realistic geotechnical data availability, the workflow defines a sparse tomographic sampling framework.
+
 <div align="center">
-  <img src="/img/posts/morie_soil/04_tomographic_layout.png" 
-       alt="Tomographic sampling layout showing XZ and YZ sectional planes used to emulate geotechnical investigation coverage" 
+  <img src="/img/posts/morie_soil/04_tomographic_layout.png"
+       alt="Tomographic sampling layout showing XZ and YZ sectional planes used to emulate geotechnical investigation coverage"
        width="500">
 </div>
-*Figure 5 – Tomographic acquisition grid representing sparse geotechnical sampling.*
+_Figure 5 – Tomographic acquisition grid representing sparse geotechnical sampling across the local domain._
 
 ### Configuration
 
-- 4 XZ planes  
-- 4 YZ planes  
+- 4 XZ planes
+- 4 YZ planes
+- Single-point validation location inside the cluster
+- Full anchor set preserved for later reconstruction
 
-### Engineering Interpretation
+### Engineering Significance
 
-Represents:
+This step represents:
 
-- CPT campaigns  
-- sectional surveys  
-- limited geotechnical investigations  
+- CPT-style investigation lines
+- Sectional surveys
+- Limited geotechnical campaigns under realistic coverage constraints
 
----
+***
 
 ## Soil Section Sampling
 
-<div align="center">
-  <img src="/img/posts/morie_soil/05_xz01_layer_id.png" 
-       alt="Vertical XZ soil section showing variation of friction angle phi across depth and horizontal distance in sampled plane" 
-       width="500">
-</div>
-*Figure 6 – XZ section illustrating vertical soil layering and lateral variability.*
+The synthetic truth model is sampled along each tomographic plane to generate the available sectional dataset.
 
 <div align="center">
-  <img src="/img/posts/morie_soil/06_yz01_layer_id.png" 
-       alt="Vertical YZ soil section showing variation of friction angle phi across depth and horizontal distance in sampled plane" 
+  <img src="/img/posts/morie_soil/05_xz01_layer_id.png"
+       alt="Vertical XZ soil section showing reconstructed stratigraphic layer distribution across depth and horizontal distance in the sampled plane"
        width="500">
 </div>
-*Figure 7 – YZ section illustrating vertical soil layering and lateral variability.*
+_Figure 6 – Example XZ section showing vertical layering and lateral variability._
+
+<div align="center">
+  <img src="/img/posts/morie_soil/06_yz01_layer_id.png"
+       alt="Vertical YZ soil section showing reconstructed stratigraphic layer distribution across depth and horizontal distance in the sampled plane"
+       width="500">
+</div>
+_Figure 7 – Example YZ section showing vertical layering and lateral variability._
 
 ### Engineering Significance
 
-These sections represent the **available dataset**, capturing:
+These sections form the **available dataset**, capturing:
 
-- vertical layering  
-- lateral variability  
-- sparse measurement coverage  
+- Vertical layer stacking
+- Lateral variation across the domain
+- Sparse but structured information for downstream interpolation
 
----
+***
 
 ## Profile Reconstruction
 
+A single-point proof of concept is first used to validate the reconstruction methodology within the selected layout.
+
 <div align="center">
-  <img src="/img/posts/morie_soil/07_profile_comparison_phi.png" 
-       alt="Comparison of reconstructed and ground truth soil profiles showing accuracy of interpolation-based soil property estimation" 
+  <img src="/img/posts/morie_soil/07_profile_comparison_phi.png"
+       alt="Comparison of reconstructed and ground truth soil profiles showing accuracy of interpolation-based soil property estimation"
        width="500">
 </div>
-*Figure 8 – Reconstructed vs ground truth soil profiles at anchor location.*
+_Figure 8 – Reconstructed vs ground truth soil profile at the single-point validation location._
 
 ### Method
 
-- Inverse Distance Weighting (IDW)  
-- Multi-plane interpolation  
+- Inverse Distance Weighting (IDW)
+- Multi-plane interpolation from XZ and YZ sections
 
 ### Engineering Output
 
-- Continuous φ(z), Dr(z), γ(z)  
-- Anchor-specific soil profiles  
+- Continuous φ(z), Dr(z), γ(z)
+- Local profile reconstruction from sparse sections
+- Validation of the proof-of-concept interpolation approach
 
----
+***
 
 ## Boundary Detection & Validation
 
+The reconstructed profile is then converted into discrete engineering layers through boundary detection.
+
 <div align="center">
-  <img src="/img/posts/morie_soil/08_boundary_comparison.png" 
-       alt="Comparison of detected and true soil layer boundaries demonstrating accuracy of boundary identification algorithm" 
+  <img src="/img/posts/morie_soil/08_boundary_comparison.png"
+       alt="Comparison of detected and true soil layer boundaries demonstrating accuracy of boundary identification algorithm"
        width="500">
 </div>
-*Figure 9 – Boundary detection accuracy for reconstructed soil layers.*
+_Figure 9 – Boundary detection accuracy at the single-point validation location._
 
 ### Results
 
-- Z1 error ≈ 0.30 m (mean)  
-- Z2 error ≈ 0.42 m (mean)  
-- Maximum error < 1 m  
+- Z1 mean error ≈ 0.30 m
+- Z2 mean error ≈ 0.42 m
+- Maximum error < 1 m
 
 ### Engineering Significance
 
-Transforms reconstructed profiles into:
+This step transforms reconstructed profiles into:
 
-- discrete engineering layers  
-- inputs for capacity models  
-- validated subsurface representation  
+- Discrete engineering layers
+- Inputs for capacity models
+- Quantified reconstruction accuracy
 
----
+***
 
 ## Multi-Anchor Evaluation
 
-- 24 anchors evaluated  
-- independent reconstruction per location  
-- anchors ranked by reconstruction accuracy  
+Following proof-of-concept validation, the workflow is applied across all anchors in the selected layout.
+
+- 24 anchors evaluated
+- Independent reconstruction at each anchor location
+- Boundary comparison metrics computed for all anchors
+- Ranking performed based on total boundary error
 
 ### Selected Anchor
 
-- **fowt6c** → best agreement with truth  
+- **fowt1b** → selected as downstream handoff anchor for `morie_anchor`
 
-This anchor becomes the **handoff point to morie_anchor**.
+This selection is now formalized in the workflow and exported for the downstream case study.
 
----
+### Engineering Significance
+
+This step ensures that the soil-reconstruction module produces **actionable anchor-specific outputs**, not only validation figures.
+
+***
 
 ## Outputs Generated
 
-- Cropped bathymetry and soil grids  
-- Synthetic soil model (truth)  
-- Tomographic sections  
-- Reconstructed profiles  
-- Boundary detection results  
-- Anchor-level soil datasets  
+The workflow produces:
 
----
+- Lease-to-local crop context figure
+- Cropped bathymetry and soil grids
+- Synthetic truth soil model
+- Tomographic section plots
+- Single-point profile validation plots
+- Boundary detection results
+- Anchor-level soil datasets
+- Selected downstream anchor definition
+
+These outputs are directly usable in the next engineering modules.
+
+***
 
 ## Engineering Applications
 
-- Anchor design input generation  
-- Soil-structure interaction modeling  
-- Early-stage geotechnical interpretation  
-- Validation of sparse-data reconstruction  
-- Integration with anchor capacity workflows  
+The outputs support:
 
----
+- Anchor design input generation
+- Soil-structure interaction modeling
+- Early-stage geotechnical interpretation
+- Validation of sparse-data reconstruction
+- Integration with anchor capacity workflows
+
+This transforms sparse subsurface information into **engineering decision inputs**.
+
+***
 
 ## Relationship to Other Morie Study Cases
 
+This study is the **subsurface intelligence bridge** of the Morie Analytics workflow.
+
 ### Receives from:
-- **morie_layout** → floater and anchor locations  
-- **morie_site** → bathymetry and soil grids  
+
+- **morie_site** → lease boundary, bathymetry, soil grids
+- **morie_layout** → floater cluster and anchor coordinates
 
 ### Feeds into:
-- **morie_anchor** → soil profiles for capacity design  
-- **morie_mooring** (indirectly) → soil-informed load transfer assumptions  
 
-This module is the **bridge between layout geometry and geotechnical design**.
+- **morie_anchor** → selected anchor profile and boundary definition
+- **morie_mooring** → soil-informed assumptions for embedded load transfer
+- **morie_cable** → local seabed interpretation for downstream routing logic
 
----
+It provides the **geotechnical transition from layout geometry to anchor design**.
+
+***
 
 ## Why It Matters Commercially
 
-- Reduces uncertainty in early-stage geotechnical design  
-- Enables engineering decisions with limited data  
-- Improves anchor sizing reliability  
-- Supports scalable offshore development workflows  
-- Bridges gap between GIS and geotechnical engineering  
+- Reduces uncertainty in early-stage geotechnical interpretation
+- Enables engineering decisions with limited site data
+- Improves reliability of anchor sizing inputs
+- Supports scalable offshore development workflows
+- Bridges the gap between GIS-scale data and anchor-scale design
 
 This is where **subsurface uncertainty becomes quantifiable and manageable**.
 
----
+***
 
 ## Aspects to Improve
 
-- Integration with real CPT datasets  
-- Multi-soil systems (clay, sand, rock)  
-- Uncertainty quantification  
-- Adaptive sampling strategies  
-- Machine learning-based reconstruction  
+- Integration with real CPT datasets
+- Multi-soil systems (clay, sand, rock)
+- Uncertainty quantification
+- Adaptive sampling strategies
+- Machine learning-based reconstruction
 
----
+These extensions would move the workflow closer to **project-grade geotechnical intelligence**.
+
+***
 
 ## Design Philosophy
 
 This study reflects Morie Analytics principles:
 
-- physics-informed modeling  
-- data-driven reconstruction  
-- modular workflow design  
-- engineering usability  
-- scalability across projects  
+- Physics-informed modeling
+- Data-driven reconstruction
+- Modular workflow design
+- Engineering usability
+- Scalability across projects
 
----
+***
 
 ## How to Run
 
-1. Place datasets in `celtic_sea_share/`  
+1. Place datasets in `celtic_sea_share/`
 2. Install dependencies:
 
-   - `numpy`  
-   - `matplotlib` 
-   - `geopandas`  
-   - `xarray`   
+- `numpy`
+- `matplotlib`
+- `pyyaml`
+- `pickle`
+- `famodel`
 
 3. Execute:
 
-```bash
-python morie_soil.py
-```
+    python morie_soil.py
