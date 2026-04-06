@@ -191,14 +191,14 @@ Represents:
 ## Soil Section Sampling
 
 <div align="center">
-  <img src="/img/posts/morie_soil/05_xz01_phi.png" 
+  <img src="/img/posts/morie_soil/05_xz01_layer_id.png" 
        alt="Vertical XZ soil section showing variation of friction angle phi across depth and horizontal distance in sampled plane" 
        width="500">
 </div>
 *Figure 5 – XZ section illustrating vertical soil layering and lateral variability.*
 
 <div align="center">
-  <img src="/img/posts/morie_soil/06_yz01_phi.png" 
+  <img src="/img/posts/morie_soil/06_yz01_layer_id.png" 
        alt="Vertical YZ soil section showing variation of friction angle phi across depth and horizontal distance in sampled plane" 
        width="500">
 </div>
