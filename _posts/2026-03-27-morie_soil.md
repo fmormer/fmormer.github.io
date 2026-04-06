@@ -114,19 +114,42 @@ The structure ensures **full traceability from data to engineering output**.
 
 ## Local Domain Definition
 
+## Local Domain Definition
+
+The workflow begins by extracting a **localized engineering domain** from the selected floating wind layout.
+
+The cropped domain is defined relative to the full lease area, ensuring that all subsequent soil modeling is performed within a **focused and relevant region around the floater cluster**.
+
+<div align="center">
+  <img src="/img/posts/morie_soil/00_lease_crop_context.png" 
+       alt="Lease boundary and cropped local domain showing selected floating wind cluster and anchor positions within the Celtic Sea lease area" 
+       width="500">
+</div>
+*Figure 1 – Lease boundary and cropped local domain highlighting the selected floater cluster and associated anchor positions.*
+
+### Engineering Significance
+
+This step establishes:
+
+- the relationship between **regional lease scale and local engineering domain**  
+- a **focused computational region** around the layout  
+- spatial traceability from site-level screening to detailed soil modeling  
+
+---
+
 <div align="center">
   <img src="/img/posts/morie_soil/01_cropped_bathy.png" 
        alt="Cropped bathymetry map of the local domain showing water depth distribution around selected floating wind turbine cluster" 
        width="500">
 </div>
-*Figure 1 – Cropped bathymetry defining the local engineering domain.*
+*Figure 2 – Cropped bathymetry defining the local engineering domain.*
 
 <div align="center">
   <img src="/img/posts/morie_soil/02_cropped_soil.png" 
        alt="Cropped seabed classification map showing local sediment distribution within selected floating wind farm domain" 
        width="500">
 </div>
-*Figure 2 – Cropped soil classification aligned with the local layout domain.*
+*Figure 3 – Cropped soil classification aligned with the local layout domain.*
 
 ### Engineering Significance
 
@@ -145,7 +168,7 @@ Defines:
        alt="Synthetic layered soil model showing spatial variation of layer boundaries Z1 and Z2 across the local domain" 
        width="500">
 </div>
-*Figure 3 – Synthetic ground truth soil model with spatially varying layer interfaces.*
+*Figure 4 – Synthetic ground truth soil model with spatially varying layer interfaces.*
 
 ### Model Characteristics
 
@@ -171,7 +194,7 @@ Provides:
        alt="Tomographic sampling layout showing XZ and YZ sectional planes used to emulate geotechnical investigation coverage" 
        width="500">
 </div>
-*Figure 4 – Tomographic acquisition grid representing sparse geotechnical sampling.*
+*Figure 5 – Tomographic acquisition grid representing sparse geotechnical sampling.*
 
 ### Configuration
 
@@ -195,14 +218,14 @@ Represents:
        alt="Vertical XZ soil section showing variation of friction angle phi across depth and horizontal distance in sampled plane" 
        width="500">
 </div>
-*Figure 5 – XZ section illustrating vertical soil layering and lateral variability.*
+*Figure 6 – XZ section illustrating vertical soil layering and lateral variability.*
 
 <div align="center">
   <img src="/img/posts/morie_soil/06_yz01_layer_id.png" 
        alt="Vertical YZ soil section showing variation of friction angle phi across depth and horizontal distance in sampled plane" 
        width="500">
 </div>
-*Figure 6 – YZ section illustrating vertical soil layering and lateral variability.*
+*Figure 7 – YZ section illustrating vertical soil layering and lateral variability.*
 
 ### Engineering Significance
 
@@ -221,7 +244,7 @@ These sections represent the **available dataset**, capturing:
        alt="Comparison of reconstructed and ground truth soil profiles showing accuracy of interpolation-based soil property estimation" 
        width="500">
 </div>
-*Figure 7 – Reconstructed vs ground truth soil profiles at anchor location.*
+*Figure 8 – Reconstructed vs ground truth soil profiles at anchor location.*
 
 ### Method
 
@@ -242,7 +265,7 @@ These sections represent the **available dataset**, capturing:
        alt="Comparison of detected and true soil layer boundaries demonstrating accuracy of boundary identification algorithm" 
        width="500">
 </div>
-*Figure 8 – Boundary detection accuracy for reconstructed soil layers.*
+*Figure 9 – Boundary detection accuracy for reconstructed soil layers.*
 
 ### Results
 
