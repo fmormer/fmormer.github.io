@@ -324,6 +324,48 @@ This step ensures that the soil-reconstruction module produces **actionable anch
 
 ***
 
+## Anchor-Level Soil Profile (fowt1b)
+
+The selected anchor **fowt1b** is exported with its fully reconstructed soil profile in a structured format (`profile_map`), directly usable in downstream anchor capacity models.
+
+This structure represents the **final engineering output** of the soil reconstruction workflow.
+
+### Profile Structure
+
+```python
+profile_map = {
+    'layers': [
+        {
+            'type': 'sand',
+            'z_top': stick-up_length,
+            'z_bottom': Z1 + stick-up_length,
+            'gamma_top': 9.0,
+            'gamma_bot': 10.0,
+            'phi_top': 30.0,
+            'phi_bot': 32.0,
+            'Dr_top': 60.0,
+            'Dr_bot': 75.0},
+        {
+            'type': 'sand',
+            'z_top': Z1 + stick-up_length,
+            'z_bot': Z2 + stick-up_length,
+            'gamma_top': 10.0,
+            'gamma_bot': 11.0,
+            'phi_top': 32.0,
+            'phi_bot': 37.0,
+            'Dr_top': 75.0,
+            'Dr_bot': 85.0},
+        {
+            'type': 'sand',
+            'z_top': Z2 + stick-up_length,
+            'z_bot': Zmax + stick-up_length,
+            'gamma_top': 11.0,
+            'gamma_bot': 12.0,
+            'phi_top': 37.0,
+            'phi_bot': 40.0,
+            'Dr_top': 85.0,
+            'Dr_bot': 95.0}]}```
+
 ## Outputs Generated
 
 The workflow produces:
