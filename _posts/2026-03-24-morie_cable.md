@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Dynamic Cable Design & Configuration Optimization – Celtic Sea
-image: "/img/posts/morie_cable/morie_cable.png"
+image: "/img/posts/morie_cable/morie_cable2.png"
 tags: [Offshore Floating Wind, Dynamic Cables, Floating Wind, Cable Optimization, RAFT, MoorPy, Python]
 ---
 
