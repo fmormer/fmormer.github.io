@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Local Soil Reconstruction & Subsurface Intelligence – Celtic Sea
-image: "/img/posts/morie_soil/04_tomographic_layout.png"
+image: "/img/posts/morie_soil/morie_soil.png"
 tags: [Offshore Floating Wind, Geotechnical Engineering, Soil Modeling, Tomography, Floating Wind, Anchors, Python]
 ---
 
