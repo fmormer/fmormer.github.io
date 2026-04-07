@@ -475,9 +475,9 @@ a:hover, a:focus { color: var(--morie-accent-hover) !important; }
 
 .post-body {
   width: 100% !important;
-  max-width: 1020px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 .post-body img {
