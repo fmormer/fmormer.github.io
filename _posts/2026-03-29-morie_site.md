@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Lease Area Site Characterization – Celtic Sea
-image: "/img/posts/morie_site/morie_site.png"
+image: "/img/posts/morie_site/morie_site2.png"
 tags: [Offshore Floating Wind, Site Characterization, GEBCO, EMODnet, GIS, Python]
 ---
 
