@@ -14,7 +14,9 @@ layout: default
 
   <h1>{{ page.title | escape }}</h1>
 
-  {% include read-time.html %}
+  <div class="post-meta">
+    <span class="page__meta"><i class="ion ion-md-time"></i> {% include read-time.html %}</span>
+  </div>
 
   <div class="post-body">
     {{ content }}
