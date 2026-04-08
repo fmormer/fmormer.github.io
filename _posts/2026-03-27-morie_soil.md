@@ -57,18 +57,18 @@ This workflow introduces a **localized reconstruction methodology**, where spars
 
 This study builds directly on upstream Morie Analytics outputs:
 
+### From `morie_site`
+
+- Bathymetry grid  
+- Soil classification grid  
+- Lease boundary context 
+
 ### From `morie_layout`
 
 - Selected floater cluster  
 - FOWT coordinates  
 - Anchor coordinates  
-- Local layout footprint  
-
-### From `morie_site`
-
-- Bathymetry grid  
-- Soil classification grid  
-- Lease boundary context  
+- Local layout footprint   
 
 ### Additional Inputs
 
