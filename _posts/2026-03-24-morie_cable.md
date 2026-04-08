@@ -287,9 +287,9 @@ Dynamic cables are among the most critical and costly components of floating win
 
 This is where:
 
-- system behavior meets infrastructure design  
-- constraints define feasibility  
-- final design decisions are made  
+- System behavior meets infrastructure design  
+- Constraints define feasibility  
+- Final design decisions are made  
 
 
 ## Aspects to Improve
