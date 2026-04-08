@@ -78,14 +78,17 @@ The workflow is implemented in Python using:
 - `numpy`, `scipy` → numerical operations  
 - `matplotlib` → visualization  
 - `pyyaml` → configuration management  
-- `famodel`, `MoorPy` → system integration  
+- `famodel` → system definition and integration  
+- `MoorPy` → mooring system compatibility  
 
 Core modules:
 
-- `populate_array_hexgrid.py` → lattice generation  
-- `hex_cluster_optimizer.py` → cluster selection  
-- `inject_cluster_yaml.py` → model integration  
-- `merge_shared_anchors.py` → anchor topology  
+- `load_moorpy_grid` → bathymetry and soil grid loading  
+- `suitability_filtering` → depth (88–94 m) and soil-based feasibility masking   
+- `generate_hex_turbine_array` → constrained lattice generation  
+- `slide_fixed8_best` → cluster optimization  
+- `inject_selected_cluster_into_yaml` → layout integration into system model  
+- `merge_coincident_anchors` → shared-anchor topology definition  
 
 ### System Flow
 

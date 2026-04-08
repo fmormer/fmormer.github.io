@@ -83,13 +83,24 @@ This provides the **boundary conditions for cable design optimization**.
 
 ## Technical Architecture
 
-The workflow integrates:
+The workflow is implemented in Python using:
 
-- Geometry definition  
-- Mooring response  
-- Hydrodynamic motion  
-- Cable modeling  
-- Optimization  
+- `numpy`, `scipy` → numerical operations  
+- `matplotlib` → visualization  
+- `famodel` → system definition and data handling  
+- `RAFT` → hydrodynamic response input  
+- `CableDesign` → dynamic cable modeling and optimization  
+
+Core modules:
+
+- system initialization → project and platform extraction  
+- bathymetry sampling → local water depth evaluation  
+- geometry definition → fairlead position and span setup  
+- motion integration → offset and dynamic amplitude computation  
+- design parametrization → variables, bounds, and constraints definition  
+- cable model → multi-segment configuration representation  
+- constraint evaluation → tension, curvature, sag, and touchdown checks  
+- optimization engine → iterative design convergence   
 
 ### System Flow
 

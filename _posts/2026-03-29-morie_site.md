@@ -67,17 +67,19 @@ This provides the **spatial data foundation for downstream modules**.
 
 The workflow is implemented in Python using:
 
-- `geopandas` → spatial data processing  
-- `xarray` → bathymetry handling  
-- `numpy` → numerical operations  
+- `geopandas` → lease boundary processing  
+- `xarray` → GEBCO bathymetry access  
+- `numpy` → grid generation and numerical operations  
 - `matplotlib` → visualization  
+- `famodel` → 2D plotting and soil/bathymetry integration  
 
 Core modules:
 
-- Lease boundary extraction  
-- CRS transformation  
-- Bathymetry masking  
-- Seabed classification intersection  
+- `read_lease_boundary` → lease area extraction  
+- `make_lonlat_grid` → structured grid generation  
+- `sample_gebco_depths` → bathymetry sampling on grid  
+- `label_substrate` → soil classification assignment  
+- `convert_and_write` → export to engineering-ready formats  
 
 ### System Flow
 
