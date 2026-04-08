@@ -196,7 +196,7 @@ The transformation from mudline loads to padeye loads depends on:
 - Relative density (Dr)  
 - Embedded line behavior  
 
-These parameters are provided by **morie_soil**, establishing a direct coupling between:
+These parameters are provided by `morie_soil`, establishing a direct coupling between:
 
 - Mooring response  
 - Soil-dependent load transfer 
@@ -205,7 +205,7 @@ These parameters are provided by **morie_soil**, establishing a direct coupling 
 
 The selected anchor **fowt1b** is exported with its fully reconstructed soil profile in a structured format (`profile_map`), directly usable in downstream anchor capacity models.
 
-This structure represents the **final engineering output** of the soil and it was generated in the previous study case **morie_soil**.
+This structure represents the **final engineering output** of the soil and it was generated in the previous study case `morie_soil`.
 
 ### Profile Structure
 
