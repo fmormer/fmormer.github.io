@@ -11,7 +11,7 @@ tags: [Offshore Floating Wind, Mooring Systems, RAFT, MoorPy, Shared Anchors, Py
 
 This study establishes the **mooring physics layer** of Morie Analytics by transforming floating wind layouts into **physically consistent mooring systems and design-ready load outputs**.
 
-Using YAML-based configurations and simulation tools, the workflow generates mooring systems and extracts **padeye-level loads** for engineering assessment.
+Using YAML-based configurations and simulation tools, the workflow generates mooring systems and extracts **mudline-level loads** for engineering assessment that will be transformed into **padeye-level loads** in the following study case.
 
 The result is a **reproducible computational pipeline** that connects geometry, equilibrium physics, and load transfer into downstream anchor design inputs.
 
@@ -24,7 +24,7 @@ Site intelligence → Layout generation → Soil reconstruction → **Mooring ph
 
 - Mooring system generation  
 - Shared-anchor configurations  
-- Padeye load extraction  
+- Mudline load extraction  
 - Load aggregation  
 - Environmental load case evaluation  
 - Optional dynamic response analysis  
@@ -53,21 +53,16 @@ This workflow provides a **continuous mechanical link** from layout to anchor de
 
 This study builds directly on upstream Morie Analytics outputs:
 
-### From `morie_layout`
-
-- Floater positions  
-- Anchor coordinates  
-- Shared-anchor topology  
-
 ### From `morie_site`
 
 - Bathymetry grids  
 - Spatial domain  
 
-### From `morie_soil`
+### From `morie_layout`
 
-- Soil reconstruction framework  
-- Parameters influencing load transfer  
+- Floater positions  
+- Anchor coordinates  
+- Shared-anchor topology  
 
 ### Additional Inputs
 
@@ -84,18 +79,24 @@ This provides the **mechanical inputs required for load generation**.
 
 The workflow is implemented in Python using:
 
-- `FAModel` → system definition  
-- `MoorPy` → static equilibrium  
-- `RAFT` → dynamic response  
 - `numpy`, `scipy` → numerical operations  
 - `matplotlib` → visualization  
+- `famodel` → system definition and data handling  
+- `MoorPy` → static equilibrium solver  
+- `RAFT` → frequency-domain dynamic response  
 
 Core modules:
 
-- Mooring system generation  
-- Shared-anchor merging  
-- Equilibrium solver  
-- Dynamic response evaluation  
+- system initialization → project setup and soil loading  
+- domain extraction → local cropped study area definition  
+- shared-anchor merging → topology consolidation  
+- mooring configuration → generation of unique line setups  
+- pretension adjustment → chain length tuning for target loads  
+- equilibrium solver → static system solution  
+- watch circle evaluation → platform offset computation  
+- RAFT interface → dynamic response simulation  
+- load reconstruction → stochastic time-series generation from PSD    
+- load extraction → mudline elevation  
 
 ### System Flow
 
@@ -256,26 +257,13 @@ This enables:
 - Validation of dynamic response  
 
 
-## Load Extraction (Padeye Level)
+## Load Extraction
 
-Loads are extracted at the **padeye connection point**:
+Loads are extracted at the **mudline connection point**:
 
-- Horizontal → Ha  
-- Vertical → Va  
-- Direction → θ  
-
-### Link with Soil Reconstruction
-
-The transformation from mudline loads to padeye loads depends on:
-
-- Soil friction angle (φ)  
-- Relative density (Dr)  
-- Embedded line behavior  
-
-These parameters are provided by **morie_soil**, establishing a direct coupling between:
-
-- Mooring response  
-- Soil-dependent load transfer  
+- Horizontal → Hm  
+- Vertical → Vm  
+- Direction → θm  
 
 
 ## Anchor Load Aggregation
@@ -290,9 +278,9 @@ This step converts:
 
 Resulting in:
 
-- H (horizontal resultant)  
-- V (vertical load)  
-- θ (direction)  
+- H (horizontal component of the mooring line tension load)  
+- V (vertical component of the mooring line tension load)  
+- θ (angle with the horizontal seabed plane)  
 
 This is the **critical interface between physics and design**.
 
@@ -304,7 +292,7 @@ This is the **critical interface between physics and design**.
 - Mooring geometry and topology  
 - Equilibrium configuration  
 - Line tensions and profiles  
-- Padeye loads (Ha, Va, θ)  
+- Mudline loads (Hm, Vm, θm)  
 
 ### Dynamic Outputs
 
@@ -321,10 +309,9 @@ This is the **critical interface between physics and design**.
 
 ## Engineering Applications
 
-- Shared-anchor load evaluation  
-- Anchor sizing and verification  
 - Mooring system optimization  
-- Environmental sensitivity studies  
+- Environmental sensitivity studies
+- Offset sensitivity analysis for dynamic cable coupling  
 - Fatigue and extreme load assessment  
 
 This enables:

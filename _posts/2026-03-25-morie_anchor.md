@@ -85,7 +85,13 @@ This provides the **load and resistance inputs required for anchor verification*
 
 ## Technical Architecture
 
-The workflow integrates:
+The workflow is implemented in Python using:
+
+- `numpy`, `scipy` → numerical operations  
+- `matplotlib` → visualization 
+- `FAModel` → system definition 
+
+Core modules:
 
 - Load processing  
 - Event detection  
@@ -165,11 +171,33 @@ Note here that the standard deviation was increased to match the maximum load in
 
 The anchor must be checked against **simultaneous load conditions**, not independent maxima.
 
+
+## Load Extraction
+
+Loads are extracted at the **mudline connection point** are derived at the **padeye connection point**:
+
+- Horizontal → Ha  
+- Vertical → Va  
+- Direction → θa  
+
+### Link with Soil Reconstruction
+
+The transformation from mudline loads to padeye loads depends on:
+
+- Soil friction angle (φ)  
+- Relative density (Dr)  
+- Embedded line behavior  
+
+These parameters are provided by **morie_soil**, establishing a direct coupling between:
+
+- Mooring response  
+- Soil-dependent load transfer 
+
 ## Anchor-Level Soil Profile (fowt1b)
 
 The selected anchor **fowt1b** is exported with its fully reconstructed soil profile in a structured format (`profile_map`), directly usable in downstream anchor capacity models.
 
-This structure represents the **final engineering output** of the soil reconstruction workflow.
+This structure represents the **final engineering output** of the soil and it was generated in the previous study case **morie_soil**.
 
 ### Profile Structure
 
@@ -207,7 +235,6 @@ profile_map = {
             'Dr_top': 85.0,
             'Dr_bot': 95.0}]}
 ```
-
 
 ## Load Transfer to Padeye
 
@@ -328,8 +355,10 @@ Defines **admissible load combinations** and anchor utilization.
 ## Outputs Generated
 
 - Concomitant load states  
-- Padeye loads  
+- Padeye loads
+- Shared-anchor load evaluation 
 - Resultant anchor loads (H, V, T)  
+- Anchor sizing and verification    
 - Capacity envelopes  
 - Utilization factors  
 
@@ -386,7 +415,7 @@ This is where:
 
 - Soil–mooring static vs dynamic decoupling loads  
 - Probabilistic loads  
-- Optimization loops  
+- Optimization anchor design loops  
 
 
 ## Design Philosophy

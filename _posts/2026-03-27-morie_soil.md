@@ -93,13 +93,13 @@ The workflow is implemented in Python using:
 
 Core modules:
 
-- `step01_layout_domain.py` → domain cropping  
-- `step02_truth_soil_model.py` → synthetic soil generation  
-- `step03_tomographic_grid.py` → plane definition  
-- `step04_soil_planes.py` → soil sampling  
-- `step05_query_soil_profiles.py` → profile reconstruction  
-- `step06_boundary_detection.py` → boundary detection  
-- `step07_plot_soil.py` → visualization  
+- `layout_domain` → domain cropping around selected layout  
+- `truth_soil_model` → synthetic layered soil generation  
+- `tomographic_grid` → plane definition for soil sampling  
+- `soil_sampling` → property extraction along planes  
+- `profile_reconstruction` → interpolation at anchor locations  
+- `boundary_detection` → layer interface identification  
+- `soil_visualization` → validation and plotting   
 
 ### System Flow
 
