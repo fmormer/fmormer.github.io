@@ -17,7 +17,7 @@ The result is a **deterministic and reproducible layout generation framework** t
 
 This module represents the stage where site constraints are translated into spatial system configuration.
 
-Site intelligence → **Layout generation** → Soil reconstruction → Mooring physics → Anchor verification → Cable optimization
+> Site intelligence → **Layout generation** → Soil reconstruction → Mooring physics → Anchor verification → Cable optimization
 
 
 ## Project Scope

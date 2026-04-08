@@ -17,7 +17,7 @@ The result is a **reproducible framework** connecting system response, load tran
 
 This module represents the point where **mooring demand and soil resistance are combined into verified design decisions**.
 
-Site intelligence → Layout generation → Soil reconstruction → Mooring physics → **Anchor verification** → Cable optimization
+> Site intelligence → Layout generation → Soil reconstruction → Mooring physics → **Anchor verification** → Cable optimization
 
 
 ## Project Scope

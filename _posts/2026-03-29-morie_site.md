@@ -17,7 +17,7 @@ The result is a **reproducible Python-based pipeline** that replaces fragmented 
 
 This module represents the entry point of the workflow, where raw geospatial data is converted into structured engineering inputs.
 
-Site intelligence → Layout generation → Soil reconstruction → Mooring physics → Anchor verification → Cable optimization
+> Site intelligence → Layout generation → Soil reconstruction → Mooring physics → Anchor verification → Cable optimization
 
 
 ## Project Scope
