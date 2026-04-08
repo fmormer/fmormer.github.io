@@ -57,63 +57,71 @@ This workflow introduces a **localized reconstruction methodology**, where spars
 
 This study builds directly on upstream Morie Analytics outputs:
 
-### From `morie_layout`:
-- Selected floater cluster
-- FOWT coordinates
-- Anchor coordinates
-- Local layout footprint
+### From `morie_layout`
 
-### From `morie_site`:
-- Bathymetry grid
-- Soil classification grid
-- Lease boundary context
+- Selected floater cluster  
+- FOWT coordinates  
+- Anchor coordinates  
+- Local layout footprint  
 
-Additional inputs:
+### From `morie_site`
 
-- Layered soil profile definitions (YAML)
-- Cropped local-domain outputs
-- Synthetic soil-model parameters
+- Bathymetry grid  
+- Soil classification grid  
+- Lease boundary context  
+
+### Additional Inputs
+
+- Layered soil profile definitions (YAML)  
+- Cropped local-domain datasets  
+- Synthetic soil-model parameters  
 
 All inputs are aligned in a **common projected coordinate system**.
+
+This provides the **subsurface data framework for anchor-level characterization**.
 
 
 ## Technical Architecture
 
 The workflow is implemented in Python using:
 
-- `numpy` → numerical operations
-- `matplotlib` → visualization
-- `yaml` → configuration handling
-- `pickle` → intermediate storage
-- `famodel` → layout and anchor extraction
+- `numpy` → numerical operations  
+- `matplotlib` → visualization  
+- `yaml` → configuration handling  
+- `pickle` → intermediate storage  
+- `famodel` → layout and anchor extraction  
 
 Core modules:
 
-- `step01_layout_domain.py` → crop local bathymetry and soil fields
-- `step02_truth_soil_model.py` → generate synthetic truth soil model
-- `step03_tomographic_grid.py` → define XZ / YZ tomographic planes
-- `step04_soil_planes.py` → sample truth model along planes
-- `step05_query_soil_profiles.py` → reconstruct soil profiles
-- `step06_boundary_detection.py` → detect and compare layer boundaries
-- `step07_plot_soil.py` → plotting and visualization
+- `step01_layout_domain.py` → domain cropping  
+- `step02_truth_soil_model.py` → synthetic soil generation  
+- `step03_tomographic_grid.py` → plane definition  
+- `step04_soil_planes.py` → soil sampling  
+- `step05_query_soil_profiles.py` → profile reconstruction  
+- `step06_boundary_detection.py` → boundary detection  
+- `step07_plot_soil.py` → visualization  
 
-The structure ensures **full traceability from spatial inputs to anchor-level soil outputs**.
+### System Flow
+
+Layout Geometry → Domain Extraction → Soil Reconstruction → Anchor Profiles
+
+The architecture ensures **traceability from spatial inputs to geotechnical outputs**.
 
 
 ## Processing Workflow
 
-1. Load selected layout and soil model
-2. Extract FOWT and anchor coordinates
-3. Define cropped local domain around layout
-4. Generate lease-scale crop context
-5. Create synthetic ground truth soil model
-6. Build tomographic acquisition grid
-7. Sample soil properties along XZ and YZ planes
-8. Reconstruct profiles at validation and anchor locations
-9. Detect layer boundaries and compare against truth
-10. Evaluate all anchors and select downstream case-study location
+1. Load selected layout and soil model  
+2. Extract FOWT and anchor coordinates  
+3. Define cropped local domain  
+4. Generate synthetic soil model  
+5. Build tomographic sampling grid  
+6. Sample soil properties along planes  
+7. Reconstruct profiles at anchor locations  
+8. Detect layer boundaries  
+9. Validate reconstruction against truth  
+10. Select representative anchor location  
 
-The workflow is fully modular and repeatable.
+This converts **layout geometry into anchor-level soil profiles**.
 
 
 ## Local Domain Definition
@@ -425,13 +433,13 @@ These extensions would move the workflow closer to **project-grade geotechnical 
 
 ## Design Philosophy
 
-This study reflects Morie Analytics principles:
+This study reflects the Morie Analytics approach:
 
-- Physics-informed modeling
-- Data-driven reconstruction
-- Modular workflow design
-- Engineering usability
-- Scalability across projects
+- Physics-informed  
+- Modular  
+- Traceable  
+- Engineering-focused  
+- Scalable  
 
 
 ## How to Run

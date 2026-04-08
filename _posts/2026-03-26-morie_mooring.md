@@ -11,123 +11,113 @@ tags: [Offshore Floating Wind, Mooring Systems, RAFT, MoorPy, Shared Anchors, Py
 
 This study establishes the **mooring physics layer** of Morie Analytics by transforming floating wind layouts into **physically consistent mooring systems and design-ready load outputs**.
 
-Using YAML-based farm definitions, bathymetry and soil datasets, and integrated simulation tools (primarily MoorPy, with optional RAFT coupling), a modular Python workflow is developed to generate mooring configurations and extract **padeye-level loads (horizontal, vertical, and directional)** for engineering assessment.
+Using YAML-based configurations and simulation tools, the workflow generates mooring systems and extracts **padeye-level loads** for engineering assessment.
 
-A key objective of the workflow is to explicitly bridge **mooring system behavior and anchor demand**, enabling consistent transformation of line-level forces into **design-ready anchor loads (H, V, θ)**.
+The result is a **reproducible computational pipeline** that connects geometry, equilibrium physics, and load transfer into downstream anchor design inputs.
 
-This module represents the first stage in the workflow where **physical system behavior governs design outcomes**, transitioning from geometric definition to force-driven engineering.
-
-The result is a **reproducible computational pipeline** that connects geometry, equilibrium physics, and load transfer mechanisms into downstream anchor design inputs.
+This module represents the first stage where **physical system behavior governs design outcomes**, transitioning from geometry to force-driven engineering.
 
 Site intelligence → Layout generation → Soil reconstruction → **Mooring physics** → Anchor verification → Cable optimization
 
 
 ## Project Scope
 
-- Farm-scale mooring system generation  
-- Shared-anchor configurations enabled through geometric alignment  
-- Padeye-level load extraction (Ha, Va, θ) for each mooring line  
-- Shared-anchor load aggregation into resultant (H, V, θ)  
-- Evaluation of environmental load cases  
-- Optional dynamic extension using RAFT (frequency-domain and time-domain reconstruction)  
+- Mooring system generation  
+- Shared-anchor configurations  
+- Padeye load extraction  
+- Load aggregation  
+- Environmental load case evaluation  
+- Optional dynamic response analysis  
 
-This workflow transforms layout candidates into **engineering-ready mooring and anchor load datasets**, ensuring full traceability from:
-
-**Layout → Mooring System → Line Loads → Anchor Demand**
+This study converts **layout geometry into design-driving loads**.
 
 
 ## Engineering Context
 
-Floating offshore wind farms increasingly adopt **shared-anchor configurations** to reduce installation cost and seabed footprint. In these systems, multiple mooring lines from different turbines converge into a single anchor, creating a **coupled load interaction problem** that must be resolved consistently.
+Floating wind farms increasingly adopt shared-anchor configurations, introducing **coupled load interaction**.
 
-Accurate engineering design requires a clear understanding of:
+Accurate design requires:
 
-- Mooring system geometry and pretension  
-- Static equilibrium and restoring behavior  
-- Directional load redistribution under environmental forcing  
-- Dynamic amplification of line tensions  
-- Translation of line-level forces into **anchor demand**  
+- Geometry and pretension  
+- Static equilibrium  
+- Directional loading  
+- Dynamic amplification  
+- Load transfer to anchors  
 
-A recurring challenge in offshore workflows is that **mooring analysis and anchor design are often treated separately**, with limited traceability between:
+Traditional workflows separate mooring and anchor design.
 
-- Line tensions from mooring solvers  
-- Padeye loads at the anchor connection  
-- Resultant loads required by anchor capacity models  
-
-This workflow addresses that disconnect by building an explicit path from **layout geometry to mooring physics to anchor design inputs**.
+This workflow provides a **continuous mechanical link** from layout to anchor demand.
 
 
 ## Inputs and Data Sources
 
+This study builds directly on upstream Morie Analytics outputs:
+
 ### From `morie_layout`
+
 - Floater positions  
 - Anchor coordinates  
 - Shared-anchor topology  
 
 ### From `morie_site`
+
 - Bathymetry grids  
-- Spatial domain and lease constraints  
+- Spatial domain  
 
 ### From `morie_soil`
-- Soil reconstruction framework (`profile_map`)  
-- Local soil parameters influencing load transfer  
+
+- Soil reconstruction framework  
+- Parameters influencing load transfer  
 
 ### Additional Inputs
 
-- YAML-based floating wind farm configuration  
-- Mooring line properties and segment definitions  
-- Environmental load cases (wave headings and dynamic forcing assumptions)  
+- YAML-based farm configuration  
+- Mooring line properties  
+- Environmental load cases  
 
-All inputs are harmonized into a simulation-ready framework compatible with **FAModel**, **MoorPy**, and **RAFT**.
+All inputs are integrated into a **simulation-ready framework**.
 
-
-## Quantitative Scope & Processing Metrics
-
-- Number of floaters: 8  
-- Mooring lines per floater: 3 (total: 24 lines)  
-- Shared anchors: typically 12–16 depending on topology  
-- Environmental load cases: multiple wave headings (e.g., 12–24)  
-- Frequency-domain resolution: ~100 frequency bins per case  
-- Time-domain reconstruction: 360 s per critical case  
-
-These metrics highlight the computational scale and reproducibility of the workflow.
+This provides the **mechanical inputs required for load generation**.
 
 
 ## Technical Architecture
 
 The workflow is implemented in Python using:
 
-- `FAModel` → project structure and system definition  
-- `MoorPy` → static equilibrium solver  
-- `RAFT` → frequency-domain dynamic response  
+- `FAModel` → system definition  
+- `MoorPy` → static equilibrium  
+- `RAFT` → dynamic response  
 - `numpy`, `scipy` → numerical operations  
 - `matplotlib` → visualization  
 
 Core modules:
 
-- `morie_mooring.py` → main execution pipeline  
-- `merge_shared_anchors.py` → shared-anchor detection and merging  
-- RAFT interface → dynamic response and PSD extraction  
+- Mooring system generation  
+- Shared-anchor merging  
+- Equilibrium solver  
+- Dynamic response evaluation  
 
 ### System Flow
 
-Layout → Mooring Definition → Equilibrium → Dynamic Response → Load Extraction → Anchor Demand
+Layout → Mooring Definition → Equilibrium → Dynamic Response → Load Extraction
+
+The architecture ensures **traceability from geometry to load outputs**.
 
 
 ## Processing Workflow
 
-1. Load floating wind farm configuration from YAML  
-2. Generate mooring geometry from floater positions and heading rules  
-3. Detect and merge coincident anchors  
+1. Load farm configuration  
+2. Generate mooring geometry  
+3. Detect and merge shared anchors  
 4. Adjust line lengths and pretension  
-5. Solve static equilibrium using MoorPy  
-6. Evaluate environmental response using RAFT  
+5. Solve static equilibrium  
+6. Evaluate environmental response  
 7. Identify governing load case  
-8. Reconstruct time-domain tension histories  
-9. Extract padeye-level loads  
-10. Aggregate loads into anchor-level demand  
+8. Reconstruct time-domain response  
+9. Extract padeye loads  
+10. Aggregate anchor demand  
 
-This converts a geometric layout into **design-driving forces for anchor verification**.
+This converts **system geometry into design-driving loads**.
 
 
 ## Mooring System Definition
@@ -387,11 +377,13 @@ This is the stage where:
 
 ## Design Philosophy
 
-- Physics-informed modeling  
-- Modular architecture  
-- Traceability from geometry to loads  
-- Engineering usability  
-- Scalability  
+This study reflects the Morie Analytics approach:
+
+- Physics-informed  
+- Modular  
+- Traceable  
+- Engineering-focused  
+- Scalable   
 
 
 ## How to Run

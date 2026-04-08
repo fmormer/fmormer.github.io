@@ -9,102 +9,77 @@ tags: [Offshore Floating Wind, Dynamic Cables, Cable Optimization, Floating Wind
 
 ## Executive Summary
 
-This study establishes the **cable optimization layer** of Morie Analytics by transforming **floater motion, mooring behavior, and site geometry into optimized dynamic cable configurations**.
+This study establishes the **system closure layer** of Morie Analytics by transforming **system behavior into optimized dynamic cable configurations**.
 
-Building on outputs from `morie_layout`, `morie_mooring`, and `morie_anchor`, the workflow integrates bathymetry, mooring-derived offsets, and hydrodynamic response from RAFT to design **constraint-compliant dynamic power cables**.
+Building on upstream modules, the workflow integrates bathymetry, mooring offsets, and hydrodynamic response to design **constraint-compliant dynamic cables**.
 
-A representative floating wind turbine is selected, and a standalone cable system is optimized under realistic motion conditions.
+The result is a **constraint-driven optimization framework** producing deployable cable designs.
 
-This module represents the final stage of the Morie Analytics workflow, where:
-
-- Geometry  
-- Physics  
-- Geotechnical constraints  
-
-Are translated into **deployable electrical infrastructure design**.
+This module represents the final stage where **system behavior is translated into infrastructure design**.
 
 Site intelligence → Layout generation → Soil reconstruction → Mooring physics → Anchor verification → **Cable optimization**
 
 
 ## Project Scope
 
-- Dynamic cable configuration from seabed to floater  
-- Integration of bathymetry and platform geometry  
-- Mooring-derived offset (watch circle)  
-- Hydrodynamic motion from RAFT (surge and sway)  
-- Constraint-based cable optimization  
-- Evaluation of sag, curvature, tension, and touchdown  
-- Modular and reproducible Python workflow  
+- Cable configuration modeling  
+- Mooring offset integration  
+- Hydrodynamic motion input  
+- Constraint-based optimization  
+- Geometry and performance evaluation  
 
-This workflow transforms:
-
-**Floater Motion → Cable Geometry → Constraint Verification → Optimized Design**
+This study converts **system behavior into optimized cable design**.
 
 
 ## Engineering Context
 
-Dynamic power cables must accommodate:
+Dynamic cables must accommodate:
 
-- Large floater excursions  
-- Cyclic hydrodynamic motion  
+- Floater motion  
+- Cyclic loading  
 - Seabed interaction  
-- Strict geometric and mechanical constraints  
+- Strict mechanical constraints  
 
-Unlike moorings or anchors, cable design is a **constraint-dominated problem**, where:
+Cable design is a **constraint-dominated problem**, balancing:
 
-- Geometry must remain feasible  
-- Curvature must stay within limits  
-- Tension must remain below allowable thresholds  
-- Seabed interaction must be controlled  
+- Geometry  
+- Curvature  
+- Tension  
+- Seabed contact  
 
-Traditional approaches rely on assumed motions.
+This workflow ensures cable design reflects **true system response**, not assumptions.
 
-This workflow instead uses:
-
-- MoorPy → mean offset (watch circle)  
-- RAFT → dynamic response envelope  
-
-This ensures that cable design reflects **true system behavior**, not assumptions.
-
----
 
 ## Inputs and Data Sources
+
+This study builds directly on upstream Morie Analytics outputs:
 
 ### From `morie_layout`
 
 - Floater geometry  
-- Fairlead location  
+- Fairlead position  
 
 ### From `morie_site`
 
 - Bathymetry grid  
-- Local seabed conditions  
+- Seabed conditions  
 
 ### From `morie_mooring`
 
-- Platform offset (watch circle)  
+- Platform offset  
 
 ### From `morie_anchor`
 
-- System boundary conditions and validated configuration  
+- Validated system constraints  
 
 ### Additional Inputs
 
-- YAML farm configuration  
-- RAFT hydrodynamic response  
+- YAML configuration  
+- RAFT motion response  
 - Cable properties and constraints  
 
----
+This provides the **boundary conditions for cable design optimization**.
 
-## Quantitative Scope & Processing Metrics
-
-- Single representative FOWT selected  
-- Multi-segment cable system modeled  
-- Several design variables (segment lengths, buoyancy distribution)  
-- Multiple constraints (tension, curvature, sag, touchdown)  
-- Iterative optimization process until convergence  
-
----
 
 ## Technical Architecture
 
@@ -114,27 +89,29 @@ The workflow integrates:
 - Mooring response  
 - Hydrodynamic motion  
 - Cable modeling  
-- Constraint-based optimization  
+- Optimization  
 
 ### System Flow
 
-Bathymetry → Mooring Offset → Dynamic Motion → Cable Geometry → Optimization → Final Design
+Bathymetry → Motion → Cable Geometry → Constraint Evaluation → Optimization
 
----
+The architecture ensures **consistent coupling between system behavior and cable design**.
+
 
 ## Processing Workflow
 
-1. Load farm configuration  
-2. Extract bathymetry at selected location  
+1. Load configuration  
+2. Extract bathymetry  
 3. Define fairlead geometry  
 4. Compute mooring offset  
-5. Extract RAFT motion  
+5. Extract motion response  
 6. Define cable model  
 7. Apply constraints  
 8. Run optimization  
-9. Evaluate final design  
+9. Evaluate final configuration  
 
----
+This converts **system response into optimized cable design**.
+
 
 ## Cable System Definition
 
@@ -148,7 +125,6 @@ Fairlead position:
 
 `rBFair = [rFair, 0, zFair]`
 
----
 
 <div align="center">
   <img src="/img/posts/morie_cable/cable_initial_config.png" 
@@ -157,7 +133,6 @@ Fairlead position:
 </div>
 *Figure 1 – Initial cable configuration.*
 
----
 
 ## Mooring-Derived Offset
 
@@ -171,7 +146,6 @@ The floater offset is computed as:
 - Sets horizontal boundary condition  
 - Directly influences cable span and touchdown  
 
----
 
 ## Hydrodynamic Motion (RAFT)
 
@@ -259,16 +233,20 @@ The optimization balances:
 - Optimized cable geometry  
 - Constraint verification  
 - Tension and curvature profiles  
-- Sag and touchdown position  
+- Sag, hog and touchdown positions  
 - Optimization history  
 
 
 ## Engineering Applications
 
+The outputs support:
+
 - Dynamic cable design  
 - Constraint-driven optimization  
 - System-level coupling  
 - Early-stage engineering decisions  
+
+This enables:
 
 **System Response → Cable Design → Constraint Verification**
 
@@ -293,23 +271,18 @@ It provides the **final transition from system behavior to deployable infrastruc
 
 ## Why It Matters Commercially
 
-Dynamic cables are:
-
-- Expensive  
-- Failure-critical  
-- Installation-sensitive  
-
-This workflow:
+Dynamic cables are among the most critical and costly components of floating wind systems.
 
 - Reduces overdesign  
-- Ensures feasibility  
-- Balances cost and risk  
+- Ensures constraint compliance  
+- Balances cost and reliability  
+- Supports early-stage decision making  
 
 This is where:
 
-- System behavior meets infrastructure design  
-- Constraints define feasibility  
-- Final design decisions are made  
+- system behavior meets infrastructure design  
+- constraints define feasibility  
+- final design decisions are made  
 
 
 ## Aspects to Improve
@@ -321,14 +294,14 @@ This is where:
 
 ## Design Philosophy
 
-This study reflects Morie Analytics principles:
+This study reflects the Morie Analytics approach:
 
-- Physics-based  
-- Constraint-driven  
+- Physics-informed  
 - Modular  
-- Scalable  
+- Traceable  
+- Engineering-focused  
+- Scalable    
 
----
 
 ## How to Run
 

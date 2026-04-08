@@ -11,11 +11,13 @@ tags: [Offshore Floating Wind, Layout Optimization, Hex Grid, Floating Wind, GIS
 
 This study establishes the **layout generation layer** of Morie Analytics by transforming site-level geospatial data into **engineering-ready floating wind farm configurations**.
 
-Using bathymetry and seabed classification from **morie_site**, the workflow identifies feasible regions, generates a constrained hexagonal lattice, and selects optimal floater clusters using **topology-driven optimization**.
+Using bathymetry and seabed classification from `morie_site`, the workflow identifies feasible regions, generates a constrained hexagonal lattice, and selects optimal floater clusters using **topology-driven optimization**.
 
-The result is a **deterministic and reproducible layout generation framework** that directly integrates with mooring and anchor models, replacing heuristic placement strategies with structured engineering logic.
+The result is a **deterministic and reproducible layout generation framework** that replaces heuristic placement strategies with structured engineering logic.
 
-> Site intelligence → **Layout generation** → Soil reconstruction → Mooring physics → Anchor verification → Cable optimization
+This module represents the stage where site constraints are translated into spatial system configuration.
+
+Site intelligence → **Layout generation** → Soil reconstruction → Mooring physics → Anchor verification → Cable optimization
 
 
 ## Project Scope
@@ -23,25 +25,22 @@ The result is a **deterministic and reproducible layout generation framework** t
 - Site-driven layout generation based on processed geospatial data  
 - Bathymetry and soil-constrained feasibility filtering  
 - Hexagonal lattice-based floater placement  
-- Topology-driven cluster optimization (8-node template)  
+- Topology-driven cluster optimization  
 - YAML-based model generation for downstream workflows  
-- Integration with:
-  - Mooring system generation  
-  - Shared-anchor detection  
-  - Anchor design workflows  
+- Integration with mooring and anchor modules  
 
-This study converts **site intelligence into spatial design decisions**.
+This study converts **site intelligence into structured spatial design decisions**.
 
 
 ## Engineering Context
 
 Following site characterization, the next critical step in offshore wind design is:
 
-> **Where do we place the turbines?**
+**Where do we place the turbines?**
 
 At this stage, engineers must balance:
 
-- Lease boundaries and setback buffers  
+- Lease boundaries and setbacks  
 - Water depth constraints  
 - Seabed conditions  
 - Mooring footprint interactions  
@@ -49,27 +48,27 @@ At this stage, engineers must balance:
 
 Traditional approaches rely on manual placement or coarse grids.
 
-This workflow introduces a **lattice-first methodology**, where layout is derived from:
-
-- Physical feasibility  
-- Spatial structure  
-- Connectivity metrics  
+This workflow introduces a **lattice-driven methodology**, where layout is derived from physical feasibility, spatial structure, and system connectivity.
 
 
 ## Inputs and Data Sources
 
-This study builds directly on **morie_site outputs** for each lease area:
+This study builds directly on upstream Morie Analytics outputs:
+
+### From `morie_site`
 
 - Bathymetry grids (`bathy_*.txt`)  
 - Soil classification grids (`soil_*.txt`)  
 - Lease boundary definitions  
 
-Additional inputs:
+### Additional Inputs
 
 - Layered soil profiles (YAML mapping)  
 - Layout parameters (spacing, buffer, orientation)  
 
-All inputs are aligned in a **common coordinate system**.
+All inputs are aligned in a **common projected coordinate system**.
+
+This provides the **spatial constraints required for layout generation**.
 
 
 ## Technical Architecture
@@ -88,7 +87,11 @@ Core modules:
 - `inject_cluster_yaml.py` → model integration  
 - `merge_shared_anchors.py` → anchor topology  
 
-The architecture ensures **direct continuity with downstream physics-based models**.
+### System Flow
+
+Site Constraints → Lattice Generation → Cluster Optimization → System Configuration
+
+The architecture ensures **direct continuity with downstream physics-based modules**.
 
 
 ## Processing Workflow
@@ -103,6 +106,8 @@ The architecture ensures **direct continuity with downstream physics-based model
 8. Inject layout into project YAML  
 9. Instantiate mooring systems and anchors  
 10. Merge shared anchors and extract topology  
+
+This converts **site constraints into structured floating wind farm layouts**.
 
 
 ## Bathymetry & Soil Context
@@ -245,15 +250,17 @@ These outputs are directly usable in:
 
 ## Engineering Applications
 
+The outputs support:
+
 - Layout feasibility screening  
 - Shared-anchor optimization  
 - Mooring spacing definition  
 - Pre-anchor design workflows  
 - Farm-scale planning  
 
-This transforms layout from:
+This enables:
 
-> **manual positioning → engineering-driven system design**
+**Manual positioning → Engineering-driven system design**
 
 
 ## Relationship to Other Morie Study Cases
@@ -272,13 +279,19 @@ This module is the **bridge between site data and system design**.
 
 ## Why It Matters Commercially
 
+Layout decisions strongly influence downstream cost and feasibility.
+
 - Reduces uncertainty in early-stage layout decisions  
 - Enables rapid comparison of layout scenarios  
 - Improves anchor-sharing efficiency  
 - Supports scalable farm design workflows  
 - Bridges GIS and engineering domains  
 
-This is where **layout becomes a strategic design variable**, not just a geometric exercise.
+This is where:
+
+- Layout becomes a strategic design variable  
+- System configuration drives cost and performance  
+- Engineering replaces heuristic placement  
 
 
 ## Aspects to Improve
@@ -292,13 +305,13 @@ This is where **layout becomes a strategic design variable**, not just a geometr
 
 ## Design Philosophy
 
-This study reflects Morie Analytics principles:
+This study reflects the Morie Analytics approach:
 
-- Deterministic design logic  
-- Topology-driven optimization  
-- Modular workflows  
-- Integration with physics-based models  
-- Scalability to farm-level design  
+- Physics-informed  
+- Modular  
+- Traceable  
+- Engineering-focused  
+- Scalable  
 
 
 ## How to Run
