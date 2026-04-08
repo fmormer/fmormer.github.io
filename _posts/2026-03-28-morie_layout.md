@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Layout Generation & Topology Optimization – Celtic Sea
+title: Layout Generation & Topology Optimization 
 image: "/img/posts/morie_layout/morie_layout2.png"
 tags: [Offshore Floating Wind, Layout Optimization, Hex Grid, Floating Wind, GIS, Python]
 ---
