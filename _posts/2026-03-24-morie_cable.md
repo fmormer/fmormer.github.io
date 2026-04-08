@@ -17,7 +17,7 @@ The result is a **constraint-driven optimization framework** producing deployabl
 
 This module represents the final stage where **system behavior is translated into infrastructure design**.
 
-Site intelligence → Layout generation → Soil reconstruction → Mooring physics → Anchor verification → **Cable optimization**
+> Site intelligence → Layout generation → Soil reconstruction → Mooring physics → Anchor verification → **Cable optimization**
 
 
 ## Project Scope

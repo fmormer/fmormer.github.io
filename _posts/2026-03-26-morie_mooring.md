@@ -17,7 +17,7 @@ The result is a **reproducible computational pipeline** that connects geometry, 
 
 This module represents the first stage where **physical system behavior governs design outcomes**, transitioning from geometry to force-driven engineering.
 
-Site intelligence → Layout generation → Soil reconstruction → **Mooring physics** → Anchor verification → Cable optimization
+> Site intelligence → Layout generation → Soil reconstruction → **Mooring physics** → Anchor verification → Cable optimization
 
 
 ## Project Scope
