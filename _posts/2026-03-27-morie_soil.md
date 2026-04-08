@@ -17,7 +17,6 @@ The result is a **reproducible framework for anchor-level soil characterization*
 
 > Site intelligence → Layout generation → **Soil reconstruction** → Mooring physics → Anchor verification → Cable optimization
 
-***
 
 ## Project Scope
 
@@ -31,7 +30,6 @@ The result is a **reproducible framework for anchor-level soil characterization*
 
 This study converts **layout intelligence into anchor-ready subsurface inputs**.
 
-***
 
 ## Engineering Context
 
@@ -54,7 +52,6 @@ However, early-stage offshore projects typically rely on:
 
 This workflow introduces a **localized reconstruction methodology**, where sparse sectional information is converted into soil profiles suitable for downstream engineering analysis.
 
-***
 
 ## Inputs and Data Sources
 
@@ -79,7 +76,6 @@ Additional inputs:
 
 All inputs are aligned in a **common projected coordinate system**.
 
-***
 
 ## Technical Architecture
 
@@ -103,7 +99,6 @@ Core modules:
 
 The structure ensures **full traceability from spatial inputs to anchor-level soil outputs**.
 
-***
 
 ## Processing Workflow
 
@@ -120,7 +115,6 @@ The structure ensures **full traceability from spatial inputs to anchor-level so
 
 The workflow is fully modular and repeatable.
 
-***
 
 ## Local Domain Definition
 
@@ -163,7 +157,6 @@ These local-domain products define:
 - Alignment between geometry and subsurface inputs
 - The starting point for localized truth-model generation
 
-***
 
 ## Synthetic Soil Model (Ground Truth)
 
@@ -194,7 +187,6 @@ The truth model provides:
 - Known boundaries for validation
 - A benchmark to quantify reconstruction performance
 
-***
 
 ## Tomographic Sampling Framework
 
@@ -222,7 +214,6 @@ This step represents:
 - Sectional surveys
 - Limited geotechnical campaigns under realistic coverage constraints
 
-***
 
 ## Soil Section Sampling
 
@@ -250,7 +241,6 @@ These sections form the **available dataset**, capturing:
 - Lateral variation across the domain
 - Sparse but structured information for downstream interpolation
 
-***
 
 ## Profile Reconstruction
 
@@ -274,7 +264,6 @@ _Figure 8 – Reconstructed vs ground truth soil profile at the single-point val
 - Local profile reconstruction from sparse sections
 - Validation of the proof-of-concept interpolation approach
 
-***
 
 ## Boundary Detection & Validation
 
@@ -301,7 +290,6 @@ This step transforms reconstructed profiles into:
 - Inputs for capacity models
 - Quantified reconstruction accuracy
 
-***
 
 ## Multi-Anchor Evaluation
 
@@ -381,7 +369,6 @@ The workflow produces:
 
 These outputs are directly usable in the next engineering modules.
 
-***
 
 ## Engineering Applications
 
@@ -395,7 +382,6 @@ The outputs support:
 
 This transforms sparse subsurface information into **engineering decision inputs**.
 
-***
 
 ## Relationship to Other Morie Study Cases
 
@@ -414,7 +400,6 @@ This study is the **subsurface intelligence bridge** of the Morie Analytics work
 
 It provides the **geotechnical transition from layout geometry to anchor design**.
 
-***
 
 ## Why It Matters Commercially
 
@@ -426,7 +411,6 @@ It provides the **geotechnical transition from layout geometry to anchor design*
 
 This is where **subsurface uncertainty becomes quantifiable and manageable**.
 
-***
 
 ## Aspects to Improve
 
@@ -438,7 +422,6 @@ This is where **subsurface uncertainty becomes quantifiable and manageable**.
 
 These extensions would move the workflow closer to **project-grade geotechnical intelligence**.
 
-***
 
 ## Design Philosophy
 
@@ -450,7 +433,6 @@ This study reflects Morie Analytics principles:
 - Engineering usability
 - Scalability across projects
 
-***
 
 ## How to Run
 

@@ -17,7 +17,6 @@ The result is a **deterministic and reproducible layout generation framework** t
 
 > Site intelligence → **Layout generation** → Soil reconstruction → Mooring physics → Anchor verification → Cable optimization
 
----
 
 ## Project Scope
 
@@ -33,7 +32,6 @@ The result is a **deterministic and reproducible layout generation framework** t
 
 This study converts **site intelligence into spatial design decisions**.
 
----
 
 ## Engineering Context
 
@@ -57,7 +55,6 @@ This workflow introduces a **lattice-first methodology**, where layout is derive
 - Spatial structure  
 - Connectivity metrics  
 
----
 
 ## Inputs and Data Sources
 
@@ -74,7 +71,6 @@ Additional inputs:
 
 All inputs are aligned in a **common coordinate system**.
 
----
 
 ## Technical Architecture
 
@@ -94,7 +90,6 @@ Core modules:
 
 The architecture ensures **direct continuity with downstream physics-based models**.
 
----
 
 ## Processing Workflow
 
@@ -109,7 +104,6 @@ The architecture ensures **direct continuity with downstream physics-based model
 9. Instantiate mooring systems and anchors  
 10. Merge shared anchors and extract topology  
 
----
 
 ## Bathymetry & Soil Context
 
@@ -135,7 +129,6 @@ These datasets define:
 - Soil conditions compatible with anchor systems  
 - Spatial constraints for layout generation  
 
----
 
 ## Suitability Region Detection
 
@@ -160,7 +153,6 @@ Defines the **valid design domain** where:
 - Anchor systems are viable  
 - Installation equipment and techniques are feasible  
 
----
 
 ## Hexagonal Lattice Generation
 
@@ -185,7 +177,6 @@ The hex grid ensures:
 - Deterministic placement  
 - Compatibility with shared-anchor layouts  
 
----
 
 ## Cluster Optimization (Topology-Driven)
 
@@ -212,7 +203,6 @@ The hex grid ensures:
 
 Connectivity acts as a **proxy for shared-anchor efficiency**, enabling layout optimization without full physics-based modeling.
 
----
 
 ## Mooring & Anchor Topology Generation
 
@@ -237,7 +227,6 @@ This step defines:
 - Anchor-sharing potential  
 - Inputs for anchor sizing  
 
----
 
 ## Outputs Generated
 
@@ -253,7 +242,6 @@ These outputs are directly usable in:
 - Anchor design  
 - Cable routing  
 
----
 
 ## Engineering Applications
 
@@ -267,7 +255,6 @@ This transforms layout from:
 
 > **manual positioning → engineering-driven system design**
 
----
 
 ## Relationship to Other Morie Study Cases
 
@@ -282,7 +269,6 @@ This transforms layout from:
 
 This module is the **bridge between site data and system design**.
 
----
 
 ## Why It Matters Commercially
 
@@ -294,7 +280,6 @@ This module is the **bridge between site data and system design**.
 
 This is where **layout becomes a strategic design variable**, not just a geometric exercise.
 
----
 
 ## Aspects to Improve
 
@@ -304,7 +289,6 @@ This is where **layout becomes a strategic design variable**, not just a geometr
 - Cost-driven objective functions  
 - Machine learning-based layout selection  
 
----
 
 ## Design Philosophy
 
@@ -316,7 +300,6 @@ This study reflects Morie Analytics principles:
 - Integration with physics-based models  
 - Scalability to farm-level design  
 
----
 
 ## How to Run
 
