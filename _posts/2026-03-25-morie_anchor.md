@@ -11,117 +11,133 @@ tags: [Offshore Floating Wind, Anchors, Suction Piles, Shared Anchors, Geotechni
 
 This study establishes the **anchor verification layer** of Morie Analytics by transforming **mooring-derived loads into capacity-verified anchor designs**.
 
-Starting from the mooring response generated in **morie_mooring**, the workflow extracts concomitant loads, transfers them through embedded chain mechanics, resolves shared-anchor load states, and verifies suction pile capacity under combined loading.
+Starting from the mooring response generated in `morie_mooring`, the workflow identifies the governing event, extracts **concomitant loads** across all contributing lines, transfers those loads through **embedded chain mechanics**, resolves the full **shared-anchor load state**, and verifies suction pile capacity under combined loading.
 
-The result is a **reproducible anchor design framework**, bridging the gap between system-level mooring physics and geotechnical engineering verification.
+A central objective of the workflow is to avoid simplified anchor checks based on isolated peak line tensions. Instead, the methodology reconstructs the **true simultaneous load condition** acting at the anchor during the governing event, preserving traceability from dynamic mooring response to geotechnical verification.
 
-> Site intelligence → Layout generation → Soil reconstruction → Mooring physics → **Anchor verification** → Cable optimization
+This module represents the point where **mooring-system mechanics and local soil conditions are combined into capacity-verified anchor design decisions**.
+
+The result is a **reproducible anchor design framework** that connects system-level response, load transfer, vector resolution, torsional effects, and layered-soil capacity assessment into a structured engineering workflow.
+
+Site intelligence → Layout generation → Soil reconstruction → Mooring physics → **Anchor verification** → Cable optimization
 
 ---
 
 ## Project Scope
 
-- Dynamic → static load transformation  
+- Governing event identification from mooring response  
 - Concomitant multi-line load extraction  
-- Embedded chain load transfer  
-- Shared-anchor load resolution (H, V, T)  
-- Torsional load evaluation  
-- Layered-soil suction pile capacity  
-- VHM and VH interaction verification  
+- Embedded chain load transfer from mudline to padeye  
+- Shared-anchor load resolution into resultant demand  
+- Torsional load evaluation due to padeye eccentricity and misalignment  
+- Layered-soil suction pile capacity assessment  
+- VH and VHM interaction verification  
+- Utilization-based anchor acceptability check  
 
-This study transforms:
+This workflow transforms:
 
-> **Mooring Loads → Anchor Demand → Capacity Verification**
+**Mooring Loads → Anchor Demand → Capacity Verification**
 
 ---
 
 ## Engineering Context
 
-Floating offshore wind systems increasingly adopt **shared-anchor configurations**, where multiple mooring lines connect to a single anchor.
+Floating offshore wind farms increasingly adopt **shared-anchor configurations**, where multiple mooring lines connect to a single anchor.
 
 This reduces:
 
-- installation cost  
-- anchor count  
-- seabed footprint  
+- Anchor count  
+- Installation cost  
+- Seabed footprint  
 
-However, it introduces:
+However, it introduces a more complex design problem:
 
-- multi-directional loading  
-- vertical load contributions  
-- torsional effects  
-- soil–structure interaction complexity  
+- Multi-directional loading  
+- Vertical uplift contributions  
+- Torsional effects  
+- Soil–structure interaction  
 
-Traditional design approaches assume single-line loading, which is insufficient.
+The critical point is:
 
-This workflow resolves that by computing:
+**The anchor design state is not defined by isolated maxima, but by the simultaneous load combination acting during the governing event.**
 
-> **True simultaneous anchor load states from dynamic mooring simulations**
+This workflow resolves that by computing the **true concomitant anchor load state**, ensuring consistency between:
+
+- Mooring response  
+- Load transfer  
+- Geotechnical verification  
 
 ---
 
-## Inputs and Dependencies
+## Inputs and Data Sources
 
-### From previous Morie studies
+### From `morie_mooring`
 
-- **morie_mooring** → padeye loads (Ha, Va, θ)  
-- **morie_layout** → shared-anchor topology  
-- **morie_site** → bathymetry and spatial domain  
-- **morie_soil** → layered soil profiles  
+- Padeye or mudline loads (Ha, Va, θ)  
+- Time series of mooring response  
+- Governing event definition  
+- Concomitant load states  
 
-### Additional inputs
+### From `morie_layout`
 
-- Mooring load time series (RAFT)  
+- Shared-anchor topology  
+- Floater-anchor connectivity  
+- Anchor coordinates  
+
+### From `morie_site`
+
+- Bathymetry context  
+- Spatial domain  
+
+### From `morie_soil`
+
+- Layered soil profile (`profile_map`)  
+- Soil parameters governing resistance  
+
+### Additional Inputs
+
 - Chain properties and embedment parameters  
-- Soil resistance models  
+- Suction pile geometry  
+- Capacity model settings  
+
+---
+
+## Quantitative Scope & Processing Metrics
+
+- Multiple shared anchors evaluated  
+- 1–3 lines contributing per anchor  
+- Governing event extracted from full time series  
+- Load components resolved: horizontal, vertical, torsional  
+- Capacity domains checked: VH and VHM  
 
 ---
 
 ## Technical Architecture
 
-The workflow is implemented as a modular Python pipeline combining:
+The workflow integrates:
 
 - Mooring load processing  
+- Event detection  
 - Load transfer mechanics  
 - Vector resolution  
-- Geotechnical capacity models  
+- Capacity verification  
 
-Core components:
+### System Flow
 
-- Load extraction and peak detection  
-- Concomitant load identification  
-- Embedded chain solver  
-- Anchor load resolution module  
-- Suction pile capacity model  
-
-### Architectural Flow
-
-```text
-Mooring Time Series (RAFT)
-              ↓
-Critical Event Detection
-              ↓
-Concomitant Load Extraction
-              ↓
-Load Transfer to Padeye
-              ↓
-Shared Anchor Resolution (H, V, T)
-              ↓
-Suction Pile Capacity Evaluation
-```
+Mooring Time Series → Critical Event → Concomitant Loads → Load Transfer → Anchor Resolution → Capacity Check
 
 ---
 
 ## Processing Workflow
 
-1. Load mooring results and time series  
-2. Identify governing load event  
-3. Extract concomitant loads across all lines  
-4. Transfer loads through embedded chain  
-5. Compute padeye load components (Ha, Va, θ)  
-6. Resolve loads at shared-anchor level (H, V, T)  
+1. Load mooring results  
+2. Identify governing event  
+3. Extract concomitant loads  
+4. Transfer loads to padeye  
+5. Resolve shared-anchor load state  
+6. Compute torsional demand  
 7. Evaluate suction pile capacity  
-8. Verify load–capacity interaction (VH, VHM)  
+8. Verify load–capacity interaction  
 
 ---
 
@@ -141,22 +157,28 @@ Suction Pile Capacity Evaluation
 </div>
 *Figure 2 – Multiple mooring lines connected to shared anchors.*
 
+### Engineering Interpretation
+
+Shared anchors form a **coupled load network**, where:
+
+- Multiple lines contribute simultaneously  
+- Load directions differ  
+- Vector combination governs demand  
+
 ---
 
 ## Critical Event & Concomitant Loads
 
 <div align="center">
   <img src="/img/posts/morie_anchor/mooring_loads.png" 
-       alt="Mooring line tension time series showing dynamic load variation and peak response used to define governing load case" 
+       alt="Mooring tension time series showing dynamic load variation and peak response used to define governing load case" 
        width="700">
 </div>
 *Figure 3 – Mooring tension time series.*
 
-The governing event is defined as:
+The governing event can be represented as:
 
-```
-T_design = T_mean + 3.8σ
-```
+**T_design = T_mean + 3.8·σ**
 
 <div align="center">
   <img src="/img/posts/morie_anchor/concomitant_loads.png" 
@@ -164,6 +186,10 @@ T_design = T_mean + 3.8σ
        width="700">
 </div>
 *Figure 4 – Concomitant loads at peak event.*
+
+### Engineering Interpretation
+
+The anchor must be checked against **simultaneous load conditions**, not independent maxima.
 
 ---
 
@@ -183,9 +209,15 @@ T_design = T_mean + 3.8σ
 </div>
 *Figure 6 – Load transformation from mudline to padeye.*
 
+### Engineering Interpretation
+
+- Loads evolve along embedded chain  
+- Soil properties influence transfer  
+- Padeye loads govern anchor design  
+
 ---
 
-## Anchor Load Resolution
+## Shared Anchor Load Resolution
 
 <div align="center">
   <img src="/img/posts/morie_anchor/shared_anchor_planview.png" 
@@ -194,31 +226,39 @@ T_design = T_mean + 3.8σ
 </div>
 *Figure 7 – Load vectors acting on a shared anchor.*
 
-```
-Hx = Ha cos(ψ)
-Hy = Ha sin(ψ)
+Load resolution:
 
-H_total = √(Hx² + Hy²)
-V_total = Σ Va
+`Hx = Ha*cos(ψ)`  
+`Hy = Ha*sin(ψ)`  
 
-R = √(H_total² + V_total²)
-```
+`H_total = √(Hx² + Hy²)`  
+`V_total = ΣVa`  
+
+### Engineering Interpretation
+
+Multiple lines are combined into a **single 3D load state**.
 
 ---
 
-## Torsional Load
+## Torsional Load Evaluation
 
-```
-T_i = H_a,i × r_lug × sin(ψ_lug)
-T_total = Σ |T_i|
-```
+`T_i = Ha,i*r_lug*sin(ψ_lug)`  
+`T_total = Σ|T_i|`
 
 <div align="center">
   <img src="/img/posts/morie_anchor/shared_anchor.png" 
        alt="System-level view of shared anchor interaction showing multiple line load contributions and resulting load state" 
        width="600">
 </div>
-*Figure 8 – Shared-anchor interaction at farm scale.*
+*Figure 8 – Shared-anchor interaction.*
+
+### Engineering Interpretation
+
+Torsion arises from:
+
+- Load misalignment  
+- Padeye eccentricity  
+- Multi-line interaction  
 
 ---
 
@@ -231,18 +271,24 @@ T_total = Σ |T_i|
 </div>
 *Figure 9 – Suction pile geometry.*
 
-### Vertical Capacity
+Vertical capacity:
 
-```
-V_max = min(V1, V2, V3)
-```
+`V_max = min(V1, V2, V3)`
 
 <div align="center">
   <img src="/img/posts/morie_anchor/anchor_failure_modes.png" 
        alt="Suction pile failure mechanisms including uplift, sliding, and rotational modes under combined loading" 
        width="600">
 </div>
-*Figure 10 – Vertical failure mechanisms.*
+*Figure 10 – Failure mechanisms.*
+
+### Engineering Interpretation
+
+Capacity depends on:
+
+- Geometry  
+- Load combination  
+- Layered soil profile  
 
 ---
 
@@ -261,93 +307,92 @@ V_max = min(V1, V2, V3)
        width="600">
 </div>
 *Figure 12 – VH capacity envelope.*
+
+### Engineering Interpretation
+
+Defines **admissible load combinations** and anchor utilization.
+
 ---
 
 ## Outputs Generated
 
-- Padeye loads (Ha, Va, θ)  
-- Shared-anchor load vectors (H, V, T)  
-- Concomitant load cases  
-- Torsional load estimates  
-- Capacity envelopes (VH, VHM)  
+- Concomitant load states  
+- Padeye loads  
+- Resultant anchor loads (H, V, T)  
+- Capacity envelopes  
 - Utilization factors  
 
 ---
 
 ## Engineering Applications
 
-- Shared-anchor design  
-- Anchor capacity verification  
-- Mooring–anchor coupling  
+- Shared-anchor verification  
+- Anchor sizing  
+- Geotechnical design decisions  
 - Floating wind optimization  
+
+**System Response → Anchor Demand → Geotechnical Verification**
 
 ---
 
 ## Relationship to Other Morie Study Cases
 
+### System Positioning
+
+Layout → Mooring → Anchor  
+        ↓  
+      Soil  
+
 ### Receives from
 
-- **morie_mooring** → load inputs  
-- **morie_layout** → geometry and topology  
-- **morie_site** → bathymetry context  
-- **morie_soil** → soil profiles  
+- `morie_mooring` → loads  
+- `morie_layout` → topology  
+- `morie_site` → context  
+- `morie_soil` → soil  
 
 ### Feeds into
 
-- **morie_cable** → indirectly via layout constraints  
-
-This module represents the **geotechnical closure of the Morie workflow**.
+- `morie_cable`  
 
 ---
 
 ## Why It Matters Commercially
 
-- Enables shared-anchor strategies → cost reduction  
-- Reduces overdesign → optimized foundations  
-- Improves reliability of early-stage design  
-- Provides traceable load definition  
+- Validates shared-anchor strategies  
+- Reduces overdesign  
+- Links physics to cost  
+- Ensures geotechnical feasibility  
 
 This is where:
 
-> **system physics becomes foundation design decisions**
+- layout efficiency is validated  
+- anchor cost is determined  
+- system design becomes real  
 
 ---
 
 ## Aspects to Improve
 
-- Coupled soil–mooring interaction  
-- Probabilistic load envelopes  
-- Automated anchor optimization  
-- Integration with installation constraints  
+- Soil–mooring coupling  
+- Probabilistic loads  
+- Optimization loops  
 
 ---
 
 ## Design Philosophy
 
-- Physics-based modeling  
-- Modular workflows  
-- Traceability from loads to design  
-- Engineering usability  
-- Scalability  
+- Physics-based  
+- Modular  
+- Traceable  
+- Scalable  
 
 ---
 
 ## How to Run
 
-1. Place required inputs from previous modules:
-
-   - Mooring results  
-   - Soil profiles  
-   - Layout geometry  
-
-2. Install dependencies:
-
-   - `numpy` 
-   - `matplotlib`    
-   - `scipy`  
-
+1. Prepare inputs  
+2. Install dependencies  
 3. Execute:
 
 ```bash
 python morie_anchor.py
-```
