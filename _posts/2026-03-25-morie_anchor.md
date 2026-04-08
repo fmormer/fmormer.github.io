@@ -52,12 +52,9 @@ This workflow ensures a **consistent transition from system mechanics to geotech
 
 This study builds directly on upstream Morie Analytics outputs:
 
-### From `morie_mooring`
+### From `morie_site`
 
-- Padeye or mudline loads  
-- Time series response  
-- Governing event  
-- Concomitant load states  
+- Bathymetry context 
 
 ### From `morie_layout`
 
@@ -65,14 +62,18 @@ This study builds directly on upstream Morie Analytics outputs:
 - Connectivity  
 - Anchor coordinates  
 
-### From `morie_site`
-
-- Bathymetry context  
-
 ### From `morie_soil`
 
 - Layered soil profile  
 - Soil parameters  
+
+### From `morie_mooring`
+
+- Padeye or mudline loads  
+- Time series response  
+- Governing event  
+- Concomitant load states  
+
 
 ### Additional Inputs
 

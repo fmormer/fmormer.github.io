@@ -54,23 +54,19 @@ This workflow ensures cable design reflects **true system response**, not assump
 
 This study builds directly on upstream Morie Analytics outputs:
 
+### From `morie_site`
+
+- Bathymetry grid  
+- Seabed conditions 
+
 ### From `morie_layout`
 
 - Floater geometry  
 - Fairlead position  
 
-### From `morie_site`
-
-- Bathymetry grid  
-- Seabed conditions  
-
 ### From `morie_mooring`
 
 - Platform offset  
-
-### From `morie_anchor`
-
-- Validated system constraints  
 
 ### Additional Inputs
 
