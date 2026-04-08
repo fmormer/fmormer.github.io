@@ -24,9 +24,8 @@ This module represents the point where **mooring demand and soil resistance are 
 
 - Governing event identification  
 - Concomitant load extraction  
-- Load transfer to padeye  
-- Shared-anchor resolution  
-- Torsional evaluation  
+- Load transfer from mudline to padeye  
+- Shared-anchor load resolution  
 - Capacity verification  
 
 This study converts **mooring loads into geotechnically verified anchor design**.
@@ -37,9 +36,8 @@ This study converts **mooring loads into geotechnically verified anchor design**
 Shared anchors reduce cost but introduce:
 
 - Multi-directional loading  
-- Vertical uplift  
-- Torsional effects  
-- Soil–structure interaction  
+- Build-up of vertical uplift and torsional effects
+- Complex soil–structure interaction  
 
 The key principle is:
 
@@ -79,7 +77,7 @@ This study builds directly on upstream Morie Analytics outputs:
 
 - Chain properties  
 - Suction pile geometry  
-- Capacity model parameters  
+- Coupled capacity model parameters  
 
 This provides the **load and resistance inputs required for anchor verification**.
 
@@ -190,7 +188,7 @@ Loads are extracted at the **mudline connection point** are derived at the **pad
 
 ### Link with Soil Reconstruction
 
-The transformation from mudline loads to padeye loads depends on:
+The transformation from mudline loads to padeye loads on sandy soils depends on:
 
 - Soil friction angle (φ)  
 - Relative density (Dr)  
@@ -262,8 +260,8 @@ profile_map = {
 
 ### Engineering Interpretation
 
-- Loads evolve along embedded chain  
-- Soil properties influence transfer  
+- Loads evolve along embedded chain, reducing the tension and increasing the angle with the horizontal plane  
+- Chain and soil properties influence transfer  
 - Padeye loads govern anchor design  
 
 
@@ -334,9 +332,9 @@ Vertical capacity:
 
 Capacity depends on:
 
-- Geometry  
+- Pile geometry and slenderness ratio (L/D)  
 - Load combination  
-- Layered soil profile  
+- Layered soil profile capacity 
 
 
 ## Load–Capacity Interaction
@@ -365,7 +363,7 @@ Defines **admissible load combinations** and anchor utilization.
 - Concomitant load states  
 - Padeye loads
 - Shared-anchor load evaluation 
-- Resultant anchor loads (H, V, T)  
+- Resultant anchor loads (Ha, Va, Ta) at padeye elevation 
 - Anchor sizing and verification    
 - Capacity envelopes  
 - Utilization factors  
@@ -376,7 +374,7 @@ Defines **admissible load combinations** and anchor utilization.
 The outputs support:
 
 - Shared-anchor verification  
-- Anchor sizing  
+- Anchor sizing for extreme loading conditions 
 - Geotechnical design decisions  
 - Floating wind optimization  
 
@@ -423,7 +421,10 @@ This is where:
 
 - Soil–mooring static vs dynamic decoupling loads  
 - Probabilistic loads  
-- Optimization anchor design loops  
+- Optimization anchor design loops 
+- Installation aspects of suction piles
+- Cyclic loading capacity
+- Seismic analysis 
 
 
 ## Design Philosophy
