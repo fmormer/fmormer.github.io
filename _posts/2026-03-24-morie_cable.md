@@ -17,15 +17,14 @@ A representative floating wind turbine is selected, and a standalone cable syste
 
 This module represents the final stage of the Morie Analytics workflow, where:
 
-- geometry  
-- physics  
-- geotechnical constraints  
+- Geometry  
+- Physics  
+- Geotechnical constraints  
 
-are translated into **deployable electrical infrastructure design**.
+Are translated into **deployable electrical infrastructure design**.
 
 Site intelligence → Layout generation → Soil reconstruction → Mooring physics → Anchor verification → **Cable optimization**
 
----
 
 ## Project Scope
 
@@ -41,23 +40,22 @@ This workflow transforms:
 
 **Floater Motion → Cable Geometry → Constraint Verification → Optimized Design**
 
----
 
 ## Engineering Context
 
 Dynamic power cables must accommodate:
 
-- large floater excursions  
-- cyclic hydrodynamic motion  
-- seabed interaction  
-- strict geometric and mechanical constraints  
+- Large floater excursions  
+- Cyclic hydrodynamic motion  
+- Seabed interaction  
+- Strict geometric and mechanical constraints  
 
 Unlike moorings or anchors, cable design is a **constraint-dominated problem**, where:
 
-- geometry must remain feasible  
-- curvature must stay within limits  
-- tension must remain below allowable thresholds  
-- seabed interaction must be controlled  
+- Geometry must remain feasible  
+- Curvature must stay within limits  
+- Tension must remain below allowable thresholds  
+- Seabed interaction must be controlled  
 
 Traditional approaches rely on assumed motions.
 
@@ -142,9 +140,9 @@ Bathymetry → Mooring Offset → Dynamic Motion → Cable Geometry → Optimiza
 
 The cable is modeled as a multi-segment system connecting:
 
-- seabed touchdown  
-- suspended buoyant sections  
-- floater fairlead  
+- Seabed touchdown point or range  
+- Suspended buoyant sections  
+- Floater fairlead  
 
 Fairlead position:
 
@@ -193,43 +191,41 @@ Dynamic motion is defined as:
 
 The cable system accounts for:
 
-- self-weight  
-- buoyancy modules  
-- seabed interaction  
-- dynamic boundary conditions  
+- Self-weight (marine growth) 
+- Buoyancy modules  
+- Seabed interaction  
+- Dynamic boundary conditions  
 
 ### Engineering Interpretation
 
 Cable behavior is governed by:
 
-- geometry  
-- motion envelope  
-- constraint limits  
+- Geometry  
+- Motion envelope  
+- Constraint limits  
 
----
 
 ## Optimization Problem
 
 ### Design Variables
 
-- segment lengths  
-- buoyancy distribution  
-- lay lengths  
+- Segment lengths  
+- Buoyancy distribution  
+- Lay lengths  
 
 ### Constraints
 
-- minimum lay length  
-- maximum sag  
-- curvature limits  
-- tension safety factors  
-- touchdown limits  
+- Minimum lay length  
+- Maximum sag and hog heights  
+- Curvature limits  
+- Tension safety factors  
+- Touchdown range limits  
 
 ### Objective
 
-- minimize cost  
-- satisfy all constraints  
+- Minimize cost  
+- Satisfy all constraints  
 
----
 
 ## Optimization Convergence
 
@@ -244,10 +240,9 @@ Cable behavior is governed by:
 
 The optimization balances:
 
-- feasibility (constraint satisfaction)  
-- efficiency (cost reduction)  
+- Feasibility (constraint satisfaction)  
+- Efficiency (cost reduction)  
 
----
 
 ## Optimized Configuration
 
@@ -258,92 +253,92 @@ The optimization balances:
 </div>
 *Figure 3 – Optimized cable configuration.*
 
----
 
 ## Outputs Generated
 
-- optimized cable geometry  
-- constraint verification  
-- tension and curvature profiles  
-- sag and touchdown position  
-- optimization history  
+- Optimized cable geometry  
+- Constraint verification  
+- Tension and curvature profiles  
+- Sag and touchdown position  
+- Optimization history  
 
----
 
 ## Engineering Applications
 
-- dynamic cable design  
-- constraint-driven optimization  
-- system-level coupling  
-- early-stage engineering decisions  
+- Dynamic cable design  
+- Constraint-driven optimization  
+- System-level coupling  
+- Early-stage engineering decisions  
 
 **System Response → Cable Design → Constraint Verification**
 
----
 
 ## Relationship to Other Morie Study Cases
 
-### System Positioning
-
-Layout → Mooring → Anchor → Cable  
+This study is the **system closure layer** of the Morie Analytics workflow.
 
 ### Receives from
 
-- `morie_site` → bathymetry  
-- `morie_layout` → geometry  
-- `morie_mooring` → motion  
-- `morie_anchor` → system constraints  
+- **morie_site** → bathymetry context  
+- **morie_layout** → geometry and topology  
+- **morie_mooring** → static and dynamic offsets  
+- **morie_anchor** → validated system constraints  
 
 ### Completes
 
-The full system workflow  
+The cable branch of the system workflow.
 
----
+It provides the **final transition from system behavior to deployable infrastructure design**.
+
 
 ## Why It Matters Commercially
 
 Dynamic cables are:
 
-- expensive  
-- failure-critical  
-- installation-sensitive  
+- Expensive  
+- Failure-critical  
+- Installation-sensitive  
 
 This workflow:
 
-- reduces overdesign  
-- ensures feasibility  
-- balances cost and risk  
+- Reduces overdesign  
+- Ensures feasibility  
+- Balances cost and risk  
 
 This is where:
 
-- system behavior meets infrastructure design  
-- constraints define feasibility  
-- final design decisions are made  
+- System behavior meets infrastructure design  
+- Constraints define feasibility  
+- Final design decisions are made  
 
----
 
 ## Aspects to Improve
 
-- fatigue analysis  
-- probabilistic motion  
-- multi-cable interaction  
-- electrical coupling  
-
----
+- Fatigue analysis  
+- Probabilistic motion  
+- Multi-cable interaction  
+- Touchdown abrasion mitigation
 
 ## Design Philosophy
 
-- physics-based  
-- constraint-driven  
-- modular  
-- scalable  
+This study reflects Morie Analytics principles:
+
+- Physics-based  
+- Constraint-driven  
+- Modular  
+- Scalable  
 
 ---
 
 ## How to Run
 
-1. Prepare inputs  
-2. Install dependencies  
+1. Place datasets in `celtic_sea_share/`  
+2. Install dependencies:
+
+- `numpy`  
+- `matplotlib` 
+- `famodel` 
+ 
 3. Execute:
 
 ```bash

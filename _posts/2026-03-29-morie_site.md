@@ -17,7 +17,6 @@ The result is a **reproducible Python-based pipeline** that replaces fragmented 
 
 > **Site intelligence** → Layout generation → Soil reconstruction → Mooring physics → Anchor verification → Cable optimization
 
-***
 
 ## Project Scope
 
@@ -29,7 +28,6 @@ The result is a **reproducible Python-based pipeline** that replaces fragmented 
 
 This study focuses on **regional-to-lease scale characterization**, forming the foundation for downstream engineering modules.
 
-***
 
 ## Engineering Context
 
@@ -45,7 +43,6 @@ These assessments are often performed manually in GIS environments, leading to i
 
 This workflow introduces a **structured computational alternative**, where public datasets are transformed into standardized engineering inputs.
 
-***
 
 ## Inputs and Data Sources
 
@@ -61,7 +58,6 @@ All datasets are:
 - Spatially aligned
 - Processed into engineering-ready formats
 
-***
 
 ## Technical Architecture
 
@@ -81,7 +77,6 @@ Core modules:
 
 This modular structure ensures **reproducibility, clarity, and scalability**.
 
-***
 
 ## Processing Workflow
 
@@ -97,7 +92,6 @@ For each lease area:
 
 The workflow is fully automated and repeatable across multiple lease areas.
 
-***
 
 ## Regional Lease Context
 
@@ -116,7 +110,6 @@ Offshore design begins at regional scale, where:
 - Bathymetry and soils vary spatially
 - Design assumptions must remain consistent
 
-***
 
 ## Bathymetry Characterization
 
@@ -163,7 +156,6 @@ However, depth variability across the site still requires:
 
 This bathymetric characterization defines the **geometric boundary conditions** for all downstream engineering modules.
 
-***
 
 ## Seabed Characterization
 
@@ -232,7 +224,6 @@ At the same time, localized heterogeneity highlights the need for:
 - Site-specific soil reconstruction (addressed in **morie_soil**)
 - Robust design envelopes for mixed conditions
 
-***
 
 ## Regional Context Verification
 
@@ -243,7 +234,6 @@ At the same time, localized heterogeneity highlights the need for:
 </div>
 _Figure 6 – Regional seabed conditions across the Celtic Sea._
 
-***
 
 ## Local-to-Regional Validation
 
@@ -262,20 +252,18 @@ Ensures:
 - Classification consistency
 - Traceability to source datasets
 
-***
 
 ## Outputs Generated
 
 For each lease area:
 
-- bathymetry grids (`.txt`)
-- soil classification grids (`.txt`)
-- spatial plots (`.png`)
-- structured CSV summaries
+- Bathymetry grids (`.txt`)
+- Soil classification grids (`.txt`)
+- Spatial plots (`.png`)
+- Structured CSV summaries
 
 These outputs are directly usable in downstream engineering workflows.
 
-***
 
 ## Engineering Applications
 
@@ -289,7 +277,6 @@ The outputs support:
 
 This transforms raw geospatial data into **engineering decision inputs**.
 
-***
 
 ## Relationship to Other Morie Study Cases
 
@@ -305,7 +292,6 @@ This study is the **entry point of the Morie Analytics workflow**.
 
 It provides the **baseline environmental context** for all downstream modules.
 
-***
 
 ## Why It Matters Commercially
 
@@ -317,7 +303,6 @@ It provides the **baseline environmental context** for all downstream modules.
 
 This is where **data becomes engineering leverage**.
 
-***
 
 ## Aspects to Improve
 
@@ -328,7 +313,6 @@ This is where **data becomes engineering leverage**.
 
 These extensions would move the workflow closer to **FEED-level site characterization**.
 
-***
 
 ## Design Philosophy
 
@@ -337,10 +321,9 @@ This study reflects the Morie Analytics approach:
 - Modular
 - Reproducible
 - Data-driven
-- Rngineering-focused
+- Engineering-focused
 - Scalable to full wind farm design
 
-***
 
 ## How to Run
 
@@ -350,7 +333,6 @@ This study reflects the Morie Analytics approach:
 - `numpy`
 - `matplotlib`
 - `geopandas`
-- `xarray`
 
 3. Execute:
 

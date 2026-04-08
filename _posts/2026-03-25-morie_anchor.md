@@ -21,7 +21,6 @@ The result is a **reproducible anchor design framework** that connects system-le
 
 Site intelligence → Layout generation → Soil reconstruction → Mooring physics → **Anchor verification** → Cable optimization
 
----
 
 ## Project Scope
 
@@ -38,7 +37,6 @@ This workflow transforms:
 
 **Mooring Loads → Anchor Demand → Capacity Verification**
 
----
 
 ## Engineering Context
 
@@ -67,7 +65,6 @@ This workflow resolves that by computing the **true concomitant anchor load stat
 - Load transfer  
 - Geotechnical verification  
 
----
 
 ## Inputs and Data Sources
 
@@ -100,7 +97,6 @@ This workflow resolves that by computing the **true concomitant anchor load stat
 - Suction pile geometry  
 - Capacity model settings  
 
----
 
 ## Quantitative Scope & Processing Metrics
 
@@ -110,7 +106,6 @@ This workflow resolves that by computing the **true concomitant anchor load stat
 - Load components resolved: horizontal, vertical, torsional  
 - Capacity domains checked: VH and VHM  
 
----
 
 ## Technical Architecture
 
@@ -126,7 +121,6 @@ The workflow integrates:
 
 Mooring Time Series → Critical Event → Concomitant Loads → Load Transfer → Anchor Resolution → Capacity Check
 
----
 
 ## Processing Workflow
 
@@ -139,7 +133,6 @@ Mooring Time Series → Critical Event → Concomitant Loads → Load Transfer �
 7. Evaluate suction pile capacity  
 8. Verify load–capacity interaction  
 
----
 
 ## Anchor System Topology
 
@@ -165,7 +158,6 @@ Shared anchors form a **coupled load network**, where:
 - Load directions differ  
 - Vector combination governs demand  
 
----
 
 ## Critical Event & Concomitant Loads
 
@@ -191,7 +183,48 @@ The governing event can be represented as:
 
 The anchor must be checked against **simultaneous load conditions**, not independent maxima.
 
----
+## Anchor-Level Soil Profile (fowt1b)
+
+The selected anchor **fowt1b** is exported with its fully reconstructed soil profile in a structured format (`profile_map`), directly usable in downstream anchor capacity models.
+
+This structure represents the **final engineering output** of the soil reconstruction workflow.
+
+### Profile Structure
+
+```python
+profile_map = {
+    'layers': [
+        {
+            'type': 'sand',
+            'z_top': stick-up_length,
+            'z_bottom': Z1 + stick-up_length,
+            'gamma_top': 9.0,
+            'gamma_bot': 10.0,
+            'phi_top': 30.0,
+            'phi_bot': 32.0,
+            'Dr_top': 60.0,
+            'Dr_bot': 75.0},
+        {
+            'type': 'sand',
+            'z_top': Z1 + stick-up_length,
+            'z_bot': Z2 + stick-up_length,
+            'gamma_top': 10.0,
+            'gamma_bot': 11.0,
+            'phi_top': 32.0,
+            'phi_bot': 37.0,
+            'Dr_top': 75.0,
+            'Dr_bot': 85.0},
+        {
+            'type': 'sand',
+            'z_top': Z2 + stick-up_length,
+            'z_bot': Zmax + stick-up_length,
+            'gamma_top': 11.0,
+            'gamma_bot': 12.0,
+            'phi_top': 37.0,
+            'phi_bot': 40.0,
+            'Dr_top': 85.0,
+            'Dr_bot': 95.0}]}```
+
 
 ## Load Transfer to Padeye
 
@@ -215,7 +248,6 @@ The anchor must be checked against **simultaneous load conditions**, not indepen
 - Soil properties influence transfer  
 - Padeye loads govern anchor design  
 
----
 
 ## Shared Anchor Load Resolution
 
@@ -238,7 +270,6 @@ Load resolution:
 
 Multiple lines are combined into a **single 3D load state**.
 
----
 
 ## Torsional Load Evaluation
 
@@ -260,7 +291,6 @@ Torsion arises from:
 - Padeye eccentricity  
 - Multi-line interaction  
 
----
 
 ## Suction Pile Capacity Model
 
@@ -290,7 +320,6 @@ Capacity depends on:
 - Load combination  
 - Layered soil profile  
 
----
 
 ## Load–Capacity Interaction
 
@@ -322,7 +351,6 @@ Defines **admissible load combinations** and anchor utilization.
 - Capacity envelopes  
 - Utilization factors  
 
----
 
 ## Engineering Applications
 
@@ -333,28 +361,24 @@ Defines **admissible load combinations** and anchor utilization.
 
 **System Response → Anchor Demand → Geotechnical Verification**
 
----
 
 ## Relationship to Other Morie Study Cases
 
-### System Positioning
-
-Layout → Mooring → Anchor  
-        ↓  
-      Soil  
+This study is the **geotechnical verification layer** of the Morie Analytics workflow.
 
 ### Receives from
 
-- `morie_mooring` → loads  
-- `morie_layout` → topology  
-- `morie_site` → context  
-- `morie_soil` → soil  
+- **morie_site** → bathymetry context  
+- **morie_layout** → geometry and topology  
+- **morie_soil** → layered soil profile and load-transfer environment  
+- **morie_mooring** → design-driving loads  
 
-### Feeds into
+### Completes
 
-- `morie_cable`  
+The anchor branch of the system workflow.
 
----
+It provides the **geotechnical transition from anchor demand to capacity-verified design**.  
+
 
 ## Why It Matters Commercially
 
@@ -365,33 +389,37 @@ Layout → Mooring → Anchor
 
 This is where:
 
-- layout efficiency is validated  
-- anchor cost is determined  
-- system design becomes real  
+- Layout efficiency is validated  
+- Anchor cost is determined  
+- System design becomes real  
 
----
 
 ## Aspects to Improve
 
-- Soil–mooring coupling  
+- Soil–mooring static vs dynamic decoupling loads  
 - Probabilistic loads  
 - Optimization loops  
 
----
 
 ## Design Philosophy
+
+This study reflects Morie Analytics principles:
 
 - Physics-based  
 - Modular  
 - Traceable  
 - Scalable  
 
----
 
 ## How to Run
 
-1. Prepare inputs  
-2. Install dependencies  
+1. Place datasets in `celtic_sea_share/`  
+2. Install dependencies:
+
+- `numpy`  
+- `matplotlib`
+- `famodel`  
+ 
 3. Execute:
 
 ```bash

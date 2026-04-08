@@ -21,7 +21,6 @@ The result is a **reproducible computational pipeline** that connects geometry, 
 
 Site intelligence → Layout generation → Soil reconstruction → **Mooring physics** → Anchor verification → Cable optimization
 
----
 
 ## Project Scope
 
@@ -36,7 +35,6 @@ This workflow transforms layout candidates into **engineering-ready mooring and 
 
 **Layout → Mooring System → Line Loads → Anchor Demand**
 
----
 
 ## Engineering Context
 
@@ -58,7 +56,6 @@ A recurring challenge in offshore workflows is that **mooring analysis and ancho
 
 This workflow addresses that disconnect by building an explicit path from **layout geometry to mooring physics to anchor design inputs**.
 
----
 
 ## Inputs and Data Sources
 
@@ -83,7 +80,6 @@ This workflow addresses that disconnect by building an explicit path from **layo
 
 All inputs are harmonized into a simulation-ready framework compatible with **FAModel**, **MoorPy**, and **RAFT**.
 
----
 
 ## Quantitative Scope & Processing Metrics
 
@@ -96,7 +92,6 @@ All inputs are harmonized into a simulation-ready framework compatible with **FA
 
 These metrics highlight the computational scale and reproducibility of the workflow.
 
----
 
 ## Technical Architecture
 
@@ -118,7 +113,6 @@ Core modules:
 
 Layout → Mooring Definition → Equilibrium → Dynamic Response → Load Extraction → Anchor Demand
 
----
 
 ## Processing Workflow
 
@@ -135,7 +129,6 @@ Layout → Mooring Definition → Equilibrium → Dynamic Response → Load Extr
 
 This converts a geometric layout into **design-driving forces for anchor verification**.
 
----
 
 ## Mooring System Definition
 
@@ -163,7 +156,6 @@ This deterministic geometry ensures:
 - Compatibility with shared-anchor configurations  
 - Consistent load transfer paths  
 
----
 
 ## Shared Anchor Topology
 
@@ -190,7 +182,6 @@ But require:
 - Directional load resolution  
 - Consistent transformation into anchor demand  
 
----
 
 ## Pretension & Equilibrium (MoorPy)
 
@@ -217,7 +208,6 @@ Pretension governs:
 - Load sharing between lines  
 - Sensitivity to environmental forcing  
 
----
 
 ## Environmental & Dynamic Response
 
@@ -240,7 +230,6 @@ Dynamic loading introduces:
 
 This reveals how environmental conditions translate into **load variability and extremes**.
 
----
 
 ## Critical Load Case Identification
 
@@ -256,7 +245,6 @@ Critical conditions typically arise when:
 
 This defines the **design-driving scenario** for anchor verification.
 
----
 
 ## Time-Domain Reconstruction
 
@@ -277,7 +265,6 @@ This enables:
 - Fatigue cycle assessment  
 - Validation of dynamic response  
 
----
 
 ## Load Extraction (Padeye Level)
 
@@ -300,7 +287,6 @@ These parameters are provided by **morie_soil**, establishing a direct coupling 
 - Mooring response  
 - Soil-dependent load transfer  
 
----
 
 ## Anchor Load Aggregation
 
@@ -320,7 +306,6 @@ Resulting in:
 
 This is the **critical interface between physics and design**.
 
----
 
 ## Outputs Generated
 
@@ -343,7 +328,6 @@ This is the **critical interface between physics and design**.
 - Resultant loads (H, V, θ)  
 - Load contribution per line  
 
----
 
 ## Engineering Applications
 
@@ -357,20 +341,15 @@ This enables:
 
 **Mooring Behavior → Anchor Demand → Design Verification**
 
----
 
 ## Relationship to Other Morie Study Cases
 
-### System Positioning
-
-Layout → Mooring → Anchor  
-        ↓  
-      Soil  
+This study is the **physics engine** of the Morie Analytics workflow.
 
 ### Receives from
 
-- **morie_layout** → geometry and topology  
 - **morie_site** → bathymetry context  
+- **morie_layout** → geometry and topology  
 - **morie_soil** → soil-dependent load transfer  
 
 ### Feeds into
@@ -378,9 +357,8 @@ Layout → Mooring → Anchor
 - **morie_anchor** → capacity verification  
 - **morie_cable** → system configuration constraints  
 
-This module acts as the **physics engine of the workflow**.
+It provides the **mechanical transition from system geometry to design-driving loads**.
 
----
 
 ## Why It Matters Commercially
 
@@ -397,7 +375,6 @@ This is the stage where:
 - shared-anchor strategies are validated or rejected  
 - system configuration directly impacts cost  
 
----
 
 ## Aspects to Improve
 
@@ -407,7 +384,6 @@ This is the stage where:
 - Automated optimization loops  
 - Integration with installation constraints  
 
----
 
 ## Design Philosophy
 
@@ -417,7 +393,6 @@ This is the stage where:
 - Engineering usability  
 - Scalability  
 
----
 
 ## How to Run
 
