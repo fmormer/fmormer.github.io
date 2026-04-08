@@ -448,11 +448,11 @@ This study reflects the Morie Analytics approach:
 1. Place datasets in `celtic_sea_share/`
 2. Install dependencies:
 
-- `numpy`
-- `matplotlib`
-- `pyyaml`
-- `pickle`
-- `famodel`
+	- `numpy`
+	- `matplotlib`
+	- `pyyaml`
+	- `pickle`
+	- `FAModel`
 
 3. Execute:
 

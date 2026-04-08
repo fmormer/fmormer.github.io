@@ -322,12 +322,12 @@ This study reflects the Morie Analytics approach:
 1. Place input datasets in `celtic_sea_share/`  
 2. Install dependencies:
 
-   - `numpy`
-   - `matplotlib`   
-   - `scipy`  
-   - `pyyaml`  
-   - `famodel`  
-   - `MoorPy`  
+	- `numpy`
+	- `matplotlib`   
+	- `scipy`  
+	- `pyyaml`  
+	- `FAModel` 
+	- `MoorPy`  
 
 3. Execute:
 
