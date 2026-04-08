@@ -15,65 +15,73 @@ Using Celtic Sea lease areas, **GEBCO 2025 bathymetry**, and **EMODnet seabed cl
 
 The result is a **reproducible Python-based pipeline** that replaces fragmented GIS workflows with a scalable and transparent offshore data-processing framework.
 
-> **Site intelligence** → Layout generation → Soil reconstruction → Mooring physics → Anchor verification → Cable optimization
+This module represents the entry point of the workflow, where raw geospatial data is converted into structured engineering inputs.
+
+Site intelligence → Layout generation → Soil reconstruction → Mooring physics → Anchor verification → Cable optimization
 
 
 ## Project Scope
 
-- Screening of **5 Celtic Sea lease areas**
-- Processing of **GEBCO 2025 bathymetry**
-- Integration of **EMODnet Folk 7 seabed classification**
-- Generation of lease-scale bathymetry and soil maps
-- Validation of local results against regional datasets
+- Screening of **5 Celtic Sea lease areas**  
+- Processing of **GEBCO 2025 bathymetry**  
+- Integration of **EMODnet Folk 7 seabed classification**  
+- Generation of lease-scale bathymetry and soil maps  
+- Validation of local results against regional datasets  
 
-This study focuses on **regional-to-lease scale characterization**, forming the foundation for downstream engineering modules.
+This study converts **regional marine data into engineering-ready spatial constraints**.
 
 
 ## Engineering Context
 
 Early-stage floating offshore wind design requires rapid and consistent evaluation of:
 
-- Water depth distribution
-- Seabed conditions
-- Anchor feasibility constraints
-- Mooring footprint implications
-- Installation constraints
+- Water depth distribution  
+- Seabed conditions  
+- Anchor feasibility constraints  
+- Mooring footprint implications  
+- Installation constraints  
 
 These assessments are often performed manually in GIS environments, leading to inconsistencies across projects.
 
-This workflow introduces a **structured computational alternative**, where public datasets are transformed into standardized engineering inputs.
+This workflow introduces a **structured computational approach**, where public datasets are transformed into standardized engineering inputs suitable for downstream design modules.
 
 
 ## Inputs and Data Sources
 
-The workflow integrates:
+This study integrates publicly available marine geospatial datasets:
 
-- Celtic Sea lease area boundaries
-- **GEBCO 2025** global bathymetry grid
-- **EMODnet Folk 7** seabed classification
+- Celtic Sea lease area boundaries  
+- **GEBCO 2025** global bathymetry grid  
+- **EMODnet Folk 7** seabed classification  
 
 All datasets are:
 
-- Harmonized into a projected coordinate system
-- Spatially aligned
-- Processed into engineering-ready formats
+- Harmonized into a projected coordinate system  
+- Spatially aligned  
+- Processed into engineering-ready formats  
+
+This provides the **spatial data foundation for downstream modules**.
 
 
 ## Technical Architecture
 
 The workflow is implemented in Python using:
 
-- `geopandas` → spatial data processing
-- `xarray` → bathymetry handling
-- `numpy` → numerical operations
-- `matplotlib` → visualization
+- `geopandas` → spatial data processing  
+- `xarray` → bathymetry handling  
+- `numpy` → numerical operations  
+- `matplotlib` → visualization  
 
 Core modules:
 
-- Lease boundary extraction
-- CRS transformation
-- Bathymetry masking
-- Seabed intersection
+- Lease boundary extraction  
+- CRS transformation  
+- Bathymetry masking  
+- Seabed classification intersection  
+
+### System Flow
+
+Raw Geospatial Data → Spatial Processing → Engineering Inputs
 
 This modular structure ensures **reproducibility, clarity, and scalability**.
 
@@ -82,15 +90,15 @@ This modular structure ensures **reproducibility, clarity, and scalability**.
 
 For each lease area:
 
-1. Import lease boundary
-2. Transform coordinates to projected system
-3. Load GEBCO bathymetry
-4. Mask bathymetry within lease polygon
-5. Load EMODnet seabed data
-6. Intersect seabed classification with lease
-7. Generate plots and structured outputs
+1. Import lease boundary  
+2. Transform coordinates to projected system  
+3. Load GEBCO bathymetry  
+4. Mask bathymetry within lease polygon  
+5. Load EMODnet seabed data  
+6. Intersect seabed classification with lease  
+7. Generate plots and structured outputs  
 
-The workflow is fully automated and repeatable across multiple lease areas.
+This converts **regional datasets into engineering-ready spatial constraints**.
 
 
 ## Regional Lease Context
@@ -318,11 +326,11 @@ These extensions would move the workflow closer to **FEED-level site characteriz
 
 This study reflects the Morie Analytics approach:
 
-- Modular
-- Reproducible
-- Data-driven
-- Engineering-focused
-- Scalable to full wind farm design
+- Physics-informed  
+- Modular  
+- Traceable  
+- Engineering-focused  
+- Scalable  
 
 
 ## How to Run

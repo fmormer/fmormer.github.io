@@ -9,117 +9,95 @@ tags: [Offshore Floating Wind, Anchors, Suction Piles, Shared Anchors, Geotechni
 
 ## Executive Summary
 
-This study establishes the **anchor verification layer** of Morie Analytics by transforming **mooring-derived loads into capacity-verified anchor designs**.
+This study establishes the **geotechnical verification layer** of Morie Analytics by transforming **mooring-derived loads into capacity-verified anchor designs**.
 
-Starting from the mooring response generated in `morie_mooring`, the workflow identifies the governing event, extracts **concomitant loads** across all contributing lines, transfers those loads through **embedded chain mechanics**, resolves the full **shared-anchor load state**, and verifies suction pile capacity under combined loading.
+The workflow identifies the governing event, extracts concomitant loads, transfers them through embedded chain mechanics, resolves shared-anchor demand, and verifies suction pile capacity.
 
-A central objective of the workflow is to avoid simplified anchor checks based on isolated peak line tensions. Instead, the methodology reconstructs the **true simultaneous load condition** acting at the anchor during the governing event, preserving traceability from dynamic mooring response to geotechnical verification.
+The result is a **reproducible framework** connecting system response, load transfer, and geotechnical resistance.
 
-This module represents the point where **mooring-system mechanics and local soil conditions are combined into capacity-verified anchor design decisions**.
-
-The result is a **reproducible anchor design framework** that connects system-level response, load transfer, vector resolution, torsional effects, and layered-soil capacity assessment into a structured engineering workflow.
+This module represents the point where **mooring demand and soil resistance are combined into verified design decisions**.
 
 Site intelligence → Layout generation → Soil reconstruction → Mooring physics → **Anchor verification** → Cable optimization
 
 
 ## Project Scope
 
-- Governing event identification from mooring response  
-- Concomitant multi-line load extraction  
-- Embedded chain load transfer from mudline to padeye  
-- Shared-anchor load resolution into resultant demand  
-- Torsional load evaluation due to padeye eccentricity and misalignment  
-- Layered-soil suction pile capacity assessment  
-- VH and VHM interaction verification  
-- Utilization-based anchor acceptability check  
+- Governing event identification  
+- Concomitant load extraction  
+- Load transfer to padeye  
+- Shared-anchor resolution  
+- Torsional evaluation  
+- Capacity verification  
 
-This workflow transforms:
-
-**Mooring Loads → Anchor Demand → Capacity Verification**
+This study converts **mooring loads into geotechnically verified anchor design**.
 
 
 ## Engineering Context
 
-Floating offshore wind farms increasingly adopt **shared-anchor configurations**, where multiple mooring lines connect to a single anchor.
-
-This reduces:
-
-- Anchor count  
-- Installation cost  
-- Seabed footprint  
-
-However, it introduces a more complex design problem:
+Shared anchors reduce cost but introduce:
 
 - Multi-directional loading  
-- Vertical uplift contributions  
+- Vertical uplift  
 - Torsional effects  
 - Soil–structure interaction  
 
-The critical point is:
+The key principle is:
 
-**The anchor design state is not defined by isolated maxima, but by the simultaneous load combination acting during the governing event.**
+**Design must be based on simultaneous load conditions, not isolated maxima.**
 
-This workflow resolves that by computing the **true concomitant anchor load state**, ensuring consistency between:
-
-- Mooring response  
-- Load transfer  
-- Geotechnical verification  
+This workflow ensures a **consistent transition from system mechanics to geotechnical verification**.  
 
 
 ## Inputs and Data Sources
 
+This study builds directly on upstream Morie Analytics outputs:
+
 ### From `morie_mooring`
 
-- Padeye or mudline loads (Ha, Va, θ)  
-- Time series of mooring response  
-- Governing event definition  
+- Padeye or mudline loads  
+- Time series response  
+- Governing event  
 - Concomitant load states  
 
 ### From `morie_layout`
 
 - Shared-anchor topology  
-- Floater-anchor connectivity  
+- Connectivity  
 - Anchor coordinates  
 
 ### From `morie_site`
 
 - Bathymetry context  
-- Spatial domain  
 
 ### From `morie_soil`
 
-- Layered soil profile (`profile_map`)  
-- Soil parameters governing resistance  
+- Layered soil profile  
+- Soil parameters  
 
 ### Additional Inputs
 
-- Chain properties and embedment parameters  
+- Chain properties  
 - Suction pile geometry  
-- Capacity model settings  
+- Capacity model parameters  
 
-
-## Quantitative Scope & Processing Metrics
-
-- Multiple shared anchors evaluated  
-- 1–3 lines contributing per anchor  
-- Governing event extracted from full time series  
-- Load components resolved: horizontal, vertical, torsional  
-- Capacity domains checked: VH and VHM  
+This provides the **load and resistance inputs required for anchor verification**.
 
 
 ## Technical Architecture
 
 The workflow integrates:
 
-- Mooring load processing  
+- Load processing  
 - Event detection  
-- Load transfer mechanics  
+- Load transfer  
 - Vector resolution  
 - Capacity verification  
 
 ### System Flow
 
-Mooring Time Series → Critical Event → Concomitant Loads → Load Transfer → Anchor Resolution → Capacity Check
+Mooring Response → Critical Event → Load Transfer → Anchor Resolution → Capacity Check
+
+The architecture ensures **traceability from system loads to geotechnical verification**.
 
 
 ## Processing Workflow
@@ -132,6 +110,8 @@ Mooring Time Series → Critical Event → Concomitant Loads → Load Transfer �
 6. Compute torsional demand  
 7. Evaluate suction pile capacity  
 8. Verify load–capacity interaction  
+
+This converts **mooring loads into capacity-verified anchor design**.
 
 
 ## Anchor System Topology
@@ -170,7 +150,9 @@ Shared anchors form a **coupled load network**, where:
 
 The governing event can be represented as:
 
-**T_design = T_mean + 3.8·σ**
+`T_design = T_mean + 3.8·σ`
+
+Note here that the standard deviation was increased to match the maximum load in the context of a limited time series.
 
 <div align="center">
   <img src="/img/posts/morie_anchor/concomitant_loads.png" 
@@ -341,7 +323,6 @@ Capacity depends on:
 
 Defines **admissible load combinations** and anchor utilization.
 
----
 
 ## Outputs Generated
 
@@ -354,10 +335,14 @@ Defines **admissible load combinations** and anchor utilization.
 
 ## Engineering Applications
 
+The outputs support:
+
 - Shared-anchor verification  
 - Anchor sizing  
 - Geotechnical design decisions  
 - Floating wind optimization  
+
+This enables:
 
 **System Response → Anchor Demand → Geotechnical Verification**
 
@@ -382,16 +367,18 @@ It provides the **geotechnical transition from anchor demand to capacity-verifie
 
 ## Why It Matters Commercially
 
-- Validates shared-anchor strategies  
-- Reduces overdesign  
-- Links physics to cost  
+Shared-anchor strategies only create value if they remain geotechnically feasible.
+
+- Validates shared-anchor concepts  
+- Reduces unnecessary overdesign  
+- Links system loads to foundation cost  
 - Ensures geotechnical feasibility  
 
 This is where:
 
 - Layout efficiency is validated  
 - Anchor cost is determined  
-- System design becomes real  
+- System design becomes physically viable   
 
 
 ## Aspects to Improve
@@ -403,12 +390,13 @@ This is where:
 
 ## Design Philosophy
 
-This study reflects Morie Analytics principles:
+This study reflects the Morie Analytics approach:
 
-- Physics-based  
+- Physics-informed  
 - Modular  
 - Traceable  
-- Scalable  
+- Engineering-focused  
+- Scalable    
 
 
 ## How to Run
