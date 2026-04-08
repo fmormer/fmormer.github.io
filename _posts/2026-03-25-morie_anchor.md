@@ -88,16 +88,23 @@ This provides the **load and resistance inputs required for anchor verification*
 The workflow is implemented in Python using:
 
 - `numpy`, `scipy` → numerical operations  
-- `matplotlib` → visualization 
-- `FAModel` → system definition 
+- `matplotlib` → visualization  
+- `famodel` → system definition and data handling  
+- `RAFT` → dynamic response input  
+- `getTransferLoad` → embedded chain load transfer  
+- `getCapacitySuction` → suction pile capacity model  
 
 Core modules:
 
-- Load processing  
-- Event detection  
-- Load transfer  
-- Vector resolution  
-- Capacity verification  
+- system initialization → project setup and soil loading  
+- RAFT interface → dynamic response simulation  
+- event detection → governing load case identification  
+- time-series reconstruction → PSD-to-time-domain conversion  
+- concomitant extraction → simultaneous multi-line load definition  
+- load transfer → mudline-to-padeye force transformation  
+- vector resolution → shared-anchor load combination  
+- torsion evaluation → lug-induced torque computation  
+- capacity verification → suction pile response assessment   
 
 ### System Flow
 
