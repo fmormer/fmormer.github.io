@@ -529,7 +529,7 @@ input, textarea, select {
 .older-link, .newer-link {
   display: inline-block;
   background-color: var(--morie-surface);
-  color: var(--morie-accent) !important;
+  color: var(--morie-heading) !important;
   border: 1px solid var(--morie-border);
   border-radius: var(--morie-radius-pill);
   padding: 0.5rem 1.25rem;
@@ -540,6 +540,7 @@ input, textarea, select {
   &:hover, &:focus {
     background-color: var(--morie-surface-strong);
     border-color: var(--morie-border-strong);
+    color: var(--morie-heading) !important;
   }
 }
 
