@@ -554,24 +554,6 @@ a.newer-link:focus,
   color: var(--morie-heading) !important;
 }
 
-.older-link, .newer-link {
-  display: inline-block;
-  background-color: var(--morie-surface);
-  color: var(--morie-heading) !important;
-  border: 1px solid rgba(10, 31, 68, 0.18);
-  border-radius: var(--morie-radius-pill);
-  padding: 0.5rem 1.25rem;
-  font-size: 0.95rem;
-  font-weight: 500;
-  text-decoration: none !important;
-
-  &:hover, &:focus {
-    background-color: var(--morie-surface-strong);
-    border-color: var(--morie-border-strong);
-    color: var(--morie-heading) !important;
-  }
-}
-
 // --- Footer ---
 .footer {
   padding: 3rem 24px 2rem;
