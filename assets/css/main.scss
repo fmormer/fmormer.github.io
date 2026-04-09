@@ -1149,17 +1149,17 @@ code.language-plaintext {
 .home-storyband__button {
   display: inline-flex;
   align-items: center;
-  margin-top: 16px;
   background-color: var(--morie-accent);
   color: #ffffff !important;
   font-family: var(--morie-font-sans);
-  font-size: 1rem;
+  font-size: 1.08rem;
   font-weight: 600;
-  padding: 0.9rem 1.9rem;
-  min-height: 46px;
+  padding: 1rem 2.25rem;
+  min-height: 48px;
   text-decoration: none !important;
   border-radius: var(--morie-radius-pill);
   transition: background-color 0.15s ease;
+  margin-top: 16px;
 }
 
 .home-storyband__button:hover,
