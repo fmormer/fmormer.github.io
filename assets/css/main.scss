@@ -526,6 +526,34 @@ input, textarea, select {
   margin: 0;
 }
 
+a.older-link,
+a.newer-link,
+.older-link a,
+.newer-link a {
+  display: inline-block;
+  background-color: var(--morie-surface);
+  color: var(--morie-heading) !important;
+  border: 1px solid rgba(10, 31, 68, 0.18);
+  border-radius: var(--morie-radius-pill);
+  padding: 0.5rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none !important;
+}
+
+a.older-link:hover,
+a.older-link:focus,
+a.newer-link:hover,
+a.newer-link:focus,
+.older-link a:hover,
+.older-link a:focus,
+.newer-link a:hover,
+.newer-link a:focus {
+  background-color: var(--morie-surface-strong);
+  border-color: rgba(10, 31, 68, 0.28);
+  color: var(--morie-heading) !important;
+}
+
 .older-link, .newer-link {
   display: inline-block;
   background-color: var(--morie-surface);
