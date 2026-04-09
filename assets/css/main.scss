@@ -111,15 +111,17 @@ a {
 
 a:hover, a:focus { color: var(--morie-heading) !important; }
 
-/* 🔵 ADD THIS EXACTLY HERE (after line 110) */
-.post-body code {
+.post-body code.language-plaintext.highlighter-rouge,
+.post-body .highlighter-rouge code {
   color: var(--morie-link-strong) !important;
-  background: rgba(29, 78, 216, 0.08);
+  background: rgba(29, 78, 216, 0.08) !important;
+  border: 1px solid rgba(29, 78, 216, 0.16) !important;
   padding: 0.15rem 0.4rem;
   border-radius: 6px;
   font-size: 0.9em;
   font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
 }
+
 ::selection {
   background: #bfdbfe;
   color: var(--morie-heading);
