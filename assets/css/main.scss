@@ -412,9 +412,10 @@ a:hover, a:focus { color: var(--morie-heading) !important; }
 
 .tag, .post-tag a, .article-tag a {
   display: inline-block;
-  background-color: var(--morie-link-strong) !important;
+  background-color: var(--morie-surface-strong) !important;
   color: var(--morie-heading) !important;
-  border: 1px solid var(--morie-link-strong) !important;
+  border: 1px solid var(--morie-border-strong) !important;
+  border-radius: var(--morie-radius-pill) !important;
   padding: 0.3rem 0.7rem;
   margin: 0 4px 4px 0;
   text-decoration: none !important;
