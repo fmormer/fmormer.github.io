@@ -3,12 +3,15 @@ layout: default
 title: Home
 ---
 
-<section class="home-intro">
-  <div class="container">
-    <div class="home-intro__inner">
-      <h2 class="home-intro__title">Engineering Intelligence for Offshore Wind Systems</h2>
+<section class="home-storyband">
+  <div class="home-storyband__inner">
 
-      <p class="home-intro__lead">
+    <div class="home-storyband__copy">
+      <p class="home-storyband__eyebrow">Integrated engineering workflow</p>
+
+      <h2 class="home-storyband__title">Engineering Intelligence for Offshore Wind Systems</h2>
+
+      <p class="home-storyband__lead">
         Morie Analytics is a tech-forward offshore engineering platform focused on
         floating wind systems. It combines physics-based modeling, geotechnical
         intelligence, and data-driven workflows to support decision-making across
@@ -21,7 +24,7 @@ title: Home
         enabling more realistic and scalable engineering solutions for deep-water environments.
       </p>
 
-      <p class="home-intro__workflow">
+      <p class="home-storyband__workflow">
         <strong>Site → Layout → Soil → Mooring → Anchor → Cable</strong>
       </p>
 
@@ -29,6 +32,37 @@ title: Home
         The portfolio demonstrates how complex offshore systems can be structured,
         analyzed, and optimized through an integrated, modular, and reproducible workflow.
       </p>
+
+      <a href="{{ '/portfolio/' | relative_url }}" class="home-storyband__button">
+        View Case Studies
+      </a>
     </div>
+
+    <div class="home-storyband__media">
+      <div class="storyband-cards">
+
+        <a class="storyband-card" href="{{ '/portfolio/' | relative_url }}">
+          <img src="{{ '/img/posts/morie_site/2farm_bathy_2_folk7.png' | relative_url }}" alt="Bathymetry characterization for the Morie Site study case">
+          <span>Site Intelligence</span>
+        </a>
+
+        <a class="storyband-card" href="{{ '/portfolio/' | relative_url }}">
+          <img src="{{ '/img/posts/morie_layout/2dfarm_layout_anchor.png' | relative_url }}" alt="Shared-anchor layout engineering study case">
+          <span>Layout Engineering</span>
+        </a>
+
+        <a class="storyband-card" href="{{ '/portfolio/' | relative_url }}">
+          <img src="{{ '/img/posts/morie_soil/04_tomographic_layout.png' | relative_url }}" alt="Tomographic soil workflow for the Morie Soil study case">
+          <span>Subsurface Intelligence</span>
+        </a>
+
+        <a class="storyband-card" href="{{ '/portfolio/' | relative_url }}">
+          <img src="{{ '/img/posts/morie_mooring/shared_anchor_planview.png' | relative_url }}" alt="Integrated mooring system design with shared anchors">
+          <span>Integrated Systems</span>
+        </a>
+
+      </div>
+    </div>
+
   </div>
 </section>
