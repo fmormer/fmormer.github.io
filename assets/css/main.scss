@@ -233,7 +233,12 @@ a:hover, a:focus { color: var(--morie-heading) !important; }
 }
 
 .hero-callout {
-  max-width: 680px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: none;
 }
 
 .hero-title {
@@ -1373,23 +1378,16 @@ code.language-plaintext {
 }
 
 .hero-right {
-  flex: 1 1 48%;
+  flex: 1 1 50%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
-.hero-title .highlight {
-  color: #8ec5ff;
-  background: transparent;
-  display: inline;
-  padding: 0;
-}
-
 .map-card {
   position: relative;
-  width: 100%;
-  max-width: 760px;
+  width: min(100%, 720px);
+  margin-left: auto;
   border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 10px 24px rgba(0,0,0,0.22);
