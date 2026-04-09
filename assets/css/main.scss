@@ -1201,7 +1201,7 @@ code.language-plaintext {
 
 .storyband-carousel__track {
   position: relative;
-  min-height: 420px;
+  min-height: 520px;
 }
 
 .storyband-slide {
@@ -1232,7 +1232,7 @@ code.language-plaintext {
 
 .storyband-slide img {
   width: 100%;
-  height: 420px;
+  height: 520px;
   object-fit: cover;
   display: block;
 }
@@ -1261,7 +1261,7 @@ code.language-plaintext {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  margin-top: 18px;
+  margin-top: 26px;
 }
 
 .storyband-carousel__button {
@@ -1308,11 +1308,11 @@ code.language-plaintext {
 
 @media (max-width: 640px) {
   .storyband-carousel__track {
-    min-height: 320px;
+    min-height: 380px;
   }
 
   .storyband-slide img {
-    height: 320px;
+    height: 380px;
   }
 
   .storyband-carousel__controls {
