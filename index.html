@@ -38,31 +38,94 @@ title: Home
       </a>
     </div>
 
-    <div class="home-storyband__media">
-      <div class="storyband-cards">
+	<div class="home-storyband__media">
+	  <div class="storyband-carousel" aria-label="Portfolio highlights carousel">
+		<div class="storyband-carousel__track">
 
-        <a class="storyband-card" href="{{ '/portfolio/' | relative_url }}">
-          <img src="{{ '/img/posts/morie_site/2farm_bathy_2_folk7.png' | relative_url }}" alt="Bathymetry characterization for the Morie Site study case">
-          <span>Site Intelligence</span>
-        </a>
+		  <a class="storyband-slide is-active" href="{{ '/portfolio/' | relative_url }}">
+			<img src="{{ '/img/posts/morie_site/2farm_bathy_2_folk7.png' | relative_url }}" alt="Bathymetry characterization for the Morie Site study case">
+			<span>Site Intelligence</span>
+		  </a>
 
-        <a class="storyband-card" href="{{ '/portfolio/' | relative_url }}">
-          <img src="{{ '/img/posts/morie_layout/2dfarm_layout_anchor.png' | relative_url }}" alt="Shared-anchor layout engineering study case">
-          <span>Layout Engineering</span>
-        </a>
+		  <a class="storyband-slide" href="{{ '/portfolio/' | relative_url }}">
+			<img src="{{ '/img/posts/morie_layout/2dfarm_layout_anchor.png' | relative_url }}" alt="Shared-anchor layout engineering study case">
+			<span>Layout Engineering</span>
+		  </a>
 
-        <a class="storyband-card" href="{{ '/portfolio/' | relative_url }}">
-          <img src="{{ '/img/posts/morie_soil/04_tomographic_layout.png' | relative_url }}" alt="Tomographic soil workflow for the Morie Soil study case">
-          <span>Subsurface Intelligence</span>
-        </a>
+		  <a class="storyband-slide" href="{{ '/portfolio/' | relative_url }}">
+			<img src="{{ '/img/posts/morie_soil/04_tomographic_layout.png' | relative_url }}" alt="Tomographic soil workflow for the Morie Soil study case">
+			<span>Subsurface Intelligence</span>
+		  </a>
 
-        <a class="storyband-card" href="{{ '/portfolio/' | relative_url }}">
-          <img src="{{ '/img/posts/morie_mooring/shared_anchor_planview.png' | relative_url }}" alt="Integrated mooring system design with shared anchors">
-          <span>Integrated Systems</span>
-        </a>
+		  <a class="storyband-slide" href="{{ '/portfolio/' | relative_url }}">
+			<img src="{{ '/img/posts/morie_mooring/shared_anchor_planview.png' | relative_url }}" alt="Integrated mooring system design with shared anchors">
+			<span>Integrated Systems</span>
+		  </a>
 
-      </div>
-    </div>
+		</div>
+
+		<div class="storyband-carousel__controls">
+		  <button class="storyband-carousel__button storyband-carousel__button--prev" type="button" aria-label="Previous slide">
+			‹
+		  </button>
+
+		  <div class="storyband-carousel__dots" aria-label="Carousel navigation">
+			<button class="storyband-carousel__dot is-active" type="button" aria-label="Go to slide 1"></button>
+			<button class="storyband-carousel__dot" type="button" aria-label="Go to slide 2"></button>
+			<button class="storyband-carousel__dot" type="button" aria-label="Go to slide 3"></button>
+			<button class="storyband-carousel__dot" type="button" aria-label="Go to slide 4"></button>
+		  </div>
+
+		  <button class="storyband-carousel__button storyband-carousel__button--next" type="button" aria-label="Next slide">
+			›
+		  </button>
+		</div>
+	  </div>
+	</div>
 
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const carousel = document.querySelector('.storyband-carousel');
+    if (!carousel) return;
+
+    const slides = Array.from(carousel.querySelectorAll('.storyband-slide'));
+    const dots = Array.from(carousel.querySelectorAll('.storyband-carousel__dot'));
+    const prevButton = carousel.querySelector('.storyband-carousel__button--prev');
+    const nextButton = carousel.querySelector('.storyband-carousel__button--next');
+
+    let currentIndex = 0;
+
+    function updateCarousel(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('is-active', i === index);
+      });
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('is-active', i === index);
+      });
+
+      currentIndex = index;
+    }
+
+    prevButton.addEventListener('click', function () {
+      const nextIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateCarousel(nextIndex);
+    });
+
+    nextButton.addEventListener('click', function () {
+      const nextIndex = (currentIndex + 1) % slides.length;
+      updateCarousel(nextIndex);
+    });
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', function () {
+        updateCarousel(index);
+      });
+    });
+
+    updateCarousel(0);
+  });
+</script>
