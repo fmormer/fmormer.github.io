@@ -102,12 +102,12 @@ p, li { font-size: 1.02rem; }
 
 // --- Links and focus ---
 a {
-  color: var(--morie-accent) !important;
+  color: var(--morie-heading) !important;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.12em;
 }
 
-a:hover, a:focus { color: var(--morie-accent-hover) !important; }
+a:hover, a:focus { color: var(--morie-heading) !important; }
 
 ::selection {
   background: #bfdbfe;
@@ -174,7 +174,7 @@ a:hover, a:focus { color: var(--morie-accent-hover) !important; }
 .header-utility-links ul li a {
   font-size: 1rem;
   font-weight: 500;
-  color: var(--morie-accent) !important;
+  color: var(--morie-heading) !important;
   text-decoration: none !important;
 }
 
@@ -323,12 +323,12 @@ a:hover, a:focus { color: var(--morie-accent-hover) !important; }
 }
 
 .section-ribbon-nav a:hover, .section-ribbon-nav a:focus {
-  color: var(--morie-accent) !important;
+  color: var(--morie-heading) !important;
   text-decoration: underline !important;
 }
 
 .section-ribbon-nav a.active {
-  color: var(--morie-accent) !important;
+  color: var(--morie-heading) !important;
 
   &::after {
     content: '';
@@ -337,7 +337,7 @@ a:hover, a:focus { color: var(--morie-accent-hover) !important; }
     bottom: -8px;
     width: 100%;
     height: 2px;
-    background-color: var(--morie-accent);
+    background-color: var(--morie-heading);
   }
 }
 
