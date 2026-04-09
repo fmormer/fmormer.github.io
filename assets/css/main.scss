@@ -1128,9 +1128,9 @@ code.language-plaintext {
   max-width: var(--morie-width-wide);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.15fr) minmax(420px, 520px);
   gap: 56px;
-  align-items: center;
+  align-items: start;
 }
 
 .home-storyband__copy {
@@ -1193,6 +1193,10 @@ code.language-plaintext {
 
 .home-storyband__media {
   min-width: 0;
+  max-width: 520px;
+  width: 100%;
+  justify-self: end;
+  padding-top: 18px;
 }
 
 .storyband-carousel {
