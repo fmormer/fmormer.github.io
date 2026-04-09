@@ -1375,18 +1375,21 @@ code.language-plaintext {
 .hero-right {
   flex: 1 1 48%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
 .hero-title .highlight {
   color: #8ec5ff;
+  background: transparent;
+  display: inline;
+  padding: 0;
 }
 
 .map-card {
   position: relative;
   width: 100%;
-  max-width: 640px;
+  max-width: 760px;
   border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 10px 24px rgba(0,0,0,0.22);
