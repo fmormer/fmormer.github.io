@@ -1165,9 +1165,19 @@ code.language-plaintext {
 }
 
 .home-storyband__workflow {
-  margin-top: 24px;
-  margin-bottom: 20px;
+  margin-top: 28px;
+  margin-bottom: 24px;
+
+  text-align: center;                  // 👈 center it
+  font-size: 1.25rem;                  // 👈 larger
+  font-weight: 600;                    // 👈 stronger presence
+  line-height: 1.4;
+
   color: var(--morie-heading);
+}
+
+.home-storyband__workflow strong {
+  letter-spacing: 0.02em;
 }
 
 .home-storyband__button {
