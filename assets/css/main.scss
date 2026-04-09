@@ -422,14 +422,6 @@ a:hover, a:focus { color: var(--morie-heading) !important; }
   font-weight: 500;
 }
 
-.post-body li .tag:hover,
-.post-body li .post-tag a:hover,
-.post-body li .article-tag a:hover {
-  color: var(--morie-link-strong-hover) !important;
-  border-color: var(--morie-link-strong-hover) !important;
-  background: rgba(29, 78, 216, 0.12);
-}
-
 .tag:hover, .post-tag a:hover, .article-tag a:hover {
   background-color: #dbeafe !important;
   color: var(--morie-accent-hover) !important;
