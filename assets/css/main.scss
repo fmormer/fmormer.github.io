@@ -1415,22 +1415,36 @@ code.language-plaintext {
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 1rem 1.1rem;
-  background: linear-gradient(to top, rgba(0,0,0,0.72), rgba(0,0,0,0));
+  padding: 0.9rem 1.1rem 1rem 1.1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.58), rgba(0,0,0,0.08), rgba(0,0,0,0));
   color: #ffffff;
 }
 
-.map-overlay p {
-  margin: 0 0 0.35rem 0;
-  font-size: 0.95rem;
-  font-weight: 500;
+.map-overlay-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.map-overlay-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.2;
 }
 
 .map-link {
-  display: inline-block;
+  flex-shrink: 0;
   color: #8ec5ff;
   text-decoration: none;
+  font-size: 0.95rem;
   font-weight: 600;
+  line-height: 1.2;
+}
+
+.map-link:hover {
+  text-decoration: underline;
 }
 
 .map-link:hover {
