@@ -1359,3 +1359,85 @@ code.language-plaintext {
     min-height: 240px;
   }
 }
+
+.hero-callout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+.hero-left {
+  flex: 1 1 52%;
+}
+
+.hero-right {
+  flex: 1 1 48%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-title .highlight {
+  color: #8ec5ff;
+}
+
+.map-card {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+}
+
+.map-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.map-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1rem 1.1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.72), rgba(0,0,0,0));
+  color: #ffffff;
+}
+
+.map-overlay p {
+  margin: 0 0 0.35rem 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.map-link {
+  display: inline-block;
+  color: #8ec5ff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.map-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .hero-callout {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .map-card {
+    max-width: 100%;
+  }
+}
