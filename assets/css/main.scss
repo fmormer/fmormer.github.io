@@ -19,8 +19,8 @@
   --morie-surface-strong: #eff6ff;
   --morie-border: #d9e2ec;
   --morie-border-strong: #bfdbfe;
-  --morie-accent: #0057ff;
-  --morie-accent-hover: #003ec4;
+  --morie-accent: #d12200;
+  --morie-accent-hover: #a91c00;
   --morie-space-1: 0.25rem;
   --morie-space-2: 0.5rem;
   --morie-space-3: 0.75rem;
@@ -260,7 +260,7 @@ a:hover, a:focus { color: var(--morie-accent-hover) !important; }
   font-family: var(--morie-font-sans);
   font-size: 1.18rem;
   font-weight: 600;
-  padding: 1rem 2.25rem;
+  padding: 1rem 3.4rem;
   min-height: 48px;
   text-decoration: none !important;
   transition: background-color 0.15s ease;
@@ -1154,7 +1154,7 @@ code.language-plaintext {
   font-family: var(--morie-font-sans);
   font-size: 1.08rem;
   font-weight: 600;
-  padding: 1rem 2.25rem;
+  padding: 1rem 3.4rem;
   min-height: 48px;
   text-decoration: none !important;
   transition: background-color 0.15s ease;
