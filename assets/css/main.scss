@@ -1205,7 +1205,7 @@ code.language-plaintext {
 
 .storyband-carousel__track {
   position: relative;
-  min-height: 520px;
+  min-height: 620px;
 }
 
 .storyband-slide {
@@ -1236,8 +1236,8 @@ code.language-plaintext {
 
 .storyband-slide img {
   width: 100%;
-  height: 520px;
-  object-fit: cover;
+  height: 620px;
+  object-fit: contain;
   display: block;
 }
 
