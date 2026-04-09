@@ -791,8 +791,8 @@ code.language-plaintext {
 .post-nav-btn {
   display: inline-block;
   background-color: var(--morie-surface);
-  color: var(--morie-accent) !important;
-  border: 1px solid var(--morie-border);
+  color: var(--morie-heading) !important;   // 🔵 changed
+  border: 1px solid rgba(10, 31, 68, 0.18); // 🔵 more consistent navy tone
   border-radius: var(--morie-radius-pill);
   padding: 0.5rem 1.25rem;
   font-size: 0.95rem;
@@ -801,10 +801,10 @@ code.language-plaintext {
 
   &:hover, &:focus {
     background-color: var(--morie-surface-strong);
-    border-color: var(--morie-border-strong);
+    border-color: rgba(10, 31, 68, 0.28);   // 🔵 subtle navy hover
+    color: var(--morie-heading) !important; // 🔵 ensure no override
   }
 }
-
 // --- Responsive ---
 @media (max-width: 1024px) {
   .container > .row > .col.col-12.col-t-12 > .row {
