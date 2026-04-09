@@ -263,6 +263,7 @@ a:hover, a:focus { color: var(--morie-accent-hover) !important; }
   border-radius: var(--morie-radius-pill);
   text-decoration: none !important;
   transition: background-color 0.15s ease;
+  margin-top: 32px;  // 👈 add this
 
   &:hover, &:focus {
     background-color: var(--morie-accent-hover);
@@ -848,7 +849,7 @@ code.language-plaintext {
   .hero-inner { padding: 36px 16px; }
   .hero-title { font-size: clamp(1.6rem, 6vw, 2.4rem) !important; }
   .hero-button {
-    padding: 0.85rem 2rem;
+    padding: 0.95rem 2.2rem;
     min-height: 44px;
     display: inline-flex;
     align-items: center;
