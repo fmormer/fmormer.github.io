@@ -38,6 +38,8 @@
   --morie-width-reading: 820px;
   --morie-width-content: 1100px;
   --morie-width-wide: 1440px;
+  --morie-link-strong: #1d4ed8;   // clean, sharp blue
+  --morie-link-strong-hover: #1e40af;
 }
 
 // --- Main content ---
@@ -410,15 +412,22 @@ a:hover, a:focus { color: var(--morie-heading) !important; }
 
 .tag, .post-tag a, .article-tag a {
   display: inline-block;
-  background-color: var(--morie-surface-strong) !important;
+  background-color: var(--morie-link-strong) !important;
   color: var(--morie-heading) !important;
-  border: 1px solid var(--morie-border-strong) !important;
-  border-radius: var(--morie-radius-pill) !important;
+  border: 1px solid var(--morie-link-strong) !important;
   padding: 0.3rem 0.7rem;
   margin: 0 4px 4px 0;
   text-decoration: none !important;
   font-size: 0.9rem;
   font-weight: 500;
+}
+
+.post-body li .tag:hover,
+.post-body li .post-tag a:hover,
+.post-body li .article-tag a:hover {
+  color: var(--morie-link-strong-hover) !important;
+  border-color: var(--morie-link-strong-hover) !important;
+  background: rgba(29, 78, 216, 0.12);
 }
 
 .tag:hover, .post-tag a:hover, .article-tag a:hover {
