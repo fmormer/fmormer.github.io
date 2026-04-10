@@ -15,7 +15,7 @@ permalink: /portfolio/
 		soil reconstruction, mooring physics, anchor design and cable performance into a unified workflow.	
       </p>
 
-      <p>
+      <p class="portfolio-page__lead">
 		The framework builds on and extends research foundations established in floating offshore wind studies at NREL, 
 		translating them into a practical, engineering-driven workflow for real-world applications. Each study case represents 
 		a connected layer in the design chain, demonstrating how data, physics, and scalable computation combine to drive robust, cost-efficient offshore wind solutions.
