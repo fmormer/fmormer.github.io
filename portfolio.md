@@ -11,17 +11,18 @@ permalink: /portfolio/
       <h1>Offshore Wind Engineering Portfolio</h1>
 
       <p class="portfolio-page__lead">
-        A collection of interconnected study cases covering the full engineering workflow
-        for floating offshore wind systems.
+		A system-level engineering portfolio for floating offshore wind, integrating site intelligence, layout optimization, 
+		soil reconstruction, mooring physics, anchor design, and cable performance into a unified workflow.	
       </p>
 
       <p>
-        Each case represents a key layer in the design chain, from site characterization
-        to subsystem optimization.
+		The framework builds on and extends research foundations established in floating offshore wind studies at NREL, 
+		translating them into a practical, engineering-driven workflow for real-world applications. Each study case represents 
+		a connected layer in the design chain, demonstrating how data, physics, and scalable computation combine to drive robust, cost-efficient offshore wind solutions.
       </p>
 
       <p class="portfolio-page__workflow">
-        <strong>Site → Layout → Soil → Mooring → Anchor → Cable</strong>
+        <strong>Site Intelligence → Layout Optimization → Soil Reconstruction → Mooring Physics → Anchor Design → Cable Performance</strong>
       </p>
     </div>
 
