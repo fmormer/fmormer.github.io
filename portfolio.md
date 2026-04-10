@@ -12,7 +12,7 @@ permalink: /portfolio/
 
       <p class="portfolio-page__lead">
 		A system-level engineering portfolio for floating offshore wind, integrating site intelligence, layout optimization, 
-		soil reconstruction, mooring physics, anchor design, and cable performance into a unified workflow.	
+		soil reconstruction, mooring physics, anchor design and cable performance into a unified workflow.	
       </p>
 
       <p>
