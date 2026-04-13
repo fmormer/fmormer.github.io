@@ -174,14 +174,14 @@ But require:
 - Consistent transformation into anchor demand  
 
 
-## Pretension & Equilibrium (MoorPy)
+## Pretension & Equilibrium
 
-The mooring system is solved in **static equilibrium**, establishing the baseline mechanical state.
+The mooring system is solved for the **quasi-static equilibrium**, establishing the baseline mechanical state.
 
 <div align="center">
   <img src="/img/posts/morie_mooring/mooring_profile.png" 
        alt="Mooring line profile showing catenary geometry between fairlead and anchor with seabed interaction" 
-       width="500">
+       width="700">
 </div>
 *Figure 3 – Mooring line catenary profile and load transfer path.*
 
@@ -224,7 +224,7 @@ This reveals how environmental conditions translate into **load variability and 
 
 ## Critical Load Case Identification
 
-The governing load case is selected based on **maximum tension response** across all conditions.
+The governing load case is selected based on **maximum tension response** across all conditions. In this case the maximum load for an omni-directional environmental loading in the upwind direction.
 
 ### Engineering Interpretation
 
@@ -261,28 +261,9 @@ This enables:
 
 Loads are extracted at the **mudline connection point**:
 
-- Horizontal → Hm  
-- Vertical → Vm  
-- Direction → θm  
-
-
-## Anchor Load Aggregation
-
-Loads from all connected lines are combined into **anchor-level demand**.
-
-### Engineering Interpretation
-
-This step converts:
-
-> Multiple line forces → Single design load
-
-Resulting in:
-
-- H (horizontal component of the mooring line tension load)  
-- V (vertical component of the mooring line tension load)  
-- θ (angle with the horizontal seabed plane)  
-
-This is the **critical interface between physics and design**.
+- Horizontal at mudline → Hm  
+- Vertical  at mudline → Vm  
+- Tension direction at mudline → θm  
 
 
 ## Outputs Generated
@@ -327,11 +308,11 @@ This study is the **physics engine** of the Morie Analytics workflow.
 
 - **morie_site** → bathymetry context  
 - **morie_layout** → geometry and topology  
-- **morie_soil** → soil-dependent load transfer  
+- **morie_soil** → soil properties at anchor locations 
 
 ### Feeds into
 
-- **morie_anchor** → capacity verification  
+- **morie_anchor** → soil-dependent load transfer and capacity verification  
 - **morie_cable** → system configuration constraints  
 
 It provides the **mechanical transition from system geometry to design-driving loads**.

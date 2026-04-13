@@ -164,7 +164,7 @@ The governing event can be represented as:
 
 `T_design = T_mean + 3.8·σ`
 
-Note here that the standard deviation was increased to match the maximum load in the context of a limited time series.
+Note, here that the standard deviation was increased to match the maximum load in the context of a limited time series.
 
 <div align="center">
   <img src="/img/posts/morie_anchor/concomitant_loads.png" 
@@ -262,10 +262,15 @@ profile_map = {
 
 - Loads evolve along embedded chain, reducing the tension and increasing the angle with the horizontal plane  
 - Chain and soil properties influence transfer  
-- Padeye loads govern anchor design  
+- Padeye loads govern anchor design 
 
+## Anchor Load Aggregation
 
-## Shared Anchor Load Resolution
+Loads from all connected lines are combined into **anchor-level demand**. This allows going from a multi-linear action to a single line load that allows for it's capacity check.
+
+### Engineering Interpretation
+
+### Shared Anchor Load Resolution
 
 <div align="center">
   <img src="/img/posts/morie_anchor/shared_anchor_planview.png" 
@@ -284,7 +289,11 @@ Load resolution:
 
 ### Engineering Interpretation
 
-Multiple lines are combined into a **single 3D load state**.
+This step converts:
+
+> Multiple line forces → Single design load
+
+This is the **critical interface between physics and design**. Multiple lines are combined into a **single 3D load state**.
 
 
 ## Torsional Load Evaluation
