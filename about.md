@@ -11,8 +11,14 @@ permalink: /about/
       <h1>About</h1>
 
       <p class="portfolio-page__lead">
-        Morie Analytics is an offshore engineering consultancy delivering system-level design solutions for floating offshore wind.
-        We transform complex offshore environments into structured, scalable engineering workflows that enable better decisions across the full project lifecycle.
+        Morie Analytics is an offshore engineering and software company focused on floating offshore wind.
+        We combine consultancy, modular tool development, and client support to turn complex engineering workflows into practical, scalable solutions.
+      </p>
+
+      <p>
+        Our work is structured around a connected suite of modules covering
+        <strong>Site → Layout → Soil → Mooring → Anchor → Cable</strong>.
+        Each module addresses a key part of the design chain while remaining interoperable with the others, enabling both targeted studies and integrated system-level workflows.
       </p>
     </div>
 
@@ -20,23 +26,30 @@ permalink: /about/
       <div class="about-page__section">
         <h3>Our mission</h3>
         <p>
-          To enable cost-effective and reliable floating offshore wind deployment through the integration of engineering physics, data-driven methods, and system-level optimization.
+          To accelerate floating offshore wind deployment through a combination of engineering consultancy, modular software, and system-level design methods that improve decision-making, traceability, and scalability.
         </p>
       </div>
 
       <div class="about-page__section">
         <h3>Our vision</h3>
         <p>
-          A future where offshore energy systems are designed holistically — with seamless interaction between layout, moorings, anchors, soil, and cables — unlocking scalability in deep-water wind development.
+          A future where offshore energy systems are designed through connected digital workflows — linking site intelligence, layout generation, soil reconstruction, mooring response, anchor verification, and cable performance into a unified engineering ecosystem.
         </p>
       </div>
 
       <div class="about-page__section">
         <h3>Our framework</h3>
         <p>
-          Our work is structured around a unified engineering pipeline:
-          <strong>Site → Layout → Soil → Mooring → Anchor → Cable</strong>.
-          Each layer feeds the next, ensuring consistency, traceability, and system-level optimization across the full design chain.
+          Morie Analytics is developing a module-based platform in which each engineering layer can be used independently or as part of a larger workflow.
+          This allows us to support clients through both consultancy services and software licensing, with flexibility for project-specific studies, internal design teams, and longer-term technical integration.
+        </p>
+      </div>
+
+      <div class="about-page__section">
+        <h3>Our offering</h3>
+        <p>
+          We work across both the back-end and front-end sides of the business: from technical model development, automation, and engineering computation to client-facing tools, deployment support, and practical implementation.
+          Our goal is not only to deliver results, but to provide usable engineering products that clients can adopt, extend, and operate with confidence.
         </p>
       </div>
 
@@ -44,7 +57,7 @@ permalink: /about/
         <h3>Our foundation</h3>
         <p>
           Morie Analytics builds on over a decade of offshore wind engineering experience and research-driven development, including methodologies inspired by work at the National Renewable Energy Laboratory (NREL).
-          Our portfolio demonstrates how complex offshore systems can be translated into reproducible, modular, and scalable engineering tools.
+          The company translates these foundations into reproducible engineering modules, commercial software pathways, and technical support services tailored to real project needs.
         </p>
       </div>
     </div>
