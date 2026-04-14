@@ -15,7 +15,7 @@ permalink: /about/
         We combine consultancy, modular tool development, and client support to turn complex engineering workflows into practical, scalable solutions.
       </p>
 
-      <p>
+      <p class="portfolio-page__lead">
         Our work is structured around a connected suite of modules covering
         <strong>Site → Layout → Soil → Mooring → Anchor → Cable</strong>.
         Each module addresses a key part of the design chain while remaining interoperable with the others, enabling both targeted studies and integrated system-level workflows.
