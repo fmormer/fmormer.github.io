@@ -429,6 +429,41 @@ a:hover, a:focus { color: var(--morie-heading) !important; }
   }
 }
 
+// --- Contact page ---
+.contact-page {
+  padding-top: 0;
+}
+
+.contact-page__content {
+  margin-top: 1.5rem;
+  max-width: 100%;
+}
+
+.contact-page__section {
+  max-width: 100%;
+  padding: 1.75rem 0 1.9rem;
+  border-top: 1px solid var(--morie-border);
+}
+
+.contact-page__section:first-child {
+  border-top: 0;
+  padding-top: 0.25rem;
+}
+
+.contact-page__section h3 {
+  margin: 0 0 0.8rem 0;
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+
+.contact-page__section p,
+.contact-page__section li {
+  margin: 0;
+  font-size: 1.06rem;
+  line-height: 1.8;
+  color: var(--morie-text-muted) !important;
+}
+
 // --- Card system ---
 .article-box {
   background-color: var(--morie-bg) !important;
