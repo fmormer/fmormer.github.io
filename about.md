@@ -4,16 +4,19 @@ title: About
 permalink: /about/
 ---
 
-<section class="about-page">
+<section class="portfolio-page about-page">
   <div class="container portfolio-container">
-    <div class="about-page__inner">
+
+    <div class="portfolio-page__intro about-page__intro-block">
       <h1>About</h1>
 
-      <p class="about-page__intro">
+      <p class="portfolio-page__lead">
         Morie Analytics is an offshore engineering consultancy delivering system-level design solutions for floating offshore wind.
         We transform complex offshore environments into structured, scalable engineering workflows that enable better decisions across the full project lifecycle.
       </p>
+    </div>
 
+    <div class="about-page__content">
       <div class="about-page__section">
         <h3>Our mission</h3>
         <p>
@@ -45,5 +48,6 @@ permalink: /about/
         </p>
       </div>
     </div>
+
   </div>
 </section>
