@@ -8,7 +8,7 @@ permalink: /about/
   <div class="container portfolio-container">
 
     <div class="portfolio-page__intro about-page__intro-block">
-      <h1>About</h1>
+      <h1>Engineering & Software Approach</h1>
 
       <p class="portfolio-page__lead">
         Morie Analytics is an offshore engineering and software company focused on floating offshore wind.
