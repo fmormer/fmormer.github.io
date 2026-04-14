@@ -11,11 +11,11 @@ permalink: /contact/
       <h1>Contact</h1>
 
       <p class="portfolio-page__lead">
-        We support offshore wind developers, engineers, and organizations through consultancy, modular software, and integrated engineering workflows.
+        We support offshore wind developers, engineers and organizations through consultancy, modular software and integrated engineering workflows.
       </p>
 
       <p>
-        If you are interested in collaboration, project support, or access to Morie Analytics tools, feel free to get in touch.
+        If you are interested in collaboration, project support or access to Morie Analytics tools, feel free to get in touch.
       </p>
     </div>
 
@@ -23,12 +23,12 @@ permalink: /contact/
 
       <div class="contact-page__section">
         <h3>Contact details</h3>
-        <p><strong>Email:</strong> your.email@example.com</p>
-        <p><strong>Location:</strong> El Puerto de Santa María, Cádiz, Spain</p>
+        <p><strong>email:</strong> felipe.moreno@morie.io</p>
+        <p><strong>location:</strong> El Puerto de Santa María, Cádiz. Spain</p>
       </div>
 
       <div class="contact-page__section">
-        <h3>How we work</h3>
+        <h3>How we work?</h3>
         <p>
           Morie Analytics operates through a combination of consultancy services and modular software solutions.
           Engagements can range from targeted engineering studies to broader system-level support and integration.
@@ -38,9 +38,9 @@ permalink: /contact/
       <div class="contact-page__section">
         <h3>Typical inquiries</h3>
         <ul>
-          <li>Floating offshore wind design and optimization</li>
+          <li>Floating offshore wind layout design and optimization</li>
           <li>Mooring and anchor engineering support</li>
-          <li>Site, soil, and layout analysis</li>
+          <li>Site characterization, soil model development and layout analysis</li>
           <li>Access to Morie Analytics tools and modules</li>
           <li>Collaboration on research or technical development</li>
         </ul>
