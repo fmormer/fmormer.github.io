@@ -14,7 +14,7 @@ permalink: /contact/
         We support offshore wind developers, engineers and organizations through consultancy, modular software and integrated engineering workflows.
       </p>
 
-      <p>
+      <p class="portfolio-page__lead">
         If you are interested in collaboration, project support or access to Morie Analytics tools, feel free to get in touch.
       </p>
     </div>
