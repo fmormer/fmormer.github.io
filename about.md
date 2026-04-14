@@ -12,7 +12,7 @@ permalink: /about/
 
       <p class="portfolio-page__lead">
         Morie Analytics is an offshore engineering and software company focused on floating offshore wind.
-        We combine consultancy, modular tool development, and client support to turn complex engineering workflows into practical, scalable solutions.
+        We combine consultancy, modular tool development and client support to turn complex engineering workflows into practical, scalable solutions.
       </p>
 
       <p class="portfolio-page__lead">
