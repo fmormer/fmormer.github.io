@@ -22,7 +22,7 @@ permalink: /portfolio/
       </p>
 
       <p class="portfolio-page__workflow">
-        <strong>Site Intelligence → Layout Optimization → Soil Reconstruction → Mooring Physics → Anchor Design → Cable Performance</strong>
+        <strong>Site Intelligence ↔ Layout Optimization ↔ Soil Reconstruction ↔ Mooring Physics ↔ Anchor Design ↔ Cable Performance</strong>
       </p>
     </div>
 
