@@ -369,6 +369,87 @@ a:hover, a:focus { color: var(--morie-heading) !important; }
   }
 }
 
+// --- About page ---
+.about-page {
+  padding: 56px 0 72px;
+}
+
+.about-page__inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.about-page h1 {
+  margin: 0 0 1.25rem 0;
+  font-family: 'Montserrat', var(--morie-font-sans) !important;
+  font-size: clamp(2.6rem, 4vw, 3.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--morie-heading) !important;
+}
+
+.about-page__intro {
+  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+  line-height: 1.75;
+  color: var(--morie-text-muted) !important;
+  max-width: 760px;
+  margin: 0 0 2.5rem 0 !important;
+}
+
+.about-page__section {
+  padding: 1.75rem 0 1.9rem;
+  border-top: 1px solid var(--morie-border);
+}
+
+.about-page__section:first-of-type {
+  border-top: 0;
+  padding-top: 0.25rem;
+}
+
+.about-page h3 {
+  margin: 0 0 0.8rem 0;
+  font-family: 'Montserrat', var(--morie-font-sans) !important;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--morie-heading) !important;
+}
+
+.about-page p {
+  margin: 0;
+  font-size: 1.06rem;
+  line-height: 1.9;
+  color: var(--morie-text-muted) !important;
+}
+
+.about-page strong {
+  color: var(--morie-heading) !important;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .about-page {
+    padding: 40px 0 56px;
+  }
+
+  .about-page__inner {
+    padding: 0 16px;
+  }
+
+  .about-page__intro {
+    margin-bottom: 2rem !important;
+  }
+
+  .about-page__section {
+    padding: 1.4rem 0 1.5rem;
+  }
+}
+
+// --- Card system ---
+.article-box {
+
 // --- Card system ---
 .article-box {
   background-color: var(--morie-bg) !important;
