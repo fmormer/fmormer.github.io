@@ -24,7 +24,8 @@ permalink: /contact/
       <div class="contact-page__section">
         <h3>Contact details</h3>
         <p><strong>email:</strong> felipe.moreno@morie.io</p>
-        <p><strong>location:</strong> El Puerto de Santa María, Cádiz. Spain</p>
+        <p><strong>locations:</strong> El Puerto de Santa María (Cádiz) and Madrid. Spain</p>
+		<p><strong>telephone:</strong> + 34 722 54 89 54</p>
       </div>
 
       <div class="contact-page__section">
@@ -39,6 +40,7 @@ permalink: /contact/
         <h3>Typical inquiries</h3>
         <ul>
           <li>Floating offshore wind layout design and optimization</li>
+		  <li>Marine energy convertors site specific components</li>
           <li>Mooring and anchor engineering support</li>
           <li>Site characterization, soil model development and layout analysis</li>
           <li>Access to Morie Analytics tools and modules</li>

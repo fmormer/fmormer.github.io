@@ -17,7 +17,7 @@ permalink: /about/
 
       <p class="portfolio-page__lead">
         Our work is structured around a connected suite of modules covering
-        <strong>Site → Layout → Soil → Mooring → Anchor → Cable</strong>.
+        <strong>Site ↔ Layout ↔ Soil ↔ Mooring ↔ Anchor ↔ Cable</strong>.
         Each module addresses a key part of the design chain while remaining interoperable with the others, enabling both targeted studies and integrated system-level workflows.
       </p>
     </div>
