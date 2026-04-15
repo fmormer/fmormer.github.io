@@ -1570,16 +1570,16 @@ code.language-plaintext {
 
 .capabilities-page {
   padding: 3rem 0;
+}
 
-  &__intro {
-    max-width: 800px;
-    margin-bottom: 2.5rem;
-  }
+.capabilities-page__intro {
+  max-width: 1100px;
+  margin-bottom: 2.5rem;
+}
 
-  &__lead {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-  }
+.capabilities-page__lead {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .capabilities-grid {
@@ -1591,7 +1591,7 @@ code.language-plaintext {
 .capability-card {
   border: 1px solid #d1d9e0;
   border-radius: 8px;
-  padding: 2rem 1.5rem;
+  padding: 2.5rem 1.75rem;
   text-align: center;
   background-color: #fff;
 
@@ -1603,26 +1603,26 @@ code.language-plaintext {
   p {
     font-size: 0.95rem;
     line-height: 1.5;
-  }
-
-  &__icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto;
-    border: 2px solid #1f3b5c;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    img {
-      width: 40px;
-      height: auto;
-    }
+    margin: 0;
   }
 }
 
-/* Responsive */
+.capability-card__icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  border: 2px solid #1f3b5c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 40px;
+    height: auto;
+  }
+}
+
 @media (max-width: 992px) {
   .capabilities-grid {
     grid-template-columns: 1fr;
