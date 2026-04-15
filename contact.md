@@ -24,8 +24,8 @@ permalink: /contact/
       <div class="contact-page__section">
         <h3>Contact details</h3>
         <p><strong>email:</strong> felipe.moreno@morie.io</p>
-        <p><strong>locations:</strong> El Puerto de Santa María (Cádiz) and Madrid. Spain</p>
 		<p><strong>telephone:</strong> + 34 722 54 89 54</p>
+		<p><strong>locations:</strong> El Puerto de Santa María (Cádiz) and Madrid. Spain</p>
       </div>
 
       <div class="contact-page__section">
@@ -45,6 +45,7 @@ permalink: /contact/
           <li>Site characterization, soil model development and layout analysis</li>
           <li>Access to Morie Analytics tools and modules</li>
           <li>Collaboration on research or technical development</li>
+		  <li>University-level teaching, technical training and engineering knowledge dissemination</li>
         </ul>
       </div>
 
