@@ -25,7 +25,7 @@ permalink: /capabilities/
 
       <div class="capability-card">
         <div class="capability-card__icon">
-          <img src="/img/morie_icon_subsurface.png" alt="Morie Anchor icon">
+          <img src="/img/morie_icon_anchor.png" alt="Morie Anchor icon">
         </div>
         <h3>Morie Anchor</h3>
         <p>
@@ -36,7 +36,7 @@ permalink: /capabilities/
 
       <div class="capability-card">
         <div class="capability-card__icon">
-          <img src="/img/morie_icon_layout.png" alt="Morie Atlas icon">
+          <img src="/img/morie_icon_atlas.png" alt="Morie Atlas icon">
         </div>
         <h3>Morie Atlas</h3>
         <p>
@@ -48,7 +48,7 @@ permalink: /capabilities/
 
       <div class="capability-card">
         <div class="capability-card__icon">
-          <img src="/img/morie_icon_site.png" alt="Morie SchemaGAN icon">
+          <img src="/img/morie_icon_GAN.png" alt="Morie SchemaGAN icon">
         </div>
         <h3>Morie SchemaGAN</h3>
         <p>
