@@ -29,8 +29,8 @@ permalink: /capabilities/
         </div>
         <h3>Morie Anchor</h3>
         <p>
-          Advanced anchor engineering software for offshore mooring systems, supporting capacity assessment,
-          load transfer, installation checks, and soil-dependent design workflows.
+          Advanced anchor engineering software for offshore anchor points, both for pile and plate types. They support extreme and cyclic capacity assessment,
+          load transfer, installation checks, soil-dependent and seismic design workflows.
         </p>
       </div>
 
@@ -40,8 +40,9 @@ permalink: /capabilities/
         </div>
         <h3>Morie Atlas</h3>
         <p>
-          A spatial intelligence platform for mapping offshore design conditions across lease areas,
-          integrating bathymetry, soil data, and system response into decision-ready regional views.
+          A spatial and automated intelligence platform for mapping offshore floating anchor designs across lease areas,
+          integrating bathymetry, soil data and system response into decision-ready site views. This allows sharp and quick comparison for
+		  feasibility and cost studies.
         </p>
       </div>
 
@@ -51,8 +52,8 @@ permalink: /capabilities/
         </div>
         <h3>Morie SchemaGAN</h3>
         <p>
-          A synthetic subsurface generation framework enabling data-driven reconstruction of offshore ground models,
-          supporting uncertainty exploration and early-stage engineering design.
+          A synthetic subsurface generation framework enabling data-driven reconstruction of offshore ground models based on Geneative Adversarial Neural networks.
+          This allows subsurface soil characterization, uncertainty exploration and improves early-stage engineering design.
         </p>
       </div>
 
