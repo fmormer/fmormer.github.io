@@ -52,8 +52,8 @@ permalink: /capabilities/
         </div>
         <h3>Morie SchemaGAN</h3>
         <p>
-          A synthetic subsurface generation framework enabling data-driven reconstruction of offshore ground models based on Geneative Adversarial Neural networks.
-          This allows subsurface soil characterization, uncertainty exploration and improves early-stage engineering design.
+          A synthetic subsurface generation framework enabling data-driven reconstruction of offshore ground models based on Generative Adversarial Networks.
+          This allows subsurface soil characterization, uncertainty exploration and improves early-stage engineering studies and designs.
         </p>
       </div>
 
