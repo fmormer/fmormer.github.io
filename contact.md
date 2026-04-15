@@ -43,7 +43,7 @@ permalink: /contact/
 		  <li>Marine energy convertors site specific components</li>
           <li>Mooring and anchor engineering support</li>
           <li>Site characterization, soil model development and layout analysis</li>
-          <li>Access to Morie Analytics tools and modules</li>
+          <li>Access to Morie Analytics software tools and modules</li>
           <li>Collaboration on research or technical development</li>
 		  <li>University-level teaching, technical training and engineering knowledge dissemination</li>
         </ul>
