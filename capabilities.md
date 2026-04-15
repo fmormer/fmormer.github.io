@@ -12,10 +12,10 @@ permalink: /capabilities/
 
       <p class="capabilities-page__lead">
         A suite of engineering software modules designed to support offshore wind and marine systems,
-        integrating physics-based models, spatial intelligence, and scalable computation into practical workflows.
+        integrating physics-based models, spatial intelligence and scalable computation into practical workflows.
       </p>
 
-      <p>
+      <p class="capabilities-page__lead">
         Each capability represents a core layer in the Morie Analytics framework, enabling engineers to
         move from data to design through modular, interoperable tools.
       </p>
