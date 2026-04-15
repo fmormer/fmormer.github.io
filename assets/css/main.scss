@@ -1569,12 +1569,13 @@ code.language-plaintext {
 ========================= */
 
 .capabilities-page {
-  padding: 3rem 0;
+  padding: 0.75rem 0 2rem;
 }
 
 .capabilities-page__intro {
-  max-width: 1100px;
-  margin-bottom: 2.5rem;
+  width: 100%;
+  max-width: none;
+  margin: 0 0 2rem;
 }
 
 .capabilities-page__lead {
