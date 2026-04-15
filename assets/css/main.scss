@@ -1609,8 +1609,11 @@ code.language-plaintext {
 }
 
 .capability-card__icon {
-  margin: 0 auto 1rem;
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+
   img {
     width: 70px;
     height: auto;
