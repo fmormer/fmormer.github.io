@@ -307,6 +307,65 @@ a:hover, a:focus { color: var(--morie-heading) !important; }
   .hero-inner { padding: 48px 16px; }
 }
 
+/* === MORIE HERO ENHANCEMENTS === */
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.hero-button--primary {
+  background-color: #0a1f44;
+  color: #ffffff;
+  border: none;
+}
+
+.hero-button--secondary {
+  background-color: transparent;
+  border: 1px solid #0a1f44;
+  color: #0a1f44;
+}
+
+.hero-button--secondary:hover {
+  background-color: #0a1f44;
+  color: #ffffff;
+}
+
+/* Map card improvements */
+.map-card-header {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #506070;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.map-card-title {
+  display: inline-block;
+}
+
+.map-caption {
+  font-size: 0.75rem;
+  color: #6b7c8f;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* Optional: slightly reduce visual dominance of map */
+.hero-right {
+  max-width: 420px;
+}
+
+.map-card img {
+  width: 100%;
+  height: auto;
+  max-height: 260px;
+  object-fit: cover;
+}
+
 // --- Nav toggle (hamburger) ---
 .nav-toggle {
   display: none;
