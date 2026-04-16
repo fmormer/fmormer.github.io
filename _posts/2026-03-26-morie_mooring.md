@@ -209,7 +209,7 @@ This defines the **design-driving scenario** for anchor verification.
 
 ## Time-Domain Reconstruction
 
-Time series are reconstructed from PSD outputs to evaluate **extreme and fatigue behavior**.
+Time series are reconstructed from Power Spectral Density (PSD) outputs to evaluate **extreme** and **fatigue behavior**.
 
 <div align="center">
   <img src="/img/posts/morie_mooring/mooring_loads.png" 
@@ -227,15 +227,6 @@ This enables:
 - Validation of dynamic response  
 
 
-## Load Extraction
-
-Loads are extracted at the **mudline connection point**:
-
-- Horizontal at mudline → Hm  
-- Vertical  at mudline → Vm  
-- Tension direction at mudline → θm  
-
-
 ## Outputs Generated
 
 ### Mooring-Level Outputs
@@ -243,7 +234,9 @@ Loads are extracted at the **mudline connection point**:
 - Mooring geometry and topology  
 - Equilibrium configuration  
 - Line tensions and profiles  
-- Mudline loads (Hm, Vm, θm)  
+- Mudline loads (Hm, Vm, θm) 
+
+Loads are extracted at the **mudline elevation point** that is assummed as a fixed point in the seabed.
 
 ### Dynamic Outputs
 
@@ -254,7 +247,7 @@ Loads are extracted at the **mudline connection point**:
 
 ### Anchor-Level Outputs
 
-- Resultant loads (H, V, θ)  
+- Resultant loads (Hm, Vm, θm)  
 - Load contribution per line  
 
 
@@ -292,24 +285,24 @@ It provides the **mechanical transition from system geometry to design-driving l
 
 This workflow enables:
 
-- Reduction of anchor overdesign  
+- Preliminary design of the mooring lines
 - Validation of shared-anchor strategies  
 - Direct linkage between layout decisions and load consequences  
 - Improved CAPEX control through load-driven design  
 
 This is the stage where:
 
-- layout decisions become load consequences  
-- shared-anchor strategies are validated or rejected  
-- system configuration directly impacts cost  
+- Layout decisions become load consequences  
+- Shared-anchor strategies are validated or rejected  
+- System configuration directly impacts cost  
 
 
 ## Aspects to Improve
 
+- Probabilistic design load cases analysis 
+- Automated optimization loops
 - Soil–mooring interaction coupling  
 - Nonlinear seabed contact models  
-- Probabilistic load cases  
-- Automated optimization loops  
 - Integration with installation constraints  
 
 
