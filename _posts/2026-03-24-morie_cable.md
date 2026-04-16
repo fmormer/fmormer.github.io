@@ -76,14 +76,14 @@ This study builds directly on upstream Morie Analytics outputs:
 
 This provides the **boundary conditions for cable design optimization**. 
 
-### System Flow
+
+## System Flow
 
 Bathymetry → Motion → Cable Geometry → Constraint Evaluation → Optimization
 
 The architecture ensures **consistent coupling between system behavior and cable design**.
 
-
-## Processing Workflow
+### Processing Workflow
 
 1. Load configuration  
 2. Extract bathymetry  

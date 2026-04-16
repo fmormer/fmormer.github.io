@@ -74,14 +74,13 @@ All inputs are integrated into a **simulation-ready framework**.
 
 This provides the **mechanical inputs required for load generation**.
 
-### System Flow
+## System Flow
 
 Layout → Mooring Definition → Equilibrium → Dynamic Response → Load Extraction
 
 The architecture ensures **traceability from geometry to load outputs**.
 
-
-## Processing Workflow
+### Processing Workflow
 
 1. Load farm configuration  
 2. Generate mooring geometry  
