@@ -296,8 +296,6 @@ The anchor response is inherently **multi-axial**, where vertical and horizontal
 
 The interaction model defines the **admissible combinations of vertical, horizontal and moment loads** that the anchor can sustain.
 
-Rather than checking each load component independently, the anchor is assessed against a **coupled capacity envelope**, where the utilization depends on the combined load state.
-
 A load condition is considered feasible only if it lies **within the interaction envelope**, ensuring that all resistance mechanisms remain within their admissible limits.
 
 
@@ -363,7 +361,7 @@ This is where:
 ## Aspects to Improve
 
 - Soil–mooring static vs dynamic decoupling loads  
-- Probabilistic loads  
+- Probabilistic assessment of design loads  
 - Optimization anchor design loops 
 - Installation aspects of suction piles
 - Cyclic loading capacity
