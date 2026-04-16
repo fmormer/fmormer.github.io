@@ -230,9 +230,14 @@ a:hover, a:focus { color: var(--morie-heading) !important; }
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 64px 24px;
+  padding: 64px 32px;
+}
+
+.hero-left--full {
+  max-width: 980px;
+  margin-left: -8px;
 }
 
 .hero-callout {
