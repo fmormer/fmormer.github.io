@@ -37,7 +37,7 @@
   --morie-shadow-2: 0 10px 30px rgba(15, 23, 42, 0.08);
   --morie-width-reading: 820px;
   --morie-width-content: 1100px;
-  --morie-width-wide: 1440px;
+  --morie-width-wide: 1600px;
   --morie-link-strong: #1d4ed8;   // clean, sharp blue
   --morie-link-strong-hover: #1e40af;
 }
@@ -246,20 +246,21 @@ a:hover, a:focus { color: var(--morie-heading) !important; }
 
 .hero-left {
   flex: 1;
-  max-width: 720px;
+  max-width: 780px;
 }
 
 .hero-right {
   flex: 0 0 420px;
   margin-left: auto;
+  transform: translateX(40px); // 👈 pushes map right
 }
 
 .hero-title {
-  max-width: 520px;
+  max-width: 700px;
   margin: 0 0 1.25rem 0;
-  font-size: clamp(3.2rem, 5vw, 4.8rem);
-  line-height: 1.02;
-  letter-spacing: -0.02em;
+  font-size: clamp(3.2rem, 3.5vw, 3.2rem);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
   color: #ffffff !important;
   font-family: var(--morie-font-sans);
   font-weight: 400;
