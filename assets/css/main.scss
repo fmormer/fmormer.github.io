@@ -327,29 +327,27 @@ a:hover, a:focus { color: var(--morie-heading) !important; }
 }
 
 .hero-button--primary {
-  background-color: #0a1f44;
-  border: 1px solid #0a1f44;
+  background-color: #0a1f44 !important;  // navy
+  border: 1px solid #0a1f44 !important;
   color: #ffffff !important;
 }
 
 .hero-button--primary:hover,
 .hero-button--primary:focus {
-  background-color: #081733;
-  border-color: #081733;
-  color: #ffffff !important;
+  background-color: #081733 !important;
+  border-color: #081733 !important;
 }
 
 .hero-button--secondary {
-  background-color: #c62828;
-  border: 1px solid #c62828;
+  background-color: #c62828 !important;  // red
+  border: 1px solid #c62828 !important;
   color: #ffffff !important;
 }
 
 .hero-button--secondary:hover,
 .hero-button--secondary:focus {
-  background-color: #a61f1f;
-  border-color: #a61f1f;
-  color: #ffffff !important;
+  background-color: #a61f1f !important;
+  border-color: #a61f1f !important;
 }
 
 @media (max-width: 768px) {
