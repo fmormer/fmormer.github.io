@@ -11,9 +11,9 @@ tags: [Offshore Floating Wind, Anchors, Suction Piles, Shared Anchors, Geotechni
 
 This study establishes the **geotechnical verification layer** of Morie Analytics by transforming **mooring-derived loads into capacity-verified anchor designs**.
 
-The workflow identifies the governing event, extracts concomitant loads, transfers them through embedded chain mechanics, resolves shared-anchor demand, and verifies suction pile capacity.
+The workflow identifies the governing event, extracts concomitant loads, transfers them through embedded chain mechanics to main padeye elevation, resolves shared-anchor demand and verifies suction pile capacity.
 
-The result is a **reproducible framework** connecting system response, load transfer, and geotechnical resistance.
+The result is a **reproducible framework** connecting system response, load transfer and geotechnical resistance.
 
 This module represents the point where **mooring demand and soil resistance are combined into verified design decisions**.
 
@@ -24,7 +24,7 @@ This module represents the point where **mooring demand and soil resistance are 
 
 - Governing event identification  
 - Concomitant load extraction  
-- Load transfer from mudline to padeye  
+- Load transfer from mudline to main padeye  
 - Shared-anchor load resolution  
 - Capacity verification  
 
@@ -52,7 +52,8 @@ This study builds directly on upstream Morie Analytics outputs:
 
 ### From `morie_site`
 
-- Bathymetry context 
+- Bathymetry and soil classification grids
+- Lease boundary definitions
 
 ### From `morie_layout`
 
@@ -135,11 +136,6 @@ Shared anchors form a **coupled load network**, where:
 </div>
 *Figure 3 – Mooring tension time series.*
 
-The governing event can be represented as:
-
-`T_design = T_mean + 3.8·σ`
-
-Note, here that the standard deviation was increased to match the maximum load in the context of a limited time series.
 
 <div align="center">
   <img src="/img/posts/morie_anchor/concomitant_loads.png" 
@@ -207,7 +203,10 @@ This structure represents the **final engineering output** of the soil and it wa
 
 Loads from all connected lines are combined into **anchor-level demand**. This allows going from a multi-linear action to a single line load that allows for it's capacity check.
 
-### Engineering Interpretation
+## Anchor Load Aggregation
+
+Loads from all connected lines are combined into a **single anchor-level demand**, integrating both **vectorial force resolution and torsional effects**. 
+This enables the transition from a multi-line system to a unified load state suitable for capacity verification.
 
 ### Shared Anchor Load Resolution
 
@@ -218,27 +217,10 @@ Loads from all connected lines are combined into **anchor-level demand**. This a
 </div>
 *Figure 7 – Load vectors acting on a shared anchor.*
 
-Load resolution:
+Each line load is decomposed according to its directional contribution, allowing horizontal forces to be combined through vector summation into a single 
+equivalent resultant. Vertical components are accumulated directly, forming a unified 3D force state at the anchor.
 
-`Hx = Ha*cos(ψ)`  
-`Hy = Ha*sin(ψ)`  
-
-`H_total = √(Hx² + Hy²)`  
-`V_total = ΣVa`  
-
-### Engineering Interpretation
-
-This step converts:
-
-> Multiple line forces → Single design load
-
-This is the **critical interface between physics and design**. Multiple lines are combined into a **single 3D load state**.
-
-
-## Torsional Load Evaluation
-
-`T_i = Ha,i*r_lug*sin(ψ_lug)`  
-`T_total = Σ|T_i|`
+### Torsional Effects
 
 <div align="center">
   <img src="/img/posts/morie_anchor/shared_anchor.png" 
@@ -247,13 +229,18 @@ This is the **critical interface between physics and design**. Multiple lines ar
 </div>
 *Figure 8 – Shared-anchor interaction.*
 
+In parallel, torsional demand arises from the misalignment between load directions and padeye geometry. Horizontal forces acting at an eccentricity generate 
+rotational effects, with each line contributing to the overall moment. The total torsion reflects the cumulative influence of all connected lines within 
+the shared-anchor system.
+
 ### Engineering Interpretation
 
-Torsion arises from:
+This step converts:
 
-- Load misalignment  
-- Padeye eccentricity  
-- Multi-line interaction  
+> Multiple line forces → Single design load state (force + moment)
+
+This is the **critical interface between physics and design**, where distributed mooring interactions are reduced to a **single 3D load state with associated torsion**, 
+governing anchor capacity verification. 
 
 
 ## Suction Pile Capacity Model
