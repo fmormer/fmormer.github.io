@@ -230,34 +230,34 @@ a:hover, a:focus { color: var(--morie-heading) !important; }
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: var(--morie-width-wide);
+  max-width: 1720px;
   margin: 0 auto;
-  padding: 64px 24px;
+  padding: 64px 48px;
 }
 
 .hero-callout {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 3rem;
+  gap: 1.5rem;
   width: 100%;
   max-width: none;
 }
 
 .hero-left {
   flex: 1 1 auto;
-  max-width: 900px;
-  padding-right: 5rem;
+  max-width: 1050px;
+  padding-right: 2rem;
 }
 
 .hero-right {
-  flex: 0 0 260px;
+  flex: 0 0 240px;
   margin-left: auto;
-  transform: translateX(40px);
+  transform: translateX(20px);
 }
 
 .hero-title {
-  max-width: 820px;
+  max-width: 980px;
   margin: 0 0 1.25rem 0;
   font-size: 2.15rem;
   line-height: 1.08;
@@ -265,6 +265,11 @@ a:hover, a:focus { color: var(--morie-heading) !important; }
   color: #ffffff !important;
   font-family: var(--morie-font-sans);
   font-weight: 400;
+}
+
+.hero-subtitle,
+.hero-tagline {
+  max-width: 820px;
 }
 
 .hero-title span {
