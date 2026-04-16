@@ -104,8 +104,12 @@ The cable is modeled as a multi-segment system connecting:
 
 - Seabed touchdown point or range  
 - Suspended buoyant sections  
-- Floater fairlead position
+- Floater fairlead position  
 
+The configuration must remain within a defined geometric envelope, including:
+
+- Maximum and minimum hog heights (upper excursion limits)  
+- Maximum and minimum sag depths (lower excursion limits)  
 
 <div align="center">
   <img src="/img/posts/morie_cable/cable_initial_config.png" 
@@ -113,6 +117,16 @@ The cable is modeled as a multi-segment system connecting:
        width="500">
 </div>
 *Figure 1 – Initial cable configuration.*
+
+### Engineering Interpretation
+
+These limits define the **allowable vertical excursion of the cable**, ensuring:
+
+- Controlled curvature along suspended sections  
+- Acceptable clearance from the seabed and surface  
+- Compatibility with floater motion and environmental loading  
+
+They act as **primary geometric constraints**, governing feasible cable configurations under the full system motion envelope.
 
 
 ## System Motion Envelope
