@@ -245,21 +245,22 @@ a:hover, a:focus { color: var(--morie-heading) !important; }
 }
 
 .hero-left {
-  flex: 0 0 72%;   // 👈 BIG CHANGE (was flexible + constrained)
-  max-width: none; // 👈 remove artificial cap
+  flex: 0 0 78%;
+  max-width: none;
+  padding-right: 4rem;
 }
 
 .hero-right {
-  flex: 0 0 28%;   // 👈 shrink map area
+  flex: 0 0 22%;
   margin-left: auto;
-  transform: translateX(60px); // 👈 push further right
+  transform: translateX(80px);
 }
 
 .hero-title {
-  max-width: none;
+  max-width: 900px;
   margin: 0 0 1.25rem 0;
-  font-size: clamp(3.2rem, 3.5vw, 3.2rem);
-  line-height: 1.12;
+  font-size: 2.6rem;
+  line-height: 1.08;
   letter-spacing: -0.015em;
   color: #ffffff !important;
   font-family: var(--morie-font-sans);
@@ -394,7 +395,7 @@ a:hover, a:focus { color: var(--morie-heading) !important; }
 .map-card img {
   width: 100%;
   height: auto;
-  max-height: 260px;
+  max-height: 220px;
   object-fit: cover;
 }
 
