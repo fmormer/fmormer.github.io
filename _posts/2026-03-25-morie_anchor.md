@@ -199,9 +199,6 @@ This structure represents the **final engineering output** of the soil and it wa
 - Chain and soil properties influence transfer  
 - Padeye loads govern anchor design 
 
-## Anchor Load Aggregation
-
-Loads from all connected lines are combined into **anchor-level demand**. This allows going from a multi-linear action to a single line load that allows for it's capacity check.
 
 ## Anchor Load Aggregation
 
@@ -225,7 +222,7 @@ equivalent resultant. Vertical components are accumulated directly, forming a un
 <div align="center">
   <img src="/img/posts/morie_anchor/shared_anchor.png" 
        alt="System-level view of shared anchor interaction showing multiple line load contributions and resulting load state" 
-       width="600">
+       width="400">
 </div>
 *Figure 8 – Shared-anchor interaction.*
 
