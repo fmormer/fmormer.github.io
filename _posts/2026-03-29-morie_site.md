@@ -11,7 +11,7 @@ tags: [Offshore Floating Wind, Site Characterization, GEBCO, EMODnet, GIS, Pytho
 
 This study establishes the **site intelligence layer** of Morie Analytics by transforming publicly available marine geospatial datasets into **engineering-ready inputs** for floating offshore wind development.
 
-Using Celtic Sea lease areas, **GEBCO 2025 bathymetry**, and **EMODnet seabed classification**, the workflow converts raw regional data into structured spatial products that support early-stage engineering decisions.
+Using Celtic Sea lease areas, **GEBCO 2025 bathymetry** and **EMODnet seabed classification**, the workflow converts raw regional data into structured spatial products that support early-stage engineering decisions.
 
 The result is a **reproducible Python-based pipeline** that replaces fragmented GIS workflows with a scalable and transparent offshore data-processing framework.
 
@@ -35,7 +35,7 @@ This study converts **regional marine data into engineering-ready spatial constr
 
 Early-stage floating offshore wind design requires rapid and consistent evaluation of:
 
-- Water depth distribution  
+- Water depth and seabed slope distribution  
 - Seabed conditions  
 - Anchor feasibility constraints  
 - Mooring footprint implications  
@@ -67,7 +67,7 @@ This provides the **spatial data foundation for downstream modules**.
 
 Raw Geospatial Data → Spatial Processing → Engineering Inputs
 
-This modular structure ensures **reproducibility, clarity, and scalability**.
+This modular structure ensures **reproducibility, clarity and scalability**.
 
 ### Processing Workflow
 
@@ -208,12 +208,12 @@ From an engineering perspective, the dominance of sand suggests:
 
 - Favorable conditions for **predictable installation behavior**
 - Strong dependence on **relative density and friction angle**
-- Suitability for **drag-embedded or driven anchor concepts**, depending on depth and variability
+- Suitability for **suction assisted or driven anchor concepts**, depending on vertical soil variability and regulations
 
 At the same time, localized heterogeneity highlights the need for:
 
 - Site-specific soil reconstruction (addressed in **morie_soil**)
-- Robust design envelopes for mixed conditions
+- Robust anchor design envelopes for mixed conditions (addresed in **morie_anchor** for a suction pile solution)
 
 
 ## Regional Context Verification
@@ -260,10 +260,10 @@ These outputs are directly usable in downstream engineering workflows.
 The outputs support:
 
 - Lease-to-lease comparison
-- Anchor concept screening
 - Mooring system feasibility
+- Anchor concept screening
 - Cable routing strategy
-- Installation planning
+- Installation feasibility and planning
 
 This transforms raw geospatial data into **engineering decision inputs**.
 

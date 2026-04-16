@@ -11,7 +11,7 @@ tags: [Offshore Floating Wind, Layout Optimization, Hex Grid, Floating Wind, GIS
 
 This study establishes the **layout generation layer** of Morie Analytics by transforming site-level geospatial data into **engineering-ready floating wind farm configurations**.
 
-Using bathymetry and seabed classification from `morie_site`, the workflow identifies feasible regions, generates a constrained hexagonal lattice, and selects optimal floater clusters using **topology-driven optimization**.
+Using bathymetry and seabed classification from `morie_site`, the workflow identifies feasible regions, generates a constrained hexagonal lattice and selects optimal floater clusters using **topology-driven optimization**.
 
 The result is a **deterministic and reproducible layout generation framework** that replaces heuristic placement strategies with structured engineering logic.
 
@@ -26,7 +26,7 @@ This module represents the stage where site constraints are translated into spat
 - Bathymetry and soil-constrained feasibility filtering  
 - Hexagonal lattice-based floater placement  
 - Topology-driven cluster optimization  
-- YAML-based model generation for downstream workflows  
+- Model generation for downstream workflows  
 - Integration with mooring and anchor modules  
 
 This study converts **site intelligence into structured spatial design decisions**.
@@ -36,12 +36,13 @@ This study converts **site intelligence into structured spatial design decisions
 
 Following site characterization, the next critical step in offshore wind design is:
 
-**Where do we place the turbines?**
+> **Where do we place the turbines?**
 
 At this stage, engineers must balance:
 
 - Lease boundaries and setbacks  
-- Water depth constraints  
+- Water depth constraints
+- Wake effects and overall wind turbine performance  
 - Seabed conditions  
 - Mooring footprint interactions  
 - Anchor-sharing potential  
@@ -57,27 +58,26 @@ This study builds directly on upstream Morie Analytics outputs:
 
 ### From `morie_site`
 
-- Bathymetry grids (`bathy_*.txt`)  
-- Soil classification grids (`soil_*.txt`)  
+- Bathymetry and soil classification grids
 - Lease boundary definitions  
 
 ### Additional Inputs
 
-- Layered soil profiles (YAML mapping)  
+- Layered soil profiles  
 - Layout parameters (spacing, buffer, orientation)  
 
 All inputs are aligned in a **common projected coordinate system**.
 
 This provides the **spatial constraints required for layout generation**.
 
-### System Flow
+
+## System Flow
 
 Site Constraints → Lattice Generation → Cluster Optimization → System Configuration
 
 The architecture ensures **direct continuity with downstream physics-based modules**.
 
-
-## Processing Workflow
+### Processing Workflow
 
 1. Load bathymetry and soil data from `morie_site`  
 2. Build engineering suitability mask  
@@ -113,7 +113,7 @@ This converts **site constraints into structured floating wind farm layouts**.
 
 These datasets define:
 
-- Feasible depth ranges  
+- Feasible depth and slope ranges  
 - Soil conditions compatible with anchor systems  
 - Spatial constraints for layout generation  
 
@@ -128,6 +128,8 @@ These datasets define:
 *Figure 3 – Feasible region derived from combined bathymetry and soil constraints.*
 
 ### Criteria
+
+Filtering relevant site criteria:
 
 - Depth: **from 88 m to 94 m**  
 - Soil: Engineering-suitable sediments - 2.0. Sand (Multiscale - folk 7)   
@@ -213,7 +215,7 @@ This step defines:
 
 - Load aggregation structure  
 - Anchor-sharing potential  
-- Inputs for anchor sizing  
+- Location inputs for anchor sizing  
 
 
 ## Outputs Generated
@@ -251,15 +253,15 @@ This enables:
 ## Relationship to Other Morie Study Cases
 
 ### Receives from:
-- **morie_site** → bathymetry, soil, lease constraints  
+- **morie_site** → bathymetry, soil and lease area boundary constraints  
 
 ### Feeds into:
 - **morie_soil** → localized soil modeling around selected cluster  
 - **morie_mooring** → system geometry and equilibrium analysis  
-- **morie_anchor** → anchor load and capacity design  
+- **morie_anchor** → anchor load assessment and capacity design check  
 - **morie_cable** → cable routing and configuration  
 
-This module is the **bridge between site data and system design**.
+This module is the **bridge between site data** and **system design**.
 
 
 ## Why It Matters Commercially
@@ -268,7 +270,7 @@ Layout decisions strongly influence downstream cost and feasibility.
 
 - Reduces uncertainty in early-stage layout decisions  
 - Enables rapid comparison of layout scenarios  
-- Improves anchor-sharing efficiency  
+- Improves mooring- and anchor-sharing efficiency  
 - Supports scalable farm design workflows  
 - Bridges GIS and engineering domains  
 
@@ -282,7 +284,7 @@ This is where:
 ## Aspects to Improve
 
 - Multi-cluster optimization across full lease  
-- Integration with dynamic load analysis (RAFT)  
+- Integration with dynamic load analysis and wake effects for production asessment 
 - Inclusion of cable constraints in optimization  
 - Cost-driven objective functions  
 - Machine learning-based layout selection  
