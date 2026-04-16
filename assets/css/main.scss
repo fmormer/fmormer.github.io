@@ -245,21 +245,21 @@ a:hover, a:focus { color: var(--morie-heading) !important; }
 }
 
 .hero-left {
-  flex: 0 0 78%;
-  max-width: none;
-  padding-right: 4rem;
+  flex: 1 1 auto;
+  max-width: 900px;
+  padding-right: 5rem;
 }
 
 .hero-right {
-  flex: 0 0 22%;
+  flex: 0 0 260px;
   margin-left: auto;
-  transform: translateX(80px);
+  transform: translateX(40px);
 }
 
 .hero-title {
-  max-width: 900px;
+  max-width: 820px;
   margin: 0 0 1.25rem 0;
-  font-size: 2.6rem;
+  font-size: 2.15rem;
   line-height: 1.08;
   letter-spacing: -0.015em;
   color: #ffffff !important;
