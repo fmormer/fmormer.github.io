@@ -277,10 +277,9 @@ This is where:
 
 ## Aspects to Improve
 
-- Fatigue analysis  
-- Probabilistic motion  
-- Multi-cable interaction  
-- Touchdown abrasion mitigation
+- Fatigue and Vortex Induced Vibrations (VIV) analysis  
+- Probabilistic motion study   
+- Touchdown abrasion mitigation strategies
 
 ## Design Philosophy
 
