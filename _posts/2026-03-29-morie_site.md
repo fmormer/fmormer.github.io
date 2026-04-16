@@ -62,14 +62,14 @@ All datasets are:
 
 This provides the **spatial data foundation for downstream modules**.
 
-### System Flow
+
+## System Flow
 
 Raw Geospatial Data → Spatial Processing → Engineering Inputs
 
 This modular structure ensures **reproducibility, clarity, and scalability**.
 
-
-## Processing Workflow
+### Processing Workflow
 
 For each lease area:
 

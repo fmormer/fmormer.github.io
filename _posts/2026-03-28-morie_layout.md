@@ -218,11 +218,13 @@ This step defines:
 
 ## Outputs Generated
 
+For selected lease area:
+
 - Optimized floater coordinates  
-- Modified project YAML (`modified_celticsea.yaml`)  
-- Suitability maps  
-- Hex grid and cluster visualizations  
-- Anchor topology maps  
+- Modified project file (`.yaml`)  
+- Suitability maps (`.png`) 
+- Hex grid and cluster visualizations (`.png`) 
+- Anchor topology maps (`.png`)
 
 These outputs are directly usable in:
 
@@ -295,22 +297,3 @@ This study reflects the Morie Analytics approach:
 - Traceable  
 - Engineering-focused  
 - Scalable  
-
-
-## How to Run
-
-1. Place input datasets in `celtic_sea_share/`  
-2. Install dependencies:
-
-	- `numpy`
-	- `matplotlib`   
-	- `scipy`  
-	- `pyyaml`  
-	- `FAModel` 
-	- `MoorPy`  
-
-3. Execute:
-
-```bash
-python morie_layout.py
-```

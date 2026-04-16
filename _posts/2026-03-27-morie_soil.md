@@ -80,14 +80,14 @@ All inputs are aligned in a **common projected coordinate system**.
 
 This provides the **subsurface data framework for anchor-level characterization**.
 
-### System Flow
+
+## System Flow
 
 Layout Geometry → Domain Extraction → Soil Reconstruction → Anchor Profiles
 
 The architecture ensures **traceability from spatial inputs to geotechnical outputs**.
 
-
-## Processing Workflow
+### Processing Workflow
 
 1. Load selected layout and soil model  
 2. Extract FOWT and anchor coordinates  
@@ -305,42 +305,6 @@ The selected anchor **fowt1b** is exported with its fully reconstructed soil pro
 
 This structure represents the **final engineering output** of the soil reconstruction workflow.
 
-### Profile Structure
-
-```python
-profile_map = {
-    'layers': [
-        {
-            'type': 'sand',
-            'z_top': stick-up_length,
-            'z_bottom': Z1 + stick-up_length,
-            'gamma_top': 9.0,
-            'gamma_bot': 10.0,
-            'phi_top': 30.0,
-            'phi_bot': 32.0,
-            'Dr_top': 60.0,
-            'Dr_bot': 75.0},
-        {
-            'type': 'sand',
-            'z_top': Z1 + stick-up_length,
-            'z_bot': Z2 + stick-up_length,
-            'gamma_top': 10.0,
-            'gamma_bot': 11.0,
-            'phi_top': 32.0,
-            'phi_bot': 37.0,
-            'Dr_top': 75.0,
-            'Dr_bot': 85.0},
-        {
-            'type': 'sand',
-            'z_top': Z2 + stick-up_length,
-            'z_bot': Zmax + stick-up_length,
-            'gamma_top': 11.0,
-            'gamma_bot': 12.0,
-            'phi_top': 37.0,
-            'phi_bot': 40.0,
-            'Dr_top': 85.0,
-            'Dr_bot': 95.0}]}
-```
 
 ## Outputs Generated
 

@@ -80,14 +80,14 @@ This study builds directly on upstream Morie Analytics outputs:
 
 This provides the **load and resistance inputs required for anchor verification**.
 
-### System Flow
+
+## System Flow
 
 Mooring Response → Critical Event → Load Transfer → Anchor Resolution → Capacity Check
 
 The architecture ensures **traceability from system loads to geotechnical verification**.
 
-
-## Processing Workflow
+### Processing Workflow
 
 1. Load mooring results  
 2. Identify governing event  
