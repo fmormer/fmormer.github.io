@@ -249,24 +249,33 @@ governing anchor capacity verification.
 </div>
 *Figure 9 – Suction pile geometry.*
 
-Vertical capacity:
-
-`V_max = min(V1, V2, V3)`
+The suction pile capacity is evaluated by considering both **vertical and horizontal resistance mechanisms**, which together define the admissible load domain of the anchor.
 
 <div align="center">
-  <img src="/img/posts/morie_anchor/anchor_failure_modes.png" 
+  <img src="/img/posts/morie_anchor/anchor_failure_modes.PNG" 
        alt="Suction pile failure mechanisms including uplift, sliding, and rotational modes under combined loading" 
        width="600">
 </div>
 *Figure 10 – Failure mechanisms.*
+
+Vertical capacity is governed by a combination of failure modes, including reverse end bearing, shaft resistance and potential plug or soil failure mechanisms. 
+The governing value is controlled by the most critical of these mechanisms.
+
+Horizontal capacity develops through lateral soil resistance mobilized along the embedded length of the pile. This response depends on soil strength, stiffness 
+and the interaction between the pile and surrounding ground, with contributions from both shallow and deep failure mechanisms.
+
+
 
 ### Engineering Interpretation
 
 Capacity depends on:
 
 - Pile geometry and slenderness ratio (L/D)  
-- Load combination  
-- Layered soil profile capacity 
+- Combined horizontal and vertical loading  
+- Load application point (padeye position)  
+- Layered soil profile and strength distribution  
+
+The anchor response is inherently **multi-axial**, where vertical and horizontal resistances are coupled and must be assessed together to define the feasible load envelope.
 
 
 ## Load–Capacity Interaction
