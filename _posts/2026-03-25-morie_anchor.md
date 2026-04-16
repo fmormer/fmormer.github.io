@@ -256,15 +256,13 @@ The suction pile capacity is evaluated by considering both **vertical and horizo
        alt="Suction pile failure mechanisms including uplift, sliding, and rotational modes under combined loading" 
        width="600">
 </div>
-*Figure 10 – Failure mechanisms.*
+*Figure 10 – Vertical failure mechanisms.*
 
 Vertical capacity is governed by a combination of failure modes, including reverse end bearing, shaft resistance and potential plug or soil failure mechanisms. 
-The governing value is controlled by the most critical of these mechanisms.
+The governing value is controlled by the most critical of these mechanisms depending on the loading conditions.
 
 Horizontal capacity develops through lateral soil resistance mobilized along the embedded length of the pile. This response depends on soil strength, stiffness 
 and the interaction between the pile and surrounding ground, with contributions from both shallow and deep failure mechanisms.
-
-
 
 ### Engineering Interpretation
 
