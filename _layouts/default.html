@@ -16,8 +16,8 @@
               <nav class="section-ribbon-nav" id="main-nav">
                 <ul class="list-reset">
                   <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active"{% endif %}>Home</a></li>
+				  <li><a href="{{ '/capabilities/' | relative_url }}"{% if page.url contains 'capabilities' %} class="active"{% endif %}>Capabilities</a></li>
                   <li><a href="{{ '/portfolio/' | relative_url }}"{% if page.url contains 'portfolio' %} class="active"{% endif %}>Portfolio</a></li>
-                  <li><a href="{{ '/capabilities/' | relative_url }}"{% if page.url contains 'capabilities' %} class="active"{% endif %}>Capabilities</a></li>
                   <!-- <li><a href="{{ '/methods/' | relative_url }}"{% if page.url contains 'methods' %} class="active"{% endif %}>Methods</a></li> -->
                   <li><a href="{{ '/about/' | relative_url }}"{% if page.url contains 'about' %} class="active"{% endif %}>About</a></li>
                   <li><a href="{{ '/contact/' | relative_url }}"{% if page.url contains 'contact' %} class="active"{% endif %}>Contact</a></li>
@@ -43,7 +43,8 @@
 		  <!-- LEFT: MAIN MESSAGE -->
 		  <div class="hero-left">
 		    <h1 class="hero-title">
-			  Engineering and software solutions for <span>floating offshore wind</span>
+			  Engineering and software solutions for 
+			  <span>floating offshore wind</span>
 			  feasibility and design
 		    </h1>
 
