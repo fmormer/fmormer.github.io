@@ -62,6 +62,25 @@ All datasets are:
 
 This provides the **spatial data foundation for downstream modules**.
 
+
+## Technical Architecture
+
+The workflow is implemented in Python using:
+
+- `geopandas` → lease boundary processing  
+- `xarray` → GEBCO bathymetry access  
+- `numpy` → grid generation and numerical operations  
+- `matplotlib` → visualization  
+- `famodel` → 2D plotting and soil/bathymetry integration  
+
+Core modules:
+
+- `read_lease_boundary` → lease area extraction  
+- `make_lonlat_grid` → structured grid generation  
+- `sample_gebco_depths` → bathymetry sampling on grid  
+- `label_substrate` → soil classification assignment  
+- `convert_and_write` → export to engineering-ready formats  
+
 ### System Flow
 
 Raw Geospatial Data → Spatial Processing → Engineering Inputs
@@ -315,3 +334,18 @@ This study reflects the Morie Analytics approach:
 - Engineering-focused  
 - Scalable  
 
+
+## How to Run
+
+1. Place datasets in `celtic_sea_share/`
+2. Install dependencies:
+
+	- `numpy`
+	- `matplotlib`
+	- `geopandas`
+
+3. Execute:
+
+```bash
+python morie_site.py
+```

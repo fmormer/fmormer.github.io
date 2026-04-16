@@ -80,6 +80,27 @@ All inputs are aligned in a **common projected coordinate system**.
 
 This provides the **subsurface data framework for anchor-level characterization**.
 
+
+## Technical Architecture
+
+The workflow is implemented in Python using:
+
+- `numpy` → numerical operations  
+- `matplotlib` → visualization  
+- `yaml` → configuration handling  
+- `pickle` → intermediate storage  
+- `famodel` → layout and anchor extraction  
+
+Core modules:
+
+- `layout_domain` → domain cropping around selected layout  
+- `truth_soil_model` → synthetic layered soil generation  
+- `tomographic_grid` → plane definition for soil sampling  
+- `soil_sampling` → property extraction along planes  
+- `profile_reconstruction` → interpolation at anchor locations  
+- `boundary_detection` → layer interface identification  
+- `soil_visualization` → validation and plotting   
+
 ### System Flow
 
 Layout Geometry → Domain Extraction → Soil Reconstruction → Anchor Profiles
@@ -420,3 +441,21 @@ This study reflects the Morie Analytics approach:
 - Traceable  
 - Engineering-focused  
 - Scalable  
+
+
+## How to Run
+
+1. Place datasets in `celtic_sea_share/`
+2. Install dependencies:
+
+	- `numpy`
+	- `matplotlib`
+	- `pyyaml`
+	- `pickle`
+	- `FAModel`
+
+3. Execute:
+
+```bash
+python morie_soil.py
+```

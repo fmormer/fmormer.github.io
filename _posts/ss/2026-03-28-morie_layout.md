@@ -70,6 +70,26 @@ All inputs are aligned in a **common projected coordinate system**.
 
 This provides the **spatial constraints required for layout generation**.
 
+
+## Technical Architecture
+
+The workflow is implemented in Python using:
+
+- `numpy`, `scipy` → numerical operations  
+- `matplotlib` → visualization  
+- `pyyaml` → configuration management  
+- `famodel` → system definition and integration  
+- `MoorPy` → mooring system compatibility  
+
+Core modules:
+
+- `load_moorpy_grid` → bathymetry and soil grid loading  
+- `suitability_filtering` → depth (88–94 m) and soil-based feasibility masking   
+- `generate_hex_turbine_array` → constrained lattice generation  
+- `slide_fixed8_best` → cluster optimization  
+- `inject_selected_cluster_into_yaml` → layout integration into system model  
+- `merge_coincident_anchors` → shared-anchor topology definition  
+
 ### System Flow
 
 Site Constraints → Lattice Generation → Cluster Optimization → System Configuration

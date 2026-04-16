@@ -74,7 +74,29 @@ This study builds directly on upstream Morie Analytics outputs:
 - RAFT motion response  
 - Cable properties and constraints  
 
-This provides the **boundary conditions for cable design optimization**. 
+This provides the **boundary conditions for cable design optimization**.
+
+
+## Technical Architecture
+
+The workflow is implemented in Python using:
+
+- `numpy`, `scipy` → numerical operations  
+- `matplotlib` → visualization  
+- `famodel` → system definition and data handling  
+- `RAFT` → hydrodynamic response input  
+- `CableDesign` → dynamic cable modeling and optimization  
+
+Core modules:
+
+- system initialization → project and platform extraction  
+- bathymetry sampling → local water depth evaluation  
+- geometry definition → fairlead position and span setup  
+- motion integration → offset and dynamic amplitude computation  
+- design parametrization → variables, bounds, and constraints definition  
+- cable model → multi-segment configuration representation  
+- constraint evaluation → tension, curvature, sag, and touchdown checks  
+- optimization engine → iterative design convergence   
 
 ### System Flow
 
@@ -286,3 +308,21 @@ This study reflects the Morie Analytics approach:
 - Traceable  
 - Engineering-focused  
 - Scalable    
+
+
+## How to Run
+
+1. Place datasets in `celtic_sea_share/`  
+2. Install dependencies:
+
+	- `numpy`  
+	- `matplotlib` 
+	- `FAModel`
+	- `MoorPy`  
+	- `RAFT`  
+ 
+3. Execute:
+
+```bash
+python morie_cable.py
+```

@@ -74,6 +74,30 @@ All inputs are integrated into a **simulation-ready framework**.
 
 This provides the **mechanical inputs required for load generation**.
 
+
+## Technical Architecture
+
+The workflow is implemented in Python using:
+
+- `numpy`, `scipy` → numerical operations  
+- `matplotlib` → visualization  
+- `famodel` → system definition and data handling  
+- `MoorPy` → static equilibrium solver  
+- `RAFT` → frequency-domain dynamic response  
+
+Core modules:
+
+- system initialization → project setup and soil loading  
+- domain extraction → local cropped study area definition  
+- shared-anchor merging → topology consolidation  
+- mooring configuration → generation of unique line setups  
+- pretension adjustment → chain length tuning for target loads  
+- equilibrium solver → static system solution  
+- watch circle evaluation → platform offset computation  
+- RAFT interface → dynamic response simulation  
+- load reconstruction → stochastic time-series generation from PSD    
+- load extraction → mudline elevation  
+
 ### System Flow
 
 Layout → Mooring Definition → Equilibrium → Dynamic Response → Load Extraction
@@ -328,3 +352,23 @@ This study reflects the Morie Analytics approach:
 - Traceable  
 - Engineering-focused  
 - Scalable   
+
+
+## How to Run
+
+1. Place datasets in `celtic_sea_share/`  
+2. Install dependencies:
+
+	- `numpy`  
+	- `matplotlib`  
+	- `scipy`  
+	- `pyyaml`  
+	- `FAModel`  
+	- `MoorPy`  
+	- `RAFT`  
+
+3. Execute:
+
+```bash
+python morie_mooring.py
+```
