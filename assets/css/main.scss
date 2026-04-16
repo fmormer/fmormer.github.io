@@ -251,9 +251,11 @@ a:hover, a:focus { color: var(--morie-heading) !important; }
 }
 
 .hero-right {
-  flex: 0 0 240px;
-  margin-left: auto;
-  transform: translateX(20px);
+  flex: 0 0 28%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  transform: translateX(0); // remove extra push to the right
 }
 
 .hero-title {
@@ -326,17 +328,27 @@ a:hover, a:focus { color: var(--morie-heading) !important; }
 
 .hero-button--primary {
   background-color: #0a1f44;
+  border: 1px solid #0a1f44;
+  color: #ffffff !important;
+}
+
+.hero-button--primary:hover,
+.hero-button--primary:focus {
+  background-color: #081733;
+  border-color: #081733;
   color: #ffffff !important;
 }
 
 .hero-button--secondary {
-  background-color: transparent;
-  border: 1px solid #0a1f44;
-  color: #0a1f44 !important;
+  background-color: #c62828;
+  border: 1px solid #c62828;
+  color: #ffffff !important;
 }
 
-.hero-button--secondary:hover {
-  background-color: #0a1f44;
+.hero-button--secondary:hover,
+.hero-button--secondary:focus {
+  background-color: #a61f1f;
+  border-color: #a61f1f;
   color: #ffffff !important;
 }
 
