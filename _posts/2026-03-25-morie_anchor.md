@@ -240,7 +240,7 @@ This is the **critical interface between physics and design**, where distributed
 governing anchor capacity verification. 
 
 
-## Suction Pile Capacity Model
+## Suction Pile Uncoupled Capacity
 
 <div align="center">
   <img src="/img/posts/morie_anchor/suction_plot.png" 
@@ -276,7 +276,7 @@ Capacity depends on:
 The anchor response is inherently **multi-axial**, where vertical and horizontal resistances are coupled and must be assessed together to define the feasible load envelope.
 
 
-## Load–Capacity Interaction
+## Load–Capacity Interaction Model
 
 <div align="center">
   <img src="/img/posts/morie_anchor/capacity_ellipsoid.png" 
@@ -294,7 +294,11 @@ The anchor response is inherently **multi-axial**, where vertical and horizontal
 
 ### Engineering Interpretation
 
-Defines **admissible load combinations** and anchor utilization.
+The interaction model defines the **admissible combinations of vertical, horizontal and moment loads** that the anchor can sustain.
+
+Rather than checking each load component independently, the anchor is assessed against a **coupled capacity envelope**, where the utilization depends on the combined load state.
+
+A load condition is considered feasible only if it lies **within the interaction envelope**, ensuring that all resistance mechanisms remain within their admissible limits.
 
 
 ## Outputs Generated
