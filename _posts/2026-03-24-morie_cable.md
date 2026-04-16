@@ -11,7 +11,7 @@ tags: [Offshore Floating Wind, Dynamic Cables, Cable Optimization, Floating Wind
 
 This study establishes the **system closure layer** of Morie Analytics by transforming **system behavior into optimized dynamic cable configurations**.
 
-Building on upstream modules, the workflow integrates bathymetry, mooring offsets, and hydrodynamic response to design **constraint-compliant dynamic cables**.
+Building on upstream modules, the workflow integrates bathymetry, mooring offsets and hydrodynamic response to design **constraint-compliant dynamic cables**.
 
 The result is a **constraint-driven optimization framework** producing deployable cable designs.
 
@@ -36,7 +36,7 @@ This study converts **system behavior into optimized cable design**.
 Dynamic cables must accommodate:
 
 - Floater motion  
-- Cyclic loading  
+- Environmental cyclic loading  
 - Seabed interaction  
 - Strict mechanical constraints  
 
@@ -56,8 +56,8 @@ This study builds directly on upstream Morie Analytics outputs:
 
 ### From `morie_site`
 
-- Bathymetry grid  
-- Seabed conditions 
+- Bathymetry and soil classification grids
+- Lease boundary definitions 
 
 ### From `morie_layout`
 
@@ -70,8 +70,8 @@ This study builds directly on upstream Morie Analytics outputs:
 
 ### Additional Inputs
 
-- YAML configuration  
-- RAFT motion response  
+- Model configuration  
+- Dynamic motion response  
 - Cable properties and constraints  
 
 This provides the **boundary conditions for cable design optimization**. 
@@ -104,11 +104,7 @@ The cable is modeled as a multi-segment system connecting:
 
 - Seabed touchdown point or range  
 - Suspended buoyant sections  
-- Floater fairlead  
-
-Fairlead position:
-
-`rBFair = [rFair, 0, zFair]`
+- Floater fairlead position
 
 
 <div align="center">
@@ -119,49 +115,39 @@ Fairlead position:
 *Figure 1 – Initial cable configuration.*
 
 
-## Mooring-Derived Offset
+## System Motion Envelope
 
-The floater offset is computed as:
+The cable boundary conditions are defined by the combined effect of:
 
-`offset = max( sqrt(dx² + dy²) )`
+- Quasi-static offset from mooring equilibrium  
+- Dynamic motion induced by environmental loading  
 
-### Engineering Interpretation
-
-- Defines quasi-static excursion  
-- Sets horizontal boundary condition  
-- Directly influences cable span and touchdown  
-
-
-## Hydrodynamic Motion (RAFT)
-
-Dynamic motion is defined as:
-
-`x_ampl = sqrt(surge_max² + sway_max²)`
+Together, these define a **motion envelope** describing the full spatial excursion of the floater.
 
 ### Engineering Interpretation
 
-- Captures wave-induced motion  
-- Defines oscillatory loading  
-- Expands cable excursion envelope  
-
----
+- Sets the kinematic boundary condition for cable design  
+- Defines maximum horizontal excursion and dynamic amplification  
+- Directly governs cable span, curvature and touchdown behavior  
 
 ## Cable Design Model
 
-The cable system accounts for:
+The cable system is modeled as a multi-segment structure responding to:
 
-- Self-weight (marine growth) 
-- Buoyancy modules  
-- Seabed interaction  
-- Dynamic boundary conditions  
+- Self-weight and buoyancy distribution  
+- Seabed interaction at touchdown  
+- Floater motion envelope  
+- Hydrodynamic excitation  
 
 ### Engineering Interpretation
 
-Cable behavior is governed by:
+Cable behavior emerges from the interaction between:
 
-- Geometry  
-- Motion envelope  
-- Constraint limits  
+- Geometry (segment lengths and buoyancy)  
+- Boundary conditions (motion envelope)  
+- Constraint limits (tension, curvature, seabed contact)  
+
+The problem is inherently **geometry-driven under dynamic constraints**, where feasible configurations must adapt to system motion while remaining within allowable limits. 
 
 
 ## Optimization Problem
@@ -182,8 +168,13 @@ Cable behavior is governed by:
 
 ### Objective
 
-- Minimize cost  
-- Satisfy all constraints  
+The optimization seeks a configuration that:
+
+- Minimizes system cost  
+- Satisfies all mechanical and geometric constraints  
+- Remains robust under the full motion envelope  
+
+This results in a **feasible and deployable cable configuration**, rather than an idealized solution. 
 
 
 ## Optimization Convergence
@@ -233,7 +224,7 @@ The outputs support:
 
 This enables:
 
-**System Response → Cable Design → Constraint Verification**
+**System Motion → Cable Geometry → Constraint-Compliant Design**
 
 
 ## Relationship to Other Morie Study Cases
