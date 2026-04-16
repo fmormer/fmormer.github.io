@@ -72,6 +72,7 @@ This study builds directly on upstream Morie Analytics outputs:
 - Governing event  
 - Concomitant load states  
 
+
 ### Additional Inputs
 
 - Chain properties  
@@ -79,6 +80,30 @@ This study builds directly on upstream Morie Analytics outputs:
 - Coupled capacity model parameters  
 
 This provides the **load and resistance inputs required for anchor verification**.
+
+
+## Technical Architecture
+
+The workflow is implemented in Python using:
+
+- `numpy`, `scipy` → numerical operations  
+- `matplotlib` → visualization  
+- `famodel` → system definition and data handling  
+- `RAFT` → dynamic response input  
+- `getTransferLoad` → embedded chain load transfer  
+- `getCapacitySuction` → suction pile capacity model  
+
+Core modules:
+
+- system initialization → project setup and soil loading  
+- RAFT interface → dynamic response simulation  
+- event detection → governing load case identification  
+- time-series reconstruction → PSD-to-time-domain conversion  
+- concomitant extraction → simultaneous multi-line load definition  
+- load transfer → mudline-to-padeye force transformation  
+- vector resolution → shared-anchor load combination  
+- torsion evaluation → lug-induced torque computation  
+- capacity verification → suction pile response assessment   
 
 ### System Flow
 
@@ -420,3 +445,19 @@ This study reflects the Morie Analytics approach:
 - Traceable  
 - Engineering-focused  
 - Scalable    
+
+
+## How to Run
+
+1. Place datasets in `celtic_sea_share/`  
+2. Install dependencies:
+
+	- `numpy`  
+	- `matplotlib`
+	- `FAModel` 
+ 
+3. Execute:
+
+```bash
+python morie_anchor.py
+```
