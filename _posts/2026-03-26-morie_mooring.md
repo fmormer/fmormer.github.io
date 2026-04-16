@@ -11,9 +11,9 @@ tags: [Offshore Floating Wind, Mooring Systems, RAFT, MoorPy, Shared Anchors, Py
 
 This study establishes the **mooring physics layer** of Morie Analytics by transforming floating wind layouts into **physically consistent mooring systems and design-ready load outputs**.
 
-Using YAML-based configurations and simulation tools, the workflow generates mooring systems and extracts **mudline-level loads** for engineering assessment that will be transformed into **padeye-level loads** in the following study case.
+Using previous data and simulation tools, the workflow generates mooring systems and extracts **mudline-level loads** for engineering assessment that will be transfered into **padeye-level loads** in the following study case (`morie_anchor`).
 
-The result is a **reproducible computational pipeline** that connects geometry, equilibrium physics, and load transfer into downstream anchor design inputs.
+The result is a **reproducible computational pipeline** that connects geometry, quasi-static equilibrium physics and frequency-domain dynamic response.
 
 This module represents the first stage where **physical system behavior governs design outcomes**, transitioning from geometry to force-driven engineering.
 
@@ -23,11 +23,9 @@ This module represents the first stage where **physical system behavior governs 
 ## Project Scope
 
 - Mooring system generation  
-- Shared-anchor configurations  
-- Mudline load extraction  
-- Load aggregation  
-- Environmental load case evaluation  
-- Optional dynamic response analysis  
+- Shared-anchor configurations   
+- Environmental design load cases evaluation  
+- Dynamic response analysis  
 
 This study converts **layout geometry into design-driving loads**.
 
@@ -41,10 +39,7 @@ Accurate design requires:
 - Geometry and pretension  
 - Static equilibrium  
 - Directional loading  
-- Dynamic amplification  
-- Load transfer to anchors  
-
-Traditional workflows separate mooring and anchor design.
+- Dynamic response   
 
 This workflow provides a **continuous mechanical link** from layout to anchor demand.
 
@@ -55,20 +50,20 @@ This study builds directly on upstream Morie Analytics outputs:
 
 ### From `morie_site`
 
-- Bathymetry grids  
-- Spatial domain  
+- Bathymetry and soil classification grids
+- Lease boundary definitions  
 
 ### From `morie_layout`
 
-- Floater positions  
-- Anchor coordinates  
-- Shared-anchor topology  
+- Selected floater cluster  
+- FOWT coordinates  
+- Shared-anchor typologies and coordinates   
 
 ### Additional Inputs
 
-- YAML-based farm configuration  
+- Farm model configuration  
 - Mooring line properties  
-- Environmental load cases  
+- Environmental design load cases for typical extreme conditions in Celtic Sea  
 
 All inputs are integrated into a **simulation-ready framework**.
 
@@ -156,9 +151,9 @@ The mooring system is solved for the **quasi-static equilibrium**, establishing 
 <div align="center">
   <img src="/img/posts/morie_mooring/mooring_profile.png" 
        alt="Mooring line profile showing catenary geometry between fairlead and anchor with seabed interaction" 
-       width="700">
+       width="800">
 </div>
-*Figure 3 – Mooring line catenary profile and load transfer path.*
+*Figure 3 – Mooring line catenary profile.*
 
 ### Engineering Interpretation
 
@@ -177,7 +172,7 @@ Pretension governs:
 
 ## Environmental & Dynamic Response
 
-Dynamic response is evaluated using **RAFT** across multiple wave headings.
+Dynamic response is evaluated using **RAFT** across most severe wave headings for mooring line loads.
 
 <div align="center">
   <img src="/img/posts/morie_mooring/raft_heading_cases.png" 
@@ -199,7 +194,7 @@ This reveals how environmental conditions translate into **load variability and 
 
 ## Critical Load Case Identification
 
-The governing load case is selected based on **maximum tension response** across all conditions. In this case the maximum load for an omni-directional environmental loading in the upwind direction.
+The governing load case is selected based on **maximum tension response** across all conditions. In this case, the maximum load for an omni-directional environmental loading happens for the upwind direction.
 
 ### Engineering Interpretation
 

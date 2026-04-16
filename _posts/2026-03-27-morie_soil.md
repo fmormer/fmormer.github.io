@@ -11,7 +11,7 @@ tags: [Offshore Floating Wind, Geotechnical Engineering, Soil Modeling, Tomograp
 
 This study establishes the **soil reconstruction layer** of Morie Analytics by transforming sparse geotechnical information into **engineering-ready soil profiles at anchor locations**.
 
-Starting from a layout generated in **morie_layout**, the workflow constructs a localized soil domain, generates a synthetic ground truth model, emulates **tomographic sampling**, and reconstructs vertical soil profiles using interpolation techniques.
+Starting from a layout generated in `morie_layout`, the workflow constructs a localized soil domain, generates a synthetic ground truth model, emulates **tomographic sampling**, and reconstructs vertical soil profiles using interpolation techniques.
 
 The result is a **reproducible framework for anchor-level soil characterization**, bridging the gap between spatial layout design and geotechnical engineering inputs.
 
@@ -37,7 +37,7 @@ Following layout definition, the next geotechnical question is:
 
 > **What soil profile is acting at each anchor location?**
 
-Anchor and mooring design depend critically on:
+Anchor design depend critically on:
 
 - Soil stratigraphy
 - Layer boundaries
@@ -59,20 +59,19 @@ This study builds directly on upstream Morie Analytics outputs:
 
 ### From `morie_site`
 
-- Bathymetry grid  
-- Soil classification grid  
-- Lease boundary context 
+- Bathymetry and soil classification grids
+- Lease boundary definitions 
 
 ### From `morie_layout`
 
 - Selected floater cluster  
 - FOWT coordinates  
-- Anchor coordinates  
+- Shared-anchor typologies and coordinates  
 - Local layout footprint   
 
 ### Additional Inputs
 
-- Layered soil profile definitions (YAML)  
+- Layered soil profile definitions  
 - Cropped local-domain datasets  
 - Synthetic soil-model parameters  
 
@@ -147,7 +146,7 @@ These local-domain products define:
 
 ## Synthetic Soil Model (Ground Truth)
 
-A synthetic truth model is generated over the cropped local domain to provide a controlled subsurface reference.
+A synthetic truth model is generated over the cropped local domain to provide a controlled subsurface reference. The three layer model displays two boundary layers.
 
 <div align="center">
   <img src="/img/posts/morie_soil/03_truth_surfaces.png"
@@ -161,7 +160,7 @@ _Figure 4 – Synthetic ground truth soil model with spatially varying layer int
 - Three-layer sand system
 - Interfaces: **Z1** and **Z2**
 - Spatially varying layer boundaries
-- Continuous variation of:
+- Linear variation of soil parameters within each layer:
   - Friction angle, φ
   - Relative density, Dr
   - Unit weight, γ
@@ -177,7 +176,7 @@ The truth model provides:
 
 ## Tomographic Sampling Framework
 
-To emulate realistic geotechnical data availability, the workflow defines a sparse tomographic sampling framework.
+To emulate realistic geotechnical data availability, the workflow defines a sparse tomographic sampling framework using 4 planes per main direction.
 
 <div align="center">
   <img src="/img/posts/morie_soil/04_tomographic_layout.png"
@@ -247,7 +246,7 @@ _Figure 8 – Reconstructed vs ground truth soil profile at the single-point val
 
 ### Engineering Output
 
-- Continuous φ(z), Dr(z), γ(z)
+- Linear variability of soil properties with depth - φ(z), Dr(z), γ(z)
 - Local profile reconstruction from sparse sections
 - Validation of the proof-of-concept interpolation approach
 
@@ -262,12 +261,6 @@ The reconstructed profile is then converted into discrete engineering layers thr
        width="500">
 </div>
 _Figure 9 – Boundary detection accuracy at the single-point validation location._
-
-### Results
-
-- Z1 mean error ≈ 0.30 m
-- Z2 mean error ≈ 0.42 m
-- Maximum error < 1 m
 
 ### Engineering Significance
 
@@ -291,19 +284,11 @@ Following proof-of-concept validation, the workflow is applied across all anchor
 
 - **fowt1b** → selected as downstream handoff anchor for `morie_anchor`
 
-This selection is now formalized in the workflow and exported for the downstream case study.
+This selection is now formalized in the workflow and exported for the downstream case study. The structure represents the **final engineering output** of the soil reconstruction workflow.
 
 ### Engineering Significance
 
 This step ensures that the soil-reconstruction module produces **actionable anchor-specific outputs**, not only validation figures.
-
-***
-
-## Anchor-Level Soil Profile (fowt1b)
-
-The selected anchor **fowt1b** is exported with its fully reconstructed soil profile in a structured format (`profile_map`), directly usable in downstream anchor capacity models.
-
-This structure represents the **final engineering output** of the soil reconstruction workflow.
 
 
 ## Outputs Generated
@@ -341,14 +326,13 @@ This study is the **subsurface intelligence bridge** of the Morie Analytics work
 
 ### Receives from:
 
-- **morie_site** → lease boundary, bathymetry, soil grids
+- **morie_site** → lease boundary, bathymetry and soil grids
 - **morie_layout** → floater cluster and anchor coordinates
 
 ### Feeds into:
 
 - **morie_anchor** → selected anchor profile and boundary definition
-- **morie_mooring** → soil-informed assumptions for embedded load transfer
-- **morie_cable** → local seabed interpretation for downstream routing logic
+- **morie_mooring** → soil-informed assumptions for mooring line seabed contact
 
 It provides the **geotechnical transition from layout geometry to anchor design**.
 
