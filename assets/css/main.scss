@@ -245,18 +245,18 @@ a:hover, a:focus { color: var(--morie-heading) !important; }
 }
 
 .hero-left {
-  flex: 1;
-  max-width: 780px;
+  flex: 0 0 72%;   // 👈 BIG CHANGE (was flexible + constrained)
+  max-width: none; // 👈 remove artificial cap
 }
 
 .hero-right {
-  flex: 0 0 420px;
+  flex: 0 0 28%;   // 👈 shrink map area
   margin-left: auto;
-  transform: translateX(40px); // 👈 pushes map right
+  transform: translateX(60px); // 👈 push further right
 }
 
 .hero-title {
-  max-width: 700px;
+  max-width: none;
   margin: 0 0 1.25rem 0;
   font-size: clamp(3.2rem, 3.5vw, 3.2rem);
   line-height: 1.12;
