@@ -248,9 +248,8 @@ Ensures:
 
 For each lease area:
 
-- Bathymetry grids (`.txt`)
-- Soil classification grids (`.txt`)
-- Spatial plots (`.png`)
+- Bathymetry and soil classification grids
+- Spatial plots
 - Structured CSV summaries
 
 These outputs are directly usable in downstream engineering workflows.

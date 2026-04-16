@@ -221,10 +221,10 @@ This step defines:
 For selected lease area:
 
 - Optimized floater coordinates  
-- Modified project file (`.yaml`)  
-- Suitability maps (`.png`) 
-- Hex grid and cluster visualizations (`.png`) 
-- Anchor topology maps (`.png`)
+- Modified project file 
+- Suitability maps  
+- Hex grid and cluster visualizations
+- Anchor topology maps
 
 These outputs are directly usable in:
 
