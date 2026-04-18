@@ -23,4 +23,13 @@
 
   <!-- Morie styles -->
   <link rel='stylesheet' href='{{ "/assets/css/main.css" | relative_url }}'>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7SM08DQEZ5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7SM08DQEZ5', { cookie_domain: 'morie.io' });
+  </script>
 </head>
