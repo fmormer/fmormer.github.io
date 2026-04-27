@@ -13,9 +13,11 @@ This study establishes the **layout generation layer** of Morie Analytics by tra
 
 Using bathymetry and seabed classification from `morie_site`, the workflow identifies feasible regions, generates a constrained hexagonal lattice and selects optimal floater clusters using **topology-driven optimization**.
 
-The result is a **deterministic and reproducible layout generation framework** that replaces heuristic placement strategies with structured engineering logic.
+The result is a **deterministic and reproducible layout generation framework** that replaces heuristic placement with **engineering-driven system configuration**. In conventional workflows, layout is often treated as a geometric or wind-driven problem.
 
-This module represents the stage where site constraints are translated into spatial system configuration.
+In floating wind, it is a **system design problem**.
+
+The reference case corresponds to a **120 MW floating wind cluster**, bridging layout generation with real project-scale design.
 
 > Site intelligence → **Layout generation** → Soil reconstruction → Mooring physics → Anchor verification → Cable optimization
 
@@ -29,7 +31,15 @@ This module represents the stage where site constraints are translated into spat
 - Model generation for downstream workflows  
 - Integration with mooring and anchor modules  
 
-This study converts **site intelligence into structured spatial design decisions**.
+This study converts **site intelligence into structured spatial system design decisions**.
+
+The reference configuration consists of:
+
+- **8 floating wind turbine generators (WTGs)**  
+- **15 MW nominal capacity per unit**  
+- **Total installed capacity: 120 MW**
+
+This defines a **cluster-scale floating wind system**, used to evaluate layout feasibility, topology optimization and downstream engineering workflows.
 
 
 ## Engineering Context
@@ -47,7 +57,7 @@ At this stage, engineers must balance:
 - Mooring footprint interactions  
 - Anchor-sharing potential  
 
-Traditional approaches rely on manual placement or coarse grids.
+Traditional approaches rely on manual placement or coarse grids. These approaches fail to capture the strong coupling between layout, mooring systems and anchor design.
 
 This workflow introduces a **lattice-driven methodology**, where layout is derived from physical feasibility, spatial structure, and system connectivity.
 
@@ -73,7 +83,7 @@ This provides the **spatial constraints required for layout generation**.
 
 ## System Flow
 
-Site Constraints → Lattice Generation → Cluster Optimization → System Configuration
+Site Intelligence → Feasibility Filtering → Lattice Generation → Topology Optimization → System Configuration
 
 The architecture ensures **direct continuity with downstream physics-based modules**.
 
@@ -153,6 +163,8 @@ Defines the **valid design domain** where:
 </div>
 *Figure 4 – Hexagonal lattice filtered by feasibility constraints.*
 
+The hexagonal structure maximizes spatial efficiency while maintaining uniform neighbor relationships, which is critical for shared-anchor topology.
+
 ### Parameters
 
 - Spacing: 800 m  
@@ -177,6 +189,8 @@ The hex grid ensures:
 </div>
 *Figure 5 – Optimal 8-node cluster selected based on connectivity metrics.*
 
+The selected cluster represents a **120 MW floating wind configuration**, enabling system-level evaluation at a realistic project scale.
+
 ### Methodology
 
 - Slide fixed cluster across lattice  
@@ -191,7 +205,35 @@ The hex grid ensures:
 
 ### Engineering Insight
 
-Connectivity acts as a **proxy for shared-anchor efficiency**, enabling layout optimization without full physics-based modeling.
+Connectivity acts as a **first-order proxy for system efficiency**, capturing:
+
+- Anchor-sharing potential  
+- Mooring interaction density  
+- Structural redundancy  
+
+This enables early-stage optimization without requiring full physics-based simulation.
+
+## System-Level Representation
+
+<div align="center">
+  <img src="/img/posts/morie_layout/3d_system_view.png" 
+       alt="3D visualization of floating wind farm layout including bathymetry surface, turbine positions, mooring lines, and anchor locations showing full system integration" 
+       width="700">
+</div>
+*Figure 6 – Integrated system view combining bathymetry, layout, mooring configuration, and anchor positions.*
+
+### Engineering Significance
+
+This visualization represents the transition from **spatial layout** to **physical system configuration**.
+
+It captures:
+
+- Bathymetry-driven placement of floaters  
+- Mooring system geometry and orientation  
+- Anchor locations and sharing structure  
+- Interaction between layout and subsea infrastructure  
+
+This is where layout becomes an **engineered offshore system**.
 
 
 ## Mooring & Anchor Topology Generation
@@ -201,7 +243,9 @@ Connectivity acts as a **proxy for shared-anchor efficiency**, enabling layout o
        alt="Anchor-sharing topology map showing mooring line connections and shared anchor nodes across the floating wind farm layout" 
        width="500">
 </div>
-*Figure 6 – Anchor-sharing topology derived from mooring system generation.*
+*Figure 7 – Anchor-sharing topology derived from mooring system generation.*
+
+This step effectively defines the **load pathways** of the system, linking spatial layout to structural behavior.
 
 ### Outputs
 
@@ -261,12 +305,12 @@ This enables:
 - **morie_anchor** → anchor load assessment and capacity design check  
 - **morie_cable** → cable routing and configuration  
 
-This module is the **bridge between site data** and **system design**.
+This module is the **bridge between site data** and **system design.**
 
 
 ## Why It Matters Commercially
 
-Layout decisions strongly influence downstream cost and feasibility.
+Layout decisions strongly influence **CAPEX, installation strategy, and system feasibility.**
 
 - Reduces uncertainty in early-stage layout decisions  
 - Enables rapid comparison of layout scenarios  
@@ -284,7 +328,7 @@ This is where:
 ## Aspects to Improve
 
 - Multi-cluster optimization across full lease  
-- Integration with dynamic load analysis and wake effects for production asessment 
+- Integration with dynamic load analysis and wake effects for production assessment 
 - Inclusion of cable constraints in optimization  
 - Cost-driven objective functions  
 - Machine learning-based layout selection  
