@@ -24,6 +24,16 @@
   <!-- Morie styles -->
   <link rel='stylesheet' href='{{ "/assets/css/main.css" | relative_url }}'>
 
+  <!-- Open Graph / Twitter Card -->
+  {% if page.og_title %}
+  <meta property="og:title" content="{{ page.og_title }}">
+  <meta property="og:description" content="{{ page.og_description }}">
+  <meta property="og:image" content="{{ page.og_image | absolute_url }}">
+  <meta property="og:type" content="{{ page.og_type | default: 'website' }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta name="twitter:card" content="summary_large_image">
+  {% endif %}
+
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-7SM08DQEZ5"></script>
   <script>
