@@ -216,7 +216,7 @@ This enables early-stage optimization without requiring full physics-based simul
 ## System-Level Representation
 
 <div align="center">
-  <img src="/img/posts/morie_layout/3D_cropped_bathy.png.png" 
+  <img src="/img/posts/morie_layout/3D_cropped_bathy.png" 
        alt="3D visualization of floating wind farm layout including bathymetry surface, turbine positions, mooring lines, and anchor locations showing full system integration" 
        width="700">
 </div>
