@@ -2140,6 +2140,17 @@ code.language-plaintext {
   margin-bottom: 2rem;
 }
 
+.plat-plans__single {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.plat-plan-card--single {
+  max-width: 560px;
+  width: 100%;
+}
+
 .plat-plan-card {
   background-color: var(--morie-bg);
   border: 1px solid var(--morie-border);
@@ -2253,11 +2264,12 @@ code.language-plaintext {
   background-color: var(--morie-heading);
 }
 
-.plat-access__inner {
-  display: grid;
-  grid-template-columns: 1fr 480px;
-  gap: 4rem;
-  align-items: start;
+.plat-access .home-storyband__eyebrow {
+  color: #93c5fd !important;
+}
+
+.plat-access__header {
+  margin-bottom: 3rem;
 }
 
 .plat-access__lead {
@@ -2267,8 +2279,22 @@ code.language-plaintext {
   margin: 0 0 1rem;
 }
 
-.plat-access .home-storyband__eyebrow {
-  color: #93c5fd !important;
+.plat-access__body {
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  gap: 4rem;
+  align-items: start;
+}
+
+.plat-feature-list--light {
+  li {
+    color: rgba(255,255,255,0.85) !important;
+    border-bottom-color: rgba(255,255,255,0.12) !important;
+  }
+
+  i {
+    color: #93c5fd !important;
+  }
 }
 
 .plat-access__form-wrap {
@@ -2370,7 +2396,7 @@ code.language-plaintext {
     direction: ltr;
   }
 
-  .plat-access__inner {
+  .plat-access__body {
     grid-template-columns: 1fr;
   }
 }
@@ -2385,7 +2411,6 @@ code.language-plaintext {
   .plat-workflow,
   .plat-tools,
   .plat-collab,
-  .plat-plans,
   .plat-access {
     padding: 64px 0 56px;
   }

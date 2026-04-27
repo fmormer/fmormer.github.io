@@ -266,80 +266,10 @@ og_type: "website"
   </div>
 </section>
 
-<!-- ── PLANS ─────────────────────────────────────────────────────────── -->
-<section class="plat-plans" aria-label="Morie Platform pricing plans">
-  <div class="plat-container">
-    <p class="home-storyband__eyebrow">Plans</p>
-    <h2 class="plat-section__title">Find the right tier for your team</h2>
-    <p class="plat-section__lead">
-      Morie Platform is currently invite-only. When public access opens, plans will range from
-      individual exploration to full enterprise deployment. Contact us for early access pricing.
-    </p>
-    <div class="plat-plans__grid">
-
-      <div class="plat-plan-card">
-        <h3 class="plat-plan-card__name">Free</h3>
-        <p class="plat-plan-card__tagline">For individuals exploring the platform</p>
-        <ul class="plat-plan-card__features">
-          <li>Access to live tools (Site + Anchor)</li>
-          <li>1 project</li>
-          <li>Limited studies per tool</li>
-          <li>Community support</li>
-        </ul>
-        <a href="#request-access" class="plat-plan-card__cta">Request access</a>
-      </div>
-
-      <div class="plat-plan-card">
-        <h3 class="plat-plan-card__name">Starter</h3>
-        <p class="plat-plan-card__tagline">For small teams and boutique consultancies</p>
-        <ul class="plat-plan-card__features">
-          <li>All live tools</li>
-          <li>Up to 5 projects</li>
-          <li>Editor and Viewer roles</li>
-          <li>Email support</li>
-        </ul>
-        <a href="#request-access" class="plat-plan-card__cta">Contact us</a>
-      </div>
-
-      <div class="plat-plan-card plat-plan-card--featured">
-        <span class="plat-plan-card__label">Most popular</span>
-        <h3 class="plat-plan-card__name">Pro</h3>
-        <p class="plat-plan-card__tagline">For growing firms and active project developers</p>
-        <ul class="plat-plan-card__features">
-          <li>All live tools + new tools as released</li>
-          <li>Unlimited projects</li>
-          <li>Full role-based access</li>
-          <li>Custom subdomain</li>
-          <li>Priority support</li>
-        </ul>
-        <a href="#request-access" class="plat-plan-card__cta">Contact us</a>
-      </div>
-
-      <div class="plat-plan-card">
-        <h3 class="plat-plan-card__name">Enterprise</h3>
-        <p class="plat-plan-card__tagline">For classification societies and large organisations</p>
-        <ul class="plat-plan-card__features">
-          <li>Everything in Pro</li>
-          <li>SSO and custom authentication</li>
-          <li>SLA and dedicated support</li>
-          <li>On-premises options available</li>
-          <li>Custom integrations</li>
-        </ul>
-        <a href="#request-access" class="plat-plan-card__cta">Contact us</a>
-      </div>
-
-    </div>
-    <p class="plat-plans__note">
-      All plans are invite-only during the current early-access phase.
-      <a href="#request-access">Request your invitation below.</a>
-    </p>
-  </div>
-</section>
-
 <!-- ── REQUEST ACCESS ────────────────────────────────────────────────── -->
 <section class="plat-access" id="request-access" aria-label="Request early access to Morie Platform">
-  <div class="plat-container plat-access__inner">
-    <div class="plat-access__copy">
+  <div class="plat-container">
+    <div class="plat-access__header">
       <p class="home-storyband__eyebrow">Early access</p>
       <h2 class="plat-section__title plat-section__title--light">
         Join the engineers shaping floating wind
@@ -349,42 +279,51 @@ og_type: "website"
         offshore wind engineers, consultancies, developers and classification societies to
         refine the tools before broader release.
       </p>
-      <p class="plat-access__lead">
-        If you are working on floating offshore wind and want early access, send us a brief
-        message describing your team and project context.
-      </p>
     </div>
-    <div class="plat-access__form-wrap">
-      <form class="plat-access__form"
-            action="{{ '/contact/' | relative_url }}"
-            method="GET"
-            aria-label="Request early access form">
-        <div class="plat-form__group">
-          <label class="plat-form__label" for="access-name">Name</label>
-          <input class="plat-form__input" type="text" id="access-name" name="name"
-                 autocomplete="name" required placeholder="Your full name">
-        </div>
-        <div class="plat-form__group">
-          <label class="plat-form__label" for="access-email">Work email</label>
-          <input class="plat-form__input" type="email" id="access-email" name="email"
-                 autocomplete="email" required placeholder="you@yourorg.com">
-        </div>
-        <div class="plat-form__group">
-          <label class="plat-form__label" for="access-org">Organisation</label>
-          <input class="plat-form__input" type="text" id="access-org" name="organisation"
-                 autocomplete="organization" placeholder="Consulting firm, developer, society…">
-        </div>
-        <div class="plat-form__group">
-          <label class="plat-form__label" for="access-context">Project context</label>
-          <textarea class="plat-form__input plat-form__textarea" id="access-context"
-                    name="context" rows="4"
-                    placeholder="Briefly describe your floating wind project and how you would use Morie Platform."></textarea>
-        </div>
-        <button class="plat-form__submit" type="submit">
-          Request early access
-        </button>
-        <p class="plat-form__note">We respond within 2–3 business days. No marketing emails.</p>
-      </form>
+    <div class="plat-access__body">
+      <div class="plat-access__features">
+        <ul class="plat-feature-list plat-feature-list--light" aria-label="What early access includes">
+          <li><i class="ion ion-md-checkmark-circle" aria-hidden="true"></i> Site Tool — interactive boundary definition and bathymetry extraction</li>
+          <li><i class="ion ion-md-checkmark-circle" aria-hidden="true"></i> Anchor Tool — 9 anchor types, multi-layer soil profiles, 3D geometry viewer</li>
+          <li><i class="ion ion-md-checkmark-circle" aria-hidden="true"></i> New tools as they are released (Layout, Soil, Mooring, Cable, Atlas)</li>
+          <li><i class="ion ion-md-checkmark-circle" aria-hidden="true"></i> Project workspaces with multiple studies per tool</li>
+          <li><i class="ion ion-md-checkmark-circle" aria-hidden="true"></i> Role-based access — Viewer, Editor, and Owner</li>
+          <li><i class="ion ion-md-checkmark-circle" aria-hidden="true"></i> Organisation account with custom subdomain</li>
+          <li><i class="ion ion-md-checkmark-circle" aria-hidden="true"></i> Direct support from the Morie Analytics team</li>
+        </ul>
+      </div>
+      <div class="plat-access__form-wrap">
+        <form class="plat-access__form"
+              action="{{ '/contact/' | relative_url }}"
+              method="GET"
+              aria-label="Request early access form">
+          <div class="plat-form__group">
+            <label class="plat-form__label" for="access-name">Name</label>
+            <input class="plat-form__input" type="text" id="access-name" name="name"
+                   autocomplete="name" required placeholder="Your full name">
+          </div>
+          <div class="plat-form__group">
+            <label class="plat-form__label" for="access-email">Work email</label>
+            <input class="plat-form__input" type="email" id="access-email" name="email"
+                   autocomplete="email" required placeholder="you@yourorg.com">
+          </div>
+          <div class="plat-form__group">
+            <label class="plat-form__label" for="access-org">Organisation</label>
+            <input class="plat-form__input" type="text" id="access-org" name="organisation"
+                   autocomplete="organization" placeholder="Consulting firm, developer, society…">
+          </div>
+          <div class="plat-form__group">
+            <label class="plat-form__label" for="access-context">Project context</label>
+            <textarea class="plat-form__input plat-form__textarea" id="access-context"
+                      name="context" rows="4"
+                      placeholder="Briefly describe your floating wind project and how you would use Morie Platform."></textarea>
+          </div>
+          <button class="plat-form__submit" type="submit">
+            Request early access
+          </button>
+          <p class="plat-form__note">We respond within 2–3 business days. No marketing emails.</p>
+        </form>
+      </div>
     </div>
   </div>
 </section>
