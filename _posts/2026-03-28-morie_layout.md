@@ -213,6 +213,33 @@ Connectivity acts as a **first-order proxy for system efficiency**, capturing:
 
 This enables early-stage optimization without requiring full physics-based simulation.
 
+
+## Mooring & Anchor Topology Generation
+
+<div align="center">
+  <img src="/img/posts/morie_layout/2dfarm_layout_anchor.png" 
+       alt="Anchor-sharing topology map showing mooring line connections and shared anchor nodes across the floating wind farm layout" 
+       width="500">
+</div>
+*Figure 6 – Anchor-sharing topology derived from mooring system generation.*
+
+This step effectively defines the **load pathways** of the system, linking spatial layout to structural behavior.
+
+### Outputs
+
+- Anchor coordinates  
+- Shared anchor configurations 
+- Attachment counts color code (1–3 lines per anchor)  
+
+### Engineering Significance
+
+This step defines:
+
+- Load aggregation structure  
+- Anchor-sharing potential  
+- Location inputs for anchor sizing  
+
+
 ## System-Level Representation
 
 <div align="center">
@@ -220,7 +247,7 @@ This enables early-stage optimization without requiring full physics-based simul
        alt="3D visualization of floating wind farm layout including bathymetry surface, turbine positions, mooring lines, and anchor locations showing full system integration" 
        width="700">
 </div>
-*Figure 6 – Integrated system view combining bathymetry, layout, mooring configuration, and anchor positions.*
+*Figure 7 – Integrated system view combining bathymetry, layout, mooring configuration, and anchor positions.*
 
 ### Engineering Significance
 
@@ -234,32 +261,6 @@ It captures:
 - Interaction between layout and subsea infrastructure  
 
 This is where layout becomes an **engineered offshore system**.
-
-
-## Mooring & Anchor Topology Generation
-
-<div align="center">
-  <img src="/img/posts/morie_layout/2dfarm_layout_anchor.png" 
-       alt="Anchor-sharing topology map showing mooring line connections and shared anchor nodes across the floating wind farm layout" 
-       width="500">
-</div>
-*Figure 7 – Anchor-sharing topology derived from mooring system generation.*
-
-This step effectively defines the **load pathways** of the system, linking spatial layout to structural behavior.
-
-### Outputs
-
-- Anchor coordinates  
-- Attachment counts (1–3 lines per anchor)  
-- Shared anchor configurations  
-
-### Engineering Significance
-
-This step defines:
-
-- Load aggregation structure  
-- Anchor-sharing potential  
-- Location inputs for anchor sizing  
 
 
 ## Outputs Generated
