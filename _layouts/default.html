@@ -75,52 +75,6 @@
 	  </div>
 	</section>
 
-	<!-- CAPABILITIES SECTION -->
-	<section class="morie-capabilities">
-	  <div class="morie-capabilities-grid">
-
-		<div class="capability-item">
-		  <div class="capability-icon">
-			<img src="/img/morie_icon_site.png" alt="Site Intelligence">
-		  </div>
-		  <h3>Site Intelligence</h3>
-		  <p>
-			Transform marine data into engineering-ready inputs for global offshore wind analysis.
-		  </p>
-		</div>
-
-		<div class="capability-item">
-		  <div class="capability-icon">
-			<img src="/img/morie_icon_layout.png" alt="Layout Engineering">
-		  </div>
-		  <h3>Layout Engineering</h3>
-		  <p>
-			Generate optimized floating wind farm layouts using constraint-driven spatial design.
-		  </p>
-		</div>
-
-		<div class="capability-item">
-		  <div class="capability-icon">
-			<img src="/img/morie_icon_subsurface.png" alt="Subsurface Design">
-		  </div>
-		  <h3>Subsurface & Anchor Design</h3>
-		  <p>
-			Evaluate soil spatial variability and anchor performance under coupled offshore loading conditions.
-		  </p>
-		</div>
-
-		<div class="capability-item">
-		  <div class="capability-icon">
-			<img src="/img/morie_icon_system.png" alt="System Integration">
-		  </div>
-		  <h3>Integrated System Design</h3>
-		  <p>
-			Coupled mooring, anchor and cable analysis systems integrated into a unified engineering workflow.
-		  </p>
-		</div>
-
-	  </div>
-	</section>
 	{% endif %}
 
     <main>
@@ -129,16 +83,38 @@
 
     <footer class="footer">
       <div class="footer-inner">
-        <div>
+
+        <div class="footer-col footer-col--brand">
           <div class="footer-brand">{{ site.title }}</div>
-          <p class="footer-tagline">{{ site.location }}</p>
+          <p class="footer-tagline">Offshore engineering and software<br>for floating wind.</p>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/company/morie-analytics/" target="_blank" rel="noopener" aria-label="Morie Analytics on LinkedIn">
+              <i class="ion ion-logo-linkedin"></i>
+            </a>
+            <a href="mailto:info@morie.io" aria-label="Email Morie Analytics">
+              <i class="ion ion-md-mail"></i>
+            </a>
+          </div>
         </div>
-        <ul class="footer-links">
-          <li><a href="{{ site.github }}">GitHub</a></li>
-          <li><a href="{{ site.linkedln }}">LinkedIn</a></li>
-          <li><a href="{{ site.resume_url | relative_url }}">Resume</a></li>
-          <li><a href="/admin/">CMS</a></li>
-        </ul>
+
+        <div class="footer-col">
+          <p class="footer-col__heading">Services</p>
+          <ul class="footer-nav">
+            <li><a href="{{ '/consulting/' | relative_url }}">Consulting</a></li>
+            <li><a href="{{ '/software/' | relative_url }}">Software</a></li>
+            <li><a href="{{ '/academy/' | relative_url }}">Academy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-col__heading">Company</p>
+          <ul class="footer-nav">
+            <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+            <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+            <li><a href="mailto:info@morie.io">info@morie.io</a></li>
+          </ul>
+        </div>
+
       </div>
       <div class="footer-copy">
         &copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.

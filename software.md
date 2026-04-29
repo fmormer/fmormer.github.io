@@ -2,7 +2,7 @@
 layout: default
 title: "Morie Software Platform"
 permalink: /software/
-description: "Purpose-built software modules for floating offshore wind engineering — from seabed to cable."
+description: "Purpose-built software modules for floating offshore wind engineering — from seabed to turbine."
 og_title: "Morie Software Platform — Floating Wind Engineering"
 og_description: "Purpose-built tools for site definition, anchor design, and the full floating wind engineering workflow — from bathymetry to cable layout."
 og_image: "/img/posts/morie_site/morie_site.png"
@@ -19,10 +19,9 @@ og_type: "website"
   <div class="hero-inner">
     <div class="hero-callout">
       <div class="hero-left">
-        <p class="plat-hero__eyebrow">Invite-only · Early Access</p>
         <h1 class="hero-title">
           One platform for floating wind<br>
-          <span>engineering, from seabed to cable</span>
+          <span>engineering, from seabed to turbine</span>
         </h1>
         <p class="hero-subtitle">
           Stop hunting data across disconnected tools. Morie Platform combines environmental datasets,
@@ -36,140 +35,6 @@ og_type: "website"
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ── PROBLEM ───────────────────────────────────────────────────────── -->
-<section class="plat-problem" aria-label="The problem Morie Platform solves">
-  <div class="plat-container">
-    <p class="home-storyband__eyebrow">The problem</p>
-    <h2 class="plat-section__title">Floating wind engineering is fragmented by design</h2>
-    <p class="plat-section__lead">
-      Offshore floating wind projects span seven interconnected engineering disciplines — yet most teams
-      work in silos, stitching together spreadsheets, GIS tools, and one-off scripts. The result is rework,
-      version mismatches, and weeks lost before design even begins.
-    </p>
-    <div class="plat-problem__grid">
-      <div class="plat-problem__item">
-        <i class="ion ion-md-search plat-problem__icon" aria-hidden="true"></i>
-        <h3>Data fragmentation</h3>
-        <p>Bathymetry, metocean, soil, and load data live in separate systems with no shared coordinate space or version control.</p>
-      </div>
-      <div class="plat-problem__item">
-        <i class="ion ion-md-construct plat-problem__icon" aria-hidden="true"></i>
-        <h3>Manual, error-prone workflows</h3>
-        <p>Copy-pasting between spreadsheets and scripts introduces silent errors that only surface late in the design cycle.</p>
-      </div>
-      <div class="plat-problem__item">
-        <i class="ion ion-md-apps plat-problem__icon" aria-hidden="true"></i>
-        <h3>No purpose-built tool</h3>
-        <p>General-purpose engineering software was not built for floating offshore wind — engineers adapt tools that were never designed for this context.</p>
-      </div>
-      <div class="plat-problem__item">
-        <i class="ion ion-md-people plat-problem__icon" aria-hidden="true"></i>
-        <h3>Collaboration is an afterthought</h3>
-        <p>Files shared by email, no audit trail, no role-based access — coordination overhead grows with team size.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── WORKFLOW ──────────────────────────────────────────────────────── -->
-<section class="plat-workflow" aria-label="Seven-step floating wind engineering workflow">
-  <div class="plat-container">
-    <p class="home-storyband__eyebrow">The workflow</p>
-    <h2 class="plat-section__title">A connected engineering pipeline — end to end</h2>
-    <p class="plat-section__lead">
-      Morie Platform structures the full floating wind design chain into seven modular tools.
-      Two are live today. Five are in active development.
-    </p>
-    <ol class="plat-pipeline" aria-label="Seven-step Morie workflow">
-
-      <li class="plat-pipeline__step plat-pipeline__step--live" aria-label="Site Tool — Live">
-        <div class="plat-pipeline__step-header">
-          <span class="plat-pipeline__badge plat-pipeline__badge--live">Live</span>
-          <span class="plat-pipeline__number">01</span>
-        </div>
-        <div class="plat-pipeline__icon">
-          <img src="{{ '/img/morie_icon_site.png' | relative_url }}" alt="">
-        </div>
-        <h3 class="plat-pipeline__name">Site</h3>
-        <p class="plat-pipeline__desc">Define project boundaries and extract bathymetry and environmental data automatically.</p>
-      </li>
-
-      <li class="plat-pipeline__step plat-pipeline__step--soon">
-        <div class="plat-pipeline__step-header">
-          <span class="plat-pipeline__badge plat-pipeline__badge--soon">Coming soon</span>
-          <span class="plat-pipeline__number">02</span>
-        </div>
-        <div class="plat-pipeline__icon">
-          <img src="{{ '/img/morie_icon_layout.png' | relative_url }}" alt="">
-        </div>
-        <h3 class="plat-pipeline__name">Layout</h3>
-        <p class="plat-pipeline__desc">Optimised turbine placement within site constraints and environmental loading.</p>
-      </li>
-
-      <li class="plat-pipeline__step plat-pipeline__step--soon">
-        <div class="plat-pipeline__step-header">
-          <span class="plat-pipeline__badge plat-pipeline__badge--soon">Coming soon</span>
-          <span class="plat-pipeline__number">03</span>
-        </div>
-        <div class="plat-pipeline__icon">
-          <img src="{{ '/img/morie_icon_subsurface.png' | relative_url }}" alt="">
-        </div>
-        <h3 class="plat-pipeline__name">Soil</h3>
-        <p class="plat-pipeline__desc">Multi-layer geotechnical model builder and spatial interpolation across the farm footprint.</p>
-      </li>
-
-      <li class="plat-pipeline__step plat-pipeline__step--soon">
-        <div class="plat-pipeline__step-header">
-          <span class="plat-pipeline__badge plat-pipeline__badge--soon">Coming soon</span>
-          <span class="plat-pipeline__number">04</span>
-        </div>
-        <div class="plat-pipeline__icon">
-          <img src="{{ '/img/morie_icon_system.png' | relative_url }}" alt="">
-        </div>
-        <h3 class="plat-pipeline__name">Mooring</h3>
-        <p class="plat-pipeline__desc">Catenary and taut-leg mooring analysis with shared-anchor configurations.</p>
-      </li>
-
-      <li class="plat-pipeline__step plat-pipeline__step--live" aria-label="Anchor Tool — Live">
-        <div class="plat-pipeline__step-header">
-          <span class="plat-pipeline__badge plat-pipeline__badge--live">Live</span>
-          <span class="plat-pipeline__number">05</span>
-        </div>
-        <div class="plat-pipeline__icon">
-          <img src="{{ '/img/morie_icon_anchor.png' | relative_url }}" alt="">
-        </div>
-        <h3 class="plat-pipeline__name">Anchor</h3>
-        <p class="plat-pipeline__desc">Nine anchor types. Multi-layer soil profiles. 3D real-time geometry viewer. Factor-of-safety design checks.</p>
-      </li>
-
-      <li class="plat-pipeline__step plat-pipeline__step--soon">
-        <div class="plat-pipeline__step-header">
-          <span class="plat-pipeline__badge plat-pipeline__badge--soon">Coming soon</span>
-          <span class="plat-pipeline__number">06</span>
-        </div>
-        <div class="plat-pipeline__icon plat-pipeline__icon--placeholder" aria-hidden="true">
-          <i class="ion ion-md-git-network"></i>
-        </div>
-        <h3 class="plat-pipeline__name">Cable</h3>
-        <p class="plat-pipeline__desc">Inter-array and export cable routing and sizing.</p>
-      </li>
-
-      <li class="plat-pipeline__step plat-pipeline__step--soon">
-        <div class="plat-pipeline__step-header">
-          <span class="plat-pipeline__badge plat-pipeline__badge--soon">Coming soon</span>
-          <span class="plat-pipeline__number">07</span>
-        </div>
-        <div class="plat-pipeline__icon">
-          <img src="{{ '/img/morie_icon_atlas.png' | relative_url }}" alt="">
-        </div>
-        <h3 class="plat-pipeline__name">Atlas</h3>
-        <p class="plat-pipeline__desc">Integrated project atlas — full-farm anchor mapping, cost estimation, and comparison views.</p>
-      </li>
-
-    </ol>
   </div>
 </section>
 
@@ -229,6 +94,60 @@ og_type: "website"
         </ul>
       </div>
     </article>
+  </div>
+</section>
+
+<!-- ── COMING SOON ───────────────────────────────────────────────────── -->
+<section class="plat-soon" aria-label="Tools in development">
+  <div class="plat-container">
+    <p class="home-storyband__eyebrow">In development</p>
+    <h2 class="plat-section__title">Five more tools on the way</h2>
+    <p class="plat-section__lead">
+      The full engineering pipeline is being built module by module. Here's what's coming next.
+    </p>
+    <div class="plat-soon__grid">
+
+      <div class="plat-soon__item">
+        <div class="plat-soon__icon">
+          <img src="{{ '/img/morie_icon_layout.png' | relative_url }}" alt="">
+        </div>
+        <h3>Layout</h3>
+        <p>Optimised turbine placement within site constraints and environmental loading.</p>
+      </div>
+
+      <div class="plat-soon__item">
+        <div class="plat-soon__icon">
+          <img src="{{ '/img/morie_icon_subsurface.png' | relative_url }}" alt="">
+        </div>
+        <h3>Soil</h3>
+        <p>Multi-layer geotechnical model builder and spatial interpolation across the farm footprint.</p>
+      </div>
+
+      <div class="plat-soon__item">
+        <div class="plat-soon__icon">
+          <img src="{{ '/img/morie_icon_mooring.png' | relative_url }}" alt="">
+        </div>
+        <h3>Mooring</h3>
+        <p>Catenary and taut-leg mooring analysis with shared-anchor configurations.</p>
+      </div>
+
+      <div class="plat-soon__item">
+        <div class="plat-soon__icon">
+          <img src="{{ '/img/morie_icon_cable.png' | relative_url }}" alt="">
+        </div>
+        <h3>Cable</h3>
+        <p>Inter-array and export cable routing and sizing.</p>
+      </div>
+
+      <div class="plat-soon__item">
+        <div class="plat-soon__icon">
+          <img src="{{ '/img/morie_icon_atlas.png' | relative_url }}" alt="">
+        </div>
+        <h3>Atlas</h3>
+        <p>Integrated project atlas — full-farm anchor mapping, cost estimation and comparison views.</p>
+      </div>
+
+    </div>
   </div>
 </section>
 

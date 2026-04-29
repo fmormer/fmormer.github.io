@@ -15,7 +15,6 @@ description: "Offshore wind and marine engineering consultancy — portfolio, ca
   <div class="hero-inner">
     <div class="hero-callout">
       <div class="hero-left">
-        <p class="plat-hero__eyebrow">Offshore Engineering Consultancy</p>
         <h1 class="hero-title">
           Offshore wind engineering consultancy<br>
           <span>from concept to design</span>

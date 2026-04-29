@@ -131,7 +131,7 @@ og_type: "website"
           <span class="plat-pipeline__number">04</span>
         </div>
         <div class="plat-pipeline__icon">
-          <img src="{{ '/img/morie_icon_system.png' | relative_url }}" alt="">
+          <img src="{{ '/img/morie_icon_mooring.png' | relative_url }}" alt="">
         </div>
         <h3 class="plat-pipeline__name">Mooring</h3>
         <p class="plat-pipeline__desc">Catenary and taut-leg mooring analysis with shared-anchor configurations.</p>
@@ -154,8 +154,8 @@ og_type: "website"
           <span class="plat-pipeline__badge plat-pipeline__badge--soon">Coming soon</span>
           <span class="plat-pipeline__number">06</span>
         </div>
-        <div class="plat-pipeline__icon plat-pipeline__icon--placeholder" aria-hidden="true">
-          <i class="ion ion-md-git-network"></i>
+        <div class="plat-pipeline__icon">
+          <img src="{{ '/img/morie_icon_cable.png' | relative_url }}" alt="">
         </div>
         <h3 class="plat-pipeline__name">Cable</h3>
         <p class="plat-pipeline__desc">Inter-array and export cable routing and sizing.</p>

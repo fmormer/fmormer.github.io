@@ -8,22 +8,74 @@ permalink: /about/
   <div class="container portfolio-container">
 
     <div class="portfolio-page__intro about-page__intro-block">
-      <h1>Engineering & Software Approach</h1>
+      <h1>About Morie Analytics</h1>
 
-      <p class="portfolio-page__lead">
-        Morie Analytics is an offshore engineering and software company focused on floating offshore wind and wave energy converter deployments.
-        We combine consultancy, modular tool development and client support with university-level teaching and engineering knowledge dissemination 
-		to turn complex workflows into practical and scalable solutions.
-      </p>
-
-      <p class="portfolio-page__lead">
-        Our work is structured around a connected suite of modules covering
-        <strong>Site ↔ Layout ↔ Soil ↔ Mooring ↔ Anchor ↔ Cable</strong>.
-        Each module addresses a key part of the design chain while remaining interoperable with the others, enabling both targeted studies and integrated system-level workflows.
-      </p>
     </div>
 
     <div class="about-page__content">
+
+      <div class="about-page__section">
+        <h3>The company</h3>
+        <div>
+          <img src="{{ '/img/morie_analytics_logo.png' | relative_url }}" alt="Morie Analytics" class="about-company__logo">
+          <p>
+            Morie Analytics is an offshore engineering and software company focused on floating offshore wind and wave energy converter deployments.
+            We combine consultancy, modular tool development and client support with university-level teaching and engineering knowledge dissemination
+            to turn complex workflows into practical and scalable solutions.
+          </p>
+        </div>
+      </div>
+
+      <div class="about-page__section about-page__founders">
+        <h3>The founders</h3>
+        <div class="founders-list">
+          <p class="founders-list__intro">Morie Analytics builds on over a decade of offshore wind engineering experience and research-driven development, including methodologies inspired by work at the National Renewable Energy Laboratory (NREL). The company translates these foundations into reproducible engineering modules, commercial software pathways and technical support services tailored to real project needs.</p>
+
+
+          <div class="founder-entry">
+            <div class="founder-entry__header">
+              <img class="founder-entry__photo" src="{{ '/img/founder_felipe.jpg' | relative_url }}" alt="Felipe Moreno">
+              <div>
+                <span class="founder-entry__name">Felipe Moreno</span>
+                <span class="founder-entry__title">Co-founder &amp; CEO</span>
+              </div>
+            </div>
+            <p class="founder-entry__bio">Offshore wind engineering specialist with over a decade of experience in floating wind systems, mooring and anchor design, and geotechnical engineering. Developed methodologies at the National Renewable Energy Laboratory (NREL) and translates that research foundation into practical engineering tools and consultancy.</p>
+            <div class="founder-entry__links">
+              <a href="https://www.linkedin.com/in/fmormer/" target="_blank" rel="noopener"><i class="ion ion-logo-linkedin"></i> LinkedIn</a>
+              <a href="{{ '/docs/C%20V_F%20e%20l%20i%20p%20e%20%20J.%20%20M%20o%20r%20e%20n%20o_A%20b%20r%20%202%200%202%206.pdf' | relative_url }}" target="_blank"><i class="ion ion-md-document"></i> Resume</a>
+            </div>
+          </div>
+
+          <div class="founder-entry">
+            <div class="founder-entry__header">
+              <img class="founder-entry__photo" src="{{ '/img/founder_alvaro.png' | relative_url }}" alt="Álvaro Almagro">
+              <div>
+                <span class="founder-entry__name">Álvaro Almagro</span>
+                <span class="founder-entry__title">Co-founder &amp; CTO</span>
+              </div>
+            </div>
+            <p class="founder-entry__bio">Engineering manager and director with over a decade in software engineering and seven years leading cross-functional teams. Serial entrepreneur and co-founder of Morie Analytics, Kalinka Tech and Tone Treasures. Brings deep expertise in engineering systems, product development and AI integration to the platform side of Morie Analytics.</p>
+            <div class="founder-entry__links">
+              <a href="https://www.linkedin.com/in/alvaroalmagro/" target="_blank" rel="noopener"><i class="ion ion-logo-linkedin"></i> LinkedIn</a>
+              <a href="https://alvaroalmagro.com/" target="_blank" rel="noopener"><i class="ion ion-md-globe"></i> Website</a>
+            </div>
+          </div>
+
+          <div class="founder-entry">
+            <div class="founder-entry__header">
+              <div class="founder-entry__photo"></div>
+              <div>
+                <span class="founder-entry__name">—</span>
+                <span class="founder-entry__title">Co-founder</span>
+              </div>
+            </div>
+            <p class="founder-entry__bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+
+        </div>
+      </div>
+
       <div class="about-page__section">
         <h3>Our mission</h3>
         <p>
@@ -58,34 +110,6 @@ permalink: /about/
         </p>
       </div>
 
-      <div class="about-page__section">
-        <h3>Our foundation</h3>
-        <p>
-          Morie Analytics builds on over a decade of offshore wind engineering experience and research-driven development, including methodologies inspired by work at the National Renewable Energy Laboratory (NREL).
-          The company translates these foundations into reproducible engineering modules, commercial software pathways and technical support services tailored to real project needs.
-        </p>
-      </div>
-    </div>
-
-    <div class="about-page__section about-page__founders">
-      <h3>The founders</h3>
-      <div class="founders-grid">
-
-        <div class="founder-card">
-          <div class="founder-card__avatar"></div>
-          <h4 class="founder-card__name">Felipe Moreno</h4>
-          <p class="founder-card__role">Co-founder &amp; Lead Engineer</p>
-          <p>Offshore wind engineering specialist with over a decade of experience in floating systems, mooring design and geotechnical engineering. Research background at NREL.</p>
-        </div>
-
-        <div class="founder-card">
-          <div class="founder-card__avatar"></div>
-          <h4 class="founder-card__name">[Name]</h4>
-          <p class="founder-card__role">[Role]</p>
-          <p>[Founder biography — to be provided by the team.]</p>
-        </div>
-
-      </div>
     </div>
 
   </div>

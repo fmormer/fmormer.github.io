@@ -15,7 +15,6 @@ description: "University programs, online campus, corporate training and R&D in 
   <div class="hero-inner">
     <div class="hero-callout">
       <div class="hero-left">
-        <p class="plat-hero__eyebrow">Morie Academy</p>
         <h1 class="hero-title">
           Engineering knowledge for the next<br>
           <span>generation of offshore wind</span>
@@ -155,8 +154,8 @@ description: "University programs, online campus, corporate training and R&D in 
 
     <article class="plat-tool-card" aria-labelledby="rd-methods-heading">
       <div class="plat-tool-card__media">
-        <img src="{{ '/img/posts/morie_anchor/anchor_types.png' | relative_url }}"
-             alt="Anchor methodology development and validation"
+        <img src="{{ '/img/posts/morie_layout/morie_layout.png' | relative_url }}"
+             alt="Floating wind farm layout optimisation methodology"
              loading="lazy">
       </div>
       <div class="plat-tool-card__body">
@@ -180,8 +179,8 @@ description: "University programs, online campus, corporate training and R&D in 
 
     <article class="plat-tool-card plat-tool-card--reverse" aria-labelledby="rd-dissemination-heading">
       <div class="plat-tool-card__media">
-        <img src="{{ '/img/posts/morie_site/celtic_sea_lease_areas.png' | relative_url }}"
-             alt="Knowledge dissemination and industry engagement"
+        <img src="{{ '/img/posts/morie_soil/04_tomographic_layout.png' | relative_url }}"
+             alt="Tomographic subsurface reconstruction for knowledge dissemination"
              loading="lazy">
       </div>
       <div class="plat-tool-card__body">
