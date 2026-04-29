@@ -264,11 +264,11 @@ a:hover, a:focus { color: var(--morie-heading) !important; }
 }
 
 .hero-right {
-  flex: 0 0 28%;
+  flex: 0 0 auto;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  transform: translateX(0); // remove extra push to the right
+  align-self: center;
 }
 
 .hero-title {
@@ -335,12 +335,12 @@ a:hover, a:focus { color: var(--morie-heading) !important; }
 }
 
 .hero-button {
-  width: auto;           // 👈 prevents full-width stacking
-  white-space: nowrap;   // 👈 keeps text on one line
+  width: auto;
+  white-space: nowrap;
 }
 
 .hero-button--primary {
-  background-color: #0a1f44 !important;  // navy
+  background-color: #0a1f44 !important;
   border: 1px solid #0a1f44 !important;
   color: #ffffff !important;
 }
@@ -352,7 +352,7 @@ a:hover, a:focus { color: var(--morie-heading) !important; }
 }
 
 .hero-button--secondary {
-  background-color: #c62828 !important;  // red
+  background-color: #c62828 !important;
   border: 1px solid #c62828 !important;
   color: #ffffff !important;
 }
@@ -361,6 +361,17 @@ a:hover, a:focus { color: var(--morie-heading) !important; }
 .hero-button--secondary:focus {
   background-color: #a61f1f !important;
   border-color: #a61f1f !important;
+}
+
+.hero-button--tertiary {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  color: #ffffff !important;
+
+  &:hover, &:focus {
+    background-color: rgba(255, 255, 255, 0.22) !important;
+    color: #ffffff !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -377,22 +388,6 @@ a:hover, a:focus { color: var(--morie-heading) !important; }
   flex-wrap: wrap;
 }
 
-.hero-button--primary {
-  background-color: #0a1f44;
-  color: #ffffff;
-  border: none;
-}
-
-.hero-button--secondary {
-  background-color: transparent;
-  border: 1px solid #0a1f44;
-  color: #0a1f44;
-}
-
-.hero-button--secondary:hover {
-  background-color: #0a1f44;
-  color: #ffffff;
-}
 
 /* Map card improvements */
 .map-card-header {
@@ -2553,16 +2548,6 @@ code.language-plaintext {
 // Hero tertiary button (Academy CTA on homepage)
 // ==========================================================================
 
-.hero-button--tertiary {
-  background-color: rgba(255, 255, 255, 0.12) !important;
-  border: 1px solid rgba(255, 255, 255, 0.35) !important;
-  color: #ffffff !important;
-
-  &:hover, &:focus {
-    background-color: rgba(255, 255, 255, 0.22) !important;
-    color: #ffffff !important;
-  }
-}
 
 // ==========================================================================
 // Home storyband CTA row (3 section cards below the workflow chain)

@@ -213,8 +213,8 @@ og_type: "website"
       </div>
       <div class="plat-access__form-wrap">
         <form class="plat-access__form"
-              action="{{ '/contact/' | relative_url }}"
-              method="GET"
+              action="https://formspree.io/f/xgodwlar"
+              method="POST"
               aria-label="Request early access form">
           <div class="plat-form__group">
             <label class="plat-form__label" for="access-name">Name</label>

@@ -58,7 +58,7 @@ permalink: /contact/
       <div class="contact-page__form-col">
         <div class="contact-form-wrap">
           <form class="contact-form"
-                action="https://formspree.io/f/xeojgvoe"
+                action="https://formspree.io/f/xgodwlar"
                 method="POST"
                 aria-label="Contact form">
             <div class="plat-form__group">
