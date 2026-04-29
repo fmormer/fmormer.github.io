@@ -2,9 +2,13 @@
 layout: default
 title: Capabilities
 permalink: /capabilities/
+redirect_to: /consulting/
 ---
 
-<section class="capabilities-page">
+<meta http-equiv="refresh" content="0;url=/consulting/">
+<p>This page has moved. <a href="/consulting/">Go to Consulting</a>.</p>
+
+<section class="capabilities-page" style="display:none">
   <div class="container portfolio-container">
 
     <div class="capabilities-page__intro">

@@ -19,6 +19,37 @@ permalink: /contact/
       </p>
     </div>
 
+    <div class="contact-form-wrap">
+      <form class="contact-form"
+            action="https://formspree.io/f/xeojgvoe"
+            method="POST"
+            aria-label="Contact form">
+        <div class="plat-form__group">
+          <label class="plat-form__label" for="contact-name">Name</label>
+          <input class="plat-form__input" type="text" id="contact-name" name="name"
+                 autocomplete="name" required placeholder="Your full name">
+        </div>
+        <div class="plat-form__group">
+          <label class="plat-form__label" for="contact-email">Email</label>
+          <input class="plat-form__input" type="email" id="contact-email" name="email"
+                 autocomplete="email" required placeholder="you@yourorg.com">
+        </div>
+        <div class="plat-form__group">
+          <label class="plat-form__label" for="contact-subject">Subject</label>
+          <input class="plat-form__input" type="text" id="contact-subject" name="subject"
+                 placeholder="Consultancy inquiry, software access, training…">
+        </div>
+        <div class="plat-form__group">
+          <label class="plat-form__label" for="contact-message">Message</label>
+          <textarea class="plat-form__input plat-form__textarea" id="contact-message"
+                    name="message" rows="5" required
+                    placeholder="Tell us about your project or inquiry."></textarea>
+        </div>
+        <button class="plat-form__submit" type="submit">Send message</button>
+        <p class="plat-form__note">We respond within 2–3 business days.</p>
+      </form>
+    </div>
+
     <div class="contact-page__content">
 
       <div class="contact-page__section">

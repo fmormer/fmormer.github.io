@@ -67,5 +67,26 @@ permalink: /about/
       </div>
     </div>
 
+    <div class="about-page__section about-page__founders">
+      <h3>The founders</h3>
+      <div class="founders-grid">
+
+        <div class="founder-card">
+          <div class="founder-card__avatar"></div>
+          <h4 class="founder-card__name">Felipe Moreno</h4>
+          <p class="founder-card__role">Co-founder &amp; Lead Engineer</p>
+          <p>Offshore wind engineering specialist with over a decade of experience in floating systems, mooring design and geotechnical engineering. Research background at NREL.</p>
+        </div>
+
+        <div class="founder-card">
+          <div class="founder-card__avatar"></div>
+          <h4 class="founder-card__name">[Name]</h4>
+          <p class="founder-card__role">[Role]</p>
+          <p>[Founder biography — to be provided by the team.]</p>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </section>

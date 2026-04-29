@@ -16,10 +16,9 @@
               <nav class="section-ribbon-nav" id="main-nav">
                 <ul class="list-reset">
                   <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active"{% endif %}>Home</a></li>
-				  <li><a href="{{ '/capabilities/' | relative_url }}"{% if page.url contains 'capabilities' %} class="active"{% endif %}>Capabilities</a></li>
-                  <li><a href="{{ '/portfolio/' | relative_url }}"{% if page.url contains 'portfolio' %} class="active"{% endif %}>Portfolio</a></li>
-                  <!-- <li><a href="{{ '/methods/' | relative_url }}"{% if page.url contains 'methods' %} class="active"{% endif %}>Methods</a></li> -->
-                  <li><a href="{{ '/platform/' | relative_url }}"{% if page.url contains 'platform' %} class="active"{% endif %}>Platform</a></li>
+                  <li><a href="{{ '/consulting/' | relative_url }}"{% if page.url contains 'consulting' %} class="active"{% endif %}>Consulting</a></li>
+                  <li><a href="{{ '/software/' | relative_url }}"{% if page.url contains 'software' %} class="active"{% endif %}>Software</a></li>
+                  <li><a href="{{ '/academy/' | relative_url }}"{% if page.url contains 'academy' %} class="active"{% endif %}>Academy</a></li>
                   <li><a href="{{ '/about/' | relative_url }}"{% if page.url contains 'about' %} class="active"{% endif %}>About</a></li>
                   <li><a href="{{ '/contact/' | relative_url }}"{% if page.url contains 'contact' %} class="active"{% endif %}>Contact</a></li>
                 </ul>
@@ -61,12 +60,14 @@
 		    </p>
 
 		    <div class="hero-buttons">
-			  <a href="{{ '/capabilities/' | relative_url }}" class="hero-button hero-button--primary">
-			    Explore CAPABILITIES
+			  <a href="{{ '/consulting/' | relative_url }}" class="hero-button hero-button--primary">
+			    Consulting
 			  </a>
-
-			  <a href="{{ '/portfolio/' | relative_url }}" class="hero-button hero-button--secondary">
-			    Explore PORTFOLIO
+			  <a href="{{ '/software/' | relative_url }}" class="hero-button hero-button--secondary">
+			    Software
+			  </a>
+			  <a href="{{ '/academy/' | relative_url }}" class="hero-button hero-button--tertiary">
+			    Academy
 			  </a>
 		    </div>
 		  </div>

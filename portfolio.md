@@ -2,9 +2,13 @@
 layout: default
 title: Portfolio
 permalink: /portfolio/
+redirect_to: /consulting/
 ---
 
-<section class="portfolio-page">
+<meta http-equiv="refresh" content="0;url=/consulting/">
+<p>This page has moved. <a href="/consulting/">Go to Consulting</a>.</p>
+
+<section class="portfolio-page" style="display:none">
   <div class="container portfolio-container">
 
     <div class="portfolio-page__intro">

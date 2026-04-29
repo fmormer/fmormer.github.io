@@ -2435,3 +2435,174 @@ code.language-plaintext {
     grid-template-columns: 1fr;
   }
 }
+
+// ==========================================================================
+// Hero tertiary button (Academy CTA on homepage)
+// ==========================================================================
+
+.hero-button--tertiary {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  color: #ffffff !important;
+
+  &:hover, &:focus {
+    background-color: rgba(255, 255, 255, 0.22) !important;
+    color: #ffffff !important;
+  }
+}
+
+// ==========================================================================
+// Home storyband CTA row (3 section cards below the workflow chain)
+// ==========================================================================
+
+.home-storyband__cta-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.home-storyband__cta-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--morie-bg);
+  border: 1px solid var(--morie-border);
+  border-radius: var(--morie-radius-2);
+  box-shadow: var(--morie-shadow-1);
+  text-decoration: none !important;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+
+  &:hover, &:focus {
+    box-shadow: var(--morie-shadow-2);
+    transform: translateY(-2px);
+  }
+}
+
+.home-storyband__cta-label {
+  font-family: 'Montserrat', var(--morie-font-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--morie-heading) !important;
+  letter-spacing: -0.01em;
+}
+
+.home-storyband__cta-desc {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--morie-text-muted) !important;
+}
+
+@media (max-width: 640px) {
+  .home-storyband__cta-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ==========================================================================
+// About page — Founders section
+// ==========================================================================
+
+.about-page__founders {
+  border-top: 1px solid var(--morie-border);
+  padding-top: 1.75rem;
+  padding-bottom: 1.9rem;
+}
+
+.about-page__founders h3 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+
+.founders-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.founder-card {
+  background-color: var(--morie-surface);
+  border: 1px solid var(--morie-border);
+  border-radius: var(--morie-radius-2);
+  padding: 2rem 1.75rem;
+  box-shadow: var(--morie-shadow-1);
+}
+
+.founder-card__avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 999px;
+  background-color: var(--morie-border);
+  margin-bottom: 1rem;
+}
+
+.founder-card__name {
+  font-family: 'Montserrat', var(--morie-font-sans);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--morie-heading) !important;
+  margin: 0 0 0.3rem;
+}
+
+.founder-card__role {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--morie-accent) !important;
+  margin: 0 0 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.founder-card p {
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: var(--morie-text-muted) !important;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .founders-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ==========================================================================
+// Contact page — contact form
+// ==========================================================================
+
+.contact-form-wrap {
+  margin-bottom: 2.5rem;
+  padding: 2rem 2rem 2.25rem;
+  background-color: var(--morie-surface);
+  border: 1px solid var(--morie-border);
+  border-radius: var(--morie-radius-2);
+  box-shadow: var(--morie-shadow-1);
+  max-width: 640px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .contact-form-wrap {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+// ==========================================================================
+// Consulting page — CTA section spacing
+// ==========================================================================
+
+.plat-access .plat-access__header {
+  max-width: var(--morie-width-reading);
+}
+
+.plat-access .hero-button {
+  margin-top: 1.5rem;
+  display: inline-flex;
+}

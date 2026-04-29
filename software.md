@@ -1,23 +1,19 @@
 ---
 layout: default
-title: "Morie Platform — Floating Wind Engineering SaaS"
-permalink: /platform/
-redirect_to: /software/
-description: "Morie Platform is invite-only SaaS for offshore floating wind engineers. Site screening, anchor design, and the full engineering pipeline in a single collaborative workspace."
-og_title: "Morie Platform — Floating Wind Engineering SaaS"
+title: "Morie Software Platform"
+permalink: /software/
+description: "Purpose-built software modules for floating offshore wind engineering — from seabed to cable."
+og_title: "Morie Software Platform — Floating Wind Engineering"
 og_description: "Purpose-built tools for site definition, anchor design, and the full floating wind engineering workflow — from bathymetry to cable layout."
 og_image: "/img/posts/morie_site/morie_site.png"
 og_type: "website"
 ---
 
-<meta http-equiv="refresh" content="0;url=/software/">
-<p>This page has moved. <a href="/software/">Go to Software</a>.</p>
-
 <!-- ── HERO ─────────────────────────────────────────────────────────── -->
-<section class="hero plat-hero" aria-label="Morie Platform hero">
+<section class="hero plat-hero" aria-label="Morie Software Platform hero">
   <div class="hero-background">
     <img src="{{ '/img/posts/morie_site/morie_site.png' | relative_url }}"
-         alt="Offshore floating wind farm site definition — Morie Platform">
+         alt="Offshore floating wind farm site definition — Morie Software Platform">
   </div>
   <div class="hero-overlay plat-hero__overlay"></div>
   <div class="hero-inner">
