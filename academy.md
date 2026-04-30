@@ -17,15 +17,15 @@ description: "University programs, online campus, corporate training and R&D in 
       <div class="hero-left">
         <h1 class="hero-title">
           Engineering knowledge for the next<br>
-          <span>generation of offshore wind</span>
+          <span>generation of offshore wind professionals</span>
         </h1>
         <p class="hero-subtitle">
           Bridging academic research and industry practice through structured university programs,
           online learning, corporate training and collaborative R&D in floating offshore wind engineering.
         </p>
-        <p class="hero-tagline">From lecture halls to design offices — structured, scalable, engineering-grade.</p>
+        <p class="hero-tagline">From lecture halls to design offices — structured, scalable and engineering-grade.</p>
         <div class="hero-buttons">
-          <a href="{{ '/contact/' | relative_url }}" class="hero-button hero-button--secondary">Get in touch</a>
+          <a href="{{ '/contact/' | relative_url }}" class="hero-button hero-button--secondary">CONTACT US</a>
         </div>
       </div>
     </div>
@@ -154,7 +154,7 @@ description: "University programs, online campus, corporate training and R&D in 
 
     <article class="plat-tool-card" aria-labelledby="rd-methods-heading">
       <div class="plat-tool-card__media">
-        <img src="{{ '/img/posts/morie_layout/morie_layout.png' | relative_url }}"
+        <img src="{{ '/img/posts/morie_layout/morie_layout2.png' | relative_url }}"
              alt="Floating wind farm layout optimisation methodology"
              loading="lazy">
       </div>
@@ -166,7 +166,7 @@ description: "University programs, online campus, corporate training and R&D in 
         <p class="plat-tool-card__lead">
           We develop and validate engineering methodologies for floating offshore wind — covering geotechnical
           characterization, anchor capacity under coupled loading, mooring system analysis and integrated
-          system-level design. Research outputs are translated into structured, reproducible engineering methods.
+          system-level design. Research outputs are translated into structured and reproducible engineering methods.
         </p>
         <ul class="plat-feature-list" aria-label="R&D methodology areas">
           <li><i class="ion ion-md-checkmark-circle" aria-hidden="true"></i> Anchor capacity under combined monotonic and cyclic loading</li>
@@ -179,7 +179,7 @@ description: "University programs, online campus, corporate training and R&D in 
 
     <article class="plat-tool-card plat-tool-card--reverse" aria-labelledby="rd-dissemination-heading">
       <div class="plat-tool-card__media">
-        <img src="{{ '/img/posts/morie_soil/04_tomographic_layout.png' | relative_url }}"
+        <img src="{{ '/img/posts/morie_soil/3D_cropped_8turbines.png' | relative_url }}"
              alt="Tomographic subsurface reconstruction for knowledge dissemination"
              loading="lazy">
       </div>
