@@ -29,7 +29,7 @@ permalink: /about/
       <div class="about-page__section about-page__founders">
         <h3>The team</h3>
         <div class="founders-list">
-          <p class="founders-list__intro">Morie Analytics builds on over a decade of offshore wind engineering experience and research-driven development, including methodologies inspired by work at the former National Renewable Energy Laboratory (NREL). The company translates these foundations into reproducible engineering modules, commercial software pathways and technical support services tailored to real project needs.</p>
+          <p class="founders-list__intro">Morie Analytics builds on over a decade of offshore wind engineering experience and research-driven development, including methodologies inspired by the work done at the former National Renewable Energy Laboratory (NREL). The company translates these foundations into reproducible engineering modules, commercial software pathways and technical support services tailored to real project needs.</p>
 
 
           <div class="founder-entry">
