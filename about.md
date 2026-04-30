@@ -40,7 +40,7 @@ permalink: /about/
                 <span class="founder-entry__title">CEO</span>
               </div>
             </div>
-            <p class="founder-entry__bio">Offshore engineering specialist with a background in floating wind systems, mooring–anchor interaction and geotechnical design. Co-founder of Morie Analytics, connecting engineering models, site conditions and system-level constraints into integrated workflows. Focused on translating complex offshore design challenges into practical, scalable solutions for real project development.</p>
+            <p class="founder-entry__bio">Offshore engineering specialist with a background in floating wind systems, mooring–anchor interaction and geotechnical design. Connecting engineering models, site conditions and system-level constraints into integrated workflows. Focused on translating complex offshore design challenges into practical, scalable solutions for real project development.</p>
             <div class="founder-entry__links">
               <a href="https://www.linkedin.com/in/fmormer/" target="_blank" rel="noopener"><i class="ion ion-logo-linkedin"></i> LinkedIn</a>
               <a href="{{ '/docs/C%20V_F%20e%20l%20i%20p%20e%20%20J.%20%20M%20o%20r%20e%20n%20o_A%20b%20r%20%202%200%202%206.pdf' | relative_url }}" target="_blank"><i class="ion ion-md-document"></i> Resume</a>
@@ -55,7 +55,7 @@ permalink: /about/
                 <span class="founder-entry__title">CTO</span>
               </div>
             </div>
-            <p class="founder-entry__bio">Offshore engineering specialist with a background in floating wind systems, mooring–anchor interaction and geotechnical design. Co-founder of Morie Analytics, connecting engineering models, site conditions and system-level constraints into integrated workflows. Focused on translating complex offshore design challenges into practical, scalable solutions for real project development.</p>
+            <p class="founder-entry__bio">Engineering leader with a background in software development, product design and AI integration. Leading the development of scalable platforms that connect engineering models, data and user-facing tools. Focused on translating complex systems into robust, deployable software solutions for offshore energy applications.</p>
             <div class="founder-entry__links">
               <a href="https://www.linkedin.com/in/alvaroalmagro/" target="_blank" rel="noopener"><i class="ion ion-logo-linkedin"></i> LinkedIn</a>
               <a href="https://alvaroalmagro.com/" target="_blank" rel="noopener"><i class="ion ion-md-globe"></i> Website</a>
