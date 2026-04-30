@@ -66,7 +66,7 @@ permalink: /about/
             <div class="founder-entry__header">
               <div class="founder-entry__photo"></div>
               <div>
-                <span class="founder-entry__name">—</span>
+                <span class="founder-entry__name">Anastasia Galkina</span>
                 <span class="founder-entry__title">Co-founder</span>
               </div>
             </div>
