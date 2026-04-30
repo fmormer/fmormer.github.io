@@ -27,7 +27,7 @@ permalink: /about/
       </div>
 
       <div class="about-page__section about-page__founders">
-        <h3>The founders</h3>
+        <h3>The team</h3>
         <div class="founders-list">
           <p class="founders-list__intro">Morie Analytics builds on over a decade of offshore wind engineering experience and research-driven development, including methodologies inspired by work at the National Renewable Energy Laboratory (NREL). The company translates these foundations into reproducible engineering modules, commercial software pathways and technical support services tailored to real project needs.</p>
 
@@ -37,10 +37,10 @@ permalink: /about/
               <img class="founder-entry__photo" src="{{ '/img/founder_felipe.jpg' | relative_url }}" alt="Felipe Moreno">
               <div>
                 <span class="founder-entry__name">Felipe Moreno</span>
-                <span class="founder-entry__title">Co-founder &amp; CEO</span>
+                <span class="founder-entry__title">CEO</span>
               </div>
             </div>
-            <p class="founder-entry__bio">Offshore wind engineering specialist with over a decade of experience in floating wind systems, mooring and anchor design, and geotechnical engineering. Developed methodologies at the National Renewable Energy Laboratory (NREL) and translates that research foundation into practical engineering tools and consultancy.</p>
+            <p class="founder-entry__bio">Offshore engineering specialist with a background in floating wind systems, mooring–anchor interaction and geotechnical design. Co-founder of Morie Analytics, connecting engineering models, site conditions and system-level constraints into integrated workflows. Focused on translating complex offshore design challenges into practical, scalable solutions for real project development.</p>
             <div class="founder-entry__links">
               <a href="https://www.linkedin.com/in/fmormer/" target="_blank" rel="noopener"><i class="ion ion-logo-linkedin"></i> LinkedIn</a>
               <a href="{{ '/docs/C%20V_F%20e%20l%20i%20p%20e%20%20J.%20%20M%20o%20r%20e%20n%20o_A%20b%20r%20%202%200%202%206.pdf' | relative_url }}" target="_blank"><i class="ion ion-md-document"></i> Resume</a>
@@ -52,10 +52,10 @@ permalink: /about/
               <img class="founder-entry__photo" src="{{ '/img/founder_alvaro.png' | relative_url }}" alt="Álvaro Almagro">
               <div>
                 <span class="founder-entry__name">Álvaro Almagro</span>
-                <span class="founder-entry__title">Co-founder &amp; CTO</span>
+                <span class="founder-entry__title">CTO</span>
               </div>
             </div>
-            <p class="founder-entry__bio">Engineering manager and director with over a decade in software engineering and seven years leading cross-functional teams. Serial entrepreneur and co-founder of Morie Analytics, Kalinka Tech and Tone Treasures. Brings deep expertise in engineering systems, product development and AI integration to the platform side of Morie Analytics.</p>
+            <p class="founder-entry__bio">Offshore engineering specialist with a background in floating wind systems, mooring–anchor interaction and geotechnical design. Co-founder of Morie Analytics, connecting engineering models, site conditions and system-level constraints into integrated workflows. Focused on translating complex offshore design challenges into practical, scalable solutions for real project development.</p>
             <div class="founder-entry__links">
               <a href="https://www.linkedin.com/in/alvaroalmagro/" target="_blank" rel="noopener"><i class="ion ion-logo-linkedin"></i> LinkedIn</a>
               <a href="https://alvaroalmagro.com/" target="_blank" rel="noopener"><i class="ion ion-md-globe"></i> Website</a>
@@ -67,7 +67,7 @@ permalink: /about/
 			  <img class="founder-entry__photo" src="{{ '/img/founder_anastasia.png' | relative_url }}" alt="Ánastasia Galkina">
               <div>
                 <span class="founder-entry__name">Anastasia Galkina</span>
-                <span class="founder-entry__title">Co-founder</span>
+                <span class="founder-entry__title">COO</span>
               </div>
             </div>
             <p class="founder-entry__bio">Strategic and creative lead with experience in business development, communication and holistic project design. Project manager, bringing a cross-disciplinary perspective that connects engineering, client needs and market positioning. Focused on translating complex technical work into clear narratives, scalable offerings and meaningful client engagement.</p>
