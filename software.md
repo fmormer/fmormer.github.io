@@ -20,8 +20,8 @@ og_type: "website"
     <div class="hero-callout">
       <div class="hero-left">
         <h1 class="hero-title">
-          One platform for floating wind<br>
-          <span>engineering, from seabed to turbine</span>
+          One platform for floating wind engineering<br>
+          <span>from seabed to turbine</span>
         </h1>
         <p class="hero-subtitle">
           Stop hunting data across disconnected tools. Morie Platform combines environmental datasets,
@@ -30,8 +30,8 @@ og_type: "website"
         </p>
         <p class="hero-tagline">Built by offshore wind engineers, for offshore wind engineers.</p>
         <div class="hero-buttons">
-          <a href="#request-access" class="hero-button hero-button--secondary">Request Access</a>
-          <a href="#live-tools" class="hero-button hero-button--primary">See the Tools</a>
+          <a href="#request-access" class="hero-button hero-button--secondary">ACCESS</a>
+          <a href="#live-tools" class="hero-button hero-button--primary">TOOLS</a>
         </div>
       </div>
     </div>
@@ -72,24 +72,24 @@ og_type: "website"
     <article class="plat-tool-card plat-tool-card--reverse" aria-labelledby="tool-anchor-heading">
       <div class="plat-tool-card__media">
         <img src="{{ '/img/posts/morie_anchor/anchor_types.png' | relative_url }}"
-             alt="Morie Anchor Tool — nine anchor types supported including suction pile, plate DEA, SEPLA, torpedo and driven pile"
+             alt="Morie Anchor Tool — main anchor concepts supported including suction pile, plate DEA, SEPLA, torpedo and driven pile"
              loading="lazy">
       </div>
       <div class="plat-tool-card__body">
         <span class="plat-tool-card__badge">Anchor Tool</span>
         <h3 id="tool-anchor-heading" class="plat-tool-card__title">
-          Nine anchor types. Any soil profile. Real-time 3D geometry.
+          Main anchor concepts. Location based soil profiles. Real-time 3D geometry.
         </h3>
         <p class="plat-tool-card__lead">
-          Configure any anchor type, build a multi-layer soil profile, and get factor-of-safety results —
+          Configure main anchor concept, build a multi-layer soil profile at relevant anchor location and get capacity results —
           all within your project workspace. The 3D viewer updates in real time as you adjust geometry inputs,
           so you see the design change before you run the analysis.
         </p>
         <ul class="plat-feature-list" aria-label="Anchor Tool features">
-          <li><i class="ion ion-md-checkmark-circle" aria-hidden="true"></i> 9 anchor types: suction pile, plate DEA, SEPLA, DEPLA, VLA, torpedo, helical, driven, drilled</li>
-          <li><i class="ion ion-md-checkmark-circle" aria-hidden="true"></i> Multi-layer soil profile builder — clay, sand, and rock</li>
+          <li><i class="ion ion-md-checkmark-circle" aria-hidden="true"></i> Main anchor types: suction, torpedo, helical, driven, drilled and grouted piles as well as DEA, SEPLA, DEPLA and VLA plates </li>
+          <li><i class="ion ion-md-checkmark-circle" aria-hidden="true"></i> Multi-layer soil profile builder — clay, sand and rock</li>
           <li><i class="ion ion-md-checkmark-circle" aria-hidden="true"></i> 3D anchor geometry viewer that updates in real time</li>
-          <li><i class="ion ion-md-checkmark-circle" aria-hidden="true"></i> Horizontal and vertical load input with factor-of-safety acceptance criteria</li>
+          <li><i class="ion ion-md-checkmark-circle" aria-hidden="true"></i> Horizontal and vertical load input with acceptance criteria</li>
           <li><i class="ion ion-md-checkmark-circle" aria-hidden="true"></i> Multiple studies per project for parametric design iteration</li>
         </ul>
       </div>
@@ -136,7 +136,7 @@ og_type: "website"
           <img src="{{ '/img/morie_icon_cable.png' | relative_url }}" alt="">
         </div>
         <h3>Cable</h3>
-        <p>Inter-array and export cable routing and sizing.</p>
+        <p>Dynamic cable design and optimization. Inter-array and export cable routing and sizing.</p>
       </div>
 
       <div class="plat-soon__item">
@@ -203,7 +203,7 @@ og_type: "website"
       <div class="plat-access__features">
         <ul class="plat-feature-list plat-feature-list--light" aria-label="What early access includes">
           <li><i class="ion ion-md-checkmark-circle" aria-hidden="true"></i> Site Tool — interactive boundary definition and bathymetry extraction</li>
-          <li><i class="ion ion-md-checkmark-circle" aria-hidden="true"></i> Anchor Tool — 9 anchor types, multi-layer soil profiles, 3D geometry viewer</li>
+          <li><i class="ion ion-md-checkmark-circle" aria-hidden="true"></i> Anchor Tool — Main anchor types, multi-layer soil profiles, 3D geometry viewer</li>
           <li><i class="ion ion-md-checkmark-circle" aria-hidden="true"></i> New tools as they are released (Layout, Soil, Mooring, Cable, Atlas)</li>
           <li><i class="ion ion-md-checkmark-circle" aria-hidden="true"></i> Project workspaces with multiple studies per tool</li>
           <li><i class="ion ion-md-checkmark-circle" aria-hidden="true"></i> Role-based access — Viewer, Editor, and Owner</li>
