@@ -70,7 +70,7 @@ permalink: /about/
                 <span class="founder-entry__title">Co-founder</span>
               </div>
             </div>
-            <p class="founder-entry__bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p class="founder-entry__bio">Strategic and creative lead with experience in business development, communication and holistic project design. Project manager, bringing a cross-disciplinary perspective that connects engineering, client needs and market positioning. Focused on translating complex technical work into clear narratives, scalable offerings and meaningful client engagement.</p>
           </div>
 
         </div>
