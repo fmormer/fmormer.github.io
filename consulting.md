@@ -25,8 +25,8 @@ description: "Offshore wind and marine engineering consultancy — portfolio, ca
         </p>
         <p class="hero-tagline">Built on a decade of research and real-project engineering experience.</p>
         <div class="hero-buttons">
-          <a href="{{ '/contact/' | relative_url }}" class="hero-button hero-button--secondary">Get in touch</a>
-          <a href="#portfolio" class="hero-button hero-button--primary">View portfolio</a>
+          <a href="{{ '/contact/' | relative_url }}" class="hero-button hero-button--secondary">CONTACT US</a>
+          <a href="#portfolio" class="hero-button hero-button--primary">PORTFOLIO</a>
         </div>
       </div>
     </div>
@@ -39,7 +39,7 @@ description: "Offshore wind and marine engineering consultancy — portfolio, ca
     <p class="home-storyband__eyebrow">Our offering</p>
     <h2 class="plat-section__title">Engineering consultancy across the full design chain</h2>
     <p class="plat-section__lead">
-      We work across both the technical and client-facing sides of engineering: from model development,
+      We operate across both the technical and client-facing sides of offshore engineering — from model development,
       automation and computation to practical implementation and deployment support. Our goal is to deliver
       results that clients can adopt, extend and operate with confidence.
     </p>
