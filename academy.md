@@ -214,7 +214,7 @@ description: "University programs, online campus, corporate training and R&D in 
         Whether you are a university, engineering consultancy or energy developer looking to build team
         capability or collaborate on R&amp;D, we would like to hear from you.
       </p>
-      <a href="{{ '/contact/' | relative_url }}" class="hero-button hero-button--secondary">Get in touch</a>
+      <a href="{{ '/contact/' | relative_url }}" class="hero-button hero-button--secondary">CONTACT US</a>
     </div>
   </div>
 </section>
