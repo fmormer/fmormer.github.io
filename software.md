@@ -30,8 +30,8 @@ og_type: "website"
         </p>
         <p class="hero-tagline">Built by offshore wind engineers, for offshore wind engineers.</p>
         <div class="hero-buttons">
-          <a href="#request-access" class="hero-button hero-button--secondary">ACCESS</a>
-          <a href="#live-tools" class="hero-button hero-button--primary">TOOLS</a>
+          <a href="#request-access" class="hero-button hero-button--secondary">EARLY ACCESS</a>
+          <a href="#live-tools" class="hero-button hero-button--primary">LIVE TOOLS</a>
         </div>
       </div>
     </div>

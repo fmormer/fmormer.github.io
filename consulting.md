@@ -136,7 +136,7 @@ description: "Offshore wind and marine engineering consultancy — portfolio, ca
         Whether you need targeted engineering studies, system-level support or longer-term technical integration,
         we are here to help. Get in touch to discuss your project.
       </p>
-      <a href="{{ '/contact/' | relative_url }}" class="hero-button hero-button--secondary">Contact us</a>
+      <a href="{{ '/contact/' | relative_url }}" class="hero-button hero-button--secondary">CONTACT US</a>
     </div>
   </div>
 </section>
