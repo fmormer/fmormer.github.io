@@ -112,7 +112,7 @@ description: "Offshore wind and marine engineering consultancy — portfolio, ca
     </div>
 
     <div class="row">
-      {% assign desired_order = 'morie_site|morie_layout|morie_soil|morie_mooring|morie_anchor|morie_cable' | split: '|' %}
+      {% assign desired_order = 'morie_site|morie_layout|morie_soil|morie_mooring|morie_anchor|morie_cable|morie_anchorAI' | split: '|' %}
 
       {% for target_slug in desired_order %}
         {% for post in site.posts %}
