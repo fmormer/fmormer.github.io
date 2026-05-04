@@ -74,7 +74,7 @@ body {
 }
 
 // --- Typography ---
-body, p, li, .post-body, .article-excerpt, .header-tagline, .item-link,
+p, li, .post-body, .article-excerpt, .header-tagline, .item-link,
 .page__meta, .post-time, .article-date, .footer, .footer p, .footer li,
 .footer a, input, textarea, select, button {
   font-family: 'Public Sans', sans-serif;
@@ -278,13 +278,13 @@ a:hover, a:focus { color: var(--morie-heading) !important; }
   line-height: 1.08;
   letter-spacing: -0.015em;
   color: #ffffff !important;
-  font-family: var(--morie-font-sans);
-  font-weight: 400;
+  font-family: 'Montserrat', var(--morie-font-sans);
+  font-weight: 700;
 }
 
 .hero-subtitle,
 .hero-tagline {
-  max-width: 820px;
+  max-width: 100%;
 }
 
 .hero-title span {
@@ -1270,20 +1270,20 @@ code.language-plaintext {
 
 .portfolio-page__intro h1 {
   margin-bottom: 1rem;
-  color: #0b1f44;
+  color: var(--morie-heading);
 }
 
 .portfolio-page__lead {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   line-height: 1.8;
-  color: #23395d;
+  color: var(--morie-text-muted);
   margin-bottom: 1.25rem;
 }
 
 .portfolio-page__workflow {
   margin-top: 1.8rem;
-  font-size: 1.3rem;
-  color: #0b1f44;
+  font-size: 1.1rem;
+  color: var(--morie-heading);
 }
 
 .portfolio-page .row {
@@ -1774,9 +1774,12 @@ code.language-plaintext {
   border-radius: 8px;
   padding: 2.5rem 1.75rem;
   text-align: center;
-  background-color: #f8f4ec;
+  background-color: var(--morie-surface);
 
   h3 {
+    font-family: 'Montserrat', var(--morie-font-sans);
+    font-size: 1.1rem;
+    font-weight: 700;
     margin-top: 1rem;
     margin-bottom: 0.75rem;
   }
@@ -1839,7 +1842,7 @@ code.language-plaintext {
   font-size: 1.1rem;
   line-height: 1.75;
   color: var(--morie-text-muted) !important;
-  max-width: 760px;
+  max-width: 100%;
   margin: 0 0 2.5rem;
 }
 
