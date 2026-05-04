@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Dynamic Cable Design & Configuration Optimization 
-image: "/img/posts/morie_cable/morie_cable2.png"
+image: "/img/posts/morie_cable/morie_cable.png"
 tags: [Offshore Floating Wind, Dynamic Cables, Cable Optimization, Floating Wind, RAFT, MoorPy, Python]
 ---
 

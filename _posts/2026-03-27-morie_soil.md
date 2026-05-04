@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Local Soil Reconstruction & Subsurface Intelligence 
-image: "/img/posts/morie_soil/morie_soil2.png"
+image: "/img/posts/morie_soil/morie_soil.png"
 tags: [Offshore Floating Wind, Geotechnical Engineering, Soil Modeling, Tomography, Floating Wind, Anchors, Python]
 ---
 

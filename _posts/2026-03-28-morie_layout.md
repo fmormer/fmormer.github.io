@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Layout Generation & Topology Optimization 
-image: "/img/posts/morie_layout/morie_layout2.png"
+image: "/img/posts/morie_layout/morie_layout.png"
 tags: [Offshore Floating Wind, Layout Optimization, Hex Grid, Floating Wind, GIS, Python]
 ---
 

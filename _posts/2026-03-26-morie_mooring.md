@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Mooring System Generation & Load Analysis 
-image: "/img/posts/morie_mooring/morie_mooring2.png"
+image: "/img/posts/morie_mooring/morie_mooring.png"
 tags: [Offshore Floating Wind, Mooring Systems, RAFT, MoorPy, Shared Anchors, Python]
 ---
 

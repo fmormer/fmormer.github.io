@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Site Intelligence & Spatial Characterization
-image: "/img/posts/morie_site/morie_site2.png"
+image: "/img/posts/morie_site/morie_site.png"
 tags: [Offshore Floating Wind, Site Characterization, GEBCO, EMODnet, GIS, Python]
 ---
 
