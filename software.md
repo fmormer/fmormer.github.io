@@ -151,6 +151,122 @@ og_type: "website"
   </div>
 </section>
 
+<!-- ── SDK ───────────────────────────────────────────────────────────────── -->
+<section class="plat-sdk" id="sdk" aria-label="Morie Python SDK">
+  <div class="plat-container">
+    <div class="plat-sdk__inner">
+
+      <div class="plat-sdk__text">
+        <p class="plat-sdk__eyebrow">Python SDK</p>
+        <h2 class="plat-sdk__headline">
+          Bring Morie into<br>your own workflow
+        </h2>
+        <p class="plat-sdk__lead">
+          Run site assessments, anchor studies, and mooring analyses directly
+          from Python — in your scripts, Jupyter notebooks, or automated pipelines.
+          Full OrcaFlex interoperability included.
+        </p>
+        <div class="plat-sdk__install">
+          <span class="plat-sdk__install-prompt">$</span>
+          <span class="plat-sdk__install-cmd">pip install morie</span>
+        </div>
+        <div class="plat-sdk__features">
+          <div class="plat-sdk__feat"><i class="ion ion-md-checkmark-circle" aria-hidden="true"></i> Submit and poll engineering jobs from Python</div>
+          <div class="plat-sdk__feat"><i class="ion ion-md-checkmark-circle" aria-hidden="true"></i> Export mooring designs directly into OrcaFlex</div>
+          <div class="plat-sdk__feat"><i class="ion ion-md-checkmark-circle" aria-hidden="true"></i> Import OrcaFlex loads back into anchor capacity studies</div>
+          <div class="plat-sdk__feat"><i class="ion ion-md-checkmark-circle" aria-hidden="true"></i> Works in Jupyter, scripts, and CI pipelines</div>
+        </div>
+      </div>
+
+      <div class="plat-sdk__demo">
+        <div class="plat-sdk__tabbar" role="tablist" aria-label="SDK code examples">
+          <button class="plat-sdk__tab plat-sdk__tab--active"
+                  role="tab" aria-selected="true" aria-controls="sdk-pane-anchor"
+                  id="sdk-tab-anchor" data-pane="sdk-pane-anchor">
+            Anchor study
+          </button>
+          <button class="plat-sdk__tab"
+                  role="tab" aria-selected="false" aria-controls="sdk-pane-orcaflex"
+                  id="sdk-tab-orcaflex" data-pane="sdk-pane-orcaflex">
+            OrcaFlex workflow
+          </button>
+        </div>
+
+        <div class="plat-sdk__codewrap">
+          <pre class="plat-sdk__code" id="sdk-pane-anchor" role="tabpanel" aria-labelledby="sdk-tab-anchor"><code><span class="sdk-kw">import</span> morie
+
+<span class="sdk-kw">with</span> morie.Client(api_key=<span class="sdk-st">"mk_live_..."</span>) <span class="sdk-kw">as</span> client:
+    project = client.projects.get(<span class="sdk-st">"your-project-id"</span>)
+
+    job_id = project.anchor.run(
+        name=<span class="sdk-st">"North Sea — 5 m suction pile ULS"</span>,
+        payload={
+            <span class="sdk-st">"anchor_type"</span>: <span class="sdk-st">"suction_pile"</span>,
+            <span class="sdk-st">"geometry"</span>: {<span class="sdk-st">"D"</span>: <span class="sdk-nm">5.0</span>, <span class="sdk-st">"L"</span>: <span class="sdk-nm">10.0</span>, <span class="sdk-st">"zlug"</span>: <span class="sdk-nm">8.0</span>},
+            <span class="sdk-st">"soil"</span>:   {<span class="sdk-st">"soil_type"</span>: <span class="sdk-st">"clay"</span>, <span class="sdk-st">"profile"</span>: [...]},
+            <span class="sdk-st">"loads"</span>:  {<span class="sdk-st">"load_point"</span>: <span class="sdk-st">"mudline"</span>,
+                         <span class="sdk-st">"Hm"</span>: <span class="sdk-nm">2_800_000.0</span>, <span class="sdk-st">"Vm"</span>: <span class="sdk-nm">450_000.0</span>},
+        },
+    )
+
+    job = client.jobs.wait(job_id)
+    print(job.result_payload)</code></pre>
+
+          <pre class="plat-sdk__code plat-sdk__code--hidden" id="sdk-pane-orcaflex" role="tabpanel" aria-labelledby="sdk-tab-orcaflex"><code><span class="sdk-kw">import</span> OrcFxAPI
+<span class="sdk-kw">import</span> morie
+<span class="sdk-kw">import</span> morie.orcaflex  <span class="sdk-cm"># activates OrcaFlex integration</span>
+
+<span class="sdk-kw">with</span> morie.Client(api_key=<span class="sdk-st">"mk_live_..."</span>) <span class="sdk-kw">as</span> client:
+    project = client.projects.get(<span class="sdk-st">"your-project-id"</span>)
+
+    <span class="sdk-cm"># open a Morie mooring design in OrcaFlex (Windows)</span>
+    project.mooring.export_to_orcaflex(mooring_job_id)
+
+    <span class="sdk-cm"># load a completed OrcaFlex simulation</span>
+    model = OrcFxAPI.Model()
+    model.LoadSimulation(<span class="sdk-st">"storm_uls.sim"</span>)
+
+    <span class="sdk-cm"># extract Line1 anchor loads → run capacity study</span>
+    job_id = project.anchor.run_from_orcaflex(
+        model,
+        line_name=<span class="sdk-st">"Line1"</span>,
+        anchor_payload={
+            <span class="sdk-st">"anchor_type"</span>: <span class="sdk-st">"suction_pile"</span>,
+            <span class="sdk-st">"geometry"</span>: {<span class="sdk-st">"D"</span>: <span class="sdk-nm">5.0</span>, <span class="sdk-st">"L"</span>: <span class="sdk-nm">10.0</span>, <span class="sdk-st">"zlug"</span>: <span class="sdk-nm">8.0</span>},
+            <span class="sdk-st">"soil"</span>:   {<span class="sdk-st">"soil_type"</span>: <span class="sdk-st">"clay"</span>, <span class="sdk-st">"profile"</span>: [...]},
+        },
+        name=<span class="sdk-st">"North Sea — OrcaFlex ULS loads"</span>,
+    )
+
+    job = client.jobs.wait(job_id)
+    print(job.result_payload)</code></pre>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  (function() {
+    var tabs = document.querySelectorAll('.plat-sdk__tab');
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        tabs.forEach(function(t) {
+          t.classList.remove('plat-sdk__tab--active');
+          t.setAttribute('aria-selected', 'false');
+          var pane = document.getElementById(t.dataset.pane);
+          if (pane) pane.classList.add('plat-sdk__code--hidden');
+        });
+        tab.classList.add('plat-sdk__tab--active');
+        tab.setAttribute('aria-selected', 'true');
+        var active = document.getElementById(tab.dataset.pane);
+        if (active) active.classList.remove('plat-sdk__code--hidden');
+      });
+    });
+  })();
+</script>
+
 <!-- ── COLLABORATION ─────────────────────────────────────────────────── -->
 <section class="plat-collab" aria-label="Collaboration and team features">
   <div class="plat-container">

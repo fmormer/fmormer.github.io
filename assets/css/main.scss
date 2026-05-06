@@ -2369,6 +2369,187 @@ code.language-plaintext {
   }
 }
 
+/* ── SDK ── */
+.plat-sdk {
+  padding: 96px 0 88px;
+  background-color: #0d1b2e;
+  overflow: hidden;
+}
+
+.plat-sdk__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.plat-sdk__eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #93c5fd !important;
+  background-color: rgba(147, 197, 253, 0.1);
+  border: 1px solid rgba(147, 197, 253, 0.25);
+  border-radius: var(--morie-radius-pill);
+  padding: 0.3rem 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.plat-sdk__headline {
+  font-family: 'Montserrat', var(--morie-font-sans);
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  font-weight: 800;
+  color: #ffffff !important;
+  line-height: 1.1;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.02em;
+}
+
+.plat-sdk__lead {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.65) !important;
+  margin: 0 0 2rem;
+}
+
+.plat-sdk__install {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--morie-radius-1);
+  padding: 0.65rem 1.1rem;
+  margin-bottom: 2rem;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
+.plat-sdk__install-prompt {
+  color: #4ade80 !important;
+  font-size: 0.95rem;
+  font-weight: 700;
+  user-select: none;
+}
+
+.plat-sdk__install-cmd {
+  color: #f1f5f9 !important;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+}
+
+.plat-sdk__features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.plat-sdk__feat {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7) !important;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  line-height: 1.5;
+
+  i {
+    color: #4ade80 !important;
+    font-size: 1.05rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+}
+
+.plat-sdk__demo {
+  position: relative;
+}
+
+.plat-sdk__tabbar {
+  display: flex;
+  gap: 0;
+  background-color: #252526;
+  border-radius: var(--morie-radius-2) var(--morie-radius-2) 0 0;
+  border: 1px solid #3c3c3c;
+  border-bottom: none;
+  padding: 0 0.25rem;
+}
+
+.plat-sdk__tab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  padding: 0.65rem 1.2rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  font-family: 'Public Sans', sans-serif;
+  color: #8c8c8c !important;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  letter-spacing: 0.01em;
+
+  &:hover {
+    color: #cccccc !important;
+  }
+}
+
+.plat-sdk__tab--active {
+  color: #cccccc !important;
+  border-bottom-color: #569cd6;
+}
+
+.plat-sdk__codewrap {
+  background-color: #1e1e1e !important;
+  border: 1px solid #3c3c3c;
+  border-top: none;
+  border-radius: 0 0 var(--morie-radius-2) var(--morie-radius-2);
+  height: 420px;
+  overflow: hidden;
+}
+
+.plat-sdk__code {
+  margin: 0;
+  padding: 1.75rem 1.75rem;
+  height: 100%;
+  box-sizing: border-box;
+  overflow-x: auto;
+  overflow-y: auto;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.84rem;
+  line-height: 1.8;
+  color: #d4d4d4 !important;
+  background-color: #1e1e1e !important;
+  border: none !important;
+  white-space: pre;
+
+  code {
+    font-family: inherit;
+    font-size: inherit;
+    background-color: #1e1e1e !important;
+    border: none !important;
+    padding: 0 !important;
+    color: #d4d4d4 !important;
+  }
+}
+
+.plat-sdk__code--hidden {
+  display: none;
+}
+
+/* Syntax token colours — VS Code Dark+ */
+.sdk-kw  { color: #c586c0 !important; font-weight: 400; }  /* keywords: import, with, as */
+.sdk-st  { color: #ce9178 !important; }                     /* strings */
+.sdk-cm  { color: #6a9955 !important; font-style: italic; } /* comments */
+.sdk-nm  { color: #b5cea8 !important; }                     /* numbers */
+
+@media (max-width: 900px) {
+  .plat-sdk__inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
 /* ── Request access ── */
 .plat-access {
   padding: 96px 0 88px;
