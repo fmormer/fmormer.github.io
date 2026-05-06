@@ -327,9 +327,7 @@ The outputs support:
 - Integration with anchor capacity workflows
 - Validation of geotechnical assumptions under sparse data conditions
 
-This transforms sparse subsurface information into **engineering decision inputs**.
-
-This study demonstrates that sparse geotechnical data, when structured through a tomographic reconstruction workflow, can provide sufficiently accurate soil profiles to support early-stage anchor design decisions.
+This transforms sparse subsurface information into **engineering decision inputs**. The study also demonstrates that sparse geotechnical data, when structured through a tomographic reconstruction workflow, can provide sufficiently accurate soil profiles to support early-stage anchor design decisions.
 
 
 ## Relationship to Other Morie Study Cases
