@@ -11,9 +11,9 @@ tags: [Offshore Floating Wind, Geotechnical Engineering, Soil Modeling, Tomograp
 
 This study establishes the **soil reconstruction layer** of Morie Analytics by transforming sparse geotechnical information into **engineering-ready soil profiles at anchor locations**.
 
-Starting from a layout generated in `morie_layout`, the workflow constructs a localized soil domain, generates a synthetic ground truth model, emulates **tomographic sampling**, and reconstructs vertical soil profiles using interpolation techniques.
+Starting from a layout generated in `morie_layout`, the workflow constructs a localized soil domain, generates a synthetic ground truth model, emulates **tomographic sampling**, and reconstructs vertical soil profiles from sparse sectional data.
 
-The result is a **reproducible framework for anchor-level soil characterization**, bridging the gap between spatial layout design and geotechnical engineering inputs.
+The process is performed in a **controlled environment where the true subsurface is known**, enabling **quantitative validation of reconstruction accuracy** before application to real offshore datasets.
 
 > Site intelligence → Layout generation → **Soil reconstruction** → Mooring physics → Anchor verification → Cable optimization
 
@@ -27,6 +27,8 @@ The result is a **reproducible framework for anchor-level soil characterization*
 - Soil profile reconstruction via interpolation
 - Boundary detection and validation
 - Multi-anchor soil characterization
+- Quantitative validation of reconstructed layer boundaries  
+- Multi-anchor statistical evaluation of reconstruction performance  
 
 This study converts **layout intelligence into anchor-ready subsurface inputs**.
 
@@ -51,6 +53,8 @@ However, early-stage offshore projects typically rely on:
 - Incomplete subsurface coverage
 
 This workflow introduces a **localized reconstruction methodology**, where sparse sectional information is converted into soil profiles suitable for downstream engineering analysis.
+
+To address this, the workflow is first applied in a **controlled synthetic setting**, where the true subsurface is known. This allows direct validation of reconstruction accuracy and provides confidence in the methodology before application to real geotechnical datasets.
 
 
 ## Inputs and Data Sources
@@ -82,7 +86,7 @@ This provides the **subsurface data framework for anchor-level characterization*
 
 ## System Flow
 
-Layout Geometry → Domain Extraction → Soil Reconstruction → Anchor Profiles
+Layout Geometry → Domain Extraction → Tomographic Sampling → Soil Reconstruction → Anchor Profiles
 
 The architecture ensures **traceability from spatial inputs to geotechnical outputs**.
 
@@ -200,6 +204,8 @@ This step represents:
 - Sectional surveys
 - Limited geotechnical campaigns under realistic coverage constraints
 
+Unlike isolated borehole or CPT-based approaches, this configuration captures spatial continuity through sectional sampling, enabling reconstruction between investigation lines.
+
 
 ## Soil Section Sampling
 
@@ -230,7 +236,7 @@ These sections form the **available dataset**, capturing:
 
 ## Profile Reconstruction
 
-A single-point proof of concept is first used to validate the reconstruction methodology within the selected layout.
+A single-point controlled validation case is first used to assess the reconstruction methodology within the selected layout.
 
 <div align="center">
   <img src="/img/posts/morie_soil/07_profile_comparison_phi.png"
@@ -262,6 +268,8 @@ The reconstructed profile is then converted into discrete engineering layers thr
 </div>
 _Figure 9 – Boundary detection accuracy at the single-point validation location._
 
+At the validation point, boundary detection errors are on the order of decimetres. Across all anchors, mean absolute errors are approximately 0.2 m for both Z1 and Z2, with maximum deviations remaining below ~1 m.
+
 ### Engineering Significance
 
 This step transforms reconstructed profiles into:
@@ -282,7 +290,7 @@ Following proof-of-concept validation, the workflow is applied across all anchor
 
 ### Selected Anchor
 
-- **fowt1b** → selected as downstream handoff anchor for `morie_anchor`
+- **fowt1b** → selected as downstream handoff anchor for `morie_anchor`, ensuring traceability from soil reconstruction to anchor design
 
 This selection is now formalized in the workflow and exported for the downstream case study. The structure represents the **final engineering output** of the soil reconstruction workflow.
 
@@ -303,6 +311,7 @@ The workflow produces:
 - Boundary detection results
 - Anchor-level soil datasets
 - Selected downstream anchor definition
+- Engineering-ready soil profiles at anchor locations
 
 These outputs are directly usable in the next engineering modules.
 
@@ -316,8 +325,11 @@ The outputs support:
 - Early-stage geotechnical interpretation
 - Validation of sparse-data reconstruction
 - Integration with anchor capacity workflows
+- Validation of geotechnical assumptions under sparse data conditions
 
 This transforms sparse subsurface information into **engineering decision inputs**.
+
+This study demonstrates that sparse geotechnical data, when structured through a tomographic reconstruction workflow, can provide sufficiently accurate soil profiles to support early-stage anchor design decisions.
 
 
 ## Relationship to Other Morie Study Cases
@@ -344,6 +356,7 @@ It provides the **geotechnical transition from layout geometry to anchor design*
 - Improves reliability of anchor sizing inputs
 - Supports scalable offshore development workflows
 - Bridges the gap between GIS-scale data and anchor-scale design
+- Enables anchor design decisions before full site investigation campaigns are available
 
 This is where **subsurface uncertainty becomes quantifiable and manageable**.
 
