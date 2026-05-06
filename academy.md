@@ -154,7 +154,7 @@ description: "University programs, online campus, corporate training and R&D in 
 
     <article class="plat-tool-card" aria-labelledby="rd-methods-heading">
       <div class="plat-tool-card__media">
-        <img src="{{ '/img/posts/morie_layout/morie_layout2.png' | relative_url }}"
+        <img src="{{ '/img/posts/morie_layout/morie_layout.png' | relative_url }}"
              alt="Floating wind farm layout optimisation methodology"
              loading="lazy">
       </div>
@@ -179,7 +179,7 @@ description: "University programs, online campus, corporate training and R&D in 
 
     <article class="plat-tool-card plat-tool-card--reverse" aria-labelledby="rd-dissemination-heading">
       <div class="plat-tool-card__media">
-        <img src="{{ '/img/posts/morie_soil/09_lease_crop_context.png' | relative_url }}"
+        <img src="{{ '/img/posts/morie_soil/3D_cropped_8turbines.png' | relative_url }}"
              alt="Tomographic subsurface reconstruction for knowledge dissemination"
              loading="lazy">
       </div>
