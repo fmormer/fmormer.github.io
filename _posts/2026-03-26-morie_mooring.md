@@ -129,6 +129,17 @@ Coincident anchor locations are merged to define **shared-anchor nodes**, creati
 </div>
 *Figure 2 – Shared-anchor configurations showing multiple line connections per anchor.*
 
+The shared-anchor network can then be placed back into its full seabed context, integrating bathymetry, soil conditions and spatial load-transfer geometry.
+
+This transforms the system from a purely topological representation into a site-dependent mechanical model.
+
+<div align="center">
+  <img src="/img/posts/morie_mooring/3D_cropped_8turbines.png" 
+       alt="Floating offshore wind farm mooring system integrated with bathymetry and soil classification" 
+       width="900">
+</div>
+*Figure 3 – Integrated mooring system showing layout geometry, shared-anchor topology, bathymetry and soil classification.*
+
 ### Engineering Significance
 
 Shared anchors enable:
@@ -153,7 +164,7 @@ The mooring system is solved for the **quasi-static equilibrium**, establishing 
        alt="Mooring line profile showing catenary geometry between fairlead and anchor with seabed interaction" 
        width="800">
 </div>
-*Figure 3 – Mooring line catenary profile.*
+*Figure 4 – Mooring line catenary profile.*
 
 ### Engineering Interpretation
 
@@ -179,7 +190,7 @@ Dynamic response is evaluated using **RAFT** across most severe wave headings fo
        alt="Frequency-domain mooring response across multiple wave headings" 
        width="500">
 </div>
-*Figure 4 – Environmental load cases and frequency-domain response.*
+*Figure 5 – Environmental load cases and frequency-domain response.*
 
 ### Engineering Interpretation
 
@@ -216,7 +227,7 @@ Time series are reconstructed from Power Spectral Density (PSD) outputs to evalu
        alt="Time-domain mooring tension showing dynamic variation and peak loads" 
        width="500">
 </div>
-*Figure 5 – Time-domain reconstruction of mooring line tension.*
+*Figure 6 – Time-domain reconstruction of mooring line tension.*
 
 ### Engineering Significance
 
