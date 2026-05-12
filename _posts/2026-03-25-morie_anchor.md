@@ -293,7 +293,7 @@ The anchor response is inherently **multi-axial**, where vertical and horizontal
 ## Load–Capacity Interaction Model
 
 <div align="center">
-  <img src="/img/posts/morie_anchor/anchor_ellipsoild.PNG" 
+  <img src="/img/posts/morie_anchor/anchor_ellipsoid.PNG" 
        alt="Tongue-shaped 3D VHM resistance envelope for suction caissons under combined loading" 
        width="500">
 </div>
