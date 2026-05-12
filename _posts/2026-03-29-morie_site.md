@@ -156,7 +156,7 @@ This bathymetric characterization defines the **geometric boundary conditions** 
 ## Seafloor Slope Characterization
 
 <div align="center">
-  <img src="/img/posts/morie_site/2dfamr_slope_2.png"
+  <img src="/img/posts/morie_site/2dfarm_slope_2.png"
        alt="Seafloor slope map derived from GEBCO bathymetry showing slope distribution across the Celtic Sea lease area"
        width="500">
 </div>
