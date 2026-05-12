@@ -9,13 +9,13 @@ tags: [Offshore Floating Wind, Anchors, Suction Piles, Shared Anchors, Geotechni
 
 ## Executive Summary
 
-This study establishes the **geotechnical verification layer** of Morie Analytics by transforming **mooring-derived loads into capacity-verified anchor designs**.
+This study establishes the **geotechnical verification layer** of Morie Analytics by transforming **mooring-derived loads into capacity-assessed anchor evaluation**.
 
 The workflow identifies the governing event, extracts concomitant loads, transfers them through embedded chain mechanics to main padeye elevation, resolves shared-anchor demand and verifies suction pile capacity.
 
 The result is a **reproducible framework** connecting system response, load transfer and geotechnical resistance.
 
-This module represents the point where **mooring demand and soil resistance are combined into verified design decisions**.
+This module represents the point where **mooring demand and soil resistance are combined into preliminary geotechnical design assessment**.
 
 > Site intelligence → Layout generation → Soil reconstruction → Mooring physics → **Anchor verification** → Cable optimization
 
@@ -28,7 +28,7 @@ This module represents the point where **mooring demand and soil resistance are 
 - Shared-anchor load resolution  
 - Capacity verification  
 
-This study converts **mooring loads into geotechnically verified anchor design**.
+This study converts **mooring loads into geotechnically assessed anchor design**.
 
 
 ## Engineering Context
@@ -36,7 +36,7 @@ This study converts **mooring loads into geotechnically verified anchor design**
 Shared anchors reduce cost but introduce:
 
 - Multi-directional loading  
-- Build-up of vertical uplift and torsional effects
+- Accumulation of vertical uplift and torsional effects
 - Complex soil–structure interaction  
 
 The key principle is:
@@ -99,7 +99,7 @@ The architecture ensures **traceability from system loads to geotechnical verifi
 7. Evaluate suction pile capacity  
 8. Verify load–capacity interaction  
 
-This converts **mooring loads into capacity-verified anchor design**.
+This converts **mooring loads into capacity-assessed anchor design**.
 
 
 ## Anchor System Topology
@@ -151,7 +151,7 @@ The anchor must be checked against **simultaneous load conditions**, not indepen
 
 ## Load Extraction
 
-Loads are extracted at the **mudline connection point** are derived at the **padeye connection point**:
+Loads are extracted at the **mudline elevation point** and transferred to the embedded **padeye connection point** through inverse catenary mechanics:
 
 - Horizontal → Ha  
 - Vertical → Va  
@@ -227,17 +227,31 @@ equivalent resultant. Vertical components are accumulated directly, forming a un
 *Figure 8 – Shared-anchor interaction.*
 
 In parallel, torsional demand arises from the misalignment between load directions and padeye geometry. Horizontal forces acting at an eccentricity generate 
-rotational effects, with each line contributing to the overall moment. The total torsion reflects the cumulative influence of all connected lines within 
+rotational effects, with each line contributing to the overall torsional demand. The total torsion reflects the cumulative influence of all connected lines within 
 the shared-anchor system.
 
 ### Engineering Interpretation
 
 This step converts:
 
-> Multiple line forces → Single design load state (force + moment)
+> Multiple line forces → Unified anchor-level load state (V, H, M, T)
 
 This is the **critical interface between physics and design**, where distributed mooring interactions are reduced to a **single 3D load state with associated torsion**, 
 governing anchor capacity verification. 
+
+## Capacity Methodology Basis
+
+The suction pile capacity workflow used in this study is based on the Kay / Kay & Palix VHM resistance-envelope formulation for caissons in undrained soils.
+
+The methodology represents the anchor response through a combined VHM interaction surface, where:
+
+- V = vertical load  
+- H = horizontal load  
+- M = overturning moment about a horizontal axis  
+
+The formulation is derived from finite-element-based resistance envelopes for suction caissons under combined loading and is used here as a preliminary engineering assessment method.
+
+This study does not use a direct industry-standard code formulation for suction pile capacity. Instead, it adopts the Kay VHM framework as a physically consistent capacity-screening methodology suitable for early-stage floating offshore wind assessment.
 
 
 ## Suction Pile Uncoupled Capacity
@@ -279,24 +293,57 @@ The anchor response is inherently **multi-axial**, where vertical and horizontal
 ## Load–Capacity Interaction Model
 
 <div align="center">
+  <img src="/img/posts/morie_anchor/anchor_ellipsoild.PNG" 
+       alt="Tongue-shaped 3D VHM resistance envelope for suction caissons under combined loading" 
+       width="500">
+</div>
+*Figure 11 – Tongue-shaped 3D VHM resistance envelope following the Kay / Kay & Palix caisson formulation.*
+
+The tongue-shaped geometry of the VHM resistance envelope reflects the nonlinear interaction between vertical load, horizontal load and overturning moment in suction caissons under combined loading.
+
+As one load component increases, the admissible capacity available for the remaining components progressively decreases, producing a coupled resistance domain rather than independent capacity limits.
+
+This interaction behavior is a defining characteristic of caisson response under multi-axial loading and forms the basis of the Kay / Kay & Palix preliminary assessment methodology adopted in this study.
+
+<div align="center">
   <img src="/img/posts/morie_anchor/capacity_ellipsoid.png" 
        alt="VHM interaction surface representing combined vertical, horizontal, and moment capacity of suction pile anchor" 
        width="600">
 </div>
-*Figure 11 – VHM interaction surface.*
+*Figure 12 – VHM interaction surface.*
+
+The interaction surface shown above represents a VHM envelope:
+
+- V → vertical load  
+- H → horizontal load  
+- M → overturning moment about a horizontal axis  
+
+This surface does not include torsion about the vertical pile axis.
+
+In the present workflow, torsional demand generated by shared-anchor eccentricity is evaluated separately from the Kay VHM resistance formulation.
 
 <div align="center">
   <img src="/img/posts/morie_anchor/capacity_envelope.png" 
        alt="VH capacity envelope showing allowable combinations of vertical and horizontal loads for suction pile design" 
        width="600">
 </div>
-*Figure 12 – VH capacity envelope.*
+*Figure 13 – VH capacity envelope.*
 
 ### Engineering Interpretation
 
-The interaction model defines the **admissible combinations of vertical, horizontal and moment loads** that the anchor can sustain.
+The interaction model defines the admissible combinations of:
 
-A load condition is considered feasible only if it lies **within the interaction envelope**, ensuring that all resistance mechanisms remain within their admissible limits.
+- Vertical load (V)
+- Horizontal load (H)
+- Overturning moment (M)
+
+that the suction caisson can sustain simultaneously.
+
+The resulting resistance domain forms a tongue-shaped VHM envelope derived from the Kay / Kay & Palix formulation for caissons in undrained soils.
+
+A load condition is considered feasible only if it lies within the interaction surface, ensuring that the governing resistance mechanisms remain within admissible limits.
+
+Torsional demand generated by padeye eccentricity is evaluated separately from the VHM interaction surface.
 
 
 ## Outputs Generated
@@ -305,7 +352,7 @@ A load condition is considered feasible only if it lies **within the interaction
 - Padeye loads
 - Shared-anchor load evaluation 
 - Resultant anchor loads (Ha, Va, Ta) at padeye elevation 
-- Anchor sizing and verification    
+- Preliminary anchor sizing and assessment    
 - Capacity envelopes  
 - Utilization factors  
 
@@ -315,9 +362,9 @@ A load condition is considered feasible only if it lies **within the interaction
 The outputs support:
 
 - Shared-anchor verification  
-- Anchor sizing for extreme loading conditions 
+- Preliminary anchor sizing under representative extreme loading conditions
 - Geotechnical design decisions  
-- Floating wind optimization  
+- Preliminary anchor optimization workflows  
 
 This enables:
 
@@ -339,23 +386,23 @@ This study is the **geotechnical verification layer** of the Morie Analytics wor
 
 The anchor branch of the system workflow.
 
-It provides the **geotechnical transition from anchor demand to capacity-verified design**.  
+It provides the **geotechnical transition from anchor demand to capacity-assessed design**.  
 
 
 ## Why It Matters Commercially
 
 Shared-anchor strategies only create value if they remain geotechnically feasible.
 
-- Validates shared-anchor concepts  
+- Assesses the geotechnical feasibility of shared-anchor concepts  
 - Reduces unnecessary overdesign  
 - Links system loads to foundation cost  
 - Ensures geotechnical feasibility  
 
 This is where:
 
-- Layout efficiency is validated  
+- Shared-anchor layout assumptions are geotechnically assessed 
 - Anchor cost is determined  
-- System design becomes physically viable   
+- System design becomes geotechnically assessable   
 
 
 ## Aspects to Improve
@@ -363,9 +410,20 @@ This is where:
 - Soil–mooring static vs dynamic decoupling loads  
 - Probabilistic assessment of design loads  
 - Optimization anchor design loops 
-- Installation aspects of suction piles
 - Cyclic loading capacity
-- Seismic analysis 
+- Seismic analysis
+
+Anchor capacity alone does not guarantee suction installation feasibility.
+
+Additional installation checks may be required for:
+
+- Hydraulic gradient limitations
+- Piping risk
+- Cavitation
+- Soil plug behavior
+- Achievable penetration depth
+
+These aspects remain outside the present capacity-screening workflow. 
 
 
 ## Design Philosophy
