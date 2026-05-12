@@ -112,11 +112,11 @@ description: "Offshore wind and marine engineering consultancy — portfolio, ca
     </div>
 
 	<div class="row">
-	  {% assign desired_order = '2026-03-29-morie_site.md|2026-03-28-morie_layout.md|2026-03-27-morie_soil.md|2026-03-26-morie_mooring.md|2026-03-25-morie_anchor.md|2026-03-24-morie_cable.md|2026-03-23-morie_anchorAI.md' | split: '|' %}
+	  {% assign desired_order = 'morie_site|morie_layout|morie_soil|morie_mooring|morie_anchor|morie_cable|morie_anchorAI' | split: '|' %}
 
-	  {% for target_file in desired_order %}
+	  {% for target_slug in desired_order %}
 		{% for post in site.posts %}
-		  {% if post.path contains target_file %}
+		  {% if post.slug == target_slug %}
 			{% include post-card.html %}
 		  {% endif %}
 		{% endfor %}
