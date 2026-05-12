@@ -95,7 +95,7 @@ description: "Offshore wind and marine engineering consultancy — portfolio, ca
       <h2 class="plat-section__title">Celtic Sea floating wind — end-to-end workflow</h2>
 
       <p class="portfolio-page__lead">
-        A system-level engineering portfolio for floating offshore wind, integrating site intelligence, layout optimization,
+        A system-level engineering portfolio for floating offshore wind, integrating site intelligence, layout spatial screening,
         soil reconstruction, mooring physics, anchor design and cable performance into a unified workflow.
       </p>
 
@@ -107,21 +107,21 @@ description: "Offshore wind and marine engineering consultancy — portfolio, ca
       </p>
 
       <p class="portfolio-page__workflow">
-        <strong>Site Intelligence ↔ Layout Optimization ↔ Soil Reconstruction ↔ Mooring Physics ↔ Anchor Design ↔ Cable Performance</strong>
+        <strong>Site Intelligence ↔ Layout Generation ↔ Soil Reconstruction ↔ Mooring Physics ↔ Anchor Design ↔ Cable Performance</strong>
       </p>
     </div>
 
-    <div class="row">
-      {% assign desired_order = 'morie_site|morie_layout|morie_soil|morie_mooring|morie_anchor|morie_cable|morie_anchorAI' | split: '|' %}
+	<div class="row">
+	  {% assign desired_order = '/2026/03/29/morie_site.html|/2026/03/28/morie_layout.html|/2026/03/27/morie_soil.html|/2026/03/26/morie_mooring.html|/2026/03/25/morie_anchor.html|/2026/03/24/morie_cable.html|/2026/03/23/morie_anchorAI.html' | split: '|' %}
 
-      {% for target_slug in desired_order %}
-        {% for post in site.posts %}
-          {% if post.slug == target_slug %}
-            {% include post-card.html %}
-          {% endif %}
-        {% endfor %}
-      {% endfor %}
-    </div>
+	  {% for target_url in desired_order %}
+		{% for post in site.posts %}
+		  {% if post.url == target_url %}
+			{% include post-card.html %}
+		  {% endif %}
+		{% endfor %}
+	  {% endfor %}
+	</div>
 
   </div>
 </section>

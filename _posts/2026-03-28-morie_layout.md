@@ -15,9 +15,7 @@ Using bathymetry and seabed classification from `morie_site`, the workflow ident
 
 The result is a **deterministic and reproducible layout generation framework** that replaces heuristic placement with **engineering-driven system configuration**. In conventional workflows, layout is often treated as a geometric or wind-driven problem.
 
-In floating wind, it is a **system design problem**.
-
-The reference case corresponds to a **120 MW floating wind cluster**, bridging layout generation with real project-scale design.
+In floating wind, it is a **system design problem**. The reference case corresponds to a **120 MW floating wind cluster**, bridging layout generation with real project-scale design.
 
 > Site intelligence → **Layout generation** → Soil reconstruction → Mooring physics → Anchor verification → Cable optimization
 
