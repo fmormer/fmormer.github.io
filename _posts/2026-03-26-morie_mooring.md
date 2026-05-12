@@ -9,9 +9,9 @@ tags: [Offshore Floating Wind, Mooring Systems, RAFT, MoorPy, Shared Anchors, Py
 
 ## Executive Summary
 
-This study establishes the **mooring physics layer** of Morie Analytics by transforming floating wind layouts into **physically consistent mooring systems and design-ready load outputs**.
+This study establishes the **mooring physics layer** of Morie Analytics by transforming floating wind layouts into **physically consistent mooring systems and preliminary design load outputs**.
 
-Using previous data and simulation tools, the workflow generates mooring systems and extracts **mudline-level loads** for engineering assessment that will be transfered into **padeye-level loads** in the following study case (`morie_anchor`).
+Using previous data and simulation tools, the workflow generates mooring systems and extracts **mudline-level loads** for engineering assessment that will be transferred into **padeye-level loads** in the following study case (`morie_anchor`).
 
 The result is a **reproducible computational pipeline** that connects geometry, quasi-static equilibrium physics and frequency-domain dynamic response.
 
@@ -28,6 +28,31 @@ This module represents the first stage where **physical system behavior governs 
 - Dynamic response analysis  
 
 This study converts **layout geometry into design-driving loads**.
+
+## Design Basis & Scope
+
+This study is presented as a preliminary engineering workflow intended for concept-level and early-stage floating offshore wind assessment.
+
+The objective is to generate physically consistent mooring configurations and representative load pathways suitable for downstream anchor and system evaluation.
+
+The current implementation focuses on:
+
+- Characteristic environmental loading conditions  
+- Preliminary Ultimate Limit State (ULS)-type assessment  
+- Frequency-domain dynamic response  
+- Shared-anchor load interaction  
+
+The workflow does not currently represent a fully code-qualified mooring design process.
+
+The following aspects remain outside the present scope:
+
+- Partial safety factor application  
+- Detailed fatigue verification  
+- Fully coupled nonlinear time-domain dynamics  
+- Second-order low-frequency response effects  
+- Installation and operational load cases  
+
+These aspects would require integration with higher-fidelity design workflows and project-specific certification criteria.
 
 
 ## Engineering Context
@@ -63,7 +88,7 @@ This study builds directly on upstream Morie Analytics outputs:
 
 - Farm model configuration  
 - Mooring line properties  
-- Environmental design load cases for typical extreme conditions in Celtic Sea  
+- Environmental design load cases for representative extreme conditions in the Celtic Sea  
 
 All inputs are integrated into a **simulation-ready framework**.
 
@@ -85,7 +110,7 @@ The architecture ensures **traceability from geometry to load outputs**.
 6. Evaluate environmental response  
 7. Identify governing load case  
 8. Reconstruct time-domain response  
-9. Extract padeye loads  
+9. Extract mudline loads  
 10. Aggregate anchor demand  
 
 This converts **system geometry into design-driving loads**.
@@ -100,7 +125,11 @@ Mooring systems are generated from floater layouts using deterministic geometric
 - 3 mooring lines per floater  
 - 120° angular spacing  
 - Fixed anchor radius  
-- Global coordinate consistency  
+- Global coordinate consistency 
+
+The reference heading of each mooring system is assigned deterministically relative to the global layout orientation in order to preserve consistent shared-anchor topology generation across the farm.
+
+Sensitivity to alternative heading assignments is recognized as an important downstream engineering consideration. 
 
 <div align="center">
   <img src="/img/posts/morie_mooring/2dfarm_layout.png" 
@@ -183,7 +212,9 @@ Pretension governs:
 
 ## Environmental & Dynamic Response
 
-Dynamic response is evaluated using **RAFT** across most severe wave headings for mooring line loads.
+**RAFT** is used here as a frequency-domain preliminary response tool suitable for early-stage system assessment.
+
+The present workflow primarily captures first-order hydrodynamic response and does not fully represent nonlinear low-frequency slow-drift effects or fully coupled time-domain dynamics, which may become significant in detailed mooring verification studies.
 
 <div align="center">
   <img src="/img/posts/morie_mooring/raft_heading_cases.png" 
@@ -220,7 +251,7 @@ This defines the **design-driving scenario** for anchor verification.
 
 ## Time-Domain Reconstruction
 
-Time series are reconstructed from Power Spectral Density (PSD) outputs to evaluate **extreme** and **fatigue behavior**.
+Time series are reconstructed from Power Spectral Density (PSD) outputs to evaluate **extreme response characteristics** and **preliminary fatigue-related load variability**.
 
 <div align="center">
   <img src="/img/posts/morie_mooring/mooring_loads.png" 
@@ -234,7 +265,7 @@ Time series are reconstructed from Power Spectral Density (PSD) outputs to evalu
 This enables:
 
 - Extreme load identification  
-- Fatigue cycle assessment  
+- Preliminary fatigue response characterization 
 - Validation of dynamic response  
 
 
@@ -247,7 +278,7 @@ This enables:
 - Line tensions and profiles  
 - Mudline loads (Hm, Vm, θm) 
 
-Loads are extracted at the **mudline elevation point** that is assummed as a fixed point in the seabed.
+Loads are extracted at the **mudline elevation point** that is assumed as a fixed point in the seabed.
 
 ### Dynamic Outputs
 
@@ -267,16 +298,16 @@ Loads are extracted at the **mudline elevation point** that is assummed as a fix
 - Mooring system optimization  
 - Environmental sensitivity studies
 - Offset sensitivity analysis for dynamic cable coupling  
-- Fatigue and extreme load assessment  
+- Preliminary fatigue-related response assessment  
 
 This enables:
 
-**Mooring Behavior → Anchor Demand → Design Verification**
+**Mooring Behavior → Anchor Demand → Engineering Assessment**
 
 
 ## Relationship to Other Morie Study Cases
 
-This study is the **physics engine** of the Morie Analytics workflow.
+This study is the **mechanical response layer** of the Morie Analytics workflow.
 
 ### Receives from
 
@@ -304,7 +335,7 @@ This workflow enables:
 This is the stage where:
 
 - Layout decisions become load consequences  
-- Shared-anchor strategies are validated or rejected  
+- Shared-anchor strategies can be comparatively assessed  
 - System configuration directly impacts cost  
 
 

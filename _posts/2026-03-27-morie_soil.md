@@ -39,7 +39,7 @@ Following layout definition, the next geotechnical question is:
 
 > **What soil profile is acting at each anchor location?**
 
-Anchor design depend critically on:
+Anchor design depends critically on:
 
 - Soil stratigraphy
 - Layer boundaries
@@ -268,7 +268,7 @@ The reconstructed profile is then converted into discrete engineering layers thr
 </div>
 _Figure 9 – Boundary detection accuracy at the single-point validation location._
 
-At the validation point, boundary detection errors are on the order of decimetres. Across all anchors, mean absolute errors are approximately 0.2 m for both Z1 and Z2, with maximum deviations remaining below ~1 m.
+Within the synthetic validation domain, boundary detection errors at the validation point are on the order of decimetres. Across all anchors, mean absolute errors are approximately 0.2 m for both Z1 and Z2, with maximum deviations remaining below ~1 m. These metrics quantify reconstruction performance against the controlled truth model, not uncertainty against real geological variability.
 
 ### Engineering Significance
 
@@ -327,8 +327,9 @@ The outputs support:
 - Integration with anchor capacity workflows
 - Validation of geotechnical assumptions under sparse data conditions
 
-This transforms sparse subsurface information into **engineering decision inputs**. The study also demonstrates that sparse geotechnical data, when structured through a tomographic reconstruction workflow, can provide sufficiently accurate soil profiles to support early-stage anchor design decisions.
+This transforms sparse subsurface information into **structured engineering inputs** for early-stage assessment.
 
+Within the controlled synthetic domain used in this study, the results demonstrate that tomographic reconstruction can recover layer boundaries with sufficient accuracy to support proof-of-concept anchor-level screening. Application to real offshore datasets requires calibration against CPT, borehole or geophysical investigation data.
 
 ## Relationship to Other Morie Study Cases
 
@@ -356,7 +357,7 @@ It provides the **geotechnical transition from layout geometry to anchor design*
 - Bridges the gap between GIS-scale data and anchor-scale design
 - Enables anchor design decisions before full site investigation campaigns are available
 
-This is where **subsurface uncertainty becomes quantifiable and manageable**.
+This is where **subsurface uncertainty begins to be structured, tested and reduced**.
 
 
 ## Aspects to Improve
