@@ -131,7 +131,7 @@ Coincident anchor locations are merged to define **shared-anchor nodes**, creati
 
 The shared-anchor network can then be placed back into its full seabed context, integrating bathymetry, soil conditions and spatial load-transfer geometry.
 
-This transforms the system from a purely topological representation into a site-dependent mechanical model.
+This transforms the system from a purely topological representation into a **site-dependent mechanical model**.
 
 <div align="center">
   <img src="/img/posts/morie_mooring/3D_cropped_8turbines.png" 

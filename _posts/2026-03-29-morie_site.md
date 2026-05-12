@@ -17,7 +17,11 @@ The result is a **reproducible Python-based pipeline** that replaces fragmented 
 
 This module represents the entry point of the workflow, where raw geospatial data is converted into structured engineering inputs.
 
+This article is the first study case within the Morie Analytics portfolio, a sequential engineering workflow for floating offshore wind development:
+
 > **Site intelligence** → Layout generation → Soil reconstruction → Mooring physics → Anchor verification → Cable optimization
+
+Each module transforms upstream engineering information into progressively more detailed design constraints for downstream analysis.
 
 
 ## Project Scope
@@ -53,6 +57,8 @@ This study integrates publicly available marine geospatial datasets:
 - Celtic Sea lease area boundaries  
 - **GEBCO 2025** global bathymetry grid  
 - **EMODnet Folk 7** seabed classification  
+
+The EMODnet classification is used here as a regional sediment screening dataset and not as a substitute for site-specific geotechnical investigation.
 
 All datasets are:
 
@@ -130,7 +136,7 @@ Bathymetry directly informs:
 From an engineering perspective, the observed depth range implies:
 
 - **Floating wind is prefered** (fixed-bottom solutions are not economically viable at this depth scale)
-- Mooring systems will operate in a **deep-water regime** (even if its in the shallowest range), where line length and compliance dominate behavior
+- Mooring systems will operate in an **intermediate-depth floating wind regime**, where line compliance and footprint expansion remain dominant design considerations.
 - Anchor locations must be designed considering **relevant horizontal offsets and footprint expansion**
 
 The relatively mild seabed slopes enable:
@@ -147,6 +153,37 @@ However, depth variability across the site still requires:
 
 This bathymetric characterization defines the **geometric boundary conditions** for all downstream engineering modules.
 
+## Seafloor Slope Characterization
+
+<div align="center">
+  <img src="/img/posts/morie_site/2dfamr_slope_2.png"
+       alt="Seafloor slope map derived from GEBCO bathymetry showing slope distribution across the Celtic Sea lease area"
+       width="500">
+</div>
+_Figure 3 – Seafloor slope map derived from GEBCO bathymetry._
+
+The slope map was computed directly from the processed bathymetric grid in order to evaluate local seabed gradients across the lease area.
+
+The results indicate a relatively smooth seabed morphology, with gentle regional gradients and limited occurrence of localized steep terrain.
+
+### Engineering Significance
+
+Seafloor slope directly affects several downstream engineering processes:
+
+- Mooring line touchdown behavior
+- Anchor mudline load angle
+- Cable touchdown and routing
+- Installation accessibility and vessel operations
+
+Even in relatively smooth environments, localized slope variations can influence:
+
+- Horizontal and vertical load transfer at the seabed
+- Mooring line equilibrium geometry
+- Cable free-span risk
+- Spatial variability of installation conditions
+
+This additional spatial layer therefore complements bathymetry by introducing a first-order terrain constraint into the workflow.
+
 
 ## Seabed Characterization
 
@@ -157,7 +194,7 @@ This bathymetric characterization defines the **geometric boundary conditions** 
        alt="Initial seabed classification map showing raw sediment distribution prior to EMODnet alignment for offshore wind site analysis"
        width="500">
 </div>
-_Figure 3 – Initial soil classification used for validation of processing steps._
+_Figure 4 – Initial soil classification used for validation of processing steps._
 
 ### EMODnet Classification Alignment
 
@@ -166,7 +203,7 @@ _Figure 3 – Initial soil classification used for validation of processing step
        alt="EMODnet Folk-7 classification legend showing sediment categories used for seabed mapping in offshore wind studies"
        width="500">
 </div>
-_Figure 4 – EMODnet Folk 7 classification legend._
+_Figure 5 – EMODnet Folk 7 classification legend._
 
 The EMODnet seabed dataset provides sediment classification at multiple levels of resolution:
 
@@ -189,7 +226,7 @@ This level preserves key distinctions (e.g., sand vs mud vs coarse material) whi
        alt="Seabed classification map aligned with EMODnet Folk-7 system showing sediment distribution for anchor and cable design assessment"
        width="500">
 </div>
-_Figure 5 – Soil classification aligned with EMODnet standards._
+_Figure 6 – Soil classification aligned with EMODnet standards._
 
 The processed map shows a **predominance of sandy sediments** across the selected Celtic Sea region, with localized variations including:
 
@@ -204,11 +241,9 @@ Seabed classification supports:
 - Soil-structure interaction assumptions (strength, stiffness, friction)
 - Cable burial feasibility and protection requirements
 
-From an engineering perspective, the dominance of sand suggests:
+From an engineering perspective, the predominance of sandy sediments suggests potentially favorable conditions for suction-assisted or driven anchor concepts, subject to confirmation through site-specific geotechnical investigation.
 
-- Favorable conditions for **predictable installation behavior**
-- Strong dependence on **relative density and friction angle**
-- Suitability for **suction assisted or driven anchor concepts**, depending on vertical soil variability and regulations
+At this stage, the Folk-7 classification should be interpreted as a regional sediment screening layer rather than a direct indicator of geotechnical strength, relative density, installation feasibility or anchor capacity.
 
 At the same time, localized heterogeneity highlights the need for:
 
@@ -223,7 +258,7 @@ At the same time, localized heterogeneity highlights the need for:
        alt="Regional seabed map of the Celtic Sea showing large-scale sediment distribution across offshore wind development areas"
        width="500">
 </div>
-_Figure 6 – Regional seabed conditions across the Celtic Sea._
+_Figure 7 – Regional seabed conditions across the Celtic Sea._
 
 
 ## Local-to-Regional Validation
@@ -233,7 +268,7 @@ _Figure 6 – Regional seabed conditions across the Celtic Sea._
        alt="Comparison of lease-scale seabed classification against regional EMODnet dataset to validate spatial consistency"
        width="500">
 </div>
-_Figure 7 – Verification of lease-scale results within regional context._
+_Figure 8 – Verification of lease-scale results within regional context._
 
 ### Engineering Significance
 
@@ -300,13 +335,18 @@ This is where **data becomes engineering leverage**.
 - Integration of geotechnical CPT data
 - Inclusion of metocean conditions
 - Automated constraint mapping (exclusion zones, cables, shipping)
+- Incorporation of slope-based constraint filtering
 
 These extensions would move the workflow closer to **FEED-level site characterization**.
 
 
 ## Design Philosophy
 
-This study reflects the Morie Analytics approach:
+## Design Philosophy
+
+The objective of this study is not to replace detailed site investigation, but to establish a transparent and reproducible regional screening workflow capable of transforming public marine datasets into structured engineering constraints for early-stage floating offshore wind assessment.
+
+The study reflects the Morie Analytics approach:
 
 - Physics-informed  
 - Modular  
