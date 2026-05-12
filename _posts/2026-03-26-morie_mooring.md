@@ -29,31 +29,6 @@ This module represents the first stage where **physical system behavior governs 
 
 This study converts **layout geometry into design-driving loads**.
 
-## Design Basis & Scope
-
-This study is presented as a preliminary engineering workflow intended for concept-level and early-stage floating offshore wind assessment.
-
-The objective is to generate physically consistent mooring configurations and representative load pathways suitable for downstream anchor and system evaluation.
-
-The current implementation focuses on:
-
-- Characteristic environmental loading conditions  
-- Preliminary Ultimate Limit State (ULS)-type assessment  
-- Frequency-domain dynamic response  
-- Shared-anchor load interaction  
-
-The workflow does not currently represent a fully code-qualified mooring design process.
-
-The following aspects remain outside the present scope:
-
-- Partial safety factor application  
-- Detailed fatigue verification  
-- Fully coupled nonlinear time-domain dynamics  
-- Second-order low-frequency response effects  
-- Installation and operational load cases  
-
-These aspects would require integration with higher-fidelity design workflows and project-specific certification criteria.
-
 
 ## Engineering Context
 
@@ -114,6 +89,31 @@ The architecture ensures **traceability from geometry to load outputs**.
 10. Aggregate anchor demand  
 
 This converts **system geometry into design-driving loads**.
+
+## Design Basis & Scope
+
+The study is presented as a preliminary engineering workflow intended for concept-level and early-stage floating offshore wind assessment.
+
+The objective is to generate physically consistent mooring configurations and representative load pathways suitable for downstream anchor and system evaluation.
+
+The current implementation focuses on:
+
+- Characteristic environmental loading conditions  
+- Preliminary Ultimate Limit State (ULS)-type assessment  
+- Frequency-domain dynamic response  
+- Shared-anchor load interaction  
+
+The workflow does not currently represent a fully code-qualified mooring design process.
+
+The following aspects remain outside the present scope:
+
+- Partial safety factor application  
+- Detailed fatigue verification  
+- Fully coupled nonlinear time-domain dynamics  
+- Second-order low-frequency response effects  
+- Installation and operational load cases  
+
+These aspects would require integration with higher-fidelity design workflows and project-specific certification criteria.
 
 
 ## Mooring System Definition
