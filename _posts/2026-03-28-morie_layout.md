@@ -1,6 +1,6 @@
 ---
 layout: post
-Layout Generation & Spatial Topology Screening 
+title: Generation & Spatial Topology Screening 
 image: "/img/posts/morie_layout/morie_layout.png"
 tags: [Offshore Floating Wind, Layout Optimization, Hex Grid, Floating Wind, GIS, Python]
 ---
