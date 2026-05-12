@@ -1,17 +1,17 @@
 ---
 layout: post
-title: Layout Generation & Topology Optimization 
+Layout Generation & Spatial Topology Screening 
 image: "/img/posts/morie_layout/morie_layout.png"
 tags: [Offshore Floating Wind, Layout Optimization, Hex Grid, Floating Wind, GIS, Python]
 ---
 
-# Celtic Sea Floating Offshore Wind – Layout Generation & Topology Optimization
+# Celtic Sea Floating Offshore Wind – Layout Generation & Spatial Topology Screening
 
 ## Executive Summary
 
 This study establishes the **layout generation layer** of Morie Analytics by transforming site-level geospatial data into **engineering-ready floating wind farm configurations**.
 
-Using bathymetry and seabed classification from `morie_site`, the workflow identifies feasible regions, generates a constrained hexagonal lattice and selects optimal floater clusters using **topology-driven optimization**.
+Using bathymetry and seabed classification from `morie_site`, the workflow identifies feasible regions, generates a constrained hexagonal lattice and selects optimal floater clusters using **topology-driven screening**.
 
 The result is a **deterministic and reproducible layout generation framework** that replaces heuristic placement with **engineering-driven system configuration**. In conventional workflows, layout is often treated as a geometric or wind-driven problem.
 
@@ -27,7 +27,7 @@ The reference case corresponds to a **120 MW floating wind cluster**, bridging l
 - Site-driven layout generation based on processed geospatial data  
 - Bathymetry and soil-constrained feasibility filtering  
 - Hexagonal lattice-based floater placement  
-- Topology-driven cluster optimization  
+- Topology-driven cluster screening 
 - Model generation for downstream workflows  
 - Integration with mooring and anchor modules  
 
@@ -61,6 +61,12 @@ Traditional approaches rely on manual placement or coarse grids. These approache
 
 This workflow introduces a **lattice-driven methodology**, where layout is derived from physical feasibility, spatial structure, and system connectivity.
 
+At this stage, wake interactions and AEP optimization are intentionally treated as secondary constraints.
+
+The focus of this workflow is the generation of engineering-compatible spatial configurations suitable for downstream mooring, anchor and cable analysis.
+
+Detailed aerodynamic optimization would require coupling with dedicated wake models and site-specific wind resource assessment.
+
 
 ## Inputs and Data Sources
 
@@ -83,7 +89,7 @@ This provides the **spatial constraints required for layout generation**.
 
 ## System Flow
 
-Site Intelligence → Feasibility Filtering → Lattice Generation → Topology Optimization → System Configuration
+Site Intelligence → Feasibility Filtering → Lattice Generation → Topology Screening → System Configuration
 
 The architecture ensures **direct continuity with downstream physics-based modules**.
 
@@ -142,7 +148,7 @@ These datasets define:
 Filtering relevant site criteria:
 
 - Depth: **from 88 m to 94 m**  
-- Soil: Engineering-suitable sediments - 2.0. Sand (Multiscale - folk 7)   
+- Soil: Sediment classes preliminarily compatible with the selected anchor concept assumptions - 2.0. Sand (Multiscale - folk 7)   
 
 ### Engineering Significance
 
@@ -150,7 +156,7 @@ Defines the **valid design domain** where:
 
 - Standardization of the assets
 - Mooring configurations are coherent across the site 
-- Anchor systems are viable  
+- Anchor concepts remain preliminarily compatible with the selected site constraints 
 - Installation equipment and techniques are feasible  
 
 
@@ -163,13 +169,15 @@ Defines the **valid design domain** where:
 </div>
 *Figure 4 – Hexagonal lattice filtered by feasibility constraints.*
 
-The hexagonal structure maximizes spatial efficiency while maintaining uniform neighbor relationships, which is critical for shared-anchor topology.
+The hexagonal structure provides uniform neighbor relationships and consistent spatial spacing, which are advantageous for evaluating shared-anchor compatibility and mooring connectivity patterns.
 
 ### Parameters
 
 - Spacing: 800 m  
 - Buffer: 400 m  
-- Orientation: 30°  
+- Orientation: 30°
+
+The selected spacing is used here as a demonstrative engineering configuration and should not be interpreted as an aerodynamically optimized arrangement for commercial-scale deployment.  
 
 ### Engineering Significance
 
@@ -184,10 +192,10 @@ The hex grid ensures:
 
 <div align="center">
   <img src="/img/posts/morie_layout/2dfarm_layout.png" 
-       alt="Selected 8-turbine cluster within hexagonal grid showing optimized floating wind layout based on connectivity and feasibility metrics" 
+       alt="Selected 8-turbine cluster within hexagonal grid showing selected floating wind layout based on connectivity and feasibility metrics" 
        width="500">
 </div>
-*Figure 5 – Optimal 8-node cluster selected based on connectivity metrics.*
+*Figure 5 – Selected 8-node cluster identified through topological compactness screening.*
 
 The selected cluster represents a **120 MW floating wind configuration**, enabling system-level evaluation at a realistic project scale.
 
@@ -201,17 +209,32 @@ The selected cluster represents a **120 MW floating wind configuration**, enabli
 
 - `avg_neighbors` → compactness  
 - `min_neighbors` → weakest node  
-- `score` → overall topology quality  
+- `score` → Topological Compactness Index (TCI) 
 
 ### Engineering Insight
 
-Connectivity acts as a **first-order proxy for system efficiency**, capturing:
+The Topological Compactness Index (TCI) is introduced here as a spatial screening metric intended to identify geometric configurations potentially compatible with shared-anchor mooring arrangements.
 
-- Anchor-sharing potential  
-- Mooring interaction density  
-- Structural redundancy  
+The metric evaluates local floater connectivity and spatial compactness within the lease area prior to detailed mooring generation.
 
-This enables early-stage optimization without requiring full physics-based simulation.
+At this stage, the TCI should not be interpreted as:
+
+- A wake optimization metric  
+- An annual energy production (AEP) indicator  
+- A hydrodynamic efficiency metric  
+- A full-system economic optimization metric  
+
+Instead, it acts as a first-order indicator of geometric proximity and potential anchor-sharing compatibility.
+
+Actual shared-anchor feasibility remains dependent on downstream engineering parameters including:
+
+- Mooring heading assignment  
+- Anchor radius  
+- Mooring line orientation  
+- Dynamic system response  
+- Boundary effects within the lease area  
+
+This enables early-stage spatial screening prior to detailed physics-based analysis.
 
 
 ## Mooring & Anchor Topology Generation
@@ -267,7 +290,7 @@ This is where layout becomes an **engineered offshore system**.
 
 For selected lease area:
 
-- Optimized floater coordinates  
+- Selected floater coordinates  
 - Modified project file 
 - Suitability maps  
 - Hex grid and cluster visualizations
