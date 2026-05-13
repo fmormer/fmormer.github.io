@@ -169,8 +169,7 @@ Shared anchors form a **coupled load network**, where:
 *Figure 4 – Concomitant loads at peak event.*
 
 ### Engineering Interpretation
-
-The anchor must be checked against **simultaneous load conditions**, not independent maxima to avoid a conservatism that overdesigns the pile.
+The anchor must be checked against **simultaneous load conditions**, not independent maxima, to avoid artificially conservative load combinations that may lead to unnecessary pile overdesign.
 
 
 ## Anchor-Level Soil Profile (fowt1b)
@@ -197,9 +196,8 @@ These parameters are provided by `morie_soil`, establishing a direct coupling be
 
 Loads per mooring line are extracted at **mudline elevation** and transferred to the embedded **padeye connection point** through inverse catenary mechanics:
 
-- Horizontal Hm → Ha  
-- Vertical Vm → Va  
-- Direction θm → θa 
+- Tension (Tm → Ta)  
+- Direction (θm → θa) 
 
 <div align="center">
   <img src="/img/posts/morie_anchor/anchor_inverse_catenary.png" 
