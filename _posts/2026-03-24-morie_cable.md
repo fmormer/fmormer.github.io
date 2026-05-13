@@ -145,7 +145,7 @@ The configuration must remain within a defined geometric envelope, including:
 These limits define the **allowable vertical excursion of the cable**, ensuring:
 
 - Controlled curvature along suspended sections  
-- Acceptable clearance from the seabed and surface  
+- Acceptable clearance from the seabed and water surface  
 - Compatibility with floater motion and environmental loading  
 
 They act as **primary geometric constraints**, governing feasible cable configurations under the full system motion envelope.
@@ -301,7 +301,7 @@ This is where:
 
 - Fatigue and Vortex Induced Vibrations (VIV) analysis  
 - Probabilistic motion study   
-- Touchdown abrasion mitigation strategies
+- Touchdown cable abrasion mitigation strategies
 
 ## Design Philosophy
 

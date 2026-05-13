@@ -93,7 +93,7 @@ The architecture ensures **traceability from system loads to geotechnical verifi
 1. Load mooring results  
 2. Identify governing event  
 3. Extract concomitant loads  
-4. Transfer loads to padeye  
+4. Transfer loads from mudline to padeye  
 5. Resolve shared-anchor load state  
 6. Compute torsional demand  
 7. Evaluate suction pile capacity  
@@ -121,7 +121,6 @@ The following aspects remain outside the present scope:
 - Detailed cyclic degradation assessment  
 - Installation engineering verification  
 - Probabilistic geotechnical uncertainty  
-- Full VHMT resistance formulation  
 - Detailed finite-element soil–structure interaction analysis  
 
 These aspects would require integration with higher-fidelity geotechnical workflows and project-specific certification criteria.
@@ -171,29 +170,8 @@ Shared anchors form a **coupled load network**, where:
 
 ### Engineering Interpretation
 
-The anchor must be checked against **simultaneous load conditions**, not independent maxima.
+The anchor must be checked against **simultaneous load conditions**, not independent maxima to avoid a conservatism that overdesigns the pile.
 
-
-## Load Extraction
-
-Loads are extracted at the **mudline elevation point** and transferred to the embedded **padeye connection point** through inverse catenary mechanics:
-
-- Horizontal → Ha  
-- Vertical → Va  
-- Direction → θa  
-
-### Link with Soil Reconstruction
-
-The transformation from mudline loads to padeye loads on sandy soils depends on:
-
-- Soil friction angle (φ)  
-- Relative density (Dr)  
-- Embedded line behavior  
-
-These parameters are provided by `morie_soil`, establishing a direct coupling between:
-
-- Mooring response  
-- Soil-dependent load transfer 
 
 ## Anchor-Level Soil Profile (fowt1b)
 
@@ -201,8 +179,27 @@ The selected anchor **fowt1b** is exported with its fully reconstructed soil pro
 
 This structure represents the **final engineering output** of the soil and it was generated in the previous study case `morie_soil`.
 
+### Link with Soil Reconstruction
+
+The transformation from mudline loads to padeye loads on sandy soils depends on:
+
+- Soil friction angle (φ)  
+- Relative density (Dr)  
+- Embedded mooring line behavior  
+
+These parameters are provided by `morie_soil`, establishing a direct coupling between:
+
+- Mooring response  
+- Soil-dependent load transfer 
+
 
 ## Load Transfer to Padeye
+
+Loads per mooring line are extracted at **mudline elevation** and transferred to the embedded **padeye connection point** through inverse catenary mechanics:
+
+- Horizontal Hm → Ha  
+- Vertical Vm → Va  
+- Direction θm → θa 
 
 <div align="center">
   <img src="/img/posts/morie_anchor/anchor_inverse_catenary.png" 
@@ -220,9 +217,9 @@ This structure represents the **final engineering output** of the soil and it wa
 
 ### Engineering Interpretation
 
+- Padeye loads govern anchor design as opposed to mudline loads
 - Loads evolve along embedded chain, reducing the tension and increasing the angle with the horizontal plane  
-- Chain and soil properties influence transfer  
-- Padeye loads govern anchor design 
+- Chain and soil properties influence load transfer  
 
 
 ## Anchor Load Aggregation
@@ -259,25 +256,23 @@ the shared-anchor system.
 
 This step converts:
 
-> Multiple line forces → Unified anchor-level load state single unified anchor-level load state including V, H, M and T components
+> Multiple line forces → Unified anchor-level load state single unified anchor-level load state
 
 This is the **critical interface between physics and design**, where distributed mooring interactions are reduced to a **single 3D load state with associated torsion**, 
 governing anchor capacity verification. 
 
-## Capacity Methodology Basis
 
-The suction pile capacity workflow used in this study is based on the Kay / Kay & Palix VHM resistance-envelope formulation for caissons in undrained soils.
+## Suction Pile Coupled Capacity
 
-The methodology represents the anchor response through a combined VHM interaction surface, where:
+The interaction model defines the admissible combinations of:
 
-- V = vertical load  
-- H = horizontal load  
-- M = overturning moment about a horizontal axis  
+- Vertical load (V)
+- Horizontal load (H)
+- Overturning moment (M)
 
-The formulation is derived from finite-element-based resistance envelopes for suction caissons under combined loading. This study does not use a direct industry-standard code formulation for suction pile capacity. Instead, it adopts the Kay VHM framework as a physically consistent capacity-screening methodology suitable for early-stage floating offshore wind assessment.
+The resulting resistance domain forms a tongue-shaped VHM envelope derived from the Kay formulation for caissons in undrained soils. 
+A load condition is considered feasible only if it lies within the interaction surface, ensuring that the governing resistance mechanisms remain within admissible limits.
 
-
-## Suction Pile Uncoupled Capacity
 
 <div align="center">
   <img src="/img/posts/morie_anchor/suction_plot.png" 
@@ -320,7 +315,7 @@ The anchor response is inherently **multi-axial**, where vertical and horizontal
        alt="Tongue-shaped 3D VHM resistance envelope for suction caissons under combined loading" 
        width="500">
 </div>
-*Figure 11 – Tongue-shaped 3D VHM resistance envelope following the Kay / Kay & Palix caisson formulation.*
+*Figure 11 – Tongue-shaped 3D VHM resistance envelope following the Kay caisson formulation.*
 
 The tongue-shaped geometry of the VHM resistance envelope reflects the nonlinear interaction between vertical load, horizontal load and overturning moment in suction caissons under combined loading.
 
@@ -339,18 +334,6 @@ As one load component increases, the admissible capacity available for the remai
        width="600">
 </div>
 *Figure 13 – VH capacity envelope.*
-
-### Engineering Interpretation
-
-The interaction model defines the admissible combinations of:
-
-- Vertical load (V)
-- Horizontal load (H)
-- Overturning moment (M)
-
-that the suction caisson can sustain simultaneously.
-
-The resulting resistance domain forms a tongue-shaped VHM envelope derived from the Kay / Kay & Palix formulation for caissons in undrained soils. A load condition is considered feasible only if it lies within the interaction surface, ensuring that the governing resistance mechanisms remain within admissible limits.
 
 
 ## Outputs Generated
