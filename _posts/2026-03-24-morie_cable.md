@@ -13,9 +13,9 @@ This study establishes the **system closure layer** of Morie Analytics by transf
 
 Building on upstream modules, the workflow integrates bathymetry, mooring offsets and hydrodynamic response to design **constraint-compliant dynamic cables**.
 
-The result is a **constraint-driven optimization framework** producing deployable cable designs.
+The result is a **constraint-driven optimization framework** producing mechanically feasible cable configurations.
 
-This module represents the final stage where **system behavior is translated into infrastructure design**.
+This module represents the final stage where **system behavior is translated into preliminary cable configuration assessment**.
 
 > Site intelligence → Layout generation → Soil reconstruction → Mooring physics → Anchor verification → **Cable optimization**
 
@@ -28,7 +28,7 @@ This module represents the final stage where **system behavior is translated int
 - Constraint-based optimization  
 - Geometry and performance evaluation  
 
-This study converts **system behavior into optimized cable design**.
+This study converts **system behavior into optimized cable configuration**.
 
 
 ## Engineering Context
@@ -47,7 +47,9 @@ Cable design is a **constraint-dominated problem**, balancing:
 - Tension  
 - Seabed contact  
 
-This workflow ensures cable design reflects **true system response**, not assumptions.
+This workflow ensures cable design reflects **representative system response**, not assumptions.
+
+At this stage, coupling between floater motion and cable response is represented through transferred motion envelopes and boundary conditions rather than through fully coupled nonlinear time-domain simulation.
 
 
 ## Inputs and Data Sources
@@ -95,7 +97,27 @@ The architecture ensures **consistent coupling between system behavior and cable
 8. Run optimization  
 9. Evaluate final configuration  
 
-This converts **system response into optimized cable design**.
+This converts **system response into optimized cable configuration**.
+
+## Design Basis
+
+This workflow is intended as a preliminary dynamic cable assessment framework suitable for early-stage floating offshore wind studies.
+
+The current implementation focuses on:
+
+- Motion-envelope-driven cable configuration  
+- Geometric and mechanical constraint evaluation  
+- Preliminary configuration optimization  
+- System-level coupling with floater response  
+
+The workflow does not currently include:
+
+- Full-array routing optimization  
+- Electrical power-flow optimization  
+- Detailed fatigue verification  
+- Vortex-Induced Vibration (VIV) assessment  
+- Fully coupled nonlinear cable dynamics  
+- Installation engineering analysis
 
 
 ## Cable System Definition
@@ -184,11 +206,11 @@ The problem is inherently **geometry-driven under dynamic constraints**, where f
 
 The optimization seeks a configuration that:
 
-- Minimizes system cost  
+- Minimizes a simplified configuration cost function based on cable length, buoyancy distribution and geometric efficiency  
 - Satisfies all mechanical and geometric constraints  
 - Remains robust under the full motion envelope  
 
-This results in a **feasible and deployable cable configuration**, rather than an idealized solution. 
+This results in a **feasible and constraint-compliant cable configuration**, rather than an idealized solution. 
 
 
 ## Optimization Convergence
@@ -256,7 +278,7 @@ This study is the **system closure layer** of the Morie Analytics workflow.
 
 The cable branch of the system workflow.
 
-It provides the **final transition from system behavior to deployable infrastructure design**.
+It provides the **final transition from system behavior to mechanically feasible cable configuration design**.
 
 
 ## Why It Matters Commercially
@@ -270,9 +292,9 @@ Dynamic cables are among the most critical and costly components of floating win
 
 This is where:
 
-- System behavior meets infrastructure design  
+- System behavior meets mechanically feasible cable configuration design  
 - Constraints define feasibility  
-- Final design decisions are made  
+- Preliminary cable design decisions are assessed  
 
 
 ## Aspects to Improve

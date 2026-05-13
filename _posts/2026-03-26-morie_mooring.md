@@ -90,7 +90,7 @@ The architecture ensures **traceability from geometry to load outputs**.
 
 This converts **system geometry into design-driving loads**.
 
-## Design Basis & Scope
+## Design Basis
 
 The study is presented as a preliminary engineering workflow intended for concept-level and early-stage floating offshore wind assessment.
 

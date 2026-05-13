@@ -101,6 +101,31 @@ The architecture ensures **traceability from system loads to geotechnical verifi
 
 This converts **mooring loads into capacity-assessed anchor design**.
 
+## Design Basis
+
+This workflow is intended as a preliminary geotechnical assessment framework suitable for early-stage floating offshore wind studies.
+
+The current implementation focuses on:
+
+- Shared-anchor load aggregation  
+- Mudline-to-padeye load transfer  
+- Preliminary suction pile capacity assessment  
+- VHM interaction evaluation  
+- Soil-dependent anchor response  
+
+The workflow does not currently represent a fully code-qualified anchor design methodology.
+
+The following aspects remain outside the present scope:
+
+- Partial safety factor application  
+- Detailed cyclic degradation assessment  
+- Installation engineering verification  
+- Probabilistic geotechnical uncertainty  
+- Full VHMT resistance formulation  
+- Detailed finite-element soil–structure interaction analysis  
+
+These aspects would require integration with higher-fidelity geotechnical workflows and project-specific certification criteria.
+
 
 ## Anchor System Topology
 
@@ -234,7 +259,7 @@ the shared-anchor system.
 
 This step converts:
 
-> Multiple line forces → Unified anchor-level load state (V, H, M, T)
+> Multiple line forces → Unified anchor-level load state single unified anchor-level load state including V, H, M and T components
 
 This is the **critical interface between physics and design**, where distributed mooring interactions are reduced to a **single 3D load state with associated torsion**, 
 governing anchor capacity verification. 
@@ -249,9 +274,7 @@ The methodology represents the anchor response through a combined VHM interactio
 - H = horizontal load  
 - M = overturning moment about a horizontal axis  
 
-The formulation is derived from finite-element-based resistance envelopes for suction caissons under combined loading and is used here as a preliminary engineering assessment method.
-
-This study does not use a direct industry-standard code formulation for suction pile capacity. Instead, it adopts the Kay VHM framework as a physically consistent capacity-screening methodology suitable for early-stage floating offshore wind assessment.
+The formulation is derived from finite-element-based resistance envelopes for suction caissons under combined loading. This study does not use a direct industry-standard code formulation for suction pile capacity. Instead, it adopts the Kay VHM framework as a physically consistent capacity-screening methodology suitable for early-stage floating offshore wind assessment.
 
 
 ## Suction Pile Uncoupled Capacity
@@ -301,7 +324,7 @@ The anchor response is inherently **multi-axial**, where vertical and horizontal
 
 The tongue-shaped geometry of the VHM resistance envelope reflects the nonlinear interaction between vertical load, horizontal load and overturning moment in suction caissons under combined loading.
 
-As one load component increases, the admissible capacity available for the remaining components progressively decreases, producing a coupled resistance domain rather than independent capacity limits.This interaction behavior is a defining characteristic of caisson response under multi-axial loading and forms the basis of the Kay / Kay & Palix preliminary assessment methodology adopted in this study.
+As one load component increases, the admissible capacity available for the remaining components progressively decreases, producing a coupled resistance domain rather than independent capacity limits. This interaction behavior is a defining characteristic of caisson response under multi-axial loading and forms the basis of the Kay / Kay & Palix preliminary assessment methodology adopted in this study.
 
 <div align="center">
   <img src="/img/posts/morie_anchor/capacity_ellipsoid.png" 
