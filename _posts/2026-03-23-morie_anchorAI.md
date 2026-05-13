@@ -11,13 +11,13 @@ tags: [Offshore Floating Wind, Anchors, Machine Learning, Suction Piles, Surroga
 
 This study establishes the **predictive anchor design layer** of Morie Analytics by transforming physics-based anchor verification into a **lease-scale machine learning capability**.
 
-Building on `morie_anchor`, the workflow replaces the iterative suction pile sizing loop with a **physics-informed surrogate model**, trained on synthetic data generated from validated capacity formulations.
+Building on the coupled outputs of `morie_soil`, `morie_mooring` and `morie_anchor`, the workflow replaces the iterative suction pile sizing loop with a **physics-informed surrogate model** trained on synthetic engineering data generated from the integrated offshore design chain.
 
-The surrogate is structured to mirror the underlying physics, separating load transfer and capacity mechanisms into two learnable stages.
+The surrogate architecture mirrors the underlying engineering workflow, preserving the causal separation between soil reconstruction, mooring-load transfer and anchor-capacity response through a two-stage predictive cascade.
 
 The result is a **reproducible and scalable framework** that predicts anchor loads and dimensions in milliseconds, enabling full-domain evaluation and system-level decision support.
 
-This module represents the transition from **point-based engineering verification to continuous predictive capability**.
+This module represents the transition from point-based offshore engineering verification to lease-scale predictive capability across the integrated floating wind workflow.
 
 > Site intelligence → Layout generation → Soil reconstruction → Mooring physics → Anchor verification → **AnchorAI prediction** → Atlas visualization
 
@@ -28,7 +28,7 @@ This module represents the transition from **point-based engineering verificatio
 - Load transfer and capacity solving across spatial samples  
 - Feature engineering from soil and load fields  
 - Training of a two-stage machine learning surrogate  
-- Validation under spatial generalization conditions  
+- Validation within the cropped local engineering domain  
 - Lease-scale prediction and mapping  
 
 This study converts **iterative anchor design into a scalable predictive framework**.
@@ -106,10 +106,33 @@ The architecture ensures **traceability from physics-based design to machine lea
 
 This converts **physics-based simulations into predictive capability**.
 
+## Design Basis
+
+This workflow is intended as a site-conditioned surrogate framework suitable for preliminary lease-scale anchor assessment.
+
+The current implementation is trained exclusively on:
+
+- A cropped Celtic Sea sand domain  
+- Narrow water-depth variation (~88–94 m)  
+- Fixed suction-pile configuration assumptions  
+- Limited environmental loading scenarios  
+
+The surrogate is therefore intended for interpolation within the trained design space rather than for extrapolation to arbitrary offshore environments.
+
+The workflow does not currently include:
+
+- Multi-soil environments (clay / rock)  
+- Installation effects  
+- Cyclic degradation  
+- Dynamic foundation response  
+- Probabilistic uncertainty quantification  
+- Multi-anchor interaction effects
 
 ## Surrogate Model Architecture
 
 The surrogate model follows a **two-stage cascade**, mirroring the engineering process.
+
+The present implementation uses a two-stage Random Forest surrogate, although the layered architecture shown conceptually is compatible with future deep-learning implementations.
 
 ### Stage A — Surrogate of Load Transfer Physics
 
@@ -121,9 +144,7 @@ Inputs:
 
 Outputs:
 
-- Padeye loads (`Ha, Va, Ta, thetaa`)
-
----
+- Padeye loads (`Ha, Va, Ta, theta_a`)
 
 ### Stage B — Surrogate of Anchor Capacity Design
 
@@ -139,8 +160,6 @@ Outputs:
 - Length (L)  
 - Mass  
 
----
-
 ### Engineering Significance
 
 This structure preserves:
@@ -150,6 +169,12 @@ This structure preserves:
 - Interpretability of results  
 
 Rather than treating anchor design as a black-box regression problem.
+
+This decomposition also improves interpretability and error traceability.
+
+Stage A captures the transformation of mudline loads into embedded padeye demand, while Stage B learns the resulting capacity-constrained anchor sizing behavior.
+
+The separation allows prediction errors to be associated with specific physical mechanisms rather than being absorbed into a single black-box model.
 
 
 ## Interpretation of Stage A and Stage B
@@ -209,13 +234,13 @@ This ensures:
 
 ## Model Performance
 
-The trained model demonstrates strong predictive capability under spatial generalization.
+The trained model demonstrates strong predictive capability within the cropped local engineering domain established in `morie_soil`.
 
 ### Key Results
 
-- Accurate prediction of **D and L** across unseen regions  
+- Accurate prediction of **D and L** within the cropped local engineering domain 
 - Robust load transformation in Stage A  
-- Reduced performance for mass extrapolation outside training domain  
+- No physically reliable prediction capability outside the trained design domain 
 
 ### Engineering Interpretation
 
@@ -223,12 +248,16 @@ The trained model demonstrates strong predictive capability under spatial genera
 - Soil-driven variability dominates results  
 - Extrapolation limits reflect physical domain boundaries  
 
+Multiple (D, L) combinations can produce mechanically equivalent solutions along the UC ≈ 1 manifold while preserving similar overall anchor mass.
+
+This explains why global mass predictions remain more robust than individual geometric variables such as diameter.
+
 This confirms that the model captures **underlying engineering behavior**, not only statistical correlations.
 
 
 ## Lease-Scale Prediction
 
-The surrogate enables evaluation across the full lease area.
+The surrogate enables rapid evaluation across the conditioned lease-scale domain.
 
 <div align="center">
   <img src="/img/posts/morie_anchorAI/heatmap_mass.png"
@@ -250,9 +279,19 @@ This level of variation has direct implications for:
 
 It highlights that even within a seemingly uniform sand domain, **subsurface variability alone can drive significant differences in anchor sizing**.  
 
-### Key Insight
+### Spatial Drivers of Anchor Mass
 
-> Soil layer geometry (Z1, Z2) drives ~95% of anchor mass variability
+Within the constrained Celtic Sea cropped-domain configuration used in this study, spatial variability in suction-pile mass is dominated by the reconstructed subsurface geometry, particularly the Z1 and Z2 layer boundaries.
+
+In the current sand-only domain:
+
+- Soil layer geometry accounts for ~95% of the spatial variability in predicted pile mass  
+- Mudline load variation contributes secondarily  
+- Raw spatial coordinates become largely irrelevant once the upstream soil and load fields are resolved  
+
+This behavior is specific to the present site-conditioned surrogate and should not be interpreted as a universal result for offshore anchor design.
+
+The result instead highlights that, within the studied domain, variations in bearing stratigraphy exert a stronger influence on anchor sizing than the relatively limited variation in load magnitude.
 
 ### Engineering Implication
 
@@ -359,8 +398,8 @@ These extensions would move the workflow toward **fully predictive offshore desi
 
 This study reflects the Morie Analytics approach:
 
-- Physics-informed  
-- Modular  
-- Traceable  
-- Engineering-focused  
-- Scalable  
+- **Physics-informed**: labels originate from the validated `morie_anchor` capacity formulations.
+- **Mechanism-preserving**: the two-stage cascade mirrors the underlying engineering workflow.
+- **Reproducible**: all datasets and models are generated from deterministic configuration-driven pipelines.
+- **Scalable**: millisecond-level prediction enables lease-scale evaluation and interactive engineering workflows.
+- **Site-conditioned**: the surrogate is explicitly tied to reconstructed soil and load fields from the Celtic Sea domain.

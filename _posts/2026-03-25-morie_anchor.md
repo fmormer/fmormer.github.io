@@ -194,7 +194,7 @@ These parameters are provided by `morie_soil`, establishing a direct coupling be
 
 ## Load Transfer to Padeye
 
-Loads per mooring line are extracted at **mudline elevation** and transferred to the embedded **padeye connection point** through inverse catenary mechanics:
+Loads from all connected lines are extracted at **mudline elevation** and transferred to the embedded **padeye connection point** through inverse catenary mechanics:
 
 - Tension (Tm → Ta)  
 - Direction (θm → θa) 
