@@ -41,7 +41,7 @@ Shared anchors reduce cost but introduce:
 
 The key principle is:
 
-**Design must be based on simultaneous load conditions, not isolated maxima.**
+**Design must be based on simultaneous padeye load conditions, not isolated maxima at mudline elevation.**
 
 This workflow ensures a **consistent transition from system mechanics to geotechnical verification**.  
 
@@ -68,7 +68,7 @@ This study builds directly on upstream Morie Analytics outputs:
 
 ### From `morie_mooring`
 
-- Padeye or mudline loads  
+- Mudline loads  
 - Time series response  
 - Governing event  
 - Concomitant load states  
@@ -401,9 +401,7 @@ This is where:
 - Cyclic loading capacity
 - Seismic analysis
 
-Anchor capacity alone does not guarantee suction installation feasibility.
-
-Additional installation checks may be required for:
+Anchor capacity alone does not guarantee suction installation feasibility. Additional installation checks may be required for:
 
 - Hydraulic gradient limitations
 - Piping risk
