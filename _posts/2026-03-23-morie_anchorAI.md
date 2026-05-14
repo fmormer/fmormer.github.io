@@ -206,6 +206,33 @@ This enables the decomposition of complex engineering workflows into scalable pr
 
 The dataset is generated entirely from **physics-based simulations**.
 
+### Mooring Load Screening for Stage A
+
+Before surrogate training, a lease-scale mooring screening campaign is performed to construct the mudline load fields used by Stage A.
+
+A hexagonal grid of probe FOWTs is distributed across the cropped Celtic Sea lease domain, and each floater is evaluated through directional watch-circle sweeps using 
+the `morie_mooring` workflow. The resulting anchor-level mudline loads (`Tm`, `thetam`) are stored as spatial load planes and later queried internally by the surrogate during inference.
+
+The selected configuration uses:
+
+- Hex spacing: 800 m  
+- Inner buffer: 300 m  
+- 52 probe FOWTs  
+- 156 anchors (143 inside lease)
+
+This configuration provides a balance between:
+- Spatial coverage
+- Load-field interpolation quality
+- Computational cost
+
+<div align="center">
+  <img src="/img/posts/morie_anchorAI/hexgrid_layout_preview_s800_b300.png"
+       alt="Hexagonal probe layout used to construct mudline load planes for Stage A mooring screening"
+       width="650">
+</div>
+
+*Figure 1 – Hexagonal probe-FOWT layout used to generate lease-scale mudline load fields for Stage A surrogate training.*
+
 ### Methodology
 
 - Spatial sampling across lease domain  
@@ -260,11 +287,11 @@ This confirms that the model captures **underlying engineering behavior**, not o
 The surrogate enables rapid evaluation across the conditioned lease-scale domain.
 
 <div align="center">
-  <img src="/img/posts/morie_anchorAI/heatmap_mass.png"
+  <img src="/img/posts/morie_anchorAI/predict_heatmap.png"
        alt="Lease-scale prediction of suction pile mass showing spatial variability driven by subsurface conditions"
        width="600">
 </div>
-*Figure 1 – Lease-scale prediction of anchor mass using the surrogate model.*
+*Figure 2 – Lease-scale prediction of anchor mass using the surrogate model.*
 
 ### Example Output
 
