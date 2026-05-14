@@ -144,7 +144,7 @@ Inputs:
 
 Outputs:
 
-- Padeye loads (`Ha, Va, Ta, theta_a`)
+- Padeye loads (`Ha, Va, Ta, θa`)
 
 ### Stage B — Surrogate of Anchor Capacity Design
 
@@ -168,12 +168,9 @@ This structure preserves:
 - Separation of mechanisms  
 - Interpretability of results  
 
-Rather than treating anchor design as a black-box regression problem.
-
-This decomposition also improves interpretability and error traceability.
+Rather than treating anchor design as a black-box regression problem. This decomposition also improves interpretability and error traceability.
 
 Stage A captures the transformation of mudline loads into embedded padeye demand, while Stage B learns the resulting capacity-constrained anchor sizing behavior.
-
 The separation allows prediction errors to be associated with specific physical mechanisms rather than being absorbed into a single black-box model.
 
 
@@ -181,12 +178,12 @@ The separation allows prediction errors to be associated with specific physical 
 
 The two-stage structure mirrors the original physics-based workflow.
 
-In the reference formulation (`morie_anchor`):
+In the `morie_anchor` reference formulation:
 
 - Mudline loads are transferred to padeye level using **embedded line mechanics and soil interaction models**
 - Anchor dimensions are obtained by solving a **capacity-constrained optimization problem (UC ≈ 1)**
 
-In Morie AnchorAI:
+In `morie_anchorAI`:
 
 - **Stage A** acts as a surrogate of the **mudline-to-padeye load transfer process**, learning the combined effects of:
   - Soil friction and strength  
@@ -211,14 +208,14 @@ The dataset is generated entirely from **physics-based simulations**.
 Before surrogate training, a lease-scale mooring screening campaign is performed to construct the mudline load fields used by Stage A.
 
 A hexagonal grid of probe FOWTs is distributed across the cropped Celtic Sea lease domain, and each floater is evaluated through directional watch-circle sweeps using 
-the `morie_mooring` workflow. The resulting anchor-level mudline loads (`Tm`, `thetam`) are stored as spatial load planes and later queried internally by the surrogate during inference.
+the `morie_mooring` workflow. The resulting anchor-level mudline loads (`Tm`, `θm`) are stored as spatial load planes and later queried internally by the surrogate during inference.
 
 The selected configuration uses:
 
 - Hex spacing: 800 m  
 - Inner buffer: 300 m  
 - 52 probe FOWTs  
-- 156 anchors (143 inside lease)
+- 156 anchors (143 inside cropped-domain)
 
 This configuration provides a balance between:
 - Spatial coverage
@@ -245,8 +242,6 @@ Each sample produces:
 - Input features (soil + loads)  
 - Target outputs (D, L, Mass at UC ≈ 1)  
 
-As described in the repository:
-
 > The surrogate replaces the iterative capacity loop with a learned mapping from spatial inputs to anchor design outputs
 
 
@@ -265,7 +260,7 @@ The trained model demonstrates strong predictive capability within the cropped l
 
 ### Key Results
 
-- Accurate prediction of **D and L** within the cropped local engineering domain 
+- Accurate prediction of **D and L** within the cropped local domain 
 - Robust load transformation in Stage A  
 - No physically reliable prediction capability outside the trained design domain 
 
@@ -275,11 +270,10 @@ The trained model demonstrates strong predictive capability within the cropped l
 - Soil-driven variability dominates results  
 - Extrapolation limits reflect physical domain boundaries  
 
-Multiple (D, L) combinations can produce mechanically equivalent solutions along the UC ≈ 1 manifold while preserving similar overall anchor mass.
+Multiple (D, L) combinations can produce mechanically equivalent solutions along the UC ≈ 1 solution while preserving somehow similar overall anchor mass.
 
-This explains why global mass predictions remain more robust than individual geometric variables such as diameter.
-
-This confirms that the model captures **underlying engineering behavior**, not only statistical correlations.
+This explains why global mass predictions remain more robust than individual geometric variables such as diameter, 
+the model captures **underlying engineering behavior**, not only statistical correlations.
 
 
 ## Lease-Scale Prediction
@@ -308,7 +302,8 @@ It highlights that even within a seemingly uniform sand domain, **subsurface var
 
 ### Spatial Drivers of Anchor Mass
 
-Within the constrained Celtic Sea cropped-domain configuration used in this study, spatial variability in suction-pile mass is dominated by the reconstructed subsurface geometry, particularly the Z1 and Z2 layer boundaries.
+Within the constrained Celtic Sea cropped-domain configuration used in this study, spatial variability in suction-pile mass is dominated by the reconstructed subsurface geometry, 
+particularly the Z1 and Z2 layer boundaries.
 
 In the current sand-only domain:
 
