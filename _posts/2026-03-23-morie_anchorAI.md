@@ -47,9 +47,7 @@ In `morie_anchor`, this is solved through an iterative process:
 
 > Find (D, L) such that **UC ≈ 1**
 
-This approach is robust, but computationally expensive.
-
-At lease scale, where thousands of anchor locations must be evaluated, the process becomes prohibitive.
+This approach is robust, but computationally expensive. At lease scale, where thousands of anchor locations must be evaluated, the process becomes prohibitive.
 
 This workflow introduces a new approach:
 
@@ -72,8 +70,8 @@ This study builds directly on upstream Morie Analytics outputs:
 
 ### From `morie_anchor`
 
-- Load transfer (`getTransferLoad`)  
-- Capacity model (`getCapacitySuction`)  
+- Load transfer from mudline-to-padeye 
+- Capacity model  
 
 ### Additional Inputs
 
@@ -81,9 +79,7 @@ This study builds directly on upstream Morie Analytics outputs:
 - Scenario definitions  
 - Model configuration parameters  
 
-All inputs are integrated into a **data-driven engineering framework**.
-
-This provides the **training data foundation for surrogate modeling**.
+All inputs are integrated into a **data-driven engineering framework**, this provides the **training data foundation for surrogate modeling**.
 
 
 ## System Flow
@@ -112,16 +108,16 @@ This workflow is intended as a site-conditioned surrogate framework suitable for
 
 The current implementation is trained exclusively on:
 
-- A cropped Celtic Sea sand domain  
-- Narrow water-depth variation (~88–94 m)  
-- Fixed suction-pile configuration assumptions  
-- Limited environmental loading scenarios  
+- The cropped Celtic Sea sand domain from `morie_soil`
+- Narrow water-depth variation (~88–94 m) from `morie_site` 
+- Fixed suction-pile configuration assumptions from `morie_anchor`  
+- Limited environmental loading scenarios from `morie_mooring`  
 
 The surrogate is therefore intended for interpolation within the trained design space rather than for extrapolation to arbitrary offshore environments.
 
 The workflow does not currently include:
 
-- Multi-soil environments (clay / rock)  
+- Multi-soil environments (clay/rock)  
 - Installation effects  
 - Cyclic degradation  
 - Dynamic foundation response  
