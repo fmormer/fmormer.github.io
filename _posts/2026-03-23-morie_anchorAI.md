@@ -19,7 +19,7 @@ The result is a **reproducible and scalable framework** that predicts anchor loa
 
 This module represents the transition from point-based offshore engineering verification to lease-scale predictive capability across the integrated floating wind workflow.
 
-> Site intelligence → Layout generation → Soil reconstruction → Mooring physics → Anchor verification → **AnchorAI prediction** → Atlas visualization
+> Site intelligence → Layout generation → Soil reconstruction → Mooring physics → Anchor verification → **Anchor prediction** → Atlas visualization
 
 
 ## Project Scope
@@ -139,20 +139,19 @@ The present implementation uses a two-stage Random Forest surrogate, although th
 Inputs:
 
 - Depth  
-- Soil features  
-- Mudline loads  
+- Soil features (`morie_soil`)
+- Mudline loads (`morie_mooring`) 
 
 Outputs:
 
-- Padeye loads (`Ha, Va, Ta, θa`)
+- Padeye loads 
 
 ### Stage B — Surrogate of Anchor Capacity Design
 
 Inputs:
 
-- Depth  
-- Soil features  
-- Padeye loads  
+- Soil features (`morie_soil`)
+- Padeye loads
 
 Outputs:
 
