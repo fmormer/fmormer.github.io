@@ -118,7 +118,7 @@ description: "University programs, online campus, corporate training and R&D in 
     </p>
     <div class="plat-collab__grid">
       <div class="plat-collab__item">
-        <i class="ion ion-md-hammer plat-collab__icon" aria-hidden="true"></i>
+        <i class="ion ion-md-construct plat-collab__icon" aria-hidden="true"></i>
         <h3>Hands-on anchor design</h3>
         <p>One-day intensive covering soil profiling, anchor type selection, capacity calculation and design verification — using the Morie Anchor workflow.</p>
       </div>
