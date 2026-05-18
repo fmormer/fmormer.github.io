@@ -123,7 +123,7 @@ description: "University programs, online campus, corporate training and R&D in 
         <p>One-day intensive covering soil profiling, anchor type selection, capacity calculation and design verification — using the Morie Anchor workflow.</p>
       </div>
       <div class="plat-collab__item">
-        <i class="ion ion-md-layers plat-collab__icon" aria-hidden="true"></i>
+        <i class="ion ion-md-git-network plat-collab__icon" aria-hidden="true"></i>
         <h3>Integrated workflow programs</h3>
         <p>Multi-week programs that take engineering teams from site data processing through to anchor and cable design in a connected, structured workflow.</p>
       </div>
