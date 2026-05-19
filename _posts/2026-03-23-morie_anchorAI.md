@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Physics-Informed Anchor Design & Machine Learning Surrogate
-image: "/img/posts/morie_anchorAI/morie_anchorAI_simp.png"
+image: "/img/posts/morie_anchorAI/morie_anchorAI.png"
 tags: [Offshore Floating Wind, Anchors, Machine Learning, Suction Piles, Surrogate Models, Python]
 ---
 
@@ -21,6 +21,14 @@ This module represents the transition from point-based offshore engineering veri
 
 > Site intelligence → Layout generation → Soil reconstruction → Mooring physics → Anchor verification → **Anchor prediction** → Atlas visualization
 
+
+<div align="center">
+  <img src="/img/posts/morie_anchorAI/morie_anchorAI.png"
+       alt="Integrated two-stage Random Forest surrogate architecture for lease-scale anchor prediction"
+       width="1000">
+</div>
+
+*Figure 1 – Integrated two-stage Random Forest surrogate architecture linking `morie_soil`, `morie_mooring` and `morie_anchor` into lease-scale anchor prediction workflows.*
 
 ## Project Scope
 
@@ -223,7 +231,7 @@ This configuration provides a balance between:
        width="650">
 </div>
 
-*Figure 1 – Hexagonal probe-FOWT layout used to generate lease-scale mudline load fields for Stage A surrogate training.*
+*Figure 2 – Hexagonal probe-FOWT layout used to generate lease-scale mudline load fields for Stage A surrogate training.*
 
 ### Methodology
 
@@ -280,7 +288,7 @@ The surrogate enables rapid evaluation across the conditioned lease-scale domain
        alt="Lease-scale prediction of suction pile mass showing spatial variability driven by subsurface conditions"
        width="600">
 </div>
-*Figure 2 – Lease-scale prediction of anchor mass using the surrogate model.*
+*Figure 3 – Lease-scale prediction of anchor mass using the surrogate model.*
 
 ### Example Output
 
