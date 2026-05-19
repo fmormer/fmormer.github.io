@@ -34,11 +34,11 @@ The result is a reproducible framework capable of transforming sparse offshore g
 
 This study represents the transition from:
 
-> deterministic soil interpolation  
+> Deterministic soil interpolation  
 
 toward:
 
-> engineering-aware AI reconstruction of offshore subsurface systems.
+> Engineering-aware AI reconstruction of offshore subsurface systems.
 
 > Site intelligence → Layout generation → Soil reconstruction → **AI subsurface intelligence** → Mooring physics → Anchor verification → Anchor prediction
 
@@ -75,18 +75,17 @@ In real projects:
 
 - CPT campaigns are expensive  
 - Investigation density is limited  
-- Spatial variability is poorly resolved  
+- Spatial variability characterization needs to adapt to floating wind needs  
 - Engineering decisions must often be made before full site characterization is available  
 
 In `morie_soil`, this problem was approached through deterministic tomographic reconstruction.
 
 This study extends the concept further:
 
-> Generate plausible offshore geology → sparsely sample it → reconstruct it with AI → validate the engineering implications
+> Generate plausible offshore geology → sparse sampling → reconstruction with AI → validation of engineering implications
 
-The workflow does not attempt to blindly predict soil properties from coordinates.
-
-Instead, it reconstructs offshore subsurface behavior under engineering constraints while preserving geological continuity and spatial structure.
+The workflow does not attempt to blindly predict soil properties from coordinates. Instead, it reconstructs offshore 
+subsurface behavior under engineering constraints while preserving geological continuity and spatial structure.
 
 
 ## Inputs and Data Sources
@@ -123,10 +122,10 @@ All inputs remain aligned within the same cropped Celtic Sea engineering domain 
 
 This provides continuity across:
 
-- layout definition  
-- soil characterization  
-- mooring analysis  
-- anchor engineering  
+- Layout definition  
+- Soil characterization  
+- Mooring analysis  
+- Anchor engineering  
 - AI-assisted reconstruction workflows
 
 
@@ -204,17 +203,14 @@ Engineering parameters are then derived consistently from the reconstructed IC f
 - Relative density (Dr)
 - Friction angle (φ)
 - Submerged unit weight (γ)
-- CPT resistance (qc)
 
 ### Engineering Significance
 
-This preserves:
+This preserves the following properties across the reconstructed domain:
 
-- geological consistency  
-- behavioral continuity  
-- physically coherent parameter relationships  
-
-across the reconstructed domain.
+- Geological consistency  
+- Behavioral continuity  
+- Physically coherent parameter relationships  
 
 
 ## GeoSyn Synthetic Truth Generation
@@ -231,9 +227,9 @@ The workflow begins by generating synthetic offshore geological realizations usi
 
 The original GeoSyn methodology is adapted from generic geotechnical environments toward:
 
-- offshore sand-dominated geology  
-- marine depositional continuity  
-- anisotropic offshore variability  
+- Offshore sand-dominated geology  
+- Marine depositional continuity  
+- Anisotropic offshore variability  
 - Celtic Sea layered behavior  
 
 ### Engineering Significance
@@ -261,22 +257,22 @@ The synthetic truth fields are sparsely sampled using CPT-style vertical observa
 
 The sampling strategy intentionally reproduces realistic offshore constraints:
 
-- limited investigation density  
-- large spatial gaps  
-- sparse vertical observations  
-- incomplete subsurface coverage  
+- Limited investigation density from initial studies 
+- Large spatial gaps  
+- Sparse vertical observations resembling initial investigation 
+- Incomplete subsurface coverage  
 
 Each realization is sampled independently to produce:
 
-- sparse IC observations  
-- observation masks  
-- reconstruction input datasets  
+- Sparse IC observations  
+- Observation masks  
+- Reconstruction input datasets  
 
 ### Engineering Significance
 
 This step reproduces one of the central challenges of offshore geotechnics:
 
-> reconstructing reliable subsurface behavior from limited investigation campaigns.
+> Reconstructing reliable subsurface behavior from limited investigation campaigns.
 
 
 ## SchemaGAN Reconstruction
@@ -295,26 +291,22 @@ The reconstruction architecture follows:
 
 - U-Net generator  
 - PatchGAN discriminator  
-- sparse-to-dense conditional reconstruction  
+- Sparse-to-dense conditional reconstruction  
 
-The model learns:
+Rather than performing simple interpolation, the model learns:
 
-- geological continuity  
-- spatial transitions  
-- offshore layering behavior  
-- latent soil-state distributions  
-
-rather than performing simple interpolation.
+- Geological continuity  
+- Spatial transitions  
+- Offshore layering behavior  
+- Latent soil-state distributions  
 
 ### Engineering Significance
 
-The workflow introduces:
+Within floating offshore wind engineering needs the workflow introduces:
 
 - AI-assisted geological reconstruction  
-- continuity-aware subsurface inference  
-- engineering-consistent spatial reconstruction  
-
-within floating offshore wind engineering.
+- Continuity-aware subsurface inference  
+- Engineering-consistent spatial reconstruction  
 
 
 ## IC-to-Engineering Mapping
@@ -334,25 +326,23 @@ The reconstruction pipeline derives:
 - Relative density (Dr)
 - Friction angle (φ)
 - Submerged unit weight (γ)
-- Effective stress (σ'v)
-- CPT resistance (qc)
 
-This translation preserves consistency between:
+This translation preserves consistency engineering properties between:
 
-- geology  
-- soil behavior  
-- engineering interpretation  
+- Geology  
+- Soil behavior  
+- Engineering interpretation  
 
-rather than treating engineering properties as independent regression outputs.
+Rather than treating them as independent regression outputs.
 
 ### Engineering Significance
 
 This enables reconstructed AI fields to become directly usable by:
 
-- anchor sizing workflows  
-- soil-structure interaction models  
-- mooring analysis  
-- geotechnical screening studies  
+- Anchor sizing workflows  
+- Soil-structure interaction models  
+- Mooring analysis  
+- Geotechnical screening studies  
 
 
 ## Validation & Reconstruction Accuracy
@@ -391,20 +381,14 @@ The workflow evaluates:
 
 The results demonstrate that:
 
-- sparse-data reconstruction preserves engineering trends  
-- reconstruction quality remains stable across held-out realizations  
-- engineering parameter derivation remains physically coherent  
+- Sparse-data reconstruction preserves engineering trends  
+- Reconstruction quality remains stable across held-out realizations  
+- Engineering parameter derivation remains physically coherent  
 
 The workflow therefore reconstructs not only geology, but also engineering behavior.
 
 
 ## Relationship with `morie_CPTsample`
-
-This study focuses on:
-
-- synthetic geology generation  
-- sparse-data reconstruction  
-- engineering-aware validation  
 
 The adaptive CPT investigation-planning layer is intentionally separated into the sibling study case:
 
@@ -416,18 +400,18 @@ This separation preserves architectural clarity across the Morie ecosystem.
 
 Focuses on:
 
-- reconstruction quality  
-- geological realism  
-- engineering-aware AI fields  
+- Reconstruction quality  
+- Geological realism  
+- Engineering-aware AI fields  
 
 ### `morie_CPTsample`
 
 Focuses on:
 
-- adaptive CPT placement  
-- reinforcement learning  
-- investigation optimization  
-- uncertainty reduction strategies  
+- Adaptive CPT placement  
+- Reinforcement learning  
+- Investigation optimization  
+- Uncertainty reduction strategies  
 
 Together, the two study cases establish a unified offshore subsurface intelligence framework.
 
@@ -482,11 +466,11 @@ This study establishes the AI-driven extension of the Morie subsurface workflow.
 
 It provides the transition from:
 
-> deterministic subsurface interpretation  
+> Deterministic subsurface interpretation  
 
 toward:
 
-> engineering-aware AI reconstruction and offshore intelligence.
+> Engineering-aware AI reconstruction and offshore intelligence.
 
 
 ## Why It Matters Commercially
@@ -499,9 +483,9 @@ toward:
 
 This is where:
 
-- geotechnics becomes data-driven  
-- reconstruction becomes engineering-aware  
-- offshore AI becomes physically interpretable  
+- Geotechnics becomes data-driven  
+- Reconstruction becomes engineering-aware  
+- Offshore AI becomes physically interpretable  
 
 
 ## Aspects to Improve
@@ -550,7 +534,7 @@ particularly regarding sparse-data subsurface reconstruction using conditional g
 
 Within Morie Analytics, the methodology is adapted toward:
 
-- offshore floating wind environments
+- Offshore floating wind environments
 - Celtic Sea sand-state reconstruction
-- engineering-aware IC-based parameter mapping
-- downstream anchor and mooring workflows
+- Engineering-aware IC-based parameter mapping
+- Downstream anchor and mooring workflows
