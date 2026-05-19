@@ -42,6 +42,13 @@ toward:
 
 > Site intelligence → Layout generation → Soil reconstruction → **AI subsurface intelligence** → Mooring physics → Anchor verification → Anchor prediction
 
+<div align="center">
+  <img src="/img/posts/morie_subsurfaceAI/morie_subsurfaceAI.png"
+       alt="Integrated SchemaGAN-based offshore subsurface reconstruction workflow for floating offshore wind"
+       width="1000">
+</div>
+
+*Figure 1 – Integrated AI-assisted subsurface intelligence workflow linking `morie_site`, `morie_layout` and `morie_soil` into engineering-ready offshore reconstruction fields using SchemaGAN.*
 
 ## Project Scope
 
@@ -220,7 +227,7 @@ The workflow begins by generating synthetic offshore geological realizations usi
        width="650">
 </div>
 
-*Figure 1 – Example synthetic offshore geological realization generated using the GeoSyn framework.*
+*Figure 2 – Example synthetic offshore geological realization generated using the GeoSyn framework.*
 
 The original GeoSyn methodology is adapted from generic geotechnical environments toward:
 
@@ -250,7 +257,7 @@ The synthetic truth fields are sparsely sampled using CPT-style vertical observa
        width="650">
 </div>
 
-*Figure 2 – Sparse CPT-style sampling used to emulate realistic offshore site investigation density.*
+*Figure 3 – Sparse CPT-style sampling used to emulate realistic offshore site investigation density.*
 
 The sampling strategy intentionally reproduces realistic offshore constraints:
 
@@ -282,7 +289,7 @@ The sparse observations are then reconstructed using a 2D SchemaGAN architecture
        width="650">
 </div>
 
-*Figure 3 – SchemaGAN reconstruction of offshore subsurface behavior from sparse CPT-style observations.*
+*Figure 4 – SchemaGAN reconstruction of offshore subsurface behavior from sparse CPT-style observations.*
 
 The reconstruction architecture follows:
 
@@ -320,7 +327,7 @@ Once reconstructed, the IC fields are translated into engineering-ready soil par
        width="650">
 </div>
 
-*Figure 4 – Engineering mapping from reconstructed IC fields into engineering soil parameters.*
+*Figure 5 – Engineering mapping from reconstructed IC fields into engineering soil parameters.*
 
 The reconstruction pipeline derives:
 
@@ -358,7 +365,7 @@ A key aspect of the workflow is that reconstruction quality is validated against
        width="650">
 </div>
 
-*Figure 5 – Validation of reconstructed offshore subsurface fields against synthetic truth.*
+*Figure 6 – Validation of reconstructed offshore subsurface fields against synthetic truth.*
 
 ### Validation Metrics
 
@@ -527,3 +534,23 @@ The workflow does not treat AI as a replacement for offshore engineering.
 Instead:
 
 > AI becomes a mechanism for reconstructing offshore subsurface behavior under engineering constraints.
+
+
+## Research Foundations
+
+The reconstruction methodology presented in this study builds upon concepts introduced in the SchemaGAN framework developed by:
+
+- Francisco A. Campos Montero
+- Bruno Zuada Coelho
+- Evangelia Smyrniou
+- Riccardo Taormina
+- Philip J. Vardon
+
+particularly regarding sparse-data subsurface reconstruction using conditional generative adversarial networks for geotechnical applications.
+
+Within Morie Analytics, the methodology is adapted toward:
+
+- offshore floating wind environments
+- Celtic Sea sand-state reconstruction
+- engineering-aware IC-based parameter mapping
+- downstream anchor and mooring workflows
