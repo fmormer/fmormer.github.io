@@ -506,18 +506,12 @@ These extensions would move the workflow toward:
 
 This study reflects the Morie Analytics approach:
 
-- Physics-informed  
-- Engineering-aware  
-- Geologically consistent  
-- Modular  
-- Traceable  
-- Scalable  
-
-The workflow does not treat AI as a replacement for offshore engineering.
-
-Instead:
-
-> AI becomes a mechanism for reconstructing offshore subsurface behavior under engineering constraints.
+- **Physics-informed**: reconstruction targets are derived from geotechnical behavior and engineering-consistent soil-state representations.
+- **Geology-aware**: the workflow preserves offshore layering continuity and spatial depositional structure rather than performing generic interpolation.
+- **Mechanism-preserving**: the reconstruction pipeline mirrors the sequence from sparse investigation data to engineering interpretation.
+- **Reproducible**: synthetic truth generation, sparse sampling and reconstruction workflows are fully configuration-driven.
+- **Engineering-ready**: reconstructed IC fields are directly translated into parameters usable in mooring and anchor workflows.
+- **Site-conditioned**: the framework is explicitly tied to the reconstructed Celtic Sea offshore domain and associated floating wind context.
 
 
 ## Research Foundations
