@@ -327,11 +327,11 @@ This result confirms that, within the studied domain:
 
 This shifts the design focus from:
 
-→ Load-driven sizing  
+> Load-driven sizing  
 
 to  
 
-→ Soil-driven optimization  
+> Soil-driven optimization  
 
 This has direct consequences for early-stage design strategies, particularly in:
 
