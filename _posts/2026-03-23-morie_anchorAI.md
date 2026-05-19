@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Physics-Informed Anchor Design & Machine Learning Surrogate
-image: "/img/posts/morie_anchorAI/morie_anchorAI.png"
+image: "/img/posts/morie_anchorAI/morie_anchorAI_simp.png"
 tags: [Offshore Floating Wind, Anchors, Machine Learning, Suction Piles, Surrogate Models, Python]
 ---
 
