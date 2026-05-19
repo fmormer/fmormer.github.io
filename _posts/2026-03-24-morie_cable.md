@@ -301,7 +301,7 @@ This is where:
 
 - Fatigue and Vortex Induced Vibrations (VIV) analysis  
 - Probabilistic motion study   
-- Touchdown cable abrasion mitigation strategies
+- Touchdown cable rug abrasion mitigation strategies
 
 ## Design Philosophy
 

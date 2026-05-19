@@ -390,7 +390,7 @@ The workflow therefore reconstructs not only geology, but also engineering behav
 
 ## Relationship with `morie_CPTsample`
 
-The adaptive CPT investigation-planning layer is intentionally separated into the sibling study case:
+The adaptive CPT investigation-planning layer is intentionally separated into the following sibling study case:
 
 > `morie_CPTsample`
 
@@ -499,7 +499,7 @@ This is where:
 
 These extensions would move the workflow toward:
 
-> fully integrated offshore subsurface intelligence systems.
+> Fully integrated offshore subsurface intelligence systems.
 
 
 ## Design Philosophy
