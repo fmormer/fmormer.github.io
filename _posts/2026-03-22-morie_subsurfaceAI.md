@@ -387,6 +387,32 @@ The results demonstrate that:
 
 The workflow therefore reconstructs not only geology, but also engineering behavior.
 
+Beyond reconstruction of the latent IC field itself, the workflow also preserves the engineering consistency of the derived soil parameters.
+This is critical because offshore engineering workflows ultimately operate on engineering quantities such as friction angle and relative density rather than on latent behavioral indices directly.
+The comparison below illustrates how reconstructed fields preserve both large-scale depositional structure and local engineering variability after IC-to-parameter translation.
+
+<div align="center">
+  <img src="/img/posts/morie_subsurfaceAI/06_parameter_comparison.png"
+       alt="Engineering parameter comparison between truth and reconstructed fields for friction angle and relative density"
+       width="850">
+</div>
+
+*Figure 7 – Engineering-aware comparison between truth and reconstructed fields for friction angle and relative density including associated reconstruction errors.*
+
+While individual realizations help illustrate reconstruction behavior locally, offshore engineering workflows require validation across many geological scenarios.
+To evaluate robustness, the reconstruction metrics are aggregated across both training and validation realizations.
+The statistical distributions below demonstrate that reconstruction performance remains stable across unseen geological configurations while preserving engineering-consistent parameter behavior.
+
+<div align="center">
+  <img src="/img/posts/morie_subsurfaceAI/07_validation_boxplot.png"
+       alt="Distribution of reconstruction errors across training and validation realizations"
+       width="850">
+</div>
+
+*Figure 8 – Distribution of reconstruction errors across training and validation realizations for IC, friction angle and relative density predictions.*
+
+The relatively narrow spread between training and validation distributions suggests that the workflow generalizes beyond individual synthetic realizations rather than memorizing isolated geological patterns.
+This is particularly important for offshore engineering applications, where sparse investigation campaigns must support decisions across large lease areas under uncertain subsurface conditions.
 
 ## Relationship with `morie_CPTsample`
 
@@ -518,7 +544,7 @@ This study reflects the Morie Analytics approach:
 
 The reconstruction methodology presented in this study builds upon concepts introduced in the SchemaGAN framework developed by:
 
-- Francisco A. Campos Montero
+- Fabian A. Campos-Montero
 - Bruno Zuada Coelho
 - Evangelia Smyrniou
 - Riccardo Taormina
