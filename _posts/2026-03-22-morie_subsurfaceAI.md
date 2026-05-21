@@ -277,16 +277,6 @@ This step reproduces one of the central challenges of offshore geotechnics:
 
 ## SchemaGAN Reconstruction
 
-The sparse observations are then reconstructed using a 2D SchemaGAN architecture based on conditional generative adversarial networks.
-
-<div align="center">
-  <img src="/img/posts/morie_subsurfaceAI/03_schemagan_reconstruction.png"
-       alt="SchemaGAN reconstruction showing sparse CPT observations transformed into continuous reconstructed offshore subsurface fields"
-       width="650">
-</div>
-
-*Figure 4 – SchemaGAN reconstruction of offshore subsurface behavior from sparse CPT-style observations.*
-
 The reconstruction architecture follows:
 
 - U-Net generator  
@@ -319,7 +309,7 @@ Once reconstructed, the IC fields are translated into engineering-ready soil par
        width="650">
 </div>
 
-*Figure 5 – Engineering mapping from reconstructed IC fields into engineering soil parameters.*
+*Figure 4 – Engineering mapping from reconstructed IC fields into engineering soil parameters.*
 
 The reconstruction pipeline derives:
 
@@ -355,7 +345,7 @@ A key aspect of the workflow is that reconstruction quality is validated against
        width="650">
 </div>
 
-*Figure 6 – Validation of reconstructed offshore subsurface fields against synthetic truth.*
+*Figure 5 – Validation of reconstructed offshore subsurface fields against synthetic truth.*
 
 ### Validation Metrics
 
@@ -397,7 +387,7 @@ The comparison below illustrates how reconstructed fields preserve both large-sc
        width="850">
 </div>
 
-*Figure 7 – Engineering-aware comparison between truth and reconstructed fields for friction angle and relative density including associated reconstruction errors.*
+*Figure 6 – Engineering-aware comparison between truth and reconstructed fields for friction angle and relative density including associated reconstruction errors.*
 
 While individual realizations help illustrate reconstruction behavior locally, offshore engineering workflows require validation across many geological scenarios.
 To evaluate robustness, the reconstruction metrics are aggregated across both training and validation realizations.
@@ -409,7 +399,7 @@ The statistical distributions below demonstrate that reconstruction performance 
        width="850">
 </div>
 
-*Figure 8 – Distribution of reconstruction errors across training and validation realizations for IC, friction angle and relative density predictions.*
+*Figure 7 – Distribution of reconstruction errors across training and validation realizations for IC, friction angle and relative density predictions.*
 
 The relatively narrow spread between training and validation distributions suggests that the workflow generalizes beyond individual synthetic realizations rather than memorizing isolated geological patterns.
 This is particularly important for offshore engineering applications, where sparse investigation campaigns must support decisions across large lease areas under uncertain subsurface conditions.
