@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AI-Assisted Subsurface Intelligence & Sparse-Data Reconstruction
-image: "/img/posts/morie_subsurfaceAI/morie_subsurfaceAI.png"
+image: "/img/posts/morie_subsurface/morie_subsurface.png"
 tags: [Offshore Floating Wind, Geotechnical Engineering, Artificial Intelligence, Subsurface Modeling, CPT, SchemaGAN, GeoSyn, Python]
 ---
 
@@ -43,7 +43,7 @@ toward:
 > Site intelligence → Layout generation → Soil reconstruction → **AI subsurface intelligence** → Mooring physics → Anchor verification → Anchor prediction
 
 <div align="center">
-  <img src="/img/posts/morie_subsurfaceAI/morie_subsurfaceAI.png"
+  <img src="/img/posts/morie_subsurface/morie_subsurface.png"
        alt="Integrated SchemaGAN-based offshore subsurface reconstruction workflow for floating offshore wind"
        width="1000">
 </div>
@@ -218,7 +218,7 @@ This preserves the following properties across the reconstructed domain:
 The workflow begins by generating synthetic offshore geological realizations using an adapted GeoSyn framework.
 
 <div align="center">
-  <img src="/img/posts/morie_subsurfaceAI/01_geosyn_truth.png"
+  <img src="/img/posts/morie_subsurface/01_geosyn_truth.png"
        alt="Synthetic offshore geological realization generated using GeoSyn over the cropped Celtic Sea floating wind domain"
        width="650">
 </div>
@@ -248,7 +248,7 @@ This enables quantitative assessment of reconstruction quality before applicatio
 The synthetic truth fields are sparsely sampled using CPT-style vertical observations.
 
 <div align="center">
-  <img src="/img/posts/morie_subsurfaceAI/02_sparse_cpt_sampling.png"
+  <img src="/img/posts/morie_subsurface/02_sparse_cpt_sampling.png"
        alt="Sparse CPT-style sampling layout showing limited offshore investigation points within the reconstructed subsurface domain"
        width="650">
 </div>
@@ -304,7 +304,7 @@ Within floating offshore wind engineering needs the workflow introduces:
 Once reconstructed, the IC fields are translated into engineering-ready soil parameters.
 
 <div align="center">
-  <img src="/img/posts/morie_subsurfaceAI/04_engineering_mapping.png"
+  <img src="/img/posts/morie_subsurface/04_engineering_mapping.png"
        alt="Engineering-aware translation of reconstructed IC fields into relative density friction angle unit weight and CPT resistance"
        width="650">
 </div>
@@ -340,7 +340,7 @@ This enables reconstructed AI fields to become directly usable by:
 A key aspect of the workflow is that reconstruction quality is validated against known synthetic truth.
 
 <div align="center">
-  <img src="/img/posts/morie_subsurfaceAI/05_validation_comparison.png"
+  <img src="/img/posts/morie_subsurface/05_validation_comparison.png"
        alt="Comparison between reconstructed and ground-truth offshore subsurface fields showing reconstruction accuracy and spatial continuity"
        width="650">
 </div>
@@ -382,7 +382,7 @@ This is critical because offshore engineering workflows ultimately operate on en
 The comparison below illustrates how reconstructed fields preserve both large-scale depositional structure and local engineering variability after IC-to-parameter translation.
 
 <div align="center">
-  <img src="/img/posts/morie_subsurfaceAI/06_parameter_comparison.png"
+  <img src="/img/posts/morie_subsurface/06_parameter_comparison.png"
        alt="Engineering parameter comparison between truth and reconstructed fields for friction angle and relative density"
        width="850">
 </div>
@@ -394,7 +394,7 @@ To evaluate robustness, the reconstruction metrics are aggregated across both tr
 The statistical distributions below demonstrate that reconstruction performance remains stable across unseen geological configurations while preserving engineering-consistent parameter behavior.
 
 <div align="center">
-  <img src="/img/posts/morie_subsurfaceAI/07_validation_boxplot.png"
+  <img src="/img/posts/morie_subsurface/07_validation_boxplot.png"
        alt="Distribution of reconstruction errors across training and validation realizations"
        width="850">
 </div>
@@ -408,11 +408,11 @@ This is particularly important for offshore engineering applications, where spar
 
 The adaptive CPT investigation-planning layer is intentionally separated into the following sibling study case:
 
-> `morie_CPTsample`
+> `morie_sample`
 
 This separation preserves architectural clarity across the Morie ecosystem.
 
-### `morie_subsurfaceAI`
+### `morie_subsurface`
 
 Focuses on:
 
@@ -420,7 +420,7 @@ Focuses on:
 - Geological realism  
 - Engineering-aware AI fields  
 
-### `morie_CPTsample`
+### `morie_sample`
 
 Focuses on:
 
@@ -475,10 +475,9 @@ This study establishes the AI-driven extension of the Morie subsurface workflow.
 
 ### Feeds into
 
-- **morie_CPTsample** → adaptive CPT optimization  
+- **morie_sample** → adaptive CPT optimization  
 - **morie_anchor** → anchor engineering  
-- **morie_anchorAI** → predictive anchor workflows  
-- **morie_atlas** → lease-scale visualization and orchestration  
+- **morie_atlas** → predictive anchor workflows and lease-scale visualization
 
 It provides the transition from:
 

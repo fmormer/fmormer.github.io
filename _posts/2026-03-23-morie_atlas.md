@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Physics-Informed Anchor Design & Machine Learning Surrogate
-image: "/img/posts/morie_anchorAI/morie_anchorAI.png"
+image: "/img/posts/morie_atlas/morie_atlas.png"
 tags: [Offshore Floating Wind, Anchors, Machine Learning, Suction Piles, Surrogate Models, Python]
 ---
 
@@ -23,7 +23,7 @@ This module represents the transition from point-based offshore engineering veri
 
 
 <div align="center">
-  <img src="/img/posts/morie_anchorAI/morie_anchorAI.png"
+  <img src="/img/posts/morie_atlas/morie_atlas.png"
        alt="Integrated two-stage Random Forest surrogate architecture for lease-scale anchor prediction"
        width="1000">
 </div>
@@ -186,7 +186,7 @@ In the `morie_anchor` reference formulation:
 - Mudline loads are transferred to padeye level using **embedded line mechanics and soil interaction models**
 - Anchor dimensions are obtained by solving a **capacity-constrained optimization problem (UC ≈ 1)**
 
-In `morie_anchorAI`:
+In `morie_atlas`:
 
 - **Stage A** acts as a surrogate of the **mudline-to-padeye load transfer process**, learning the combined effects of:
   - Soil friction and strength  
@@ -226,7 +226,7 @@ This configuration provides a balance between:
 - Computational cost
 
 <div align="center">
-  <img src="/img/posts/morie_anchorAI/hexgrid_layout_preview_s800_b300.png"
+  <img src="/img/posts/morie_atlas/hexgrid_layout_preview_s800_b300.png"
        alt="Hexagonal probe layout used to construct mudline load planes for Stage A mooring screening"
        width="650">
 </div>
@@ -284,7 +284,7 @@ the model captures **underlying engineering behavior**, not only statistical cor
 The surrogate enables rapid evaluation across the conditioned lease-scale domain.
 
 <div align="center">
-  <img src="/img/posts/morie_anchorAI/predict_heatmap.png"
+  <img src="/img/posts/morie_atlas/predict_heatmap.png"
        alt="Lease-scale prediction of suction pile mass showing spatial variability driven by subsurface conditions"
        width="600">
 </div>
@@ -388,7 +388,7 @@ This study is the **predictive extension of the anchor workflow**.
 
 ### Feeds into
 
-- **morie_atlas** → lease-scale visualization and decision support  
+- **morie_atlas** → predictive anchor workflows and lease-scale visualization  
 
 It provides the **transition from physics-based design to scalable prediction**.
 
