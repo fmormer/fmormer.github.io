@@ -72,9 +72,9 @@ description: "Offshore wind and marine engineering consultancy — portfolio, ca
 
       <div class="capability-card">
         <div class="capability-card__icon">
-          <img src="{{ '/img/morie_icon_GAN.png' | relative_url }}" alt="Morie SchemaGAN icon">
+          <img src="{{ '/img/morie_icon_subsurface.png' | relative_url }}" alt="Morie Subsurface icon">
         </div>
-        <h3>Morie SchemaGAN</h3>
+        <h3>Morie Subsurface</h3>
         <p>
           A synthetic subsurface generation framework enabling data-driven reconstruction of offshore ground
           models based on Generative Adversarial Networks. Supports soil characterization, uncertainty
@@ -112,7 +112,7 @@ description: "Offshore wind and marine engineering consultancy — portfolio, ca
     </div>
 
 	<div class="row">
-	  {% assign desired_order = 'morie_site|morie_layout|morie_soil|morie_mooring|morie_anchor|morie_cable|morie_anchorAI|morie_subsurfaceAI' | split: '|' %}
+	  {% assign desired_order = 'morie_site|morie_layout|morie_soil|morie_mooring|morie_anchor|morie_cable|morie_atlas|morie_subsurface' | split: '|' %}
 
 	  {% for target_slug in desired_order %}
 		{% for post in site.posts %}

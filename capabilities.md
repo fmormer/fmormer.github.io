@@ -52,9 +52,9 @@ redirect_to: /consulting/
 
       <div class="capability-card">
         <div class="capability-card__icon">
-          <img src="/img/morie_icon_GAN.png" alt="Morie SchemaGAN icon">
+          <img src="/img/morie_icon_subsurface.png" alt="Morie Subsurface icon">
         </div>
-        <h3>Morie SchemaGAN</h3>
+        <h3>Morie Subsurface</h3>
         <p>
           A synthetic subsurface generation framework enabling data-driven reconstruction of offshore ground models based on Generative Adversarial Networks.
           This allows subsurface soil characterization, uncertainty exploration and improves early-stage engineering studies and designs.
