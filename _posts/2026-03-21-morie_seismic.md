@@ -1,9 +1,646 @@
 ---
+
 layout: post
-title: 
-image: "/img/posts/morie_subsurface/"
-tags: [Offshore Floating Wind, Geotechnical Engineering, Artificial Intelligence, Subsurface Modeling, CPT, SchemaGAN, GeoSyn, Python]
+title: Integrated Seismic Workflow for Floating Offshore Wind Anchors
+image: "/img/posts/morie_seismic/morie_seismic.png"
+tags: [Offshore Floating Wind, Seismic Engineering, Liquefaction, Geotechnical Engineering, Suction Piles, Offshore Geohazards, Python]
 ---
 
-# Celtic Sea Floating Offshore Wind – morie_seismic
+# Celtic Sea Floating Offshore Wind – Integrated Seismic Workflow for Offshore Anchors
 
+## Executive Summary
+
+This study establishes the **offshore seismic and seabed degradation layer** of Morie Analytics by extending the existing geotechnical and anchor-engineering workflow toward earthquake-driven seabed transformation and post-event anchor verification.
+
+The workflow combines:
+
+* Response-spectrum seismic hazard definition
+* Spectrum-compatible ground-motion generation
+* Cyclic liquefaction screening
+* Excess pore-pressure evolution
+* Effective-stress degradation
+* Residual seabed resistance modeling
+* Post-earthquake anchor verification
+
+within a unified offshore engineering framework.
+
+Building directly on the outputs of:
+
+* `morie_site`
+* `morie_layout`
+* `morie_soil`
+* `morie_anchor`
+
+The study demonstrates how offshore earthquake energy propagates through the seabed and ultimately modifies anchor-level engineering behavior.
+
+Rather than treating seismic loading as a standalone structural problem, the workflow reframes the challenge as:
+
+> offshore seabed transformation and degradation.
+
+The result is a reproducible framework capable of linking:
+
+* offshore seismic hazard,
+* cyclic soil degradation,
+* liquefaction-driven strength loss,
+* and suction-anchor engineering consequences
+
+within the same integrated Morie ecosystem.
+
+This study represents the transition from:
+
+> static offshore geotechnical verification
+
+toward:
+
+> dynamic offshore geohazard intelligence and degradation-aware anchor engineering.
+
+> Site intelligence → Layout generation → Soil reconstruction → Mooring physics → Anchor verification → **Seabed degradation & seismic intelligence**
+
+<div align="center">
+  <img src="/img/posts/morie_seismic/morie_seismic.png"
+       alt="Integrated offshore seismic and seabed degradation workflow for floating offshore wind anchors"
+       width="1000">
+</div>
+
+*Figure 1 – Integrated offshore seismic workflow linking seismic hazard, cyclic seabed degradation and suction-anchor engineering consequences within the Morie ecosystem.*
+
+---
+
+## Project Scope
+
+* Offshore seismic hazard definition
+* Spectrum-compatible ground-motion generation
+* Cyclic liquefaction screening
+* Excess pore-pressure estimation
+* Effective-stress degradation modeling
+* Residual-strength transformation of liquefied layers
+* Recomputed suction-anchor capacity and UC assessment
+* Post-event engineering verification
+
+This study converts:
+
+**Offshore seismic excitation → seabed degradation → anchor engineering consequence**.
+
+
+## Engineering Context
+
+Floating offshore wind developments increasingly move toward deeper and more geologically complex offshore environments.
+
+Although the Celtic Sea is not a highly seismic basin, the objective of this study is not to claim seismic criticality for the site itself.
+
+Instead, the workflow demonstrates:
+
+> how the Morie integrated offshore engineering framework can be extended toward seismic hazard and offshore geohazard assessment.
+
+Traditional offshore seismic workflows often separate:
+
+* earthquake engineering,
+* geotechnical degradation,
+* and anchor verification
+
+into disconnected analyses.
+
+This study approaches the problem differently.
+
+Rather than focusing solely on structural seismic demand, the workflow follows the transformation of the seabed itself:
+
+```text
+Earthquake source
+        ↓
+Ground motion at seabed
+        ↓
+Dynamic soil response
+        ↓
+Pore-pressure generation
+        ↓
+Effective-stress reduction
+        ↓
+Seabed degradation
+        ↓
+Modified anchor resistance
+        ↓
+Updated anchor UC
+```
+
+The key engineering question therefore becomes:
+
+> How does offshore seismic loading transform seabed resistance and anchor capacity?
+
+This reframes seismic engineering as:
+
+> offshore geotechnical degradation and post-event survivability.
+
+
+## Inputs and Data Sources
+
+This study builds directly on upstream Morie Analytics outputs.
+
+### From `morie_site`
+
+* Bathymetry grids
+* Local engineering domain
+* Spatial environmental context
+
+### From `morie_layout`
+
+* Floating wind layout
+* Shared-anchor configuration
+* FOWT and anchor coordinates
+
+### From `morie_soil`
+
+* Layered Celtic Sea sand profiles
+* Folk-7 classification framework
+* Layered `profile_map` structure
+* Effective stress and soil parameters
+
+### From `morie_anchor`
+
+* Padeye loads
+* Suction-pile geometry
+* VHM interaction framework
+* UC verification workflow
+
+### Additional Inputs
+
+* Eurocode 8 response spectrum
+* Seed earthquake records
+* Boulanger–Idriss liquefaction screening
+* Olson–Stark residual strength framework
+
+All workflows remain tied to the same cropped Celtic Sea engineering domain used throughout the Morie ecosystem.
+
+This preserves continuity across:
+
+* site characterization,
+* layered soil reconstruction,
+* mooring analysis,
+* anchor engineering,
+* offshore seismic assessment.
+
+## System Flow
+
+Response Spectrum → Ground Motion → Liquefaction Screening → Seabed Degradation → Updated `profile_map` → Recomputed Anchor Capacity
+
+The architecture preserves:
+
+* engineering traceability,
+* geotechnical continuity,
+* mechanism-aware degradation,
+* and reproducibility of results
+
+throughout the workflow.
+
+### Processing Workflow
+
+1. Define offshore seismic response spectrum
+2. Generate spectrum-compatible ground motion
+3. Compute cyclic stress ratio (CSR)
+4. Estimate cyclic resistance ratio (CRR)
+5. Evaluate liquefaction factor of safety
+6. Derive excess pore-pressure ratio (`ru`)
+7. Transform degraded soil layers
+8. Build `profile_map_seismic`
+9. Recompute suction-anchor capacity
+10. Compare pre- and post-earthquake UC
+
+This converts:
+
+**Offshore earthquake excitation → engineering-ready degradation assessment**.
+
+---
+
+## Offshore Seismic Hazard Definition
+
+The workflow begins by defining a target offshore response spectrum consistent with Eurocode 8 Type 2 seismic conditions.
+
+<div align="center">
+  <img src="/img/posts/morie_seismic/fig1_target_vs_matched_spectrum.png"
+       alt="Target versus matched offshore response spectrum for the Celtic Sea seismic workflow"
+       width="900">
+</div>
+
+*Figure 2 – Offshore seismic response spectrum and spectrally matched ground motion used for the Celtic Sea seismic workflow.*
+
+The response spectrum represents:
+
+```text
+maximum dynamic response
+vs
+natural vibration period
+```
+
+and defines the frequency-domain seismic hazard applied at seabed level.
+
+The selected spectrum uses:
+
+* Eurocode 8 Type 2 spectrum
+* Soil Class C assumptions
+* Effective seabed PGA = 0.15 g
+* 5% damping ratio
+
+### Engineering Significance
+
+This provides:
+
+* engineering-consistent seismic excitation,
+* offshore-compatible seismic loading,
+* and reproducible hazard definition
+
+for downstream seabed degradation analyses.
+
+---
+
+## Spectrum-Compatible Ground Motion
+
+Once the target spectrum is defined, a spectrum-compatible acceleration time history is generated from a seed earthquake record.
+
+<div align="center">
+  <img src="/img/posts/morie_seismic/fig2_matched_time_history.png"
+       alt="Matched offshore acceleration time history and Arias intensity accumulation"
+       width="1000">
+</div>
+
+*Figure 3 – Spectrum-compatible acceleration time history used for cyclic seabed loading and liquefaction screening.*
+
+The workflow performs frequency-domain spectral matching to ensure consistency between:
+
+* target hazard definition,
+* and realizable cyclic loading history.
+
+The resulting signal preserves:
+
+* duration effects,
+* cyclic accumulation,
+* loading reversals,
+* frequency content,
+* and Arias-intensity evolution.
+
+### Engineering Significance
+
+This step converts:
+
+> frequency-domain seismic hazard
+
+into:
+
+> realizable cyclic seabed forcing.
+
+A critical aspect is that:
+
+> high-cycle low-amplitude shaking persists beyond the PGA peak.
+
+This is particularly important for offshore liquefaction screening because cyclic pore-pressure accumulation is not controlled by PGA alone.
+
+---
+
+## Liquefaction Screening and Seabed Transformation
+
+The core of the workflow evaluates how cyclic loading transforms seabed resistance.
+
+<div align="center">
+  <img src="/img/posts/morie_seismic/fig3a_liquefaction_screening.png"
+       alt="Liquefaction screening chain for offshore layered sands"
+       width="1200">
+</div>
+
+*Figure 4 – Offshore liquefaction screening chain linking effective stress, CSR, CRR, factor of safety and excess pore-pressure ratio.*
+
+The workflow evaluates:
+
+```text
+σ'v(z)
+→ CSR(z)
+→ CRR(z)
+→ FoS(z)
+→ ru(z)
+```
+
+using:
+
+* Seed–Idriss cyclic stress formulation
+* Boulanger–Idriss liquefaction screening
+* Layer-aware effective stress calculations
+* Relative-density-dependent resistance estimation
+
+### Excess Pore-Pressure Ratio
+
+The degradation state is quantified through:
+
+```math
+r_u = \frac{\Delta u}{\sigma'_{v0}}
+```
+
+where:
+
+* `Δu` = excess pore pressure,
+* `σ′v0` = initial effective vertical stress.
+
+### Engineering Interpretation
+
+| `ru`     | Interpretation         |
+| -------- | ---------------------- |
+| `ru ≈ 0` | negligible degradation |
+| `ru → 1` | liquefaction onset     |
+
+Within the Celtic Sea demo:
+
+* the upper loose sand approaches liquefaction conditions,
+* while deeper dense sand remains competent.
+
+This produces a layered degradation profile highly relevant for suction-anchor behavior.
+
+---
+
+## Effective-Stress Reduction and Residual Strength
+
+Once liquefaction triggering is identified, degraded layers are transformed into residual-strength material states.
+
+<div align="center">
+  <img src="/img/posts/morie_seismic/fig3b_degraded_profile.png"
+       alt="Effective stress and residual shear-strength transformation after liquefaction"
+       width="1200">
+</div>
+
+*Figure 5 – Effective-stress collapse and constitutive transformation from drained sand behavior toward residual undrained response.*
+
+The workflow applies the Terzaghi effective-stress principle:
+
+```math
+\sigma' = \sigma - u
+```
+
+and converts liquefied sand layers into:
+
+> residual undrained-strength material states.
+
+This is a constitutive transformation rather than a simple parameter reduction.
+
+The degraded profile therefore transitions from:
+
+```text
+drained Mohr-Coulomb behavior
+```
+
+toward:
+
+```text
+residual undrained response
+```
+
+through the Olson–Stark residual-strength framework.
+
+### Engineering Significance
+
+This step creates:
+
+```python
+profile_map_seismic
+```
+
+which becomes the degraded seabed representation used by the suction-anchor solver.
+
+The seismic problem therefore becomes:
+
+```text
+modify profile_map
+→ rerun getCapacitySuction()
+→ compare UC
+```
+
+This is one of the key architectural breakthroughs of the workflow.
+
+---
+
+## Anchor Engineering Consequences
+
+The degraded seabed profile is then propagated into the suction-anchor engineering workflow.
+
+### Three-Scenario Taxonomy
+
+The verification framework evaluates three engineering states:
+
+| Scenario | Description                         |
+| -------- | ----------------------------------- |
+| A        | Baseline ULS                        |
+| B        | Co-seismic pseudostatic loading     |
+| C        | Post-event degraded seabed survival |
+
+This separates:
+
+* increased seismic demand,
+* from reduced post-liquefaction resistance.
+
+<div align="center">
+  <img src="/img/posts/morie_seismic/fig4a_uc_three_scenarios.png"
+       alt="Three-scenario anchor unity check comparison"
+       width="1200">
+</div>
+
+*Figure 6 – Comparison between baseline, co-seismic and post-event anchor verification scenarios.*
+
+### Engineering Interpretation
+
+The workflow demonstrates that:
+
+* seismic loading alone does not govern the design,
+* degraded seabed resistance becomes the controlling mechanism,
+* and post-event survivability can require deeper embedment into competent layers.
+
+One of the most important findings is that:
+
+> the seismic redesign changes the governing failure mechanism.
+
+The revised geometry increases embedment into dense competent sand, recovering horizontal capacity despite degradation in upper layers.
+
+---
+
+## VHM Interaction Envelopes
+
+The engineering consequences are further visualized through the evolution of the interaction envelopes.
+
+<div align="center">
+  <img src="/img/posts/morie_seismic/fig4b_capacity_envelopes.png"
+       alt="MH and VH interaction envelopes for offshore seismic degradation scenarios"
+       width="1400">
+</div>
+
+*Figure 7 – Evolution of MH and VH interaction envelopes under offshore seismic degradation scenarios.*
+
+The workflow evaluates:
+
+* MH interaction surfaces,
+* VH interaction surfaces,
+* and demand-point migration
+
+across the three seismic scenarios.
+
+### Engineering Interpretation
+
+The results demonstrate:
+
+* collapse of the lateral capacity envelope in liquefied layers,
+* strong sensitivity to embedment depth,
+* recovery of survivability through deeper penetration into competent dense sand.
+
+The key design insight is:
+
+> offshore seismic survivability may be governed by minimum embedment into non-liquefiable layers rather than by static ULS conditions alone.
+
+---
+
+## Relationship with `profile_map`
+
+One of the key conceptual discoveries of this study is that the entire seismic problem can be integrated into the Morie workflow through modification of the layered `profile_map`.
+
+The seismic framework therefore becomes:
+
+```text
+earthquake loading
+→ liquefaction screening
+→ degraded soil profile
+→ updated anchor verification
+```
+
+rather than an isolated seismic structural analysis.
+
+This preserves:
+
+* interoperability across Morie modules,
+* layered geotechnical consistency,
+* and engineering scalability.
+
+---
+
+## Outputs Generated
+
+The workflow produces:
+
+* Target response spectra
+* Spectrum-compatible motions
+* Liquefaction screening profiles
+* Excess pore-pressure distributions
+* Degraded soil profiles
+* Residual-strength representations
+* Updated `profile_map_seismic`
+* Recomputed suction-anchor capacities
+* UC comparison reports
+* Interaction-envelope visualizations
+
+These outputs are directly usable in offshore geotechnical and anchor-engineering workflows.
+
+---
+
+## Engineering Applications
+
+The workflow supports:
+
+* Offshore seismic screening
+* Liquefaction susceptibility assessment
+* Post-event anchor survivability studies
+* Geohazard-informed anchor design
+* Seabed degradation assessment
+* Resilience-oriented offshore engineering workflows
+
+This enables:
+
+**Offshore Seismic Hazard → Seabed Transformation → Engineering Decision**
+
+---
+
+## Relationship to Other Morie Study Cases
+
+This study establishes the seismic and geohazard extension of the Morie ecosystem.
+
+### Receives from
+
+* **morie_site** → environmental context
+* **morie_layout** → floating wind geometry
+* **morie_soil** → layered geotechnical framework
+* **morie_anchor** → suction-anchor engineering workflow
+
+### Feeds into
+
+* Future offshore geohazard workflows
+* Resilience-oriented anchor optimization
+* Offshore risk-intelligence frameworks
+
+It provides the transition from:
+
+> static offshore geotechnical verification
+
+toward:
+
+> degradation-aware offshore engineering intelligence.
+
+---
+
+## Why It Matters Commercially
+
+* Extends floating offshore wind workflows toward geohazard intelligence
+* Supports early-stage seismic and liquefaction screening
+* Enables degradation-aware anchor verification
+* Bridges offshore earthquake engineering and geotechnics
+* Preserves interoperability with integrated offshore workflows
+
+This is where:
+
+* offshore geotechnics becomes degradation-aware,
+* anchor engineering becomes resilience-oriented,
+* and seismic hazard becomes an integrated offshore design layer.
+
+---
+
+## Aspects to Improve
+
+* Fully coupled dynamic SSI formulations
+* Time-dependent pore-pressure evolution
+* Spatially variable `ru(x,y,z,t)` fields
+* Foundation-confinement effects
+* Probabilistic seismic hazard integration
+* Native offshore FE coupling
+* Multi-hazard seabed degradation workflows
+
+These extensions would move the workflow toward:
+
+> fully integrated offshore geohazard intelligence systems.
+
+---
+
+## Design Philosophy
+
+This study reflects the Morie Analytics approach:
+
+* **Physics-informed**: degradation mechanisms follow established offshore geotechnical and seismic formulations.
+* **Mechanism-preserving**: the workflow preserves the causal chain from seismic excitation to engineering consequence.
+* **Geology-aware**: degradation depends on layered seabed behavior and soil-state transitions.
+* **Engineering-ready**: degraded soil states feed directly into the anchor-capacity framework.
+* **Reproducible**: all seismic, liquefaction and degradation workflows are configuration-driven.
+* **Site-conditioned**: the framework remains tied to the reconstructed Celtic Sea engineering domain.
+
+---
+
+## Research Foundations
+
+The workflow presented in this study builds upon established concepts from:
+
+* Seed & Idriss liquefaction screening
+* Boulanger & Idriss cyclic resistance formulations
+* Olson & Stark residual-strength methodology
+* Eurocode 8 seismic response spectra
+* API RP 2GEO offshore seismic guidance
+* DNV-RP-C212 offshore geotechnical recommendations
+
+The conceptual backbone is strongly inspired by offshore liquefaction and seismic-foundation research regarding:
+
+* cyclic pore-pressure evolution,
+* seabed transformation,
+* liquefaction-driven degradation,
+* and offshore foundation response.
+
+Within Morie Analytics, these concepts are adapted toward:
+
+* floating offshore wind systems,
+* layered offshore anchor engineering,
+* degradation-aware `profile_map` workflows,
+* and integrated offshore geohazard intelligence.
