@@ -32,7 +32,7 @@ the interface between the moving floating structure, the seabed infrastructure a
 
 ## Project Scope
 
-- Cable configuration modeling  
+- Dynamic cable configuration modeling  
 - Mooring offset integration  
 - Hydrodynamic motion input  
 - Constraint-based optimization  
@@ -48,7 +48,7 @@ Dynamic cables must accommodate:
 - Floater motion  
 - Environmental cyclic loading  
 - Seabed interaction  
-- Strict mechanical constraints  
+- Strict mechanical and geometrical constraints  
 
 Cable design is a **constraint-dominated problem**, balancing:
 
@@ -57,9 +57,8 @@ Cable design is a **constraint-dominated problem**, balancing:
 - Tension  
 - Seabed contact  
 
-This workflow ensures cable design reflects **representative system response**, not assumptions.
-
-At this stage, coupling between floater motion and cable response is represented through transferred motion envelopes and boundary conditions rather than through fully coupled nonlinear time-domain simulation.
+This workflow ensures cable design reflects **representative system response**.At this stage, coupling between floater motion and cable response is represented through 
+transferred motion envelopes and boundary conditions rather than through fully coupled nonlinear time-domain simulation.
 
 
 ## Inputs and Data Sources
