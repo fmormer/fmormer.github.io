@@ -294,23 +294,18 @@ using:
 
 ### Excess Pore-Pressure Ratio
 
-The degradation state is quantified through:
+The degradation state is quantified using the excess pore-pressure ratio, `ru`.
 
-$$
-ru = \frac{\Delta u}{\sigma'_{v0}}
-$$
+This parameter describes how much of the initial effective vertical stress has been counteracted by earthquake-induced pore-pressure build-up.
 
-where:
+In practical terms:
 
-* `Δu` = excess pore pressure,
-* `σ′v0` = initial effective vertical stress.
-
-### Engineering Interpretation
-
-| `ru`     | Interpretation         |
+| `ru` | Interpretation |
 | -------- | ---------------------- |
 | `ru ≈ 0` | negligible degradation |
-| `ru → 1` | liquefaction onset     |
+| `ru → 1` | liquefaction onset |
+
+As cyclic loading accumulates, pore pressure increases and effective stress decreases. When `ru` approaches 1, the soil skeleton loses most of its effective confinement and the layer is treated as liquefied or strongly degraded.
 
 Within the Celtic Sea demo:
 
@@ -318,8 +313,6 @@ Within the Celtic Sea demo:
 * Deeper dense sand remains competent
 
 This produces a layered degradation profile highly relevant for suction-anchor behavior.
-
----
 
 ## Effective-Stress Reduction and Residual Strength
 
@@ -333,18 +326,16 @@ Once liquefaction triggering is identified, degraded layers are transformed into
 
 *Figure 5 – Effective-stress collapse and constitutive transformation from drained sand behavior toward residual undrained response.*
 
-The workflow applies the Terzaghi effective-stress principle:
+As cyclic shaking increases pore pressure within the seabed, the soil progressively loses effective confinement.
+This reduction in effective stress directly reduces the available shear resistance of the sand layers and modifies the governing anchor-capacity mechanisms.
 
-$$
-\sigma' = \sigma - u
-$$
+Within the workflow:
 
-and converts liquefied sand layers into:
+* Loose liquefiable sands experience strong degradation
+* Intermediate layers transition toward partially degraded states
+* Dense deep sands remain largely competent
 
-> Residual undrained-strength material states.
-
-This is a constitutive transformation rather than a simple parameter reduction.
-
+Rather than applying a simple reduction factor, the workflow transforms the constitutive response of the degraded layers.
 The degraded profile therefore transitions from **drained Mohr-Coulomb behavior** toward **residual undrained response** through the Olson–Stark residual-strength framework.
 
 ### Engineering Significance
