@@ -200,15 +200,7 @@ The workflow begins by defining a target offshore response spectrum consistent w
 
 *Figure 2 – Offshore seismic response spectrum and spectrally matched ground motion used for the Celtic Sea seismic workflow.*
 
-The response spectrum represents:
-
-```text
-maximum dynamic response
-vs
-natural vibration period
-```
-
-and defines the frequency-domain seismic hazard applied at seabed level.
+The response spectrum defines the frequency-domain seismic hazard applied at seabed level.
 
 The selected spectrum uses:
 
