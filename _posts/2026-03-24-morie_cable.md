@@ -19,6 +19,19 @@ This module represents the final stage where **system behavior is translated int
 
 > Site intelligence → Layout generation → Soil reconstruction → Mooring physics → Anchor verification → **Cable optimization**
 
+This module represents the final stage where **system behavior is translated into preliminary cable configuration assessment**.
+
+In floating offshore wind, the dynamic cable is where the entire system converges:
+the interface between the moving floating structure, the seabed infrastructure and the electrical network itself.
+
+<div align="center">
+  <img src="/img/posts/morie_cable/nrel-power-cable.png" 
+       alt="Dynamic power cable connecting floating offshore wind turbine to subsea electrical infrastructure" 
+       width="900">
+</div>
+
+*Figure 1 – Dynamic power cable as the interface between the floating system and the subsea electrical network.*
+
 
 ## Project Scope
 
@@ -138,7 +151,7 @@ The configuration must remain within a defined geometric envelope, including:
        alt="Initial dynamic cable configuration showing seabed touchdown, suspended spans, and connection to floating wind turbine fairlead before optimization" 
        width="500">
 </div>
-*Figure 1 – Initial cable configuration.*
+*Figure 2 – Initial cable configuration.*
 
 ### Engineering Interpretation
 
@@ -220,7 +233,7 @@ This results in a **feasible and constraint-compliant cable configuration**, rat
        alt="Optimization convergence showing cost reduction and constraint satisfaction" 
        width="650">
 </div>
-*Figure 2 – Optimization convergence.*
+*Figure 3 – Optimization convergence.*
 
 ### Engineering Interpretation
 
@@ -237,7 +250,7 @@ The optimization balances:
        alt="Optimized dynamic cable configuration satisfying all constraints" 
        width="500">
 </div>
-*Figure 3 – Optimized cable configuration.*
+*Figure 4 – Optimized cable configuration.*
 
 
 ## Outputs Generated
