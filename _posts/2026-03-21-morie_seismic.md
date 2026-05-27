@@ -71,7 +71,7 @@ toward:
 * Excess pore-pressure estimation
 * Effective-stress degradation modeling
 * Residual-strength transformation of liquefied layers
-* Recomputed suction-anchor capacity and UC assessment
+* Recomputed suction-anchor capacity and Unity Check (UC) assessment
 * Post-event engineering verification
 
 This study converts:
@@ -173,9 +173,9 @@ Throughout the workflow, this architecture preserves:
 
 1. Define offshore seismic response spectrum
 2. Generate spectrum-compatible ground motion
-3. Compute cyclic stress ratio (CSR)
-4. Estimate cyclic resistance ratio (CRR)
-5. Evaluate liquefaction factor of safety
+3. Compute Cyclic Stress Ratio (CSR)
+4. Estimate Cyclic Resistance Ratio (CRR)
+5. Evaluate liquefaction Factor of Safety (FoS)
 6. Derive excess pore-pressure ratio (`ru`)
 7. Transform degraded soil layers
 8. Build `profile_map_seismic`
@@ -214,7 +214,7 @@ The selected spectrum uses:
 
 * Eurocode 8 Type 2 spectrum
 * Soil Class C assumptions
-* Effective seabed PGA = 0.15·g
+* Effective seabed Peak Ground Acceleration (PGA) = 0.15·g
 * 5% damping ratio
 
 ### Engineering Significance
@@ -296,9 +296,9 @@ using:
 
 The degradation state is quantified through:
 
-```math
+$$
 ru = \frac{\Delta u}{\sigma'_{v0}}
-```
+$$
 
 where:
 
@@ -335,9 +335,9 @@ Once liquefaction triggering is identified, degraded layers are transformed into
 
 The workflow applies the Terzaghi effective-stress principle:
 
-```math
+$$
 \sigma' = \sigma - u
-```
+$$
 
 and converts liquefied sand layers into:
 
@@ -550,28 +550,3 @@ This study reflects the Morie Analytics approach:
 * **Reproducible**: all seismic, liquefaction and degradation workflows are configuration-driven.
 * **Site-conditioned**: the framework remains tied to the reconstructed Celtic Sea engineering domain.
 
-
-## Research Foundations
-
-The workflow presented in this study builds upon established concepts from:
-
-* Seed & Idriss liquefaction screening
-* Boulanger & Idriss cyclic resistance formulations
-* Olson & Stark residual-strength methodology
-* Eurocode 8 seismic response spectra
-* API RP 2GEO offshore seismic guidance
-* DNV-RP-C212 offshore geotechnical recommendations
-
-The conceptual backbone is strongly inspired by offshore liquefaction and seismic-foundation research regarding:
-
-* Cyclic pore-pressure evolution
-* Seabed transformation
-* Liquefaction-driven degradation
-* Offshore foundation response
-
-Within Morie Analytics, these concepts are adapted toward:
-
-* Floating offshore wind systems
-* Layered offshore anchor engineering
-* Degradation-aware `profile_map` workflows
-* Integrated offshore geohazard intelligence
