@@ -186,7 +186,6 @@ This converts:
 
 **Offshore earthquake excitation → engineering-ready degradation assessment**.
 
----
 
 ## Offshore Seismic Hazard Definition
 
@@ -252,10 +251,7 @@ into:
 
 > Realizable cyclic seabed forcing.
 
-A critical aspect is that:
-
-> High-cycle low-amplitude shaking persists beyond the PGA peak.
-
+A critical aspect is that **high-cycle low-amplitude** shaking persists beyond the PGA peak.
 This is particularly important for offshore liquefaction screening because cyclic pore-pressure accumulation is not controlled by PGA alone.
 
 
