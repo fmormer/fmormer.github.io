@@ -12,14 +12,11 @@ tags: [Offshore Floating Wind, Dynamic Cables, Cable Optimization, Floating Wind
 This study establishes the **system closure layer** of Morie Analytics by transforming **system behavior into optimized dynamic cable configurations**.
 
 Building on upstream modules, the workflow integrates bathymetry, mooring offsets and hydrodynamic response to design **constraint-compliant dynamic cables**.
-
 The result is a **constraint-driven optimization framework** producing mechanically feasible cable configurations.
 
-This module represents the final stage where **system behavior is translated into preliminary cable configuration assessment**.
+This module represents the final stage of Morie's building blocks where **system behavior is translated into preliminary cable configuration assessment**.
 
 > Site intelligence → Layout generation → Soil reconstruction → Mooring physics → Anchor verification → **Cable optimization**
-
-This module represents the final stage where **system behavior is translated into preliminary cable configuration assessment**.
 
 In floating offshore wind, the dynamic cable is where the entire system converges:
 the interface between the moving floating structure, the seabed infrastructure and the electrical network itself.
@@ -30,7 +27,7 @@ the interface between the moving floating structure, the seabed infrastructure a
        width="900">
 </div>
 
-*Figure 1 – Dynamic power cable as the interface between the floating system and the subsea electrical network.*
+*Figure 1 – Dynamic power cable as the interface between the floating system and the subsea electrical network - source: NREL.*
 
 
 ## Project Scope
