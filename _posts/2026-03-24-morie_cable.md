@@ -22,7 +22,7 @@ In floating offshore wind, the dynamic cable is where the entire system converge
 the interface between the moving floating structure, the seabed infrastructure and the electrical network itself.
 
 <div align="center">
-  <img src="/img/posts/morie_cable/nrel-power-cable.png" 
+  <img src="/img/posts/morie_cable/nrel_cable.png" 
        alt="Dynamic power cable connecting floating offshore wind turbine to subsea electrical infrastructure" 
        width="900">
 </div>
@@ -143,7 +143,7 @@ The configuration must remain within a defined geometric envelope, including:
 - Maximum and minimum sag depths (lower excursion limits)  
 
 <div align="center">
-  <img src="/img/posts/morie_cable/cable_initial_config.png" 
+  <img src="/img/posts/morie_cable/cable_init_config.png" 
        alt="Initial dynamic cable configuration showing seabed touchdown, suspended spans, and connection to floating wind turbine fairlead before optimization" 
        width="500">
 </div>
