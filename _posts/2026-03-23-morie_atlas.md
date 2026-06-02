@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Physics-Informed Anchor Design & Machine Learning Surrogate
+title: Physics-Informed Anchor Prediction & Atlas Visualization
 image: "/img/posts/morie_atlas/morie_atlas.png"
 tags: [Offshore Floating Wind, Anchors, Machine Learning, Suction Piles, Surrogate Models, Python]
 ---
 
-# Celtic Sea Floating Offshore Wind – Physics-Informed Anchor Design & Machine Learning Surrogate
+# Celtic Sea Floating Offshore Wind – Physics-Informed Anchor Prediction & Atlas Visualization
 
 ## Executive Summary
 
@@ -16,10 +16,11 @@ Building on the coupled outputs of `morie_soil`, `morie_mooring` and `morie_anch
 The surrogate architecture mirrors the underlying engineering workflow, preserving the causal separation between soil reconstruction, mooring-load transfer and anchor-capacity response through a two-stage predictive cascade.
 
 The result is a **reproducible and scalable framework** that predicts anchor loads and dimensions in milliseconds, enabling full-domain evaluation and system-level decision support.
+These Atlas layers enable rapid identification of design-driving regions, anchor standardization opportunities and spatial trends in geotechnical demand across the lease.
 
 This module represents the transition from point-based offshore engineering verification to lease-scale predictive capability across the integrated floating wind workflow.
 
-> Site intelligence → Layout generation → Soil reconstruction → Mooring physics → Anchor verification → **Anchor prediction** → Atlas visualization
+> Site intelligence → Layout generation → Soil reconstruction → Mooring physics → Anchor verification → **Anchor prediction & Atlas visualization** 
 
 
 <div align="center">
@@ -105,8 +106,10 @@ The architecture ensures **traceability from physics-based design to machine lea
 5. Solve anchor capacity (UC ≈ 1)  
 6. Store optimal design (D, L, Mass)  
 7. Train surrogate model  
-8. Validate on spatial holdout  
-9. Deploy for prediction  
+8. Deploy surrogate model
+9. Generate lease-scale prediction fields
+10. Build Atlas visualization layers
+11. Support engineering interpretation
 
 This converts **physics-based simulations into predictive capability**.
 
@@ -117,7 +120,7 @@ This workflow is intended as a site-conditioned surrogate framework suitable for
 The current implementation is trained exclusively on:
 
 - The cropped Celtic Sea sand domain from `morie_soil`
-- Narrow water-depth variation (~88–94 m) from `morie_site` 
+- Relatively narrow water-depth variation (~88–94 m) from `morie_site` 
 - Fixed suction-pile configuration assumptions from `morie_anchor`  
 - Limited environmental loading scenarios from `morie_mooring`  
 
@@ -142,9 +145,9 @@ The present implementation uses a two-stage Random Forest surrogate, although th
 
 Inputs:
 
-- Depth  
 - Soil features (`morie_soil`)
-- Mudline loads (`morie_mooring`) 
+- Mudline load fields (`morie_mooring`)
+- Anchor transfer assumptions (`morie_anchor`)
 
 Outputs:
 
@@ -155,7 +158,7 @@ Outputs:
 Inputs:
 
 - Soil features (`morie_soil`)
-- Padeye loads
+- Padeye loads derived from Stage A
 
 Outputs:
 
@@ -184,7 +187,7 @@ The two-stage structure mirrors the original physics-based workflow.
 In the `morie_anchor` reference formulation:
 
 - Mudline loads are transferred to padeye level using **embedded line mechanics and soil interaction models**
-- Anchor dimensions are obtained by solving a **capacity-constrained optimization problem (UC ≈ 1)**
+- Anchor capacity is obtained by solving the **capacity-constrained model** given anchor dimensions
 
 In `morie_atlas`:
 
@@ -245,7 +248,7 @@ Each sample produces:
 - Input features (soil + loads)  
 - Target outputs (D, L, Mass at UC ≈ 1)  
 
-> The surrogate replaces the iterative capacity loop with a learned mapping from spatial inputs to anchor design outputs
+> The surrogate replaces the iterative capacity loop with a learned **mapping from spatial inputs to anchor design outputs**.
 
 
 ### Engineering Significance
@@ -273,15 +276,15 @@ The trained model demonstrates strong predictive capability within the cropped l
 - Soil-driven variability dominates results  
 - Extrapolation limits reflect physical domain boundaries  
 
-Multiple (D, L) combinations can produce mechanically equivalent solutions along the UC ≈ 1 solution while preserving somehow similar overall anchor mass.
+Multiple (D, L) combinations can produce mechanically equivalent solutions along the UC ≈ 1 manifold while preserving similar overall anchor mass.
 
-This explains why global mass predictions remain more robust than individual geometric variables such as diameter, 
-the model captures **underlying engineering behavior**, not only statistical correlations.
+This explains why global mass predictions remain more robust than individual geometric variables such as diameter. 
+The model captures **underlying engineering behavior**, not only statistical correlations.
 
 
-## Lease-Scale Prediction
+## Atlas Visualization & Lease-Scale Prediction
 
-The surrogate enables rapid evaluation across the conditioned lease-scale domain.
+The surrogate enables rapid evaluation and visualization across the conditioned lease-scale domain.
 
 <div align="center">
   <img src="/img/posts/morie_atlas/predict_heatmap.png"
@@ -303,6 +306,21 @@ This level of variation has direct implications for:
 
 It highlights that even within a seemingly uniform sand domain, **subsurface variability alone can drive significant differences in anchor sizing**.  
 
+### Atlas Query Example
+
+Atlas is not limited to lease-scale prediction maps. Individual locations can also be queried to expose the full engineering traceability behind a predicted anchor design.
+For a selected anchor location, `morie_atlas` retrieves the local soil conditions, mudline loads from `morie_mooring`, inferred padeye loads from Stage A, and the resulting suction-pile dimensions predicted by Stage B.
+
+<div align="center">
+  <img src="/img/posts/morie_atlas/inferred_anchor_2500_5000.png"
+       alt="Atlas query showing inferred anchor design and engineering traceability"
+       width="1000">
+</div>
+
+*Figure 4 – Atlas query example for a single anchor location. The interface exposes the complete engineering chain from local soil conditions and mudline loads through Stage A load transfer and Stage B anchor sizing predictions.*
+
+This creates a transparent workflow where the final design recommendation can always be traced back to the underlying geotechnical and loading assumptions.
+
 ### Spatial Drivers of Anchor Mass
 
 Within the constrained Celtic Sea cropped-domain configuration used in this study, spatial variability in suction-pile mass is dominated by the reconstructed subsurface geometry, 
@@ -315,7 +333,6 @@ In the current sand-only domain:
 - Raw spatial coordinates become largely irrelevant once the upstream soil and load fields are resolved  
 
 This behavior is specific to the present site-conditioned surrogate and should not be interpreted as a universal result for offshore anchor design.
-
 The result instead highlights that, within the studied domain, variations in bearing stratigraphy exert a stronger influence on anchor sizing than the relatively limited variation in load magnitude.
 
 ### Engineering Implication
@@ -388,7 +405,10 @@ This study is the **predictive extension of the anchor workflow**.
 
 ### Feeds into
 
-- **morie_atlas** → predictive anchor workflows and lease-scale visualization  
+- Engineering decision support
+- Lease-scale visualization
+- Design standardization studies
+- Installation planning workflows
 
 It provides the **transition from physics-based design to scalable prediction**.
 
