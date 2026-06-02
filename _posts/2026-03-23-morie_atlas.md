@@ -309,7 +309,10 @@ It highlights that even within a seemingly uniform sand domain, **subsurface var
 ### Atlas Query Example
 
 Atlas is not limited to lease-scale prediction maps. Individual locations can also be queried to expose the full engineering traceability behind a predicted anchor design.
-For a selected anchor location, `morie_atlas` retrieves the local soil conditions, mudline loads from `morie_mooring`, inferred padeye loads from Stage A, and the resulting suction-pile dimensions predicted by Stage B.
+For a selected anchor location, `morie_atlas` retrieves the local soil conditions, mudline loads from `morie_mooring`, inferred padeye loads from Stage A and the resulting 
+suction-pile dimensions predicted by Stage B.
+
+This creates a transparent workflow where the final design recommendation can always be traced back to the underlying geotechnical and loading assumptions.
 
 <div align="center">
   <img src="/img/posts/morie_atlas/inferred_anchor_2500_5000.png"
@@ -318,8 +321,6 @@ For a selected anchor location, `morie_atlas` retrieves the local soil condition
 </div>
 
 *Figure 4 – Atlas query example for a single anchor location. The interface exposes the complete engineering chain from local soil conditions and mudline loads through Stage A load transfer and Stage B anchor sizing predictions.*
-
-This creates a transparent workflow where the final design recommendation can always be traced back to the underlying geotechnical and loading assumptions.
 
 ### Spatial Drivers of Anchor Mass
 
