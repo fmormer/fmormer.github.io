@@ -111,8 +111,21 @@ description: "Offshore wind and marine engineering consultancy — portfolio, ca
       </p>
     </div>
 
-	<!-- Portfolio grid 1: foundation workflow -->
-	<div class="row portfolio-grid portfolio-grid--primary">
+	<div class="portfolio-toggle">
+	  <button class="portfolio-toggle__button active"
+			  onclick="showPortfolioGrid('grid-1', this)">
+		Core Workflow
+	  </button>
+
+	  <button class="portfolio-toggle__button"
+			  onclick="showPortfolioGrid('grid-2', this)">
+		Advanced Workflows
+	  </button>
+	</div>
+
+	<!-- Portfolio grid 1 -->
+	<div id="grid-1" class="row portfolio-grid portfolio-grid--primary">
+
 	  {% assign desired_order_1 = 'morie_site|morie_layout|morie_soil|morie_mooring|morie_anchor|morie_cable' | split: '|' %}
 
 	  {% for target_slug in desired_order_1 %}
@@ -122,10 +135,14 @@ description: "Offshore wind and marine engineering consultancy — portfolio, ca
 		  {% endif %}
 		{% endfor %}
 	  {% endfor %}
+
 	</div>
 
-	<!-- Portfolio grid 2: advanced / expanded workflows -->
-	<div class="row portfolio-grid portfolio-grid--secondary">
+	<!-- Portfolio grid 2 -->
+	<div id="grid-2"
+		 class="row portfolio-grid portfolio-grid--secondary"
+		 style="display:none;">
+
 	  {% assign desired_order_2 = 'morie_atlas|morie_subsurface|morie_sample|morie_seismic|morie_geohazard|morie_installation' | split: '|' %}
 
 	  {% for target_slug in desired_order_2 %}
@@ -135,7 +152,24 @@ description: "Offshore wind and marine engineering consultancy — portfolio, ca
 		  {% endif %}
 		{% endfor %}
 	  {% endfor %}
+
 	</div>
+
+	<script>
+	function showPortfolioGrid(gridId, button) {
+
+	  document.getElementById('grid-1').style.display = 'none';
+	  document.getElementById('grid-2').style.display = 'none';
+
+	  document.getElementById(gridId).style.display = 'flex';
+
+	  document
+		.querySelectorAll('.portfolio-toggle__button')
+		.forEach(btn => btn.classList.remove('active'));
+
+	  button.classList.add('active');
+	}
+	</script>
 
   </div>
 </section>

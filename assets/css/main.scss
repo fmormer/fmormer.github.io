@@ -1302,6 +1302,32 @@ code.language-plaintext {
   padding-right: 0;
 }
 
+/* ===== Portfolio Toggle ===== */
+
+.portfolio-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0 3rem;
+}
+
+.portfolio-toggle__button {
+  background: transparent;
+  border: 1px solid var(--morie-heading);
+  color: var(--morie-heading);
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.portfolio-toggle__button:hover,
+.portfolio-toggle__button.active {
+  background: var(--morie-heading);
+  color: #ffffff;
+}
+
 @media only screen and (max-width: 1024px) {
   .portfolio-page .col {
     width: calc(50% - 0.75rem);
