@@ -426,11 +426,11 @@ The validation evaluates:
 
 The 75k run produced the following summary metrics:
 
-| Metric            |             DRL |        Standard |
-| ----------------- | --------------: | --------------: |
-| RMSE(IC)          | 0.0456 ± 0.0031 | 0.0462 ± 0.0030 |
-| Bias(IC)          | 0.0008 ± 0.0045 | 0.0005 ± 0.0047 |
-| PIC(abs(err) ≤ 0.05) |  0.798 ± 0.0200 |  0.790 ± 0.0200 |
+| Metric                |             DRL |        Standard |
+| --------------------- | --------------: | --------------: |
+| RMSE (IC)             | 0.0456 ± 0.0031 | 0.0462 ± 0.0030 |
+| Bias (IC)             | 0.0008 ± 0.0045 | 0.0005 ± 0.0047 |
+| PIC (abs(err) ≤ 0.05) |  0.798 ± 0.0200 |  0.790 ± 0.0200 |
 
 The adaptive policy improves the average RMSE relative to the matched uniform-spacing baseline.
 
@@ -494,11 +494,9 @@ The current result should therefore be interpreted as:
 * An indication that the current synthetic truth fields may underestimate the value of adaptive CPT placement
 * A motivation to increase geological complexity in future versions
 
-This is useful because the workflow does more than optimize CPT positions.
+This is useful because the workflow does more than optimize CPT positions. It also helps diagnose where the limiting factor lies:
 
-It also helps diagnose where the limiting factor lies:
-
-> Is reconstruction uncertainty controlled by sampling strategy, or by the reconstruction model and the complexity of the geological truth?
+> Is reconstruction uncertainty controlled by sampling strategy or by the reconstruction model and the complexity of the geological truth?
 
 In the current version, the answer appears to be:
 
