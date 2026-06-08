@@ -352,10 +352,7 @@ After each CPT is selected:
 
 This means that the agent is not learning an abstract sampling rule.
 
-It is learning through the reconstruction consequences of each CPT location.
-
-The value of a CPT is therefore measured by how much it helps reconstruct the full subsurface field.
-
+It is learning through the reconstruction consequences of each CPT location. The value of a CPT is therefore measured by how much it helps reconstruct the full subsurface field.
 This is the key link between `morie_subsurface` and `morie_sample`.
 
 `morie_subsurface` provides the reconstruction engine.
