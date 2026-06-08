@@ -430,7 +430,7 @@ The 75k run produced the following summary metrics:
 | ----------------- | --------------: | --------------: |
 | RMSE(IC)          | 0.0456 ± 0.0031 | 0.0462 ± 0.0030 |
 | Bias(IC)          | 0.0008 ± 0.0045 | 0.0005 ± 0.0047 |
-| PIC(|err| ≤ 0.05) |  0.798 ± 0.0200 |  0.790 ± 0.0200 |
+| PIC(abs(err) ≤ 0.05) |  0.798 ± 0.0200 |  0.790 ± 0.0200 |
 
 The adaptive policy improves the average RMSE relative to the matched uniform-spacing baseline.
 
@@ -449,20 +449,9 @@ The improvement is modest, but it is consistent at the distribution level:
 *Figure 4 – Validation of the trained DRL policy against the matched uniform-spacing Standard baseline across 120 GeoSyn profiles. The adaptive policy produces a slightly lower RMSE distribution, near-zero bias, and a marginally higher percentage of pixels within the selected IC error band.*
 
 The RMSE-vs-CPT-count comparison provides a second view of the same validation exercise.
-
 Because the trained policy converges toward approximately four CPTs, the paired comparisons concentrate around the same investigation count.
 
-<div align="center">
-  <img src="/img/posts/morie_sample/rmse_vs_ncpts.png"
-       alt="RMSE versus CPT count comparing DQN policy and uniform-spacing baseline at matched CPT count"
-       width="750">
-</div>
-
-*Figure 5 – Full-field IC RMSE versus CPT count for the learned DQN policy and the matched uniform-spacing baseline across 120 GeoSyn profiles. Each comparison is evaluated at the same CPT count selected by the policy.*
-
 ## Engineering Interpretation
-
-The main result is not that the adaptive policy produces a dramatic RMSE reduction.
 
 The main result is that the adaptive investigation-planning loop works end-to-end:
 
@@ -471,9 +460,7 @@ The main result is that the adaptive investigation-planning loop works end-to-en
 The trained policy slightly improves average reconstruction performance relative to a matched uniform-spacing baseline.
 However, the absolute RMSE margin remains small.
 
-This is an important engineering observation.
-
-The synthetic GeoSyn truth fields used in this first implementation are intentionally controlled.
+This is an important engineering observation. The synthetic GeoSyn truth fields used in this first implementation are intentionally controlled.
 They are smooth, structured and relatively predictable compared with real offshore stratigraphy.
 
 The current truth fields are generated from artificial geological patterns with strong spatial continuity.
@@ -482,10 +469,7 @@ As a result, the SchemaGAN-2D model can reconstruct the IC field accurately from
 Once approximately four informative CPTs are available, the reconstruction error approaches a performance ceiling.
 At that point, the specific placement of the four CPTs still matters, but there is limited room for any sampling policy to create a large additional RMSE reduction.
 
-This should not be interpreted as evidence that adaptive sampling has limited value.
-
-Instead, it indicates that the current benchmark is relatively easy for the reconstruction model.
-
+This should not be interpreted as evidence that adaptive sampling has limited value. Instead, it indicates that the current benchmark is relatively easy for the reconstruction model.
 In real offshore conditions, the subsurface may include:
 
 * Irregular layer boundaries
