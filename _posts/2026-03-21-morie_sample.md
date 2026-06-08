@@ -121,10 +121,10 @@ Focuses on:
 
 The relationship can be summarized as:
 
-| Study case         | Main question                                               | Main output                                          |
-| ------------------ | ----------------------------------------------------------- | ---------------------------------------------------- |
-| `morie_subsurface` | Can sparse CPT data reconstruct offshore subsurface fields? | Reconstructed IC and engineering parameter fields    |
-| `morie_sample`     | Where should the next CPT be placed?                        | Adaptive CPT placement policy and validation metrics |
+| Study case         | Main question                                                 | Main output                                            |
+| ------------------ | ------------------------------------------------------------- | ------------------------------------------------------ |
+| `morie_subsurface` | Can sparse CPT data reconstruct offshore subsurface fields?   | Reconstructed IC and engineering parameter fields      |
+| `morie_sample`     | Where should the next CPT be placed?                          | Adaptive CPT placement policy and validation metrics   |
 
 Together, the two study cases form a unified offshore subsurface intelligence framework.
 
