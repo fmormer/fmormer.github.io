@@ -351,7 +351,6 @@ After each CPT is selected:
 6. The resulting RMSE contributes to the reward
 
 This means that the agent is not learning an abstract sampling rule.
-
 It is learning through the reconstruction consequences of each CPT location. The value of a CPT is therefore measured by how much it helps reconstruct the full subsurface field.
 This is the key link between `morie_subsurface` and `morie_sample`.
 
