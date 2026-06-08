@@ -182,11 +182,11 @@ The study inherits the same three-layer sand profile used in `morie_soil`.
 
 ### Base Soil Structure
 
-| Layer | Description |
-|---|---|
-| Layer 1 | Loose sand |
-| Layer 2 | Medium sand |
-| Layer 3 | Medium-dense sand |
+| Layer | Description       |
+|------ |------------------ |
+|   1   | Loose sand        |
+|   2   | Medium sand       |
+|   3   | Medium-dense sand |
 
 The workflow introduces a key latent variable:
 
@@ -280,6 +280,18 @@ The reconstruction architecture follows:
 - PatchGAN discriminator  
 - Sparse-to-dense conditional reconstruction  
 
+### What is a GAN?
+
+A Generative Adversarial Network (GAN) is an AI architecture composed of two neural networks that learn together through competition.
+
+- The generator attempts to reconstruct realistic subsurface fields from sparse CPT observations.
+- The discriminator attempts to distinguish between reconstructed fields and known geological truth.
+
+Through this adversarial training process, the generator progressively learns to produce reconstructions that preserve geological structure, layering continuity and spatial variability.
+
+Unlike conventional interpolation methods, which estimate values directly between observations, GAN-based reconstruction learns the underlying patterns present within geological systems 
+and uses them to infer plausible subsurface behavior between investigation locations.
+
 Rather than performing simple interpolation, the model learns:
 
 - Geological continuity  
@@ -356,13 +368,13 @@ The workflow evaluates:
 
 ### Example Results
 
-| Metric | Mean Value |
-|---|---|
-| MAE(IC) | ~0.03 |
-| RMSE(IC) | ~0.04 |
-| RMSE(Dr) | ~5% |
-| RMSE(φ) | ~0.4° |
-| RMSE(γ') | ~0.13 kN/m³ |
+| Metric    | Mean Value  |
+|---------- |------------ |
+| MAE (IC)  | ~0.03       |
+| RMSE (IC) | ~0.04       |
+| RMSE (Dr) | ~5%         |
+| RMSE (φ)  | ~0.4°       |
+| RMSE (γ') | ~0.13 kN/m³ |
 
 ### Engineering Interpretation
 
@@ -372,7 +384,7 @@ The results demonstrate that:
 - Reconstruction quality remains stable across held-out realizations  
 - Engineering parameter derivation remains physically coherent  
 
-The workflow therefore reconstructs not only geology, but also engineering behavior.
+The workflow therefore reconstructs not only geological structure, but also the engineering behavior required for downstream offshore design workflows.
 
 Beyond reconstruction of the latent IC field itself, the workflow also preserves the engineering consistency of the derived soil parameters.
 This is critical because offshore engineering workflows ultimately operate on engineering quantities such as friction angle and relative density rather than on latent behavioral indices directly.
