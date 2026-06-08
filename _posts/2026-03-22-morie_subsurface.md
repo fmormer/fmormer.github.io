@@ -326,7 +326,7 @@ The reconstruction pipeline derives:
 - Friction angle (φ)
 - Submerged unit weight (γ)
 
-This translation preserves consistency engineering properties between:
+This translation preserves engineering consistency between:
 
 - Geology  
 - Soil behavior  
@@ -386,9 +386,8 @@ The results demonstrate that:
 
 The workflow therefore reconstructs not only geological structure, but also the engineering behavior required for downstream offshore design workflows.
 
-Beyond reconstruction of the latent IC field itself, the workflow also preserves the engineering consistency of the derived soil parameters.
-This is critical because offshore engineering workflows ultimately operate on engineering quantities such as friction angle and relative density rather than on latent behavioral indices directly.
-The comparison below illustrates how reconstructed fields preserve both large-scale depositional structure and local engineering variability after IC-to-parameter translation.
+While Figure 5 evaluates reconstruction quality in the latent IC space, offshore engineering decisions ultimately depend on derived parameters such as friction angle and relative density. 
+Figure 6 therefore evaluates whether the reconstructed IC fields preserve the engineering behavior required for anchor and mooring design workflows.
 
 <div align="center">
   <img src="/img/posts/morie_subsurface/06_parameter_comparison.png"
@@ -410,8 +409,8 @@ The statistical distributions below demonstrate that reconstruction performance 
 
 *Figure 7 – Distribution of reconstruction errors across training and validation realizations for IC, friction angle and relative density predictions.*
 
-The relatively narrow spread between training and validation distributions suggests that the workflow generalizes beyond individual synthetic realizations rather than memorizing isolated geological patterns.
-This is particularly important for offshore engineering applications, where sparse investigation campaigns must support decisions across large lease areas under uncertain subsurface conditions.
+The relatively narrow spread between training and validation distributions indicates limited overfitting and suggests that the workflow generalizes beyond individual 
+synthetic realizations rather than memorizing isolated geological patterns.
 
 ## Relationship with `morie_sample`
 
