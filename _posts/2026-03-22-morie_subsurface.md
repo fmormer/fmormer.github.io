@@ -133,13 +133,11 @@ This provides continuity across:
 
 GeoSyn Truth Generation → Sparse CPT Sampling → SchemaGAN Reconstruction → Engineering Mapping → Validation
 
-The architecture preserves:
+The architecture preserves the following aspects throughout the reconstruction process:
 
-- geological continuity  
-- engineering traceability  
-- reproducibility of results  
-
-throughout the reconstruction process.
+- Geological continuity  
+- Engineering traceability  
+- Reproducibility of results  
 
 ### Processing Workflow
 
@@ -164,18 +162,18 @@ The workflow inherits the same cropped Celtic Sea local engineering domain used 
 
 This ensures continuity across:
 
-- bathymetry  
-- soil classification  
-- floating wind layout  
-- anchor positions  
-- downstream engineering workflows  
+- Bathymetry  
+- Soil classification  
+- Floating wind layout  
+- Anchor positions  
+- Downstream engineering workflows  
 
 The selected domain preserves:
 
-- realistic offshore scale  
-- representative anchor spacing  
-- layered sand behavior  
-- spatial variability consistent with the Morie portfolio
+- Realistic offshore scale  
+- Representative anchor spacing  
+- Layered soil behavior  
+- Spatial variability consistent within Morie's portfolio
 
 
 ## Celtic Sea Sand-State Model
@@ -195,7 +193,6 @@ The workflow introduces a key latent variable:
 > **IC — behavioral soil-state index**
 
 Rather than directly reconstructing friction angle or relative density independently, the workflow reconstructs IC as the central behavioral representation of the subsurface.
-
 Engineering parameters are then derived consistently from the reconstructed IC field.
 
 ### Engineering Parameters Derived
@@ -236,9 +233,9 @@ The original GeoSyn methodology is adapted from generic geotechnical environment
 
 The synthetic truth model provides:
 
-- controlled geological references  
-- known subsurface states  
-- reproducible validation targets  
+- Controlled geological references  
+- Known subsurface states  
+- Reproducible validation targets  
 
 This enables quantitative assessment of reconstruction quality before application to real offshore investigation datasets.
 
@@ -404,7 +401,7 @@ The statistical distributions below demonstrate that reconstruction performance 
 The relatively narrow spread between training and validation distributions suggests that the workflow generalizes beyond individual synthetic realizations rather than memorizing isolated geological patterns.
 This is particularly important for offshore engineering applications, where sparse investigation campaigns must support decisions across large lease areas under uncertain subsurface conditions.
 
-## Relationship with `morie_CPTsample`
+## Relationship with `morie_sample`
 
 The adaptive CPT investigation-planning layer is intentionally separated into the following sibling study case:
 

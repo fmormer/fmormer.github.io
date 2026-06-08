@@ -1,5 +1,4 @@
 ---
-
 layout: post
 title: Integrated Seismic Workflow for Floating Offshore Wind Anchors
 image: "/img/posts/morie_seismic/morie_seismic.png"
