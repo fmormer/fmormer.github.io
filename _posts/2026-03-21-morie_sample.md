@@ -281,14 +281,14 @@ The agent observes a six-dimensional state derived from the IC traces.
 
 The state includes:
 
-| # | Feature                                                                    |
-| - | -------------------------------------------------------------------------- |
-| 1 | Mean of the IC trace at the most recent CPT column                         |
-| 2 | Standard deviation of that IC trace                                        |
-| 3 | Mean cosine similarity between the latest IC trace and previous CPT traces |
-| 4 | Standard deviation of those cosine similarities                            |
-| 5 | Normalized x-position of the latest CPT                                    |
-| 6 | Fraction of the CPT budget used                                            |
+|  #  | Feature                                                                    |
+| --- | -------------------------------------------------------------------------- |
+|  1  | Mean of the IC trace at the most recent CPT column                         |
+|  2  | Standard deviation of that IC trace                                        |
+|  3  | Mean cosine similarity between the latest IC trace and previous CPT traces |
+|  4  | Standard deviation of those cosine similarities                            |
+|  5  | Normalized x-position of the latest CPT                                    |
+|  6  | Fraction of the CPT budget used                                            |
 
 At this stage, the state is intentionally based only on IC traces.
 
