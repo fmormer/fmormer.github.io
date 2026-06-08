@@ -299,30 +299,18 @@ Future versions can extend the state to include engineering parameters, uncertai
 
 ### Action Set
 
-The action set is declared in physical meters.
+The action set is declared in physical meters and then converted into grid-column strides using the current horizontal spacing of 10 m.
 
-The Tier-L default action set is:
-
-| Action | Horizontal step |
-| ------ | --------------- |
-| 1      | 250 m           |
-| 2      | 500 m           |
-| 3      | 1000 m          |
-| 4      | 1500 m          |
-
-At the current grid spacing of 10 m, these correspond to column strides of:
-
-| Horizontal step | Column stride |
-| --------------- | ------------- |
-| 250 m           | 25 columns    |
-| 500 m           | 50 columns    |
-| 1000 m          | 100 columns   |
-| 1500 m          | 150 columns   |
+| Action | Horizontal step | Column stride |
+| ------ | --------------- | ------------- |
+| 1      | 250 m           | 25 columns    |
+| 2      | 500 m           | 50 columns    |
+| 3      | 1000 m          | 100 columns   |
+| 4      | 1500 m          | 150 columns   |
 
 This is an important adaptation within Morie Analytics.
 
-The agent is not operating in abstract pixel space.
-It is operating in engineering-relevant physical distances.
+The agent is not operating in abstract pixel space. It is operating in engineering-relevant physical distances.
 
 ### Reward Logic
 
@@ -412,9 +400,7 @@ The trained DQN policy was evaluated across 120 GeoSyn truth profiles.
 
 For each profile, the adaptive policy was compared against a uniform-spacing Standard baseline at the same CPT count selected by the policy.
 
-This paired comparison is important.
-
-The baseline is not allowed to use more CPTs than the adaptive policy.
+This paired comparison is important. The baseline is not allowed to use more CPTs than the adaptive policy.
 Both approaches are evaluated under the same investigation-count constraint.
 
 The validation evaluates:
