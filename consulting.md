@@ -111,10 +111,24 @@ description: "Offshore wind and marine engineering consultancy — portfolio, ca
       </p>
     </div>
 
-	<div class="row">
-	  {% assign desired_order = 'morie_site|morie_layout|morie_soil|morie_mooring|morie_anchor|morie_cable|morie_atlas|morie_subsurface|morie_seismic' | split: '|' %}
+	<!-- Portfolio grid 1: foundation workflow -->
+	<div class="row portfolio-grid portfolio-grid--primary">
+	  {% assign desired_order_1 = 'morie_site|morie_layout|morie_soil|morie_mooring|morie_anchor|morie_cable' | split: '|' %}
 
-	  {% for target_slug in desired_order %}
+	  {% for target_slug in desired_order_1 %}
+		{% for post in site.posts %}
+		  {% if post.slug == target_slug %}
+			{% include post-card.html %}
+		  {% endif %}
+		{% endfor %}
+	  {% endfor %}
+	</div>
+
+	<!-- Portfolio grid 2: advanced / expanded workflows -->
+	<div class="row portfolio-grid portfolio-grid--secondary">
+	  {% assign desired_order_2 = 'morie_atlas|morie_subsurface|morie_sample|morie_seismic|morie_geohazard|morie_installation' | split: '|' %}
+
+	  {% for target_slug in desired_order_2 %}
 		{% for post in site.posts %}
 		  {% if post.slug == target_slug %}
 			{% include post-card.html %}
