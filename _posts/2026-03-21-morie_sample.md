@@ -324,34 +324,30 @@ This is an important adaptation within Morie Analytics.
 The agent is not operating in abstract pixel space.
 It is operating in engineering-relevant physical distances.
 
-### Reward Formulation
+### Reward Logic
 
-The reward balances two competing objectives:
+The reinforcement-learning agent is guided by a reward logic that balances two competing objectives:
 
-* Reduce reconstruction error
-* Avoid excessive CPT count
+* Improve the quality of the reconstructed subsurface field
+* Avoid adding CPTs that do not provide enough additional value
 
-The reward is defined as:
+After each new CPT is selected, the sparse input is updated and the SchemaGAN-2D model reconstructs the full IC field again. The quality of this reconstruction is then compared against the known synthetic truth.
+The reward logic therefore combines two normalized contributions:
 
-`r_t = -(alpha * RMSE_t / RMSE_0 + (1 - alpha) * n_cpts / max_nb_cpts)`
+* A reconstruction-quality term, based on the current full-field RMSE
+* An investigation-effort term, based on the number of CPTs used
 
-where:
-
-* `RMSE_t` is the current full-field reconstruction RMSE
-* `RMSE_0` is the RMSE after the first CPT
-* `n_cpts` is the number of CPTs used
-* `max_nb_cpts` is the reference CPT budget
-* `alpha` controls the balance between accuracy and investigation effort
-
-With the Tier-L default value:
+In the Tier-L configuration, the balance is controlled by:
 
 `alpha = 0.6`
 
-the reward gives more weight to reconstruction quality while still penalizing unnecessary CPTs.
-
+This means that reconstruction quality carries slightly more weight than investigation effort, while still penalizing unnecessary CPTs.
+If the new CPT helps improve the reconstructed field, the action is favoured. If the policy keeps adding CPTs without meaningful improvement, the investigation-effort penalty becomes more important.
 This produces an engineering-relevant trade-off:
 
 > Additional CPTs are useful only if they improve the reconstructed subsurface field enough to justify the extra investigation effort.
+
+In practical terms, the agent is not simply trying to use the fewest possible CPTs, nor is it trying to sample as densely as possible. It is learning a compromise between subsurface reconstruction quality and investigation efficiency.
 
 ## SchemaGAN Reconstruction During Rollout
 
@@ -379,35 +375,28 @@ This is the key link between `morie_subsurface` and `morie_sample`.
 
 ## Training Strategy
 
-The DQN policy is trained using a Deep Q-Learning formulation.
-The policy is represented through an action-value function:
+The adaptive sampling policy is trained using Deep Q-Learning. During training, the agent repeatedly interacts with the synthetic GeoSyn truth fields inherited from `morie_subsurface`. 
+At each episode, the agent selects CPT locations, receives feedback based on reconstruction quality and investigation effort to then gradually update its sampling strategy.
 
-`Q(s, a)`
+The training process includes:
 
-where:
-
-* `s` is the current IC-derived state
-* `a` is the next CPT spacing action
-
-The selected policy is:
-
-`pi(s) = argmax_a Q(s, a)`
-
-The DQN model is a compact multilayer perceptron trained with:
-
-* Experience replay
-* Target network updates
-* Epsilon-greedy exploration
-* Mean-squared Bellman loss
-* Greedy validation after training
+* Experience replay, so the agent can learn from previous sampling decisions
+* A target network, used to stabilize the learning process
+* Epsilon-greedy exploration, so the agent initially tests different CPT-spacing strategies before becoming more selective
+* Greedy validation after training, where the learned policy is evaluated without exploratory actions
 
 The first extended Tier-L run was trained for 75,000 episodes.
+
 During training:
 
 * The exploration parameter decayed toward its lower bound
 * The moving-average reward progressively improved
 * The number of CPTs per episode reduced from denser early exploration toward compact campaigns
 * The learned policy converged toward approximately four CPTs per episode
+
+This training behavior is important from an engineering perspective. At the beginning of training, the agent explores many possible CPT-spacing combinations. 
+As training progresses, it learns that dense investigation is not always necessary for the controlled synthetic fields used in this benchmark. 
+The final policy therefore tends toward compact CPT campaigns while maintaining reconstruction quality.
 
 <div align="center">
   <img src="/img/posts/morie_sample/training_curves.png"
@@ -441,7 +430,7 @@ The 75k run produced the following summary metrics:
 | ----------------- | --------------: | --------------: |
 | RMSE(IC)          | 0.0456 ± 0.0031 | 0.0462 ± 0.0030 |
 | Bias(IC)          | 0.0008 ± 0.0045 | 0.0005 ± 0.0047 |
-| PIC(|err| ≤ 0.05) |   0.798 ± 0.020 |   0.790 ± 0.020 |
+| PIC(|err| ≤ 0.05) |  0.798 ± 0.0200 |  0.790 ± 0.0200 |
 
 The adaptive policy improves the average RMSE relative to the matched uniform-spacing baseline.
 
@@ -509,9 +498,7 @@ In real offshore conditions, the subsurface may include:
 * Interpretation uncertainty
 * Geological features not captured by smooth harmonic patterns
 
-In such conditions, more CPTs would normally be required to interpret the full stratification reliably.
-
-The value of adaptive sampling is therefore expected to become more significant as geological complexity increases.
+In such conditions, more CPTs would normally be required to interpret the full stratification reliably. The value of adaptive sampling is therefore expected to become more significant as geological complexity increases.
 
 A more complex truth-generation stage would create a more demanding benchmark where the policy must decide whether additional CPTs are needed to resolve features that cannot be inferred from smooth geological continuity alone.
 
