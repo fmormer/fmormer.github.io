@@ -9,14 +9,16 @@ tags: [Offshore Floating Wind, Geotechnical Engineering, Artificial Intelligence
 
 ## Executive Summary
 
-This study establishes the **adaptive CPT investigation-planning layer** of Morie Analytics by extending the AI-assisted subsurface reconstruction workflow developed in `morie_subsurface` toward sequential decision-making.
+This study establishes the **adaptive CPT investigation-planning layer** of Morie Analytics by extending the AI-assisted subsurface reconstruction workflow developed in `morie_subsurface` 
+toward sequential decision-making.
 
 The central question is simple:
 
 > Once a sparse subsurface reconstruction workflow exists, where should the next CPT be placed?
 
-In `morie_subsurface`, synthetic geological truth fields were generated, sparsely sampled and reconstructed using SchemaGAN-2D.
-In `morie_sample`, that reconstruction workflow becomes the environment in which an adaptive sampling policy is trained.
+In `morie_subsurface`, synthetic geological truth fields were generated, sparsely sampled and reconstructed using SchemaGAN.  
+In `morie_sample`, the same sparse-to-dense reconstruction concept is used in a 2D vertical-section setting — referred to here as SchemaGAN-2D — and becomes the environment in which an 
+adaptive sampling policy is trained.
 
 The workflow combines:
 
@@ -28,7 +30,12 @@ The workflow combines:
 * CPT-count-aware reward formulation
 * Validation against matched uniform-spacing baselines
 
-The result is a reproducible framework capable of testing whether a learned policy can improve offshore subsurface reconstruction by selecting CPT locations adaptively, rather than relying only on fixed-spacing investigation layouts.
+The result is a reproducible framework capable of testing whether a learned policy can improve offshore subsurface reconstruction by selecting CPT locations adaptively, rather than relying 
+only on fixed-spacing investigation layouts.
+
+In the current synthetic benchmark, the trained policy produces a statistically significant but practically small improvement over the matched uniform-spacing baseline. This makes the study 
+most valuable as a **feasibility demonstration of the adaptive sampling loop**, rather than as a final claim of deployment-ready CPT campaign optimization.
+
 
 This study represents the transition from:
 
@@ -61,9 +68,13 @@ The scope includes:
 * CPT-count-aware reward formulation
 * Training and validation of a Deep Q-Learning policy
 * Validation against uniform-spacing baselines at matched CPT count
+* Initial comparison framework for future non-RL adaptive baselines
 * Interpretation of adaptive sampling value under controlled synthetic geology
 
-This study converts:
+This first version should be understood as a regional investigation-planning prototype.
+It is designed to test adaptive CPT-placement logic over the synthetic Celtic Sea benchmark, rather than to define final anchor-cluster-scale investigation spacing.
+
+The study converts:
 
 **Sparse offshore reconstruction capability → adaptive CPT placement strategy**.
 
@@ -123,7 +134,7 @@ The relationship can be summarized as:
 
 | Study case         | Main question                                                 | Main output                                            |
 | ------------------ | ------------------------------------------------------------- | ------------------------------------------------------ |
-| `morie_subsurface` | Can sparse CPT data reconstruct offshore subsurface fields?   | Reconstructed IC and engineering parameter fields      |
+| `morie_subsurface` | Can sparse CPT data reconstruct offshore subsurface fields?   | Reconstructed Ic and engineering parameter fields      |
 | `morie_sample`     | Where should the next CPT be placed?                          | Adaptive CPT placement policy and validation metrics   |
 
 Together, the two study cases form a unified offshore subsurface intelligence framework.
@@ -137,12 +148,12 @@ This study builds directly on upstream Morie Analytics outputs.
 
 ### From `morie_subsurface`
 
-* GeoSyn truth IC fields
+* GeoSyn truth Ic fields
 * GeoSyn sidecar metadata
 * SchemaGAN-2D generator
-* Sparse IC and mask convention
+* Sparse Ic and mask convention
 * Celtic Sea three-layer sand-state model
-* IC-based geological convention
+* Ic-based geological convention
 * Local grid geometry
 
 The inherited truth fields represent IC values over a 2D grid with:
@@ -151,7 +162,7 @@ The inherited truth fields represent IC values over a 2D grid with:
 * 80 vertical rows
 * 10 m horizontal spacing
 * 0.5 m vertical spacing
-* IC values representative of the synthetic Celtic Sea sand-state model
+* Ic values representative of the synthetic Celtic Sea sand-state model
 
 The `morie_sample` repository consumes these artefacts as read-only inputs.
 Nothing in `morie_subsurface` is modified by the adaptive sampling workflow.
@@ -164,15 +175,17 @@ The adaptive sampling layer adds:
 * CPT action spacing in physical meters
 * Reward weighting parameter
 * Training and validation realization splits
+* All-realization validation sweep
 * Validation metrics and plotting routines
 
 All inputs remain aligned with the same cropped Celtic Sea engineering domain used across the Morie portfolio.
+
 
 ## System Flow
 
 The adaptive sampling workflow can be summarized as:
 
-**GeoSyn Truth Field → Initial CPT → Sparse IC + Mask → SchemaGAN Reconstruction → RMSE Evaluation → DQN Action → Next CPT Location → Updated Reconstruction → Reward → Policy Update**
+**GeoSyn Truth Field → Initial CPT → Sparse Ic + Mask → SchemaGAN-2D Reconstruction → Reconstruction Assessment → DQN Action → Next CPT Location → Updated Reconstruction → Reward Signal → Policy Update**
 
 The architecture preserves the following aspects throughout the process:
 
@@ -184,22 +197,26 @@ The architecture preserves the following aspects throughout the process:
 
 ### Processing Workflow
 
-1. Load a GeoSyn truth IC field inherited from `morie_subsurface`
+1. Load a GeoSyn truth Ic field inherited from `morie_subsurface`
 2. Place the first CPT trace
-3. Build the sparse IC and mask tensors
-4. Reconstruct the full IC field using SchemaGAN-2D
-5. Compute the reconstruction RMSE against the known truth
-6. Build a six-feature state vector from the observed IC traces
+3. Build the sparse Ic and mask tensors
+4. Reconstruct the full Ic field using SchemaGAN-2D
+5. Compute the reconstruction RMSE against the known synthetic truth
+6. Build a six-feature state vector from the observed Ic traces
 7. Select the next CPT spacing using the DQN policy
 8. Add the new CPT trace to the sparse input
-9. Reconstruct the IC field again
+9. Reconstruct the Ic field again
 10. Compute reward based on reconstruction quality and CPT count
 11. Repeat until the investigated section boundary is reached
-12. Compare the adaptive policy against matched uniform-spacing baselines
+12. Compare the adaptive policy against matched sampling baselines
 
 This converts:
 
-**Sparse CPT traces → reconstructed field → adaptive next-sample decision**.
+**Sparse CPT traces → reconstructed Ic field → adaptive next-sample decision**.
+
+In this first version, the known GeoSyn truth field is used to compute the reward and validation metrics during synthetic training and benchmarking. In a real investigation campaign, the full subsurface truth would not be available. 
+Future deployment-oriented versions should therefore replace truth-based reconstruction error with observable proxies such as reconstruction uncertainty, ensemble disagreement, inter-trace dissimilarity or anchor-capacity uncertainty.
+
 
 ## Local Engineering Domain
 
@@ -221,6 +238,8 @@ The selected domain preserves:
 * Compatibility with the Morie floating wind portfolio sequence
 
 The current implementation is intentionally 2D and section-based.
+It works on vertical Ic sections rather than on a full 3D ground model.
+
 This makes it suitable for developing and validating the adaptive sampling logic before extending the approach toward more complex 3D investigation planning.
 
 ## Adaptive CPT Investigation Concept
@@ -239,6 +258,9 @@ A policy that always selects long steps exits the section quickly and produces a
 A policy that always selects short steps produces a denser campaign but pays a higher investigation-cost penalty.
 
 The interesting strategies lie between these two extremes.
+
+In this first implementation, an episode ends when the policy reaches the boundary of the investigated section.
+Future versions can introduce an explicit stop action, allowing the model to decide not only where to sample next, but also when the campaign is sufficiently informative.
 
 The adaptive policy must learn when additional spatial resolution is useful and when the reconstruction model already has enough information to infer the remaining field.
 
@@ -277,23 +299,26 @@ The full-field truth is available in this synthetic benchmark so that the adapti
 
 ### State Vector
 
-The agent observes a six-dimensional state derived from the IC traces.
+The agent observes a six-dimensional state derived from the Ic traces.
 
 The state includes:
 
 | Number  | Feature                                                                    |
 | ------- | -------------------------------------------------------------------------- |
-|    1    | Mean of the IC trace at the most recent CPT column                         |
-|    2    | Standard deviation of that IC trace                                        |
+|    1    | Mean of the Ic trace at the most recent CPT column                         |
+|    2    | Standard deviation of that Ic trace                                        |
 |    3    | Mean cosine similarity between the latest IC trace and previous CPT traces |
 |    4    | Standard deviation of those cosine similarities                            |
 |    5    | Normalized x-position of the latest CPT                                    |
 |    6    | Fraction of the CPT budget used                                            |
 
-At this stage, the state is intentionally based only on IC traces.
+At this stage, the state is intentionally based only on Ic traces.
 
 The engineering quantities derived in `morie_subsurface`, such as relative density, friction angle and submerged unit weight, are not used in the v0 state.
 This keeps the first implementation directly comparable with the reinforcement-learning reference study.
+
+A limitation of this v0 state is that it does not fully encode the spatial arrangement of all previous CPTs. It includes the latest position and similarity to previous traces, 
+but it does not explicitly describe whether earlier CPTs are well distributed, clustered or leaving large unsampled gaps.
 
 Future versions can extend the state to include engineering parameters, uncertainty metrics or anchor-relevant quantities.
 
@@ -309,8 +334,10 @@ The action set is declared in physical meters and then converted into grid-colum
 | 4      | 1500 m          | 150 columns   |
 
 This is an important adaptation within Morie Analytics.
-
 The agent is not operating in abstract pixel space. It is operating in engineering-relevant physical distances.
+
+In this version, the action set should be interpreted as a regional or pre-FEED investigation-planning configuration. It is not yet intended to resolve detailed anchor-cluster-scale ground model 
+development, where smaller investigation spacings may be required. Future configurations could introduce finer actions, for example 50–100 m steps around specific anchor clusters.
 
 ### Reward Logic
 
@@ -319,7 +346,7 @@ The reinforcement-learning agent is guided by a reward logic that balances two c
 * Improve the quality of the reconstructed subsurface field
 * Avoid adding CPTs that do not provide enough additional value
 
-After each new CPT is selected, the sparse input is updated and the SchemaGAN-2D model reconstructs the full IC field again. The quality of this reconstruction is then compared against the known synthetic truth.
+After each new CPT is selected, the sparse input is updated and the SchemaGAN-2D model reconstructs the full Ic field again. The quality of this reconstruction is then compared against the known synthetic truth.
 The reward logic therefore combines two normalized contributions:
 
 * A reconstruction-quality term, based on the current full-field RMSE
@@ -343,19 +370,20 @@ The reinforcement-learning loop is coupled directly with the SchemaGAN-2D recons
 
 After each CPT is selected:
 
-1. The new IC trace is added to the sparse input field
+1. The new Ic trace is added to the sparse input field
 2. The CPT mask is updated
-3. The sparse IC and mask tensors are passed through SchemaGAN-2D
-4. The full IC field is reconstructed
-5. The reconstruction is compared against the known GeoSyn truth
-6. The resulting RMSE contributes to the reward
+3. The sparse Ic and mask tensors are passed through SchemaGAN-2D
+4. The full Ic field is reconstructed
+5. The reconstruction is compared against the known GeoSyn truth during synthetic benchmarking
+6. The resulting reconstruction assessment contributes to the reward
 
 This means that the agent is not learning an abstract sampling rule.
 It is learning through the reconstruction consequences of each CPT location. The value of a CPT is therefore measured by how much it helps reconstruct the full subsurface field.
-This is the key link between `morie_subsurface` and `morie_sample`.
 
-`morie_subsurface` provides the reconstruction engine.
-`morie_sample` uses that engine to evaluate adaptive investigation decisions.
+This is the key link between `morie_subsurface` and `morie_sample`:
+
+* `morie_subsurface` provides the reconstruction engine.
+* `morie_sample` uses that engine to evaluate adaptive investigation decisions.
 
 ## Training Strategy
 
@@ -369,7 +397,7 @@ The training process includes:
 * Epsilon-greedy exploration, so the agent initially tests different CPT-spacing strategies before becoming more selective
 * Greedy validation after training, where the learned policy is evaluated without exploratory actions
 
-The first extended Tier-L run was trained for 75,000 episodes.
+The first extended Tier-L run was trained for 75,000 episodes.The first extended large training configuration, designated Tier-L in the repository, was trained for 75,000 episodes.
 
 During training:
 
@@ -381,6 +409,9 @@ During training:
 This training behavior is important from an engineering perspective. At the beginning of training, the agent explores many possible CPT-spacing combinations. 
 As training progresses, it learns that dense investigation is not always necessary for the controlled synthetic fields used in this benchmark. 
 The final policy therefore tends toward compact CPT campaigns while maintaining reconstruction quality.
+
+The final policy therefore tends toward compact CPT campaigns while maintaining reconstruction quality. This should be interpreted in the context of the current smooth synthetic truth fields, 
+where the SchemaGAN-2D reconstruction model reaches a low error level with relatively few informative CPT traces.
 
 <div align="center">
   <img src="/img/posts/morie_sample/training_curves.png"
@@ -401,9 +432,9 @@ Both approaches are evaluated under the same investigation-count constraint.
 
 The validation evaluates:
 
-* Full-field IC RMSE
-* Mean bias
-* Percentage of pixels within a selected IC error band
+* Full-field Ic RMSE
+* Mean Ic bias
+* Percentage of pixels within a selected Ic error band
 * Paired comparison between DQN and uniform spacing
 
 The 75k run produced the following summary metrics:
@@ -412,15 +443,26 @@ The 75k run produced the following summary metrics:
 | --------------------- | --------------: | --------------: |
 | RMSE (IC)             | 0.0456 ± 0.0031 | 0.0462 ± 0.0030 |
 | Bias (IC)             | 0.0008 ± 0.0045 | 0.0005 ± 0.0047 |
-| PIC (abs(err) ≤ 0.05) |  0.798 ± 0.0200 |  0.790 ± 0.0200 |
+| PIC — abs(err) ≤ 0.05 |  0.798 ± 0.0200 |  0.790 ± 0.0200 |
 
-The adaptive policy improves the average RMSE relative to the matched uniform-spacing baseline.
+Here, PIC refers to the proportion of reconstructed cells where the absolute Ic error is lower than or equal to 0.05.
 
-The improvement is modest, but it is consistent at the distribution level:
+The adaptive policy produces a lower mean RMSE than the matched uniform-spacing baseline, but the effect is small and not universal at the individual-profile level.
 
-* DRL produces a slightly lower RMSE distribution
-* Both methods remain nearly unbiased
-* DRL produces a slightly higher fraction of pixels within the selected IC error band
+Across the 120-profile sweep:
+
+* DRL gives lower RMSE in 78 profiles
+* Uniform spacing gives lower RMSE in 42 profiles
+* The mean paired delta, DRL minus Standard, is -6.54e-4 Ic
+* The 95% bootstrap confidence interval is [-9.67e-4, -3.43e-4]
+* The paired Wilcoxon signed-rank test gives p = 1.34e-4
+* The paired t-test gives p = 1.03e-4
+
+These checks support a statistically significant but practically small improvement in the current synthetic benchmark.
+
+This is an important distinction. The result should not be interpreted as a large performance gain. 
+Instead, it shows that the adaptive sampling loop can be trained, validated and benchmarked against matched sampling strategies, 
+while producing a measurable but limited improvement over uniform spacing under the current smooth synthetic truth fields.
 
 <div align="center">
   <img src="/img/posts/morie_sample/metrics_distributions.png"
@@ -432,6 +474,12 @@ The improvement is modest, but it is consistent at the distribution level:
 
 The RMSE-vs-CPT-count comparison provides a second view of the same validation exercise.
 Because the trained policy converges toward approximately four CPTs, the paired comparisons concentrate around the same investigation count.
+
+In addition to the uniform-spacing Standard baseline, the repository now includes a second non-RL comparator: **MaxGap**. 
+This strategy places the next CPT at the midpoint of the largest unsampled gap, providing a simple adaptive baseline that does not require reinforcement learning.
+
+This is useful because uniform spacing is only a first benchmark. A stronger validation set should compare DRL not only against fixed spacing, but also against simple adaptive rules that are easier to implement and explain.
+
 
 ## Engineering Interpretation
 
@@ -483,6 +531,7 @@ This is useful because the workflow does more than optimize CPT positions. It al
 In the current version, the answer appears to be:
 
 > The SchemaGAN-2D model is already strong for the controlled synthetic fields, so the remaining RMSE margin available to adaptive placement is limited.
+
 
 ## Outputs Generated
 

@@ -207,6 +207,14 @@ The selected spectrum uses:
 * Effective seabed Peak Ground Acceleration (PGA) = 0.15·g
 * 5% damping ratio
 
+For this demonstration study, the effective seabed PGA is derived from a reference rock PGA of 0.10 g combined with the Eurocode 8 Soil Class C
+amplification factor (S = 1.5), resulting in an amplified seabed motion of approximately 0.15 g.
+
+The objective is not to define a site-specific seismic hazard for the Celtic Sea, but to place the upper loose sand layers in a degradation
+regime where liquefaction screening, excess pore-pressure generation and anchor-capacity consequences become observable within the workflow.
+
+Real project applications would derive the design PGA from a project-specific Probabilistic Seismic Hazard Assessment (PSHA) and the applicable offshore design standards.
+
 ### Engineering Significance
 
 For downstream seabed degradation analyses, this provides:
@@ -342,24 +350,28 @@ The degraded seabed profile is then propagated into the suction-anchor engineeri
 
 The verification framework evaluates three engineering states:
 
-| Scenario | Description                         |
-| -------- | ----------------------------------- |
-| A        | Baseline ULS                        |
-| B        | Co-seismic pseudostatic loading     |
-| C        | Post-event degraded seabed survival |
+| Scenario | Description                               |
+| -------- | ----------------------------------------- |
+| A        | Baseline ULS                              |
+| B        | Co-seismic pseudostatic loading           |
+| C        | Post-event degraded seabed survival (ALS) |
 
 This separates **increased seismic demand** from **reduced post-liquefaction resistance**.
 
-Scenario C does not represent the same loading condition as the baseline case. Following the seismic event, the workflow assumes a degraded seabed state combined with a 
-residual operational loading condition representative of post-event survivability assessment.
+Scenario C represents an Accidental Limit State (ALS) condition in which the earthquake has already occurred and the seabed has undergone degradation.
+Unlike the baseline ULS verification, this scenario combines:
+
+* A degraded seabed profile
+* Residual operational loading
+* Post-event anchor survivability assessment
 
 This distinction is important because the governing mechanism is no longer driven solely by transient seismic demand, but by the interaction between:
 
-- Reduced seabed resistance
-- Modified anchor equilibrium
-- Remaining environmental loading state
+* Reduced seabed resistance
+* Modified anchor equilibrium
+* Remaining environmental loading state
 
-The post-event verification therefore evaluates whether the anchor system can remain operational after seabed degradation has occurred.
+The objective is therefore not to evaluate peak seismic demand, but to verify whether the anchor system can remain operational after the earthquake-induced transformation of the seabed.
 
 <div align="center">
   <img src="/img/posts/morie_seismic/fig4a_uc_three_scenarios.png"
