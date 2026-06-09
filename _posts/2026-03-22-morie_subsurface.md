@@ -27,7 +27,7 @@ Unlike purely statistical interpolation approaches, the methodology combines:
 
 - **GeoSyn** → synthetic truth generation  
 - **SchemaGAN** → sparse-data reconstruction  
-- **IC-based engineering mapping** → derivation of engineering soil parameters  
+- **Ic-based engineering mapping** → derivation of engineering soil parameters  
 - **Validation workflows** → quantitative reconstruction assessment  
 
 The result is a reproducible framework capable of transforming sparse offshore geotechnical information into engineering-ready subsurface intelligence suitable for downstream anchor and mooring workflows.
@@ -55,7 +55,7 @@ toward:
 - Synthetic geological truth generation  
 - Sparse CPT-style sampling  
 - AI-assisted subsurface reconstruction  
-- IC-based engineering parameter derivation  
+- Ic-based engineering parameter derivation  
 - Reconstruction validation against held-out truth  
 - Engineering-aware interpretation of reconstructed fields  
 - Integration with downstream anchor workflows  
@@ -116,7 +116,7 @@ This study builds directly on upstream Morie Analytics outputs.
 - GeoSyn synthetic geology framework  
 - Sparse CPT-style sampling definitions  
 - SchemaGAN reconstruction architecture  
-- IC-to-engineering parameter mappings  
+- Ic-to-engineering parameter mappings  
 
 All inputs remain aligned within the same cropped Celtic Sea engineering domain used throughout the Morie ecosystem.
 
@@ -180,7 +180,11 @@ The selected domain preserves:
 
 The study inherits the same three-layer sand profile used in `morie_soil`.
 
-### Base Soil Structure
+### Base Soil Structure Implementation
+
+The current implementation is intentionally restricted to sand-dominated offshore environments and should not be interpreted as a complete representation of Celtic Sea geology.
+
+The objective is to establish and validate the reconstruction workflow within a controlled geotechnical setting before extending the methodology toward clay, mixed-facies and rock environments.
 
 | Layer | Description       |
 |------ |------------------ |
@@ -188,14 +192,22 @@ The study inherits the same three-layer sand profile used in `morie_soil`.
 |   2   | Medium sand       |
 |   3   | Medium-dense sand |
 
+### Latent Soil-State Representation
+
 The workflow introduces a key latent variable:
 
-> **IC — behavioral soil-state index**
+> **Ic — Robertson's Soil Behaviour Type Index (Robertson, 2010)**
 
-Rather than directly reconstructing friction angle or relative density independently, the workflow reconstructs IC as the central behavioral representation of the subsurface.
-Engineering parameters are then derived consistently from the reconstructed IC field.
+Ic is a dimensionless CPT-derived parameter that provides a compact representation of soil behavior and can be calculated directly from cone penetration test measurements.
+
+Following the SchemaGAN methodology, Ic is reconstructed as the primary subsurface variable because it preserves behavioral information while remaining suitable for image-based geological reconstruction.
+
+Rather than independently reconstructing engineering parameters such as friction angle or relative density, the workflow first reconstructs the Ic field and subsequently derives engineering 
+parameters through consistent interpretation relationships.
 
 ### Engineering Parameters Derived
+
+The reconstructed Ic field is translated into engineering-ready soil parameters including:
 
 - Relative density (Dr)
 - Friction angle (φ)
@@ -203,11 +215,13 @@ Engineering parameters are then derived consistently from the reconstructed IC f
 
 ### Engineering Significance
 
-This preserves the following properties across the reconstructed domain:
+This approach preserves consistency while avoiding the need to independently reconstruct multiple engineering parameters between:
 
-- Geological consistency  
-- Behavioral continuity  
-- Physically coherent parameter relationships  
+- Geological structure
+- Soil behavior
+- Engineering interpretation
+
+The result is a reconstruction workflow that remains geotechnically interpretable while producing outputs directly usable within downstream offshore engineering analyses.  
 
 
 ## GeoSyn Synthetic Truth Generation
@@ -261,7 +275,7 @@ The sampling strategy intentionally reproduces realistic offshore constraints:
 
 Each realization is sampled independently to produce:
 
-- Sparse IC observations  
+- Sparse Ic observations  
 - Observation masks  
 - Reconstruction input datasets  
 
@@ -290,7 +304,7 @@ A Generative Adversarial Network (GAN) is an AI architecture composed of two neu
 Through this adversarial training process, the generator progressively learns to produce reconstructions that preserve geological structure, layering continuity and spatial variability.
 
 Unlike conventional interpolation methods, which estimate values directly between observations, GAN-based reconstruction learns the underlying patterns present within geological systems 
-and uses them to infer plausible subsurface behavior between investigation locations.
+and uses them to infer geologically consistent subsurface behavior between locations.
 
 Rather than performing simple interpolation, the model learns:
 
@@ -308,23 +322,23 @@ Within floating offshore wind engineering needs the workflow introduces:
 - Engineering-consistent spatial reconstruction  
 
 
-## IC-to-Engineering Mapping
+## Ic-to-Engineering Mapping
 
-Once reconstructed, the IC fields are translated into engineering-ready soil parameters.
+Once reconstructed, the Ic fields are translated into engineering-ready soil parameters.
 
 <div align="center">
   <img src="/img/posts/morie_subsurface/04_engineering_mapping.png"
-       alt="Engineering-aware translation of reconstructed IC fields into relative density friction angle unit weight and CPT resistance"
+       alt="Engineering-aware translation of reconstructed Ic fields into relative density friction angle unit weight and CPT resistance"
        width="650">
 </div>
 
-*Figure 4 – Engineering mapping from reconstructed IC fields into engineering soil parameters.*
+*Figure 4 – Engineering mapping from reconstructed Ic fields into engineering soil parameters.*
 
 The reconstruction pipeline derives:
 
 - Relative density (Dr)
 - Friction angle (φ)
-- Submerged unit weight (γ)
+- Effective submerged unit weight (γ')
 
 This translation preserves engineering consistency between:
 
@@ -360,7 +374,7 @@ A key aspect of the workflow is that reconstruction quality is validated against
 
 The workflow evaluates:
 
-- IC reconstruction accuracy  
+- Ic reconstruction accuracy  
 - Relative density reconstruction  
 - Friction angle reconstruction  
 - Unit weight reconstruction  
@@ -370,8 +384,8 @@ The workflow evaluates:
 
 | Metric    | Mean Value  |
 |---------- |------------ |
-| MAE (IC)  | ~0.03       |
-| RMSE (IC) | ~0.04       |
+| MAE (Ic)  | ~0.03       |
+| RMSE (Ic) | ~0.04       |
 | RMSE (Dr) | ~5%         |
 | RMSE (φ)  | ~0.4°       |
 | RMSE (γ') | ~0.13 kN/m³ |
@@ -386,8 +400,8 @@ The results demonstrate that:
 
 The workflow therefore reconstructs not only geological structure, but also the engineering behavior required for downstream offshore design workflows.
 
-While Figure 5 evaluates reconstruction quality in the latent IC space, offshore engineering decisions ultimately depend on derived parameters such as friction angle and relative density. 
-Figure 6 therefore evaluates whether the reconstructed IC fields preserve the engineering behavior required for anchor and mooring design workflows.
+While Figure 5 evaluates reconstruction quality in the latent Ic space, offshore engineering decisions ultimately depend on derived parameters such as friction angle and relative density. 
+Figure 6 therefore evaluates whether the reconstructed Ic fields preserve the engineering behavior required for anchor and mooring design workflows.
 
 <div align="center">
   <img src="/img/posts/morie_subsurface/06_parameter_comparison.png"
@@ -407,10 +421,12 @@ The statistical distributions below demonstrate that reconstruction performance 
        width="850">
 </div>
 
-*Figure 7 – Distribution of reconstruction errors across training and validation realizations for IC, friction angle and relative density predictions.*
+*Figure 7 – Distribution of reconstruction errors across training and validation realizations for Ic, friction angle and relative density predictions.*
 
-The relatively narrow spread between training and validation distributions indicates limited overfitting and suggests that the workflow generalizes beyond individual 
-synthetic realizations rather than memorizing isolated geological patterns.
+The relatively narrow spread between training and validation distributions indicates limited overfitting within the GeoSyn-generated dataset distribution used in this study.
+These results should therefore be interpreted as reconstruction performance bounds within the synthetic geological domain rather than estimates of real-world reconstruction accuracy.
+
+Validation against real offshore CPT datasets remains an important next step for future development.
 
 ## Relationship with `morie_sample`
 
@@ -513,12 +529,13 @@ This is where:
 
 ## Aspects to Improve
 
-- Real CPT calibration using offshore investigation datasets  
-- Extension toward clay and rock environments  
+- Validation against real offshore CPT datasets and site investigation campaigns
+- Benchmarking against conventional interpolation approaches such as ordinary kriging and inverse-distance weighting
+- Extension toward clay, mixed-facies and rock environments  
 - Native 3D reconstruction workflows  
-- Uncertainty quantification  
+- Reconstruction uncertainty quantification and confidence mapping  
 - Cloud-scale reconstruction training  
-- Integration with adaptive CPT optimization  
+- Integration with adaptive CPT optimization through `morie_sample`  
 
 These extensions would move the workflow toward:
 
@@ -533,7 +550,7 @@ This study reflects the Morie Analytics approach:
 - **Geology-aware**: the workflow preserves offshore layering continuity and spatial depositional structure rather than performing generic interpolation.
 - **Mechanism-preserving**: the reconstruction pipeline mirrors the sequence from sparse investigation data to engineering interpretation.
 - **Reproducible**: synthetic truth generation, sparse sampling and reconstruction workflows are fully configuration-driven.
-- **Engineering-ready**: reconstructed IC fields are directly translated into parameters usable in mooring and anchor workflows.
+- **Engineering-ready**: reconstructed Ic fields are directly translated into parameters usable in mooring and anchor workflows.
 - **Site-conditioned**: the framework is explicitly tied to the reconstructed Celtic Sea offshore domain and associated floating wind context.
 
 
@@ -553,5 +570,5 @@ Within Morie Analytics, the methodology is adapted toward:
 
 - Offshore floating wind environments
 - Celtic Sea sand-state reconstruction
-- Engineering-aware IC-based parameter mapping
+- Engineering-aware Ic-based parameter mapping
 - Downstream anchor and mooring workflows
