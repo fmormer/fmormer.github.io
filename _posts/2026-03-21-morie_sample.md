@@ -485,19 +485,25 @@ This is useful because uniform spacing is only a first benchmark. A stronger val
 
 The main result is that the adaptive investigation-planning loop works end-to-end:
 
-> CPT selection → sparse input update → SchemaGAN reconstruction → RMSE evaluation → reward → next CPT decision.
+> CPT selection → Sparse input update → SchemaGAN reconstruction → RMSE evaluation → Reward → next CPT decision.
 
-The trained policy slightly improves average reconstruction performance relative to a matched uniform-spacing baseline.
-However, the absolute RMSE margin remains small.
+The trained policy produces a statistically significant but practically small improvement in mean Ic reconstruction error relative to the matched uniform-spacing baseline.
 
-This is an important engineering observation. The synthetic GeoSyn truth fields used in this first implementation are intentionally controlled.
-They are smooth, structured and relatively predictable compared with real offshore stratigraphy.
+This is an important engineering observation. The result shows that the adaptive workflow can be trained, validated and benchmarked against fixed-spacing investigation strategies. However, the absolute RMSE margin remains small 
+and the improvement should not be interpreted as a large performance gain.
 
-The current truth fields are generated from artificial geological patterns with strong spatial continuity.
-As a result, the SchemaGAN-2D model can reconstruct the IC field accurately from a small number of CPT traces.
+The synthetic GeoSyn truth fields used in this first implementation are intentionally controlled. They are smooth, structured and relatively predictable compared with real offshore stratigraphy.
 
-Once approximately four informative CPTs are available, the reconstruction error approaches a performance ceiling.
-At that point, the specific placement of the four CPTs still matters, but there is limited room for any sampling policy to create a large additional RMSE reduction.
+The current truth fields are generated from simplified geological patterns with strong spatial continuity. As a result, the SchemaGAN-2D model can reconstruct the Ic field accurately from a small number of CPT traces.
+
+Once approximately four informative CPTs are available, the reconstruction error approaches a performance ceiling. At that point, the specific placement of the four CPTs still matters, 
+but there is limited room for any sampling policy to create a large additional RMSE reduction.
+
+This limitation has three consequences:
+
+* First, reduced heterogeneity can make uniformly spaced CPTs highly competitive with adaptive policies.
+* Second, smoother truth fields allow the reconstruction error floor to be reached quickly, shrinking the headroom available for large gains.
+* Third, a policy trained only on simplified synthetic regularities may not transfer directly to real site variability without recalibration.
 
 This should not be interpreted as evidence that adaptive sampling has limited value. Instead, it indicates that the current benchmark is relatively easy for the reconstruction model.
 In real offshore conditions, the subsurface may include:
@@ -512,9 +518,11 @@ In real offshore conditions, the subsurface may include:
 * Interpretation uncertainty
 * Geological features not captured by smooth harmonic patterns
 
-In such conditions, more CPTs would normally be required to interpret the full stratification reliably. The value of adaptive sampling is therefore expected to become more significant as geological complexity increases.
+In such conditions, more CPTs would normally be required to interpret the full stratification reliably. 
+The value of adaptive sampling is therefore expected to become more significant as geological complexity increases.
 
-A more complex truth-generation stage would create a more demanding benchmark where the policy must decide whether additional CPTs are needed to resolve features that cannot be inferred from smooth geological continuity alone.
+A more complex truth-generation stage would create a more demanding benchmark where the policy must decide whether additional CPTs are needed to resolve features that cannot be inferred 
+from smooth geological continuity alone.
 
 The current result should therefore be interpreted as:
 
@@ -526,7 +534,7 @@ The current result should therefore be interpreted as:
 
 This is useful because the workflow does more than optimize CPT positions. It also helps diagnose where the limiting factor lies:
 
-> Is reconstruction uncertainty controlled by sampling strategy or by the reconstruction model and the complexity of the geological truth?
+> Is reconstruction uncertainty controlled by sampling strategy, by the reconstruction model or by the complexity of the geological truth?
 
 In the current version, the answer appears to be:
 
@@ -539,7 +547,7 @@ The workflow produces:
 
 * Trained DQN policy checkpoints
 * Episode-level reward histories
-* Episode-level RMSE histories
+* Episode-level Ic RMSE histories
 * Exploration decay curves
 * CPT-count evolution curves
 * Adaptive CPT rollout figures
@@ -548,19 +556,23 @@ The workflow produces:
 * RMSE-vs-CPT-count validation plots
 * Metrics-distribution plots
 * Paired comparison metrics against uniform-spacing baselines
+* Statistical significance reports for paired validation results
+* Comparator outputs for uniform spacing and non-RL adaptive baselines such as MaxGap
 
 These outputs are directly usable for evaluating adaptive investigation strategies.
+
 
 ## Engineering Applications
 
 The outputs support:
 
 * Early-stage CPT campaign planning
+* Regional and pre-FEED investigation-density screening
 * Sensitivity testing of CPT spacing
-* Investigation-density screening
-* Sparse-data uncertainty reduction
+* Sparse-data uncertainty reduction studies
 * AI-assisted geotechnical interpretation
 * Floating offshore wind lease-area investigation strategy
+* Benchmarking of adaptive sampling policies
 * Future integration with anchor and mooring design workflows
 
 The methodology can support questions such as:
@@ -571,10 +583,15 @@ The methodology can support questions such as:
 * Is uncertainty controlled by sampling density or by geological complexity?
 * How does adaptive sampling compare with uniform spacing?
 * How should investigation strategy evolve as new data are collected?
+* Which areas would benefit from finer investigation spacing before anchor design?
 
 This enables:
 
 **Sparse Offshore Data → AI Reconstruction → Adaptive Sampling → Engineering Decisions**
+
+At this stage, these applications should be interpreted as decision-support and benchmarking capabilities for early investigation planning. 
+Future versions will be needed before the workflow can be used as a deployment-ready tool for final offshore CPT campaign design.
+
 
 ## Relationship to Other Morie Study Cases
 
@@ -589,10 +606,10 @@ This study extends the Morie subsurface workflow from reconstruction into adapti
 
 ### Feeds into
 
-* **morie_subsurface** → future active-learning extensions
-* **morie_anchor** → anchor engineering under improved subsurface interpretation
+* **morie_subsurface** → future active-learning and uncertainty-aware reconstruction extensions
+* **morie_anchor** → future anchor engineering studies under improved subsurface interpretation
 * **morie_atlas** → lease-scale intelligence and uncertainty screening
-* **future investigation-planning workflows** → campaign optimization and adaptive sampling
+* **future investigation-planning workflows** → campaign benchmarking, adaptive sampling and CPT-density studies
 
 It provides the transition from:
 
@@ -602,7 +619,8 @@ toward:
 
 > Adaptive offshore investigation planning.
 
-## Why It Matters Commercially
+
+## Why It Matters Commercially?
 
 Site investigation is one of the earliest, most expensive and most consequential stages of offshore wind development.
 
@@ -640,6 +658,10 @@ This is where adaptive geotechnical intelligence becomes useful:
 * Engineering teams can test investigation scenarios under controlled assumptions
 * The workflow can eventually support campaign planning at lease scale
 
+In its current form, `morie_sample` is best understood as a decision-support and benchmarking workflow for early-stage investigation planning. 
+Future deployment-oriented versions should incorporate real CPT data, uncertainty-aware reward logic, finer action spacing and engineering objectives linked to anchor and mooring design.
+
+
 ## Aspects to Improve
 
 This study is an important step, but several extensions are required before the workflow can support real project-level investigation planning.
@@ -654,25 +676,30 @@ Potential improvements include:
 * Measurement noise and interpretation uncertainty
 * 3D adaptive sampling workflows
 * Explicit stop action instead of boundary-based episode termination
+* Finer action spacing for anchor-cluster-scale investigation, including 50–100 m steps
 * Alternative reward functions based on uncertainty reduction
 * Engineering-parameter-based reward channels
 * Inclusion of relative density, friction angle and submerged unit weight in the state
 * Anchor-capacity-informed reward functions
+* Depth-weighted rewards focused on anchor embedment zones
 * Integration with campaign cost, vessel logistics and weather-window constraints
 
 A natural next step is to increase geological complexity in the truth-generation stage.
 
-More realistic synthetic fields would create a more demanding benchmark where the adaptive policy must decide whether additional CPTs are needed to resolve features that cannot be inferred from smooth continuity alone.
+More realistic synthetic fields would create a more demanding benchmark where the adaptive policy must decide whether additional CPTs are needed to resolve features that cannot be inferred 
+from smooth continuity alone.
 
 This would move the workflow closer to real offshore investigation planning.
+
 
 ## Design Philosophy
 
 This study reflects the Morie Analytics approach:
 
 * **Adaptive**: the next CPT location depends on what has already been observed.
+* **Sequential**: investigation planning is treated as a step-by-step decision process, not as a fixed sampling layout.
 * **Engineering-scaled**: actions are expressed in physical meters, not abstract pixels.
-* **Reconstruction-driven**: every new CPT is evaluated through its impact on full-field reconstruction.
+* **Reconstruction-driven**: every new CPT is evaluated through its impact on full-field Ic reconstruction.
 * **Modular**: the workflow consumes `morie_subsurface` outputs without modifying them.
 * **Transparent**: the reward explicitly balances reconstruction accuracy and investigation effort.
 * **Benchmarkable**: the adaptive policy is compared against matched uniform-spacing baselines.
@@ -681,8 +708,8 @@ This study reflects the Morie Analytics approach:
 * **Engineering-ready**: the workflow is designed to connect eventually with anchor, mooring and lease-scale decision tools.
 
 The methodology does not treat AI as a black-box replacement for geotechnical judgement.
+Instead, it creates a controlled environment where investigation strategies can be tested, compared and improved before being applied to real offshore datasets.
 
-Instead, it creates a controlled environment where investigation strategies can be tested, compared and improved before being transferred to real project data.
 
 ## Research Foundations
 
@@ -711,6 +738,6 @@ The case-study contribution is not the DQN algorithm itself.
 
 The contribution is the integration of adaptive CPT planning into the Morie offshore engineering ecosystem:
 
-> GeoSyn truth → SchemaGAN reconstruction → adaptive CPT policy → validation against matched sampling baselines → engineering interpretation.
+> GeoSyn truth → SchemaGAN reconstruction → Adaptive CPT policy → Validation against matched sampling baselines → Engineering interpretation.
 
 This establishes the first version of an adaptive geotechnical investigation-planning layer for Morie Analytics.

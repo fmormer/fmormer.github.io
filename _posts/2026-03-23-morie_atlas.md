@@ -414,7 +414,7 @@ This study is the **predictive extension of the anchor workflow**.
 It provides the **transition from physics-based design to scalable prediction**.
 
 
-## Why It Matters Commercially
+## Why It Matters Commercially?
 
 - Enables lease-scale anchor assessment in real time  
 - Reduces computational cost of early-stage design  

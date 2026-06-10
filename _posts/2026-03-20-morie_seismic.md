@@ -499,7 +499,7 @@ toward:
 > Degradation-aware offshore engineering intelligence.
 
 
-## Why It Matters Commercially
+## Why It Matters Commercially?
 
 * Extends floating offshore wind workflows toward geohazard intelligence
 * Supports early-stage seismic and liquefaction screening
