@@ -278,18 +278,16 @@ The adaptive sampling problem is formulated as a reinforcement-learning environm
 
 The environment contains:
 
-* A known synthetic truth IC field
+* A known synthetic truth Ic field
 * A sparse CPT sampling mask
 * A SchemaGAN-2D reconstruction model
 * A reward function balancing reconstruction error and CPT count
 * A discrete action space expressed in physical meters
 
-At each step, the agent receives a compact state representation based only on IC traces.
+At each step, the agent receives a compact state representation based only on Ic traces.
 
 The agent does not directly observe the full truth field.
-The truth field is only used internally to compute reconstruction error during training and validation.
-
-This is important because it mirrors the engineering problem:
+The truth field is only used internally to compute reconstruction error during training and validation. This is important because it mirrors the engineering problem:
 
 > The decision-maker only has access to the CPTs already collected, not to the full subsurface truth.
 
