@@ -7,6 +7,7 @@ tags: [Offshore Floating Wind, Geotechnical Engineering, Artificial Intelligence
 
 # Celtic Sea Floating Offshore Wind – Adaptive CPT Investigation Planning with Reinforcement Learning
 
+
 ## Executive Summary
 
 This study establishes the **adaptive CPT investigation-planning layer** of Morie Analytics by extending the AI-assisted subsurface reconstruction workflow developed in `morie_subsurface` 
@@ -54,6 +55,7 @@ toward:
 </div>
 
 *Figure 1 – Integrated adaptive CPT investigation-planning workflow linking `morie_subsurface` reconstruction fields with reinforcement-learning-based sampling decisions.*
+
 
 ## Project Scope
 
@@ -104,6 +106,7 @@ Rather than prescribing a fixed sampling layout in advance, `morie_sample` explo
 
 This shifts the investigation problem from a static layout question toward a sequential decision-making problem.
 
+
 ## From `morie_subsurface` to `morie_sample`
 
 `morie_sample` is intentionally separated from `morie_subsurface`.
@@ -141,6 +144,7 @@ Together, the two study cases form a unified offshore subsurface intelligence fr
 
 `morie_subsurface` reconstructs what may exist between sparse CPTs.
 `morie_sample` learns where an additional CPT may be most useful.
+
 
 ## Inputs and Data Sources
 
@@ -293,6 +297,7 @@ The truth field is only used internally to compute reconstruction error during t
 
 The full-field truth is available in this synthetic benchmark so that the adaptive policy can be trained and evaluated quantitatively.
 
+
 ## State, Actions and Reward
 
 ### State Vector
@@ -362,6 +367,7 @@ This produces an engineering-relevant trade-off:
 
 In practical terms, the agent is not simply trying to use the fewest possible CPTs, nor is it trying to sample as densely as possible. It is learning a compromise between subsurface reconstruction quality and investigation efficiency.
 
+
 ## SchemaGAN Reconstruction During Rollout
 
 The reinforcement-learning loop is coupled directly with the SchemaGAN-2D reconstruction model developed in `morie_subsurface`.
@@ -382,6 +388,7 @@ This is the key link between `morie_subsurface` and `morie_sample`:
 
 * `morie_subsurface` provides the reconstruction engine.
 * `morie_sample` uses that engine to evaluate adaptive investigation decisions.
+
 
 ## Training Strategy
 

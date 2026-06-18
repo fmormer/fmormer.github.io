@@ -7,6 +7,7 @@ tags: [Offshore Floating Wind, Geotechnical Engineering, Artificial Intelligence
 
 # Celtic Sea Floating Offshore Wind – AI-Assisted Subsurface Intelligence & Sparse-Data Reconstruction
 
+
 ## Executive Summary
 
 This study establishes the **AI-assisted subsurface intelligence layer** of Morie Analytics by extending the deterministic reconstruction workflow developed in `morie_soil` toward a generative and reconstruction-driven geotechnical framework.
@@ -49,6 +50,7 @@ toward:
 </div>
 
 *Figure 1 – Integrated AI-assisted subsurface intelligence workflow linking `morie_site`, `morie_layout` and `morie_soil` into engineering-ready offshore reconstruction fields using SchemaGAN.*
+
 
 ## Project Scope
 

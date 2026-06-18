@@ -7,6 +7,7 @@ tags: [Offshore Floating Wind, Anchors, Machine Learning, Suction Piles, Surroga
 
 # Celtic Sea Floating Offshore Wind – Physics-Informed Anchor Prediction & Atlas Visualization
 
+
 ## Executive Summary
 
 This study establishes the **predictive anchor design layer** of Morie Analytics by transforming physics-based anchor verification into a **lease-scale machine learning capability**.
@@ -30,6 +31,7 @@ This module represents the transition from point-based offshore engineering veri
 </div>
 
 *Figure 1 – Integrated two-stage Random Forest surrogate architecture linking `morie_soil`, `morie_mooring` and `morie_anchor` into lease-scale anchor prediction workflows.*
+
 
 ## Project Scope
 
@@ -113,6 +115,7 @@ The architecture ensures **traceability from physics-based design to machine lea
 
 This converts **physics-based simulations into predictive capability**.
 
+
 ## Design Basis
 
 This workflow is intended as a site-conditioned surrogate framework suitable for preliminary lease-scale anchor assessment.
@@ -134,6 +137,7 @@ The workflow does not currently include:
 - Dynamic foundation response  
 - Probabilistic uncertainty quantification  
 - Multi-anchor interaction effects
+
 
 ## Surrogate Model Architecture
 

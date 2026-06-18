@@ -7,6 +7,7 @@ tags: [Offshore Floating Wind, Seismic Engineering, Liquefaction, Geotechnical E
 
 # Celtic Sea Floating Offshore Wind – Integrated Seismic Workflow for Offshore Anchors
 
+
 ## Executive Summary
 
 This study establishes the **offshore seismic and seabed degradation layer** of Morie Analytics by extending the existing geotechnical and anchor-engineering workflow toward earthquake-driven seabed transformation and post-event anchor verification.
