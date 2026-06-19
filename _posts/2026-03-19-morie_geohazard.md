@@ -12,7 +12,7 @@ tags: [Offshore Floating Wind, Geohazards, Site Characterization, Seabed Enginee
 
 This study establishes the **geohazard intelligence layer** of Morie Analytics by extending the existing offshore engineering workflow toward lease-scale geohazard awareness and planning support.
 
-The workflow evaluates how seabed morphology, terrain variability and shallow subsurface conditions influence engineering suitability across the offshore domain. 
+The workflow evaluates how slope conditions, mobile seabed sediments and shallow subsurface susceptibility influence engineering suitability across the offshore domain. 
 Building directly on the outputs of the following case studies:
 
 * `morie_site`
@@ -87,7 +87,17 @@ The key question therefore becomes:
 Traditional workflows often assess geohazards after layouts have already been selected.
 This study explores an alternative approach. Rather than evaluating individual hazards independently, multiple seabed indicators are integrated into a spatial screening framework capable of highlighting potentially sensitive sectors across the engineering domain.
 
-The objective is not to predict failure. The real objective is to improve visibility of spatial variability and support more informed engineering decisions.
+Within this study, geohazard sensitivity is explored through three representative categories:
+
+* Slope instability
+* Mobile seabed sediments
+* Liquefaction susceptibility
+
+Together, these categories capture both static and dynamic aspects of the offshore environment. 
+While slope-related conditions primarily reflect persistent terrain characteristics, mobile sediments introduce the possibility of seabed evolution through dune migration and morphological change. 
+Liquefaction susceptibility provides an additional view of how shallow subsurface conditions may influence infrastructure performance under cyclic loading conditions.
+
+The objective is not to model individual failure mechanisms directly, but to provide a spatial framework capable of highlighting areas where these geohazard influences may deserve additional engineering attention.
 
 
 ## Inputs and Data Sources
@@ -116,6 +126,9 @@ This study builds directly on upstream Morie Analytics outputs.
 
 * Liquefaction-related susceptibility indicators
 * Degradation-aware geohazard concepts
+* Screening concepts associated with cyclic soil behavior and post-event seabed sensitivity
+
+These inputs complement the bathymetric and morphological information by introducing a shallow subsurface perspective into the geohazard assessment workflow.
 
 ### Additional Inputs
 
@@ -186,10 +199,9 @@ These characteristics influence how engineering systems interact with the offsho
 ## Synthetic Seabed Scenarios
 
 One of the challenges of offshore planning is uncertainty.
-
 Future seabed conditions may not perfectly match the conditions observed during a site investigation campaign.
 
-To explore this uncertainty, the workflow introduces controlled synthetic seabed scenarios inspired by realistic dune-field behavior.
+To explore this uncertainty, the workflow introduces controlled synthetic seabed scenarios inspired by realistic dune-field behavior and mobile sediment environments commonly encountered offshore.
 
 <div align="center">
   <img src="/img/posts/morie_geohazard/bathy_cropped_after_synthetic.png"
@@ -241,10 +253,10 @@ The combined screening framework generates a lease-scale geohazard sensitivity m
 
 Several observations emerge:
 
-* Sensitivity is not uniformly distributed across the site.
-* Localized sectors exhibit elevated geohazard influence.
-* Morphological features create recognizable spatial patterns.
-* Areas with similar water depth may exhibit different engineering characteristics.
+* Geohazard sensitivity is not uniformly distributed across the site.
+* Mobile sediment environments create distinct spatial corridors of elevated sensitivity.
+* Areas of increased terrain variability tend to coincide with higher screening scores.
+* Shallow subsurface susceptibility introduces additional differentiation between sectors that would otherwise appear similar based on bathymetry alone.
 
 This highlights the importance of moving beyond simple bathymetric screening toward more integrated spatial assessment approaches.
 
@@ -306,7 +318,7 @@ This enables engineers to understand whether elevated sensitivity is associated 
 
 * Morphological variability
 * Terrain gradients
-* Shallow subsurface characteristics
+* Liquefaction-related susceptibility
 
 The ability to decompose geohazard sensitivity into individual contributors improves traceability and supports more informed engineering interpretation.
 
@@ -324,6 +336,16 @@ This creates opportunities for:
 * Early identification of sensitive sectors
 * Reduced redesign risk
 * Better alignment between engineering disciplines
+
+The different geohazard categories may influence offshore infrastructure in different ways.
+For example:
+
+* Mobile sediments may affect anchor embedment conditions.
+* Seabed evolution may influence mooring-line touchdown behavior.
+* Morphological variability may affect cable burial, exposure or free-span development.
+* Shallow subsurface susceptibility may influence long-term soil-structure interaction.
+
+Integrating geohazard awareness into planning therefore helps identify where additional engineering assessment may provide the greatest value.
 
 
 ## Outputs Generated
@@ -373,6 +395,7 @@ This study establishes the geohazard planning extension of the Morie ecosystem.
 * Risk-informed engineering studies
 * Geohazard-aware design strategies
 * Lease-scale planning frameworks
+* Future anchor suitability mapping
 
 It provides the transition from:
 
@@ -404,14 +427,14 @@ This is where:
 * Integration of measured geohazard inventories
 * Time-dependent seabed evolution scenarios
 * Dynamic sediment transport representations
+* Anchor suitability mapping
+* Geohazard-aware layout constraints and masks
 * Coupled geohazard–layout optimization
 * Probabilistic uncertainty assessment
 * Multi-hazard interaction frameworks
 * Full-domain lease-scale deployment
 
-These extensions would move the workflow toward:
-
-> Fully integrated offshore geohazard intelligence systems.
+These developments would progressively transform geohazard screening into engineering decision layers capable of supporting anchor placement, cable routing and future layout optimization studies.
 
 
 ## Design Philosophy
