@@ -11,7 +11,7 @@ tags: [Offshore Floating Wind, Site Characterization, GEBCO, EMODnet, GIS, Pytho
 
 This study establishes the **site intelligence layer** of Morie Analytics by transforming heterogeneous public offshore datasets into **standardized engineering resources** for floating offshore wind development.
 
-Using Celtic Sea lease areas together with **GEBCO 2025 bathymetry**, **EMODnet seabed classification**, **ERA5 atmospheric reanalysis**, and **Copernicus Marine wave and ocean physics products**, the workflow converts raw environmental information into reproducible resources describing bathymetry, seabed conditions, terrain, wind climate, wave climate and ocean currents.
+Using Celtic Sea lease areas together with **GEBCO 2025 bathymetry**, **EMODnet seabed classification**, **ERA5 atmospheric reanalysis** and **Copernicus Marine wave and ocean physics products**, the workflow converts raw environmental information into reproducible resources describing bathymetry, seabed conditions, terrain, wind climate, wave climate and ocean currents.
 
 The result is a **reproducible Python-based workflow** that replaces fragmented GIS and metocean preprocessing with a scalable and transparent environmental characterization pipeline.
 
@@ -48,7 +48,7 @@ Early-stage floating offshore wind development requires the rapid and consistent
 - Wave climate and environmental loading
 - Ocean current conditions
 
-Traditionally, these assessments rely on independent GIS workflows, multiple software platforms, and manually processed environmental datasets, often leading to duplicated effort, inconsistent assumptions and limited reproducibility between projects.
+Traditionally, these assessments rely on independent GIS workflows, multiple software platforms and manually processed environmental datasets, often leading to duplicated effort, inconsistent assumptions and limited reproducibility between projects.
 
 This workflow introduces a **structured computational approach**, where heterogeneous public datasets are transformed into **standardized engineering resources** that provide a common environmental foundation for downstream floating offshore wind analyses.
 
@@ -111,7 +111,7 @@ _Figure 1 – Regional lease areas used as the screening context for floating of
 Environmental characterization begins at the regional scale, where:
 
 - Lease areas present different environmental conditions
-- Bathymetry, seabed properties, and metocean resources vary spatially
+- Bathymetry, seabed properties and metocean resources vary spatially
 - Engineering assumptions must remain consistent across candidate sites
 
 Establishing a common environmental baseline enables objective site screening and provides a reproducible foundation for downstream floating offshore wind engineering analyses.
@@ -156,9 +156,9 @@ The relatively mild seabed gradients support:
 
 Nevertheless, spatial variations in water depth remain important for downstream engineering analyses, including:
 
-- Consistent normalization of mooring system configurations (addressed in **morie_mooring**)
-- Preliminary anchor sizing and verification under site-specific depth conditions (addressed in **morie_anchor**)
-- Assessment of cable touchdown behaviour along variable bathymetric profiles (addressed in **morie_cable**)
+- Consistent normalization of mooring system configurations (addressed in `morie_mooring`)
+- Preliminary anchor sizing and verification under site-specific depth conditions (addressed in `morie_anchor`)
+- Assessment of cable touchdown behaviour along variable bathymetric profiles (addressed in `morie_cable`)
 
 Overall, bathymetry defines the **geometric boundary conditions** that underpin subsequent floating offshore wind engineering analyses throughout the Morie Analytics workflow.
 
@@ -256,9 +256,9 @@ At this stage, the Folk-7 classification should be interpreted as a **regional s
 
 At the same time, the observed spatial variability highlights the need for:
 
-- Site-specific soil reconstruction from geotechnical investigations (addressed in **morie_soil**)
-- Detailed anchor design and verification under representative soil conditions (addressed in **morie_anchor**)
-- Site-specific cable burial and protection assessments (addressed in **morie_cable**)
+- Site-specific soil reconstruction from geotechnical investigations (addressed in `morie_soil`)
+- Detailed anchor design and verification under representative soil conditions (addressed in `morie_anchor`)
+- Site-specific cable burial and protection assessments 
 
 This environmental characterization transforms regional geological information into a standardized engineering resource that supports the downstream Morie Analytics workflow.
 
@@ -289,7 +289,7 @@ Wind characterization provides the primary environmental input for:
 - Turbine loading studies
 - Early-stage energy production estimates
 
-Within the Morie Analytics workflow, the standardized wind resource is consumed directly by **morie_layout**, where it supports wake modelling and annual energy production (AEP) assessment.
+Within the Morie Analytics workflow, the standardized wind resource is consumed directly by `morie_layout`, where it supports wake modelling and annual energy production (AEP) assessment.
 
 ### Wave Climate
 
@@ -311,7 +311,7 @@ Wave characterization supports:
 - Dynamic cable analysis
 - Installation planning and operability studies
 
-These environmental conditions provide essential inputs for downstream engineering workflows, particularly **morie_mooring** and **morie_cable**.
+These environmental conditions provide essential inputs for downstream engineering workflows, particularly `morie_mooring` and `morie_cable`.
 
 ### Current Climate
 
