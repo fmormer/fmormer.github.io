@@ -11,7 +11,7 @@ tags: [Offshore Floating Wind, Site Characterization, GEBCO, EMODnet, GIS, Pytho
 
 This study establishes the **site intelligence layer** of Morie Analytics by transforming heterogeneous public offshore datasets into **standardized engineering resources** for floating offshore wind development.
 
-Using Celtic Sea lease areas together with **GEBCO 2025 bathymetry**, **EMODnet seabed classification**, **ERA5 atmospheric reanalysis** and **Copernicus Marine wave and ocean physics products**, the workflow converts raw environmental information into reproducible resources describing bathymetry, seabed conditions, terrain, wind climate, wave climate and ocean currents.
+Using Celtic Sea lease areas together with **GEBCO 2025 bathymetry**, **EMODnet seabed classification**, **ERA5 atmospheric reanalysis** and **Copernicus Marine wave and sea physics products**, the workflow converts raw environmental information into reproducible resources describing bathymetry, seabed conditions, terrain, wind climate, wave climate and sea currents.
 
 The result is a **reproducible Python-based workflow** that replaces fragmented GIS and metocean preprocessing with a scalable and transparent environmental characterization pipeline.
 
@@ -46,7 +46,7 @@ Early-stage floating offshore wind development requires the rapid and consistent
 - Seabed geology and engineering soils
 - Wind climate and directional energy resource
 - Wave climate and environmental loading
-- Ocean current conditions
+- Sea current conditions
 
 Traditionally, these assessments rely on independent GIS workflows, multiple software platforms and manually processed environmental datasets, often leading to duplicated effort, inconsistent assumptions and limited reproducibility between projects.
 
@@ -62,7 +62,7 @@ This study integrates multiple publicly available environmental datasets that co
 - **EMODnet Folk-7** seabed classification
 - **ERA5** atmospheric reanalysis
 - **Copernicus Marine** wave reanalysis
-- **Copernicus Marine** ocean physics reanalysis
+- **Copernicus Marine** sea physics reanalysis
 
 The EMODnet classification is used as a regional sediment screening dataset and should not be interpreted as a substitute for site-specific geotechnical investigation.
 
@@ -91,7 +91,7 @@ For each lease area:
 4. Classify seabed sediments using EMODnet geological data
 5. Characterize the wind climate from ERA5 atmospheric reanalysis
 6. Characterize the wave climate from Copernicus Marine wave products
-7. Characterize ocean currents from Copernicus Marine physics products
+7. Characterize sea currents from Copernicus Marine physics products
 8. Generate standardized engineering resources and visualizations
 
 This workflow transforms **heterogeneous public environmental datasets into standardized engineering resources** that can be directly consumed by downstream floating offshore wind engineering modules.
@@ -267,7 +267,7 @@ This environmental characterization transforms regional geological information i
 
 In addition to the static characteristics of the offshore environment, floating offshore wind engineering requires a quantitative description of the dynamic environmental conditions that govern energy production, structural loading, installation planning and long-term system performance.
 
-The workflow therefore characterizes the regional wind, wave, and current climate using publicly available atmospheric and oceanographic reanalysis datasets. These environmental resources complement the bathymetric and geological characterization presented previously, providing a consistent environmental foundation for downstream engineering analyses.
+The workflow therefore characterizes the regional wind, wave and current climate using publicly available atmospheric and seaographic datasets. These environmental resources complement the bathymetric and geological characterization presented previously, providing a consistent environmental foundation for downstream engineering analyses.
 
 ### Wind Climate
 
@@ -317,23 +317,23 @@ These environmental conditions provide essential inputs for downstream engineeri
 
 <div align="center">
   <img src="/img/posts/morie_site/current_rose_Celtic_2.png"
-       alt="Directional ocean current characterization from Copernicus Marine physics reanalysis"
+       alt="Directional sea current characterization from Copernicus Marine physics reanalysis"
        width="500">
 </div>
-_Figure 9 – Directional ocean current resource characterized from Copernicus Marine physics reanalysis._
+_Figure 9 – Directional sea current resource characterized from Copernicus Marine physics reanalysis._
 
-The current resource describes the prevailing ocean current regime across the lease area, including directional occurrence and representative current velocities.
+The current resource describes the prevailing sea current regime across the lease area, including directional occurrence and representative current velocities.
 
 ### Engineering Significance
 
-Ocean current characterization contributes to:
+Sea current characterization contributes to:
 
 - Dynamic cable behaviour
 - Marine operations and installation planning
 - Environmental loading assessments
 - Future integrated offshore system studies
 
-Although generally secondary to wind and waves for floating wind design, ocean currents remain an important component of the offshore environmental characterization and complete the standardized environmental resource package generated by `morie_site`.
+Although generally secondary to wind and waves for floating wind design, sea currents remain an important component of the offshore environmental characterization and complete the standardized environmental resource package generated by `morie_site`.
 
 
 ## Geological Validation
