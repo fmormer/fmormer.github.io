@@ -9,35 +9,47 @@ tags: [Offshore Floating Wind, Layout Optimization, Hex Grid, Floating Wind, GIS
 
 ## Executive Summary
 
-This study establishes the **layout generation layer** of Morie Analytics by transforming site-level geospatial data into **engineering-ready floating wind farm configurations**.
+This study establishes the **layout generation layer** of Morie Analytics by transforming site-level geospatial data into **engineering-ready floating offshore wind layouts**.
 
-Using bathymetry and seabed classification from `morie_site`, the workflow identifies feasible regions, generates a constrained hexagonal lattice and selects optimal floater clusters using **topology-driven screening**.
+Using bathymetry and seabed classification from `morie_site`, together with representative wind resource and turbine definitions, 
+the workflow identifies feasible development regions, generates a constrained hexagonal lattice, and evaluates candidate layouts through 
+a **topology-first engineering methodology**.
 
-The result is a **deterministic and reproducible layout generation framework** that replaces heuristic placement with **engineering-driven system configuration**. In conventional workflows, layout is often treated as a geometric or wind-driven problem.
+Rather than treating layout as a purely geometric or aerodynamic problem, the workflow first identifies spatial configurations compatible with shared-anchor 
+system architectures before assessing candidate placements using additional engineering criteria, including **bathymetric coherence** and **wake-induced energy losses**. 
+Wake effects and annual energy production are evaluated through **PyWake**, providing an additional engineering metric while preserving the topology-driven design philosophy.
 
-In floating wind, it is a **system design problem**. The reference case corresponds to a **120 MW floating wind cluster**, bridging layout generation with real project-scale design.
+The selected layout is then propagated directly into the project ontology, automatically generating the corresponding mooring system and shared-anchor network 
+for downstream engineering analyses.
+
+The result is a **deterministic, reproducible and modular layout generation framework** that replaces heuristic placement with **engineering-driven system configuration**. 
+The reference case corresponds to a **120 MW floating wind cluster**, demonstrating how early-stage site information can be transformed into an engineering-ready offshore system.
 
 > Site intelligence → **Layout generation** → Soil reconstruction → Mooring physics → Anchor verification → Cable optimization
 
 
 ## Project Scope
 
-- Site-driven layout generation based on processed geospatial data  
-- Bathymetry and soil-constrained feasibility filtering  
-- Hexagonal lattice-based floater placement  
-- Topology-driven cluster screening 
-- Model generation for downstream workflows  
-- Integration with mooring and anchor modules  
+- Site-driven layout generation based on processed geospatial data
+- Bathymetry and soil-constrained feasibility filtering
+- Constrained hexagonal lattice generation
+- Topology-first candidate layout generation
+- Bathymetry-based layout assessment for engineering standardization
+- Wake effects and annual energy production (AEP) assessment using PyWake
+- Project ontology generation for downstream workflows
+- Automatic mooring system and shared-anchor network generation
 
-This study converts **site intelligence into structured spatial system design decisions**.
+This study converts **site intelligence into structured spatial system design decisions**, providing a deterministic workflow that bridges geospatial characterization 
+with physics-based engineering models.
 
 The reference configuration consists of:
 
-- **8 floating wind turbine generators (WTGs)**  
-- **15 MW nominal capacity per unit**  
+- **8 floating wind turbine generators (WTGs)**
+- **15 MW nominal capacity per unit**
 - **Total installed capacity: 120 MW**
 
-This defines a **cluster-scale floating wind system**, used to evaluate layout feasibility, topology optimization and downstream engineering workflows.
+This defines a **cluster-scale floating wind system**, used to evaluate layout feasibility, topology-driven engineering design, wake performance and downstream mooring 
+and anchor workflows.
 
 
 ## Engineering Context
